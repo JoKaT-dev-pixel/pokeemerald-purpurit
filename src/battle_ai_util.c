@@ -84,6 +84,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_FLUFFY] = 5,
     [ABILITY_FORECAST] = 6,
     [ABILITY_FOREWARN] = 2,
+    [ABILITY_FRIENDZONE] = 7,
     [ABILITY_FRIEND_GUARD] = 0,
     [ABILITY_FRISK] = 3,
     [ABILITY_FULL_METAL_BODY] = 4,

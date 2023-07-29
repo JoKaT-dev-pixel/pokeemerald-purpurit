@@ -4,6 +4,10 @@
 // overworld
 extern const u32 gMessageBox_Gfx[];
 extern const u16 gMessageBox_Pal[];
+extern const u32 gMessageBoxMale_Gfx[];
+extern const u16 gMessageBoxMale_Pal[];
+extern const u32 gMessageBoxFemale_Gfx[];
+extern const u16 gMessageBoxFemale_Pal[];
 
 // pokeballs
 extern const u32 gBallGfx_Poke[];
@@ -7501,6 +7505,18 @@ extern const u32 gBattleTerrainPalette_StadiumPhoebe[];
 extern const u32 gBattleTerrainPalette_StadiumGlacia[];
 extern const u32 gBattleTerrainPalette_StadiumDrake[];
 extern const u32 gBattleTerrainPalette_StadiumWallace[];
+extern const u32 gBattleTerrainTiles_GrassField[];
+extern const u32 gBattleTerrainTilemap_GrassField[];
+extern const u32 gBattleTerrainPalette_GrassField[];
+extern const u32 gBattleTerrainTiles_Forest[];
+extern const u32 gBattleTerrainTilemap_Forest[];
+extern const u32 gBattleTerrainPalette_Forest[];
+extern const u32 gBattleTerrainTiles_Gym[];
+extern const u32 gBattleTerrainTilemap_Gym[];
+extern const u32 gBattleTerrainPalette_Gym[];
+extern const u32 gBattleTerrainTiles_City[];
+extern const u32 gBattleTerrainTilemap_City[];
+extern const u32 gBattleTerrainPalette_City[];
 
 // pokedex
 extern const u32 gPokedexInterface_Gfx[];

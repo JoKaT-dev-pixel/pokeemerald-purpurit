@@ -1057,6 +1057,8 @@ static void InitMapBasedOnPlayerLocation(void)
         x = warp->x;
         y = warp->y;
         break;
+    case MAP_TYPE_FOREST:
+        break;
     }
 
     xOnMap = x;

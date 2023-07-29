@@ -10547,6 +10547,7 @@ static const u16 sSceptileTeachableLearnset[] = {
 };
 
 static const u16 sTorchicTeachableLearnset[] = {
+    MOVE_BULLET_SEED,
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_CUT,

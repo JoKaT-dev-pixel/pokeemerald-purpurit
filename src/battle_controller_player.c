@@ -327,7 +327,7 @@ static void HandleInputChooseAction(void)
     {
         SwapHpBarsWithHpText();
     }
-#if DEBUG_BATTLE_MENU == TRUE
+#if DEBUG_BATTLE_MENU == FALSE
     else if (JOY_NEW(SELECT_BUTTON))
     {
         BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_DEBUG, 0);

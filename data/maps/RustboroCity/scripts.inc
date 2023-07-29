@@ -845,21 +845,24 @@ RustboroCity_EventScript_MayEncounter::
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
-	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_0x8008, 0
-	msgbox RustboroCity_Text_MayPassedBrineyWantToBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleMay
-	msgbox RustboroCity_Text_MayOhHaventRaisedPokemonEnough, MSGBOX_DEFAULT
-	call RustboroCity_EventScript_RestoreBgm
+	msgbox RustboroCity_Text_MayPassedBrineyWantToBattle, MSGBOX_DEFAULT
+	msgbox RustboroCity_Text_MayImNotGoingToLose, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, RustboroCity_EventScript_BattleMayTreecko
+	case 1, RustboroCity_EventScript_BattleMayTorchic
+	case 2, RustboroCity_EventScript_BattleMayMudkip
 	releaseall
 	end
 
 RustboroCity_EventScript_MayAskToBattle::
 	setvar VAR_0x8008, 1
-	msgbox RustboroCity_Text_MayWantToBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleMay
-	msgbox RustboroCity_Text_MayOhHaventRaisedPokemonEnough, MSGBOX_DEFAULT
+	msgbox RustboroCity_Text_MayImNotGoingToLose, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, RustboroCity_EventScript_BattleMayTreecko
+	case 1, RustboroCity_EventScript_BattleMayTorchic
+	case 2, RustboroCity_EventScript_BattleMayMudkip
 	releaseall
 	end
 
@@ -873,6 +876,7 @@ RustboroCity_EventScript_BattleMay::
 
 RustboroCity_EventScript_MayBrineyHint::
 	msgbox RustboroCity_Text_MayMrBrineyHint, MSGBOX_DEFAULT
+	setvar VAR_RUSTBORO_CITY_STATE, 8
 	call_if_eq VAR_0x8008, 0, RustboroCity_EventScript_RestoreBgm
 	releaseall
 	end
@@ -1241,8 +1245,8 @@ RustboroCity_Text_DevonCorpSign:
 
 RustboroCity_Text_GymSign:
 	.string "RUSTBORO CITY POKéMON GYM\n"
-	.string "LEADER: ROXANNE\p"
-	.string "“The ROCK-loving honors student!”$"
+	.string "CHAMPION: Wil Aime\l"
+	.string "“La friendzone n'existe pas!”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
 	.string "DEVON CORP. BRANCH OFFICE\p"

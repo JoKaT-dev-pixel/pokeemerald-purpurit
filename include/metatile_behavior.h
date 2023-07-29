@@ -149,5 +149,6 @@ bool8 MetatileBehavior_IsLongGrass_Duplicate(u8);
 bool8 MetatileBehavior_IsLongGrassSouthEdge(u8);
 bool8 MetatileBehavior_IsTrainerHillTimer(u8);
 bool8 MetatileBehavior_IsRockClimbable(u8 metatileBehavior);
+bool8 MetatileBehavior_IsForestEncounter(u8);
 
 #endif // GUARD_METATILE_BEHAVIOR_H

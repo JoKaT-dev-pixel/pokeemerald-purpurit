@@ -1286,6 +1286,8 @@ static const u16 sNaturePowerMoves[BATTLE_TERRAIN_COUNT] =
     [BATTLE_TERRAIN_DISTORTION_WORLD] = MOVE_TRI_ATTACK,
     [BATTLE_TERRAIN_SPACE]            = MOVE_DRACO_METEOR,
     [BATTLE_TERRAIN_ULTRA_SPACE]      = MOVE_PSYSHOCK,
+    [BATTLE_TERRAIN_FOREST]           = MOVE_ENERGY_BALL,
+    [BATTLE_TERRAIN_CITY]             = MOVE_FLASH_CANNON,
 };
 
 static const u16 sPickupItems[] =
@@ -1352,6 +1354,8 @@ static const u8 sTerrainToType[BATTLE_TERRAIN_COUNT] =
     [BATTLE_TERRAIN_DISTORTION_WORLD] = TYPE_NORMAL,
     [BATTLE_TERRAIN_SPACE]            = TYPE_DRAGON,
     [BATTLE_TERRAIN_ULTRA_SPACE]      = TYPE_PSYCHIC,
+    [BATTLE_TERRAIN_FOREST]           = TYPE_GRASS,
+    [BATTLE_TERRAIN_CITY]             = TYPE_STEEL,
 #if B_CAMOUFLAGE_TYPES >= GEN_5
     [BATTLE_TERRAIN_MOUNTAIN]         = TYPE_GROUND,
     [BATTLE_TERRAIN_PLAIN]            = TYPE_GROUND,
@@ -14179,6 +14183,7 @@ static void Cmd_setsemiinvulnerablebit(void)
         break;
     case MOVE_PHANTOM_FORCE:
     case MOVE_SHADOW_FORCE:
+    case MOVE_PEEKABOO:
         gStatuses3[gBattlerAttacker] |= STATUS3_PHANTOM_FORCE;
         break;
     }

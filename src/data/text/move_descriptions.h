@@ -217,8 +217,8 @@ static const u8 sAcidDescription[] = _(
     "May lower Defense.");
 
 static const u8 sEmberDescription[] = _(
-    "A weak fire attack that may\n"
-    "inflict a burn.");
+    "Envoie des faibles flammes\n"
+    "pouvant brûler l'ennemi.");
 
 static const u8 sFlamethrowerDescription[] = _(
     "A powerful fire attack that\n"
@@ -229,8 +229,8 @@ static const u8 sMistDescription[] = _(
     "reduction of abilities.");
 
 static const u8 sWaterGunDescription[] = _(
-    "Squirts water to attack\n"
-    "the foe.");
+    "De l'eau est projetée sur\n"
+    "l'ennemi en arc de cercle.");
 
 static const u8 sHydroPumpDescription[] = _(
     "Blasts water at high power\n"
@@ -2473,8 +2473,8 @@ static const u8 sSolarBladeDescription[] = _(
     "chops with a blade of light.");
 
 static const u8 sLeafageDescription[] = _(
-    "Attacks with a flurry of\n"
-    "small leaves.");
+    "Le lanceur attaque l'ennemi\n"
+    "avec des feuilles.");
 
 static const u8 sSpotlightDescription[] = _(
     "Makes the foe attack the\n"
@@ -3259,6 +3259,114 @@ static const u8 sPsybladeDescription[] = _(
 static const u8 sHydroSteamDescription[] = _(
     "This move's power increases\n"
     "under harsh sunlight.");
+
+static const u8 sNibbleDescription[] = _(
+    "Une petite morsure qui peut\n"
+    "apeurer l'ennemi.");
+
+static const u8 sBeatdownDescription[] = _(
+    "Une attaque puissante si les\n"
+    "PV de l'ennemi sont aux max.");
+
+static const u8 sKamehamehaDescription[] = _(
+    "Envoie une vague d'énergie.\n"
+    "Baisse la Déf, Déf. Sp. et Vit.");
+
+static const u8 sDivebombDescription[] = _(
+    "Plonge en piqué. Si il rate,\n"
+    "l'utilisateur est blessé.");
+
+static const u8 sBloodDrawDescription[] = _(
+    "Une piqûre qui convertit les\n"
+    "dégâts infligés en PV.");
+
+static const u8 sMustardGasDescription[] = _(
+    "Répand un gaz sur l'ennemi.\n"
+    "Peut aussi le brûler.");
+
+static const u8 sStampedeDescription[] = _(
+    "Un double coup de sabot qui\n"
+    "frappe l'ennemi deux fois.");
+
+static const u8 sPetrifyDescription[] = _(
+    "Un double coup de sabot qui\n"
+    "frappe l'ennemi deux fois.");
+
+static const u8 sBlitzkriegDescription[] = _(
+    "Une charge éclair infligeant\n"
+    "un coup critique à coup sûr.");
+
+static const u8 sFireBreathDescription[] = _(
+    "Lance un souffle de chaleur\n"
+    "sur l'ennemi. N'échoue jamais.");
+
+static const u8 sOilBombDescription[] = _(
+    "Brûle l'ennemi. Super\n"
+    "efficace sur le type Eau.");
+
+static const u8 sKamikazeDescription[] = _(
+    "Le lanceur se suicide et\n"
+    "inflige des dégâts à l'ennemi.");
+
+static const u8 sPsychoHerbDescription[] = _(
+    "Une force psychédélique qui\n"
+    "peut rendre l'ennemi confus.");
+
+static const u8 sPepperPowderDescription[] = _(
+    "Répand une poudre pouvant\n"
+    "brûler l'ennemi.");
+
+static const u8 sMagicBeanDescription[] = _(
+    "Lance des haricots et sème\n"
+    "des graines sur l'ennemi.");
+
+static const u8 sJumpStartDescription[] = _(
+    "Stimule une énergie pour\n"
+    "frapper toujours en premier.");
+
+static const u8 sFlashbangDescription[] = _(
+    "Une boule aveuglante qui\n"
+    "peut baisser la précision.");
+
+static const u8 sElectroshockDescription[] = _(
+    "Délivre un choc électrique\n"
+    "sur l'ennemi. Peut l'apeurer.");
+
+static const u8 sMalwareDescription[] = _(
+    "Un glitch à la fois de type\n"
+    "Électrik et de type Insecte.");
+
+static const u8 sPowerSurgeDescription[] = _(
+    "Allows a full-power attack,\n"
+    "but sharply lowers Sp. Atk.");
+
+static const u8 sMigraineDescription[] = _(
+    "Donne à l'ennemi un énorme\n"
+    "mal de tête pendant 5 tours.");
+
+static const u8 sPsychotismDescription[] = _(
+    "Éclate une psychose de 2 à\n"
+    "3 tours. Rend confus.");
+
+static const u8 sFrostbiteDescription[] = _(
+    "Recouvre de glace très dense\n"
+    "pouvant geler l'ennemi.");
+
+static const u8 sUnoReverseDescription[] = _(
+    "Recouvre de glace très dense\n"
+    "pouvant geler l'ennemi.");
+
+static const u8 sDropletsDescription[] = _(
+    "Envoie des gouttes sur la\n"
+    "cible et baisse sa Vitesse.");
+
+static const u8 sRainbowBeamDescription[] = _(
+    "Un puissant rayon irisé\n"
+    "pouvant baisser la Déf. Spé.");
+
+static const u8 sPeekabooDescription[] = _(
+    "Un puissant rayon irisé\n"
+    "pouvant baisser la Déf. Spé.");
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
@@ -4099,4 +4207,33 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MAGICAL_TORQUE - 1] = sMagicalTorqueDescription,
     [MOVE_PSYBLADE - 1] = sPsybladeDescription,
     [MOVE_HYDRO_STEAM - 1] = sHydroSteamDescription,
+
+    //NEW MOVES
+    [MOVE_NIBBLE - 1] = sNibbleDescription,
+    [MOVE_BEATDOWN - 1] = sBeatdownDescription,
+    [MOVE_KAMEHAMEHA - 1] = sKamehamehaDescription,
+    [MOVE_DIVEBOMB - 1] = sDivebombDescription,
+    [MOVE_BLOOD_DRAW - 1] = sBloodDrawDescription,
+    [MOVE_MUSTARD_GAS - 1] = sMustardGasDescription,
+    [MOVE_STAMPEDE - 1] = sStampedeDescription,
+    [MOVE_PETRIFY - 1] = sPetrifyDescription,
+    [MOVE_BLITZKRIEG - 1] = sBlitzkriegDescription,
+    [MOVE_FIRE_BREATH - 1] = sFireBreathDescription,
+    [MOVE_OIL_BOMB - 1] = sOilBombDescription,
+    [MOVE_KAMIKAZE - 1] = sKamikazeDescription,
+    [MOVE_PSYCHO_HERB - 1] = sPsychoHerbDescription,
+    [MOVE_PEPPER_POWDER - 1] = sPepperPowderDescription,
+    [MOVE_MAGIC_BEAN - 1] = sMagicBeanDescription,
+    [MOVE_JUMPSTART - 1] = sJumpStartDescription,
+    [MOVE_FLASHBANG - 1] = sFlashbangDescription,
+    [MOVE_ELECTROSHOCK - 1] = sElectroshockDescription,
+    [MOVE_MALWARE - 1] = sMalwareDescription,
+    [MOVE_POWER_SURGE - 1] = sPowerSurgeDescription,
+    [MOVE_MIGRAINE - 1] = sMigraineDescription,
+    [MOVE_PSYCHOTISM - 1] = sPsychotismDescription,
+    [MOVE_FROSTBITE - 1] = sFrostbiteDescription,
+    [MOVE_UNO_REVERSE - 1] = sUnoReverseDescription,
+    [MOVE_DROPLETS - 1] = sDropletsDescription,
+    [MOVE_RAINBOW_BEAM - 1] = sRainbowBeamDescription,
+    [MOVE_PEEKABOO - 1] = sPeekabooDescription,
 };

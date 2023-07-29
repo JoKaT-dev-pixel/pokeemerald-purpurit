@@ -58,9 +58,9 @@ Route102_Text_RickPostBattle:
 	.string "you have to challenge! It's a rule!$"
 
 Route102_Text_TianaIntro:
-	.string "I'm going to keep winning and aim\n"
-	.string "to be the best TRAINER.\p"
-	.string "Help me further my career!$"
+	.string "Wesh!\p"
+	.string "Tu as gâché mon TikTok\n"
+	.string "connard!$"
 
 Route102_Text_TianaDefeated:
 	.string "I ended up furthering your career…$"

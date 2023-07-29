@@ -70,6 +70,7 @@
 #define FLDEFF_MOVE_DEOXYS_ROCK          66
 #define FLDEFF_USE_ROCK_CLIMB            67
 #define FLDEFF_ROCK_CLIMB_DUST           68
+#define FLDEFF_FOREST_GRASS              69
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
@@ -110,6 +111,7 @@
 #define FLDEFFOBJ_RAYQUAZA              36
 #define FLDEFFOBJ_ROCK_CLIMB_BLOB       37
 #define FLDEFFOBJ_ROCK_CLIMB_DUST       38
+#define FLDEFFOBJ_FOREST_GRASS          39
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003

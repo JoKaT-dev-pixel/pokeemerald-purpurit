@@ -5819,6 +5819,20 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
+    [ITEM_ANAL_PLUG] =
+    {
+        .name = _("Plug Anal"),
+        .itemId = ITEM_ANAL_PLUG,
+        .price = 1000,
+        .holdEffect = HOLD_EFFECT_FAIRY_POWER,
+        .holdEffectParam = 20,
+        .description = sBlackGlassesDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+    },
+
 // Choice Items
 
     [ITEM_CHOICE_BAND] =

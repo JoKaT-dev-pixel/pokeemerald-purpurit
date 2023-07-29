@@ -483,7 +483,7 @@ static void DoBattlePyramidTrainerHillBattle(void)
 // Initiates battle where Wally catches Ralts
 void StartWallyTutorialBattle(void)
 {
-    CreateMaleMon(&gEnemyParty[0], SPECIES_RALTS, 5);
+    CreateMaleMon(&gEnemyParty[0], SPECIES_PLUSLE, 5);
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     gBattleTypeFlags = BATTLE_TYPE_WALLY_TUTORIAL;
@@ -668,6 +668,7 @@ u8 BattleSetup_GetTerrainId(void)
     {
     case MAP_TYPE_TOWN:
     case MAP_TYPE_CITY:
+        return BATTLE_TERRAIN_CITY;
     case MAP_TYPE_ROUTE:
         break;
     case MAP_TYPE_UNDERGROUND:
@@ -685,6 +686,12 @@ u8 BattleSetup_GetTerrainId(void)
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_TERRAIN_WATER;
         return BATTLE_TERRAIN_PLAIN;
+    case MAP_TYPE_FOREST:
+        if (MetatileBehavior_IsForestEncounter(tileBehavior))
+            return BATTLE_TERRAIN_FOREST;
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+            return BATTLE_TERRAIN_POND;
+        return BATTLE_TERRAIN_FOREST;
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
         return BATTLE_TERRAIN_WATER;
@@ -842,6 +849,9 @@ u8 GetTrainerBattleTransition(void)
 
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
         return B_TRANSITION_CHAMPION;
+
+    if (gTrainers[gTrainerBattleOpponent_A].hasCustomTransition)
+        return gTrainers[gTrainerBattleOpponent_A].transition;
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR)
     {

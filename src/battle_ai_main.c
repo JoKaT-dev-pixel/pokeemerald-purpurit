@@ -3691,6 +3691,8 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
 
             //if (switchAbility == ABILITY_INTIMIDATE && PartyHasMoveSplit(battlerDef, SPLIT_PHYSICAL))
                 //score += 7;
+            //if (switchAbility == ABILITY_FRIENDZONE && PartyHasMoveSplit(battlerDef, SPLIT_SPECIAL))
+                //score += 7;
         }
         break;
     case EFFECT_BATON_PASS:

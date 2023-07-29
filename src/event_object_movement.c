@@ -7463,11 +7463,15 @@ static void GetGroundEffectFlags_TallGrassOnSpawn(struct ObjectEvent *objEvent, 
 {
     if (MetatileBehavior_IsTallGrass(objEvent->currentMetatileBehavior))
         *flags |= GROUND_EFFECT_FLAG_TALL_GRASS_ON_SPAWN;
+    if (MetatileBehavior_IsForestEncounter(objEvent->currentMetatileBehavior))
+        *flags |= GROUND_EFFECT_FLAG_TALL_GRASS_ON_SPAWN;
 }
 
 static void GetGroundEffectFlags_TallGrassOnBeginStep(struct ObjectEvent *objEvent, u32 *flags)
 {
     if (MetatileBehavior_IsTallGrass(objEvent->currentMetatileBehavior))
+        *flags |= GROUND_EFFECT_FLAG_TALL_GRASS_ON_MOVE;
+    if (MetatileBehavior_IsForestEncounter(objEvent->currentMetatileBehavior))
         *flags |= GROUND_EFFECT_FLAG_TALL_GRASS_ON_MOVE;
 }
 
@@ -7596,6 +7600,7 @@ static void GetGroundEffectFlags_JumpLanding(struct ObjectEvent *objEvent, u32 *
         MetatileBehavior_IsSurfableWaterOrUnderwater,
         MetatileBehavior_IsShallowFlowingWater,
         MetatileBehavior_IsATile,
+        MetatileBehavior_IsForestEncounter,
     };
 
     static const u32 jumpLandingFlags[] = {
@@ -7816,6 +7821,7 @@ void GroundEffect_SpawnOnTallGrass(struct ObjectEvent *objEvent, struct Sprite *
     gFieldEffectArguments[6] = (u8)gSaveBlock1Ptr->location.mapNum << 8 | (u8)gSaveBlock1Ptr->location.mapGroup;
     gFieldEffectArguments[7] = TRUE; // skip to end of anim
     FieldEffectStart(FLDEFF_TALL_GRASS);
+    FieldEffectStart(FLDEFF_FOREST_GRASS);
 }
 
 void GroundEffect_StepOnTallGrass(struct ObjectEvent *objEvent, struct Sprite *sprite)
@@ -7829,6 +7835,7 @@ void GroundEffect_StepOnTallGrass(struct ObjectEvent *objEvent, struct Sprite *s
     gFieldEffectArguments[6] = (u8)gSaveBlock1Ptr->location.mapNum << 8 | (u8)gSaveBlock1Ptr->location.mapGroup;
     gFieldEffectArguments[7] = FALSE; // don't skip to end of anim
     FieldEffectStart(FLDEFF_TALL_GRASS);
+    FieldEffectStart(FLDEFF_FOREST_GRASS);
 }
 
 void GroundEffect_SpawnOnLongGrass(struct ObjectEvent *objEvent, struct Sprite *sprite)

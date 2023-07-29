@@ -1074,6 +1074,7 @@ struct SaveBlock1
     /*0x3???*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
     /*0x3???*/ struct TrainerHillSave trainerHill;
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
+    /*0x3???*/ u8 unused_3598[0x18];
     // sizeof: 0x3???
 };
 

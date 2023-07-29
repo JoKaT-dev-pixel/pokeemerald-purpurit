@@ -41,5 +41,7 @@ void UpdateBubblesFieldEffect(struct Sprite *);
 void UpdateSparkleFieldEffect(struct Sprite *);
 void SetSpriteInvisible(u8 spriteId);
 void ShowWarpArrowSprite(u8 spriteId, u8 direction, s16 x, s16 y);
+void UpdateForestGrassFieldEffect(struct Sprite *);
+u8 FindForestGrassFieldEffectSpriteId(u8 localId, u8 mapNum, u8 mapGroup, s16 x, s16 y);
 
 #endif //GUARD_FIELD_EFFECT_HELPERS_H
