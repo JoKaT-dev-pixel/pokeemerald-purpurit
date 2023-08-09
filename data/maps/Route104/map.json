@@ -25,7 +25,7 @@
     },
     {
       "map": "MAP_PETALBURG_CITY",
-      "offset": 50,
+      "offset": 52,
       "direction": "right"
     }
   ],
@@ -45,10 +45,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
-      "x": 25,
-      "y": 49,
+      "x": 17,
+      "y": 58,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -70,11 +70,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 27,
-      "y": 63,
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "x": 31,
+      "y": 58,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -84,8 +84,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 30,
-      "y": 50,
+      "x": 18,
+      "y": 53,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -370,7 +370,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 29,
+      "x": 17,
       "y": 53,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -503,15 +503,15 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 10,
-      "y": 38,
+      "x": 32,
+      "y": 51,
       "elevation": 3,
       "dest_map": "MAP_PETALBURG_WOODS",
       "dest_warp_id": "2"
     },
     {
-      "x": 11,
-      "y": 38,
+      "x": 34,
+      "y": 51,
       "elevation": 3,
       "dest_map": "MAP_PETALBURG_WOODS",
       "dest_warp_id": "3"
@@ -529,6 +529,20 @@
       "elevation": 3,
       "dest_map": "MAP_PETALBURG_WOODS",
       "dest_warp_id": "5"
+    },
+    {
+      "x": 33,
+      "y": 51,
+      "elevation": 3,
+      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 35,
+      "y": 51,
+      "elevation": 3,
+      "dest_map": "MAP_PETALBURG_WOODS",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [
@@ -553,8 +567,8 @@
     },
     {
       "type": "sign",
-      "x": 27,
-      "y": 66,
+      "x": 36,
+      "y": 58,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route104_EventScript_RouteSignPetalburg"
@@ -622,6 +636,14 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 58,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route104_EventScript_RouteSignPetalburg"
     }
   ]
 }

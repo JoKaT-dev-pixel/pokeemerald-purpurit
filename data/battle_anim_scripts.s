@@ -15259,24 +15259,24 @@ Move_POWER_SURGE:
 	end
 
 Move_MIGRAINE:
-	loadspritegfx ANIM_TAG_NOISE_LINE
+	loadspritegfx ANIM_TAG_ALERT
 	monbg ANIM_ATTACKER
 	splitbgprio ANIM_ATTACKER
 	setalpha 8, 8
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -5, -5, 10, ANIM_ATTACKER, 1
 	waitforvisualfinish
-	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_ATTACKER
+	loopsewithpan SE_M_CONFUSE_RAY, SOUND_PAN_ATTACKER, 21, 2
 	createvisualtask SoundTask_PlayDoubleCry, 2, ANIM_ATTACKER, DOUBLE_CRY_GROWL
-	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 2, 24, -8, 0
-	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 2, 24, 0, 2
-	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 2, 24, 8, 1
+	createsprite gKinesisZapEnergySpriteTemplate, ANIM_ATTACKER, 2, 24, -8, 0
+	createsprite gKinesisZapEnergySpriteTemplate, ANIM_ATTACKER, 2, 24, 0, 2
+	createsprite gKinesisZapEnergySpriteTemplate, ANIM_ATTACKER, 2, 24, 8, 1
 	delay 15
-	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 2, 24, -8, 0
-	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 2, 24, 0, 2
-	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 2, 24, 8, 1
+	createsprite gKinesisZapEnergySpriteTemplate, ANIM_ATTACKER, 2, 24, -8, 0
+	createsprite gKinesisZapEnergySpriteTemplate, ANIM_ATTACKER, 2, 24, 0, 2
+	createsprite gKinesisZapEnergySpriteTemplate, ANIM_ATTACKER, 2, 24, 8, 1
 	waitforvisualfinish
 	createvisualtask AnimTask_ShakeTargetBasedOnMovePowerOrDmg, 2, FALSE, 1, 30, 1, 0
-	loopsewithpan SE_M_SWAGGER2, SOUND_PAN_TARGET, 4, 3
+	loopsewithpan SE_M_DIZZY_PUNCH, SOUND_PAN_TARGET, 4, 3
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	blendoff

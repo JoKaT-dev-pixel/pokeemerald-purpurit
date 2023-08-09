@@ -1,8 +1,11 @@
-.set LOCALID_BIRCH, 2
-.set LOCALID_ZIGZAGOON, 4
+.set LOCALID_BIRCH, 1
+.set LOCALID_ZIGZAGOON, 3
+.set LOCALID_RIVAL, 6
+.set LOCALID_FOOTPRINTS_MAN, 7
 
 Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
+	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition2
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_OnFrame
 	.byte 0
 
@@ -24,8 +27,8 @@ Route101_EventScript_StartBirchRescue::
 	playbgm MUS_HELP, TRUE
 	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
-	setobjectxy LOCALID_BIRCH, 0, 15
-	setobjectxy LOCALID_ZIGZAGOON, 0, 16
+	setobjectxy LOCALID_BIRCH, 28, 15
+	setobjectxy LOCALID_ZIGZAGOON, 28, 16
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_EnterScene
 	applymovement LOCALID_BIRCH, Route101_Movement_BirchRunAway1
 	applymovement LOCALID_ZIGZAGOON, Route101_Movement_ZigzagoonChase1
@@ -225,7 +228,7 @@ Route101_EventScript_BirchsBag::
 	setflag FLAG_RESCUED_BIRCH
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ZIGZAGOON
-	setobjectxy OBJ_EVENT_ID_PLAYER, 6, 13
+	setobjectxy OBJ_EVENT_ID_PLAYER, 34, 13
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	special ChooseStarter
@@ -284,6 +287,201 @@ Route101_Text_YouSavedMe:
 	.string "This is not the place to chat, so come\n"
 	.string "by my POKéMON LAB later, okay?$"
 
+Route101_OnTransition2:
+	call Common_EventScript_SetupRivalGfxId
+	setflag FLAG_VISITED_OLDALE_TOWN
+	addobject LOCALID_FOOTPRINTS_MAN
+	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
+
+OldaleTown_EventScript_BlockWestEntrance::
+	setobjectxyperm LOCALID_FOOTPRINTS_MAN, 26, 9
+	setobjectmovementtype LOCALID_FOOTPRINTS_MAN, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+OldaleTown_EventScript_FootprintsMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_NotBlockingPath
+	msgbox OldaleTown_Text_DiscoveredFootprints, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FOOTPRINTS_MAN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+OldaleTown_EventScript_BlockedPath::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_PlayerStepBack
+	applymovement LOCALID_FOOTPRINTS_MAN, OldaleTown_Movement_BackUp
+	waitmovement 0
+	msgbox OldaleTown_Text_WaitDontComeInHere, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FOOTPRINTS_MAN, OldaleTown_Movement_ReturnToOriginalPosition
+	waitmovement 0
+	releaseall
+	end
+
+OldaleTown_EventScript_NotBlockingPath::
+	msgbox OldaleTown_Text_FinishedSketchingFootprints, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_EventScript_Rival::
+	lockall
+	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
+	waitmovement 0
+	setvar VAR_0x8009, 0
+	goto OldaleTown_EventScript_ShowRivalMessage
+	end
+
+OldaleTown_EventScript_RivalTrigger1::
+	lockall
+	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalApproachPlayer1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	setvar VAR_0x8009, 1
+	goto OldaleTown_EventScript_ShowRivalMessage
+	end
+
+OldaleTown_EventScript_RivalTrigger2::
+	lockall
+	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalApproachPlayer2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	setvar VAR_0x8009, 1
+	goto OldaleTown_EventScript_ShowRivalMessage
+	end
+
+OldaleTown_EventScript_RivalTrigger3::
+	lockall
+	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalApproachPlayer3
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	setvar VAR_0x8009, 1
+	goto OldaleTown_EventScript_ShowRivalMessage
+	end
+
+OldaleTown_EventScript_ShowRivalMessage::
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, OldaleTown_EventScript_ShowMayMessage
+	goto_if_eq VAR_RESULT, FEMALE, OldaleTown_EventScript_ShowBrendanMessage
+	end
+
+OldaleTown_EventScript_ShowMayMessage::
+	msgbox OldaleTown_Text_MayLetsGoBack, MSGBOX_DEFAULT
+	goto OldaleTown_EventScript_RivalFinish
+	end
+
+OldaleTown_EventScript_ShowBrendanMessage::
+	msgbox OldaleTown_Text_BrendanLetsGoBack, MSGBOX_DEFAULT
+	goto OldaleTown_EventScript_RivalFinish
+	end
+
+OldaleTown_EventScript_RivalFinish::
+	closemessage
+	call_if_eq VAR_0x8009, 0, OldaleTown_EventScript_DoExitMovement1
+	call_if_eq VAR_0x8009, 1, OldaleTown_EventScript_DoExitMovement2
+	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalExit
+	waitmovement 0
+	removeobject LOCALID_RIVAL
+	setvar VAR_OLDALE_RIVAL_STATE, 2
+	setflag FLAG_HIDE_OLDALE_TOWN_RIVAL
+	releaseall
+	end
+
+OldaleTown_EventScript_DoExitMovement1::
+	goto_if_ne VAR_FACING, DIR_SOUTH, OldaleTown_EventScript_DoExitMovement2
+	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalExit
+	waitmovement 0
+	return
+
+OldaleTown_EventScript_DoExitMovement2::
+	applymovement OBJ_EVENT_ID_PLAYER, OldaleTown_Movement_WatchRivalExit
+	applymovement LOCALID_RIVAL, OldaleTown_Movement_RivalExit
+	waitmovement 0
+	return
+
+OldaleTown_Movement_RivalApproachPlayer1:
+	walk_left
+	walk_left
+	step_end
+
+OldaleTown_Movement_RivalApproachPlayer2:
+	walk_left
+	step_end
+
+OldaleTown_Movement_RivalApproachPlayer3:
+	face_left
+	step_end
+
+OldaleTown_Movement_RivalExit:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+OldaleTown_Movement_WatchRivalExit:
+	delay_8
+	delay_4
+	walk_in_place_faster_down
+	step_end
+
+OldaleTown_Movement_PlayerStepBack:
+	delay_8
+	walk_right
+	step_end
+
+OldaleTown_Movement_BackUp:
+	walk_fast_up
+	walk_in_place_faster_left
+	lock_facing_direction
+	walk_right
+	unlock_facing_direction
+	step_end
+
+OldaleTown_Movement_ReturnToOriginalPosition:
+	walk_down
+	walk_left
+	unlock_facing_direction
+	step_end
+
+
+OldaleTown_Text_WaitDontComeInHere:
+	.string "Aaaaah! Wait!\n"
+	.string "Please don't come in here.\p"
+	.string "I just discovered the footprints of\n"
+	.string "a rare POKéMON!\p"
+	.string "Wait until I finish sketching\n"
+	.string "them, okay?$"
+
+OldaleTown_Text_DiscoveredFootprints:
+	.string "I just discovered the footprints of\n"
+	.string "a rare POKéMON!\p"
+	.string "Wait until I finish sketching\n"
+	.string "them, okay?$"
+
+OldaleTown_Text_FinishedSketchingFootprints:
+	.string "I finished sketching the footprints of\n"
+	.string "a rare POKéMON.\p"
+	.string "But it turns out they were only my\n"
+	.string "own footprints…$"
+
+OldaleTown_Text_MayLetsGoBack:
+	.string "MAY: {PLAYER}{KUN}!\n"
+	.string "Over here!\l"
+	.string "Let's hurry home!$"
+
+OldaleTown_Text_BrendanLetsGoBack:
+	.string "BRENDAN: I'm heading back to my dad's\n"
+	.string "LAB now.\l"
+	.string "{PLAYER}, you should hustle back, too.$"
+
 Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "If POKéMON get tired, take them to\n"
 	.string "a POKéMON CENTER.\p"
@@ -297,6 +495,7 @@ Route101_Text_WildPokemonInTallGrass:
 	.string "to go into the tall grass and search.$"
 
 Route101_Text_RouteSign:
-	.string "ROUTE 101\n"
-	.string "{UP_ARROW} OLDALE TOWN$"
+	.string "“ROUTE D-1”\n"
+	.string "{UP_ARROW} ROUTE D-?\l"
+	.string "{LEFT_ARROW} OLDALE TOWN$"
 

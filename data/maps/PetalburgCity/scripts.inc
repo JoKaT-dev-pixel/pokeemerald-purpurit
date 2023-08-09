@@ -18,7 +18,7 @@ PetalburgCity_OnTransition:
 	end
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
-	setobjectxyperm LOCALID_GYM_BOY, 5, 11
+	setobjectxyperm LOCALID_GYM_BOY, 23, 9
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
@@ -154,12 +154,22 @@ PetalburgCity_Movement_WallyTutorialPlayer:
 	delay_8
 	walk_down
 	walk_down
+	walk_left
+	walk_left
+	walk_left
 	walk_down
 	walk_down
 	walk_down
 	walk_down
 	walk_down
 	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -188,12 +198,22 @@ PetalburgCity_Movement_WallyTutorialPlayer:
 PetalburgCity_Movement_WallyTutorialWally:
 	delay_8
 	walk_down
+	walk_left
+	walk_left
+	walk_left
 	walk_down
 	walk_down
 	walk_down
 	walk_down
 	walk_down
 	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -383,12 +403,6 @@ PetalburgCity_Movement_BoyWalkToGym0:
 	walk_right
 	walk_right
 	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_right
 	walk_in_place_faster_up
 	step_end
 
@@ -443,23 +457,15 @@ PetalburgCity_Movement_BoyWalkAway:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_up
+	walk_in_place_faster_right
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym0:
 	walk_down
 	walk_right
 	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
+	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym1:
@@ -506,7 +512,7 @@ PetalburgCity_EventScript_Scott0::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_SCOTT, 13, 10
+	setobjectxy LOCALID_SCOTT, 29, 8
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -514,7 +520,7 @@ PetalburgCity_EventScript_Scott1::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 1
-	setobjectxy LOCALID_SCOTT, 13, 11
+	setobjectxy LOCALID_SCOTT, 29, 9
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -522,7 +528,7 @@ PetalburgCity_EventScript_Scott2::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 2
-	setobjectxy LOCALID_SCOTT, 13, 12
+	setobjectxy LOCALID_SCOTT, 29, 10
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -530,7 +536,7 @@ PetalburgCity_EventScript_Scott3::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 3
-	setobjectxy LOCALID_SCOTT, 13, 13
+	setobjectxy LOCALID_SCOTT, 29, 11
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -608,7 +614,6 @@ PetalburgCity_Movement_ScottApproachPlayer:
 
 PetalburgCity_Movement_ScottExit0:
 	walk_down
-	walk_down
 	walk_left
 	walk_left
 	walk_left
@@ -635,6 +640,8 @@ PetalburgCity_Movement_ScottExit1:
 	walk_down
 	walk_left
 	walk_left
+	walk_up
+	walk_left
 	walk_left
 	walk_left
 	walk_left
@@ -655,7 +662,7 @@ PetalburgCity_Movement_PlayerWatchScottExit1:
 	step_end
 
 PetalburgCity_Movement_ScottExit2:
-	walk_down
+	walk_up
 	walk_left
 	walk_left
 	walk_left
@@ -743,8 +750,8 @@ PetalburgCity_Text_GymSign:
 	.string "“J'te mets un coup, j'te fais mal!”$"
 
 PetalburgCity_Text_CitySign:
-	.string "PETALBURG CITY\n"
-	.string "“Where people mingle with nature.”$"
+	.string "LA CULÉE\n"
+	.string "“Bienvenue en Culée.”$"
 
 PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
