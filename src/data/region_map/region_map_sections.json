@@ -10,7 +10,7 @@
     },
     {
       "map_section": "MAPSEC_OLDALE_TOWN",
-      "name": "Montplaisir",
+      "name": "Vaumort",
       "x": 4,
       "y": 9,
       "width": 1,
@@ -58,7 +58,7 @@
     },
     {
       "map_section": "MAPSEC_PETALBURG_CITY",
-      "name": "La Culée",
+      "name": "Valpuceau",
       "x": 1,
       "y": 9,
       "width": 1,
@@ -474,7 +474,7 @@
     },
     {
       "map_section": "MAPSEC_PETALBURG_WOODS",
-      "name": "PETALBURG WOODS",
+      "name": "Forêt Milly",
       "x": 0,
       "y": 8,
       "width": 1,

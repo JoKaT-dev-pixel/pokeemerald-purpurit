@@ -4226,10 +4226,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Billy[] = {
 
 static const struct TrainerMonNoItemCustomMoves sParty_Josh[] = {
     {
-    .iv = 100,
+    .iv = 0,
     .lvl = 10,
+    .species = SPECIES_SLAKOTH,
+    .moves = {MOVE_TACKLE, MOVE_CONFIDE, MOVE_FOCUS_ENERGY, MOVE_BUBBLE}
+    },
+    {
+    .iv = 0,
+    .lvl = 11,
     .species = SPECIES_GEODUDE,
-    .moves = {MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_ROCK_THROW, MOVE_TACKLE, MOVE_HARDEN, MOVE_ROCK_SMASH}
     }
 };
 
@@ -10267,40 +10273,50 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Cristin1[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_MayRustboroTreecko[] = {
+static const struct TrainerMonItemCustomMoves sParty_MayRustboroTreecko[] = {
     {
-    .iv = 25,
+    .iv = 13,
     .lvl = 13,
-    .species = SPECIES_LOTAD,
-    },
-    {
-    .iv = 50,
-    .lvl = 15,
-    .species = SPECIES_TORCHIC,
-    }
-};
-
-static const struct TrainerMonItemCustomMoves sParty_MayRustboroTorchic[] = {
-    {
-    .iv = 50,
-    .lvl = 14,
-    .species = SPECIES_SLUGMA,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_EMBER, MOVE_SWIFT, MOVE_CONFUSE_RAY, MOVE_PSYWAVE}
-    },
-    {
-    .iv = 55,
-    .lvl = 14,
     .species = SPECIES_CHINCHOU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_MEGA_DRAIN, MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_SHOCK_WAVE}
     },
     {
-    .iv = 80,
-    .lvl = 16,
-    .species = SPECIES_MARSHTOMP,
+    .iv = 13,
+    .lvl = 13,
+    .species = SPECIES_LOTAD,
+    .heldItem = ITEM_NONE,
+    },
+    {
+    .iv = 16,
+    .lvl = 15,
+    .species = SPECIES_TORCHIC,
     .heldItem = ITEM_ORAN_BERRY,
-    .moves = {MOVE_WATER_GUN, MOVE_DROPLETS, MOVE_DRAINING_KISS, MOVE_YAWN}
+    .moves = {MOVE_EMBER, MOVE_ACID_SPRAY, MOVE_POUND, MOVE_THIEF}
+    }
+};
+
+static const struct TrainerMonItemCustomMoves sParty_MayRustboroTorchic[] = {
+    {
+    .iv = 13,
+    .lvl = 13,
+    .species = SPECIES_SLUGMA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_EMBER, MOVE_SWIFT, MOVE_CONFUSE_RAY, MOVE_PSYWAVE}
+    },
+    {
+    .iv = 13,
+    .lvl = 13,
+    .species = SPECIES_CHINCHOU,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_MEGA_DRAIN, MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_SHOCK_WAVE}
+    },
+    {
+    .iv = 16,
+    .lvl = 15,
+    .species = SPECIES_MUDKIP,
+    .heldItem = ITEM_ORAN_BERRY,
+    .moves = {MOVE_WATER_GUN, MOVE_DROPLETS, MOVE_TACKLE, MOVE_YAWN}
     }
 };
 

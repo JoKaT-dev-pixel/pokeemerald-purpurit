@@ -225,6 +225,6 @@ OldaleTown_Text_PotionExplanation:
 	.string "in certain situations.$"
 
 OldaleTown_Text_TownSign:
-	.string "MONTPLAISIR\n"
-	.string "“La ville s'appelle juste Y.”$"
+	.string "VAUMORT\n"
+	.string "“Manger local, manger Vaumort.”$"
 
