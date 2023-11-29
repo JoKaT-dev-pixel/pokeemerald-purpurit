@@ -2894,11 +2894,9 @@ static const union AnimCmd sAnim_Sceptile_1[] =
 static const union AnimCmd sAnim_Torchic_1[] =
 {
     ANIMCMD_FRAME(0, 7),
-    ANIMCMD_FRAME(1, 4),
-    ANIMCMD_FRAME(0, 4),
-    ANIMCMD_FRAME(1, 4),
-    ANIMCMD_FRAME(0, 4),
-    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 8),
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
@@ -2945,9 +2943,7 @@ static const union AnimCmd sAnim_Blaziken_4[] =
 static const union AnimCmd sAnim_Mudkip_1[] =
 {
     ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 8),
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 13),
+    ANIMCMD_FRAME(1, 24),
     ANIMCMD_FRAME(0, 7),
     ANIMCMD_END,
 };

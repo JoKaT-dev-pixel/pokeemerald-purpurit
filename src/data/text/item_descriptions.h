@@ -2406,9 +2406,9 @@ static const u8 sWhiteHerbDesc[] = _(
     "lowered stat.");
 
 static const u8 sExpShareDesc[] = _(
-    "A hold item that\n"
-    "spreads experience\n"
-    "from battles.");
+    "Objet à activer\n"
+    "pour partager l'Exp\n"
+    "à tous les Pokémon.");
 
 static const u8 sQuickClawDesc[] = _(
     "A hold item that\n"

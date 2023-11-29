@@ -6864,6 +6864,8 @@ static const u16 sLedianTeachableLearnset[] = {
 
 static const u16 sSpinarakTeachableLearnset[] = {
     MOVE_ATTRACT,
+    MOVE_BULLET_SEED,
+    MOVE_CUT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
     MOVE_FACADE,
@@ -10403,7 +10405,6 @@ static const u16 sTreeckoTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
     MOVE_BULLET_SEED,
-    MOVE_CUT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
     MOVE_FACADE,
@@ -10547,7 +10548,6 @@ static const u16 sSceptileTeachableLearnset[] = {
 };
 
 static const u16 sTorchicTeachableLearnset[] = {
-    MOVE_BULLET_SEED,
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_CUT,
@@ -10902,7 +10902,6 @@ static const u16 sMightyenaTeachableLearnset[] = {
 static const u16 sZigzagoonTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
-    MOVE_CUT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
     MOVE_FACADE,

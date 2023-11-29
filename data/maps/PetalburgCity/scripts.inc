@@ -18,7 +18,7 @@ PetalburgCity_OnTransition:
 	end
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
-	setobjectxyperm LOCALID_GYM_BOY, 23, 9
+	setobjectxyperm LOCALID_GYM_BOY, 24, 10
 	return
 
 PetalburgCity_EventScript_DisableMapNameAndMusic::
@@ -304,8 +304,8 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_LeadPlayerToGym2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_LeadPlayerToGym3
 	msgbox PetalburgCity_Text_ThisIsPetalburgGym, MSGBOX_DEFAULT
-	applymovement LOCALID_GYM_BOY, Common_Movement_WalkInPlaceFasterRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_GYM_BOY, Common_Movement_WalkInPlaceFasterLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox PetalburgCity_Text_ThisIsGymSign, MSGBOX_DEFAULT
 	closemessage
@@ -324,6 +324,8 @@ PetalburgCity_EventScript_BoyApproachPlayer0::
 
 PetalburgCity_EventScript_BoyApproachPlayer1::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
@@ -375,25 +377,24 @@ PetalburgCity_Movement_Delay48::
 PetalburgCity_Movement_BoyApproachPlayer0:
 	walk_right
 	walk_right
-	walk_right
+	walk_up
 	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_BoyApproachPlayer1:
 	walk_right
 	walk_right
+	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_BoyApproachPlayer2:
 	walk_right
-	walk_right
+	walk_up
 	walk_right
 	walk_in_place_faster_down
 	step_end
 
 PetalburgCity_Movement_BoyApproachPlayer3:
-	walk_down
-	walk_right
 	walk_right
 	walk_right
 	walk_in_place_faster_down
@@ -403,21 +404,21 @@ PetalburgCity_Movement_BoyWalkToGym0:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym1:
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_right
 	walk_up
-	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_in_place_faster_up
 	step_end
@@ -430,21 +431,17 @@ PetalburgCity_Movement_BoyWalkToGym2:
 	walk_right
 	walk_right
 	walk_right
-	walk_up
-	walk_right
 	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_BoyWalkToGym3:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_up
-	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_right
 	walk_in_place_faster_up
 	step_end
@@ -457,7 +454,9 @@ PetalburgCity_Movement_BoyWalkAway:
 	walk_left
 	walk_left
 	walk_left
-	walk_up
+	walk_left
+	walk_left
+	walk_left
 	walk_in_place_faster_right
 	step_end
 
@@ -465,22 +464,25 @@ PetalburgCity_Movement_PlayerWalkToGym0:
 	walk_down
 	walk_right
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym1:
 	delay_16
-	delay_16
-	walk_down
+	walk_in_place_faster_right
+	delay_8
+	delay_4
 	walk_right
 	walk_right
 	walk_right
 	walk_right
 	walk_right
 	walk_right
-	walk_right
-	walk_up
-	walk_up
+	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym2:
@@ -491,28 +493,26 @@ PetalburgCity_Movement_PlayerWalkToGym2:
 	walk_right
 	walk_right
 	walk_right
-	walk_right
-	walk_up
+	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_Movement_PlayerWalkToGym3:
 	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_up
-	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_faster_up
 	step_end
 
 PetalburgCity_EventScript_Scott0::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_SCOTT, 29, 8
+	setobjectxy LOCALID_SCOTT, 21, 7
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -520,7 +520,7 @@ PetalburgCity_EventScript_Scott1::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 1
-	setobjectxy LOCALID_SCOTT, 29, 9
+	setobjectxy LOCALID_SCOTT, 21, 8
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -528,7 +528,7 @@ PetalburgCity_EventScript_Scott2::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 2
-	setobjectxy LOCALID_SCOTT, 29, 10
+	setobjectxy LOCALID_SCOTT, 21, 9
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -536,7 +536,7 @@ PetalburgCity_EventScript_Scott3::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 3
-	setobjectxy LOCALID_SCOTT, 29, 11
+	setobjectxy LOCALID_SCOTT, 21, 10
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -745,13 +745,13 @@ PetalburgCity_Text_FullPartyExplanation:
 	.string "BOX over a PC connection.$"
 
 PetalburgCity_Text_GymSign:
-	.string "PETALBURG CITY POKéMON GYM\n"
+	.string "Arène de Chantiville\n"
 	.string "CHAMPION: Pascal\l"
-	.string "“J'te mets un coup, j'te fais mal!”$"
+	.string "“Énerve-moi, j'vais te taper!”$"
 
 PetalburgCity_Text_CitySign:
-	.string "LA CULÉE\n"
-	.string "“Bienvenue en Culée.”$"
+	.string "CHANTIVILLE\n"
+	.string "“Ville d'Art et d'Histoire.”$"
 
 PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"

@@ -207,7 +207,7 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
     if (!expShareOn)
     {
         FlagSet(FLAG_EXP_SHARE);
-        PlaySE(SE_EXP_MAX);
+        PlaySE(MUS_LEVEL_UP);
         if (gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
             DisplayItemMessageOnField(taskId, gText_ExpShareTurnOn, Task_CloseCantUseKeyItemMessage);
         else

@@ -1,11 +1,10 @@
 Route102_Text_CalvinIntro:
-	.string "If you have POKéMON with you, then\n"
-	.string "you're an official POKéMON TRAINER!\l"
-	.string "You can't say no to my challenge!$"
+	.string "Si je te bats, tu m'achètes les\n"
+	.string "13 500 V-Bucks?!$"
 
 Route102_Text_CalvinDefeated:
-	.string "Arrgh, I lost…\n"
-	.string "I should have trained mine more…$"
+	.string "Non non et non!\p"
+	.string "Je veux mon skin…$"
 
 Route102_Text_CalvinPostBattle:
 	.string "Listen, you. If you're strong,\n"
@@ -59,11 +58,10 @@ Route102_Text_RickPostBattle:
 
 Route102_Text_TianaIntro:
 	.string "Wesh!\p"
-	.string "Tu as gâché mon TikTok\n"
-	.string "connard!$"
+	.string "Tu as gâché mon TikTok!$"
 
 Route102_Text_TianaDefeated:
-	.string "I ended up furthering your career…$"
+	.string "Vas-y toi là!$"
 
 Route102_Text_TianaPostBattle:
 	.string "To keep winning my way up, I see that\n"
@@ -295,8 +293,7 @@ Route104_Text_IvanPostBattle:
 	.string "I forgot I had to raise my POKéMON…$"
 
 Route104_Text_BillyIntro:
-	.string "Leaving footprints in the sand is\n"
-	.string "so fun!$"
+	.string "NARUTO RUUUUUUUUUUN!$"
 
 Route104_Text_BillyDefeat:
 	.string "Waah! I got sand in my runners!\n"

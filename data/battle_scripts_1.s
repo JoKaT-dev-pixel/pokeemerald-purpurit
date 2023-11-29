@@ -430,7 +430,9 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectRevivalBlessing         @ EFFECT_REVIVAL_BLESSING
 	.4byte BattleScript_EffectFrostbiteHit            @ EFFECT_FROSTBITE_HIT
 	.4byte BattleScript_EffectSnow                    @ EFFECT_SNOWSCAPE
+	.4byte BattleScript_EffectHit                     @ EFFECT_EXCALIBUR
 	.4byte BattleScript_EffectBurnHit                 @ EFFECT_OIL_BOMB
+	.4byte BattleScript_EffectTransLove               @ EFFECT_TRANS_LOVE
 
 BattleScript_EffectRevivalBlessing::
 	attackcanceler
@@ -5073,6 +5075,20 @@ BattleScript_EffectAttract::
 	call BattleScript_TryDestinyKnotAttacker
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectTransLove::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, BattleScript_AromaVeilProtects
+	trygayinfatuating BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_PKMNFELLINLOVE
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_TryDestinyKnotAttacker
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectPresent::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
@@ -8562,6 +8578,10 @@ BattleScript_RainDishActivates::
 	call BattleScript_AbilityHpHeal
 	end3
 
+BattleScript_SolarPanelsActivates::
+	call BattleScript_AbilityHpHeal
+	end3
+
 BattleScript_CheekPouchActivates::
 	copybyte sSAVED_BATTLER, gBattlerAttacker
 	copybyte gBattlerAttacker, gBattlerAbility
@@ -8715,53 +8735,52 @@ BattleScript_IntimidateInReverse:
 	call BattleScript_TryAdrenalineOrb
 	goto BattleScript_IntimidateLoopIncrement
 
-BattleScript_FriendzoneActivates::
+BattleScript_PheromoneActivates::
 	showabilitypopup BS_ATTACKER
 	pause B_WAIT_TIME_LONG
 	destroyabilitypopup
 	setbyte gBattlerTarget, 0
-BattleScript_FriendzoneLoop:
-	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_FriendzoneLoopIncrement
-	jumpiftargetally BattleScript_FriendzoneLoopIncrement
-	jumpifabsent BS_TARGET, BattleScript_FriendzoneLoopIncrement
-	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_FriendzoneLoopIncrement
-	jumpifability BS_TARGET, ABILITY_HYPER_CUTTER, BattleScript_FriendzonePrevented
-	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_FriendzonePrevented
-	jumpifability BS_TARGET, ABILITY_SCRAPPY, BattleScript_FriendzonePrevented
-	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_FriendzonePrevented
-	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_FriendzonePrevented
-	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_FriendzoneInReverse
-BattleScript_FriendzoneEffect:
+BattleScript_PheromoneLoop:
+	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_PheromoneLoopIncrement
+	jumpiftargetally BattleScript_PheromoneLoopIncrement
+	jumpifabsent BS_TARGET, BattleScript_PheromoneLoopIncrement
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_PheromoneLoopIncrement
+	jumpifstatus2 BS_TARGET, STATUS2_INFATUATION, BattleScript_PheromoneLoopIncrement
+	jumpifability BS_TARGET, ABILITY_STENCH, BattleScript_PheromonePrevented
+	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_PheromonePrevented
+	jumpifability BS_TARGET, ABILITY_RIVALRY, BattleScript_PheromonePrevented
+	jumpifability BS_TARGET, ABILITY_PARENTAL_BOND, BattleScript_PheromonePrevented
+BattleScript_PheromoneEffect:
 	copybyte sBATTLER, gBattlerAttacker
-	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_FriendzoneLoopIncrement
+	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_PheromoneLoopIncrement
 	setgraphicalstatchangevalues
-	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_FriendzoneContrary
+	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_PheromoneContrary
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printstring STRINGID_PKMNCUTSSPATTACKWITH
-BattleScript_FriendzoneEffect_WaitString:
+BattleScript_PheromoneEffect_WaitString:
 	waitmessage B_WAIT_TIME_LONG
 	copybyte sBATTLER, gBattlerTarget
 	call BattleScript_TryAdrenalineOrb
-BattleScript_FriendzoneLoopIncrement:
+BattleScript_PheromoneLoopIncrement:
 	addbyte gBattlerTarget, 1
-	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_FriendzoneLoop
-BattleScript_FriendzoneEnd:
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_PheromoneLoop
+BattleScript_PheromoneEnd:
 	copybyte sBATTLER, gBattlerAttacker
 	destroyabilitypopup
 	pause B_WAIT_TIME_MED
 	end3
 
-BattleScript_FriendzoneContrary:
+BattleScript_PheromoneContrary:
 	call BattleScript_AbilityPopUpTarget
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_FriendzoneContrary_WontIncrease
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_PheromoneContrary_WontIncrease
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printfromtable gStatUpStringIds
-	goto BattleScript_FriendzoneEffect_WaitString
-BattleScript_FriendzoneContrary_WontIncrease:
+	goto BattleScript_PheromoneEffect_WaitString
+BattleScript_PheromoneContrary_WontIncrease:
 	printstring STRINGID_TARGETSTATWONTGOHIGHER
-	goto BattleScript_FriendzoneEffect_WaitString
+	goto BattleScript_PheromoneEffect_WaitString
 
-BattleScript_FriendzonePrevented:
+BattleScript_PheromonePrevented:
 	call BattleScript_AbilityPopUp
 	pause B_WAIT_TIME_LONG
 	setbyte gBattleCommunication STAT_SPATK
@@ -8769,15 +8788,15 @@ BattleScript_FriendzonePrevented:
 	printstring STRINGID_STATWASNOTLOWERED
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_TryAdrenalineOrb
-	goto BattleScript_FriendzoneLoopIncrement
+	goto BattleScript_PheromoneLoopIncrement
 
-BattleScript_FriendzoneInReverse:
+BattleScript_PheromoneInReverse:
 	copybyte sBATTLER, gBattlerTarget
 	call BattleScript_AbilityPopUpTarget
 	pause B_WAIT_TIME_SHORT
-	modifybattlerstatstage BS_TARGET, STAT_SPATK, INCREASE, 1, BattleScript_FriendzoneLoopIncrement, ANIM_ON
+	modifybattlerstatstage BS_TARGET, STAT_SPATK, INCREASE, 1, BattleScript_PheromoneLoopIncrement, ANIM_ON
 	call BattleScript_TryAdrenalineOrb
-	goto BattleScript_FriendzoneLoopIncrement
+	goto BattleScript_PheromoneLoopIncrement
 
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT
@@ -9319,6 +9338,24 @@ BattleScript_WeakArmorSpeedAnim:
 	printstring STRINGID_TARGETABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_WeakArmorActivatesEnd:
+	return
+
+BattleScript_TyrantActivates::
+	call BattleScript_AbilityPopUp
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_TARGET, BIT_ATK | BIT_SPATK, 0
+	setstatchanger STAT_ATK, 1, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TyrantActivatesSpAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_TyrantActivatesSpAtk
+	printstring STRINGID_TARGETABILITYSTATRAISE
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_TyrantActivatesSpAtk:
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TyrantActivatesEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_TyrantActivatesEnd
+	printstring STRINGID_TARGETABILITYSTATRAISE
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_TyrantActivatesEnd:
 	return
 
 BattleScript_RaiseStatOnFaintingTarget::

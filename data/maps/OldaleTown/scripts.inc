@@ -86,35 +86,53 @@ OldaleTown_EventScript_BagIsFull::
 
 OldaleTown_Movement_EmployeeEast:
 	walk_up
+	walk_left
 	walk_up
 	walk_up
 	walk_up
 	walk_up
-	walk_up
-	walk_up
-	walk_in_place_faster_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_faster_right
 	step_end
 
 OldaleTown_Movement_EmployeeSouth:
 	walk_left
 	walk_up
 	walk_up
-	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_faster_down
-	step_end
-
-OldaleTown_Movement_EmployeeNorth:
-	walk_up
-	walk_up
 	walk_up
 	walk_up
 	walk_up
 	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_faster_right
+	step_end
+
+OldaleTown_Movement_EmployeeNorth:
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	walk_left
 	walk_left
 	walk_left
@@ -132,43 +150,69 @@ OldaleTown_Movement_EmployeeNorth:
 OldaleTown_Movement_Unknown1:
 	walk_up
 	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_up
 	walk_up
 	walk_up
-	walk_up
-	walk_up
-	delay_8
-	walk_in_place_faster_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_in_place_faster_right
 	step_end
 
 OldaleTown_Movement_PlayerEast:
-	walk_right
+	delay_16
+	delay_8
+	delay_4
+	walk_in_place_faster_up
 	walk_up
 	walk_up
 	walk_up
 	walk_up
 	walk_up
-	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 OldaleTown_Movement_PlayerSouth:
+	walk_in_place_faster_left
 	delay_16
-	delay_16
-	delay_16
-	delay_16
+	delay_8
+	delay_4
+	walk_left
 	walk_up
 	walk_up
 	walk_up
 	walk_up
-	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 OldaleTown_Movement_PlayerNorth:
 	walk_up
+	walk_left
 	walk_up
 	walk_up
 	walk_up
@@ -184,22 +228,24 @@ OldaleTown_Movement_PlayerNorth:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
-	walk_in_place_faster_left
 	step_end
 
 OldaleTown_Movement_Unknown2:
 	walk_left
 	walk_up
 	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_up
 	walk_up
 	walk_up
-	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 OldaleTown_Text_SavingMyProgress:
@@ -225,6 +271,7 @@ OldaleTown_Text_PotionExplanation:
 	.string "in certain situations.$"
 
 OldaleTown_Text_TownSign:
-	.string "VAUMORT\n"
-	.string "“Manger local, manger Vaumort.”$"
+	.string "FOURQUEUE\p"
+	.string "… … … … … … … … …\p"
+	.string "Ce village a un drôle de nom…$"
 

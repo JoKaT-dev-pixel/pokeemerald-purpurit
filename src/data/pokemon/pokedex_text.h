@@ -1529,10 +1529,10 @@ const u8 gSceptilePokedexText[] = _(
     "by basking in sunlight.");
 
 const u8 gTorchicPokedexText[] = _(
-    "If attacked, it strikes back by spitting\n"
-    "balls of fire it forms in its stomach.\n"
-    "A Torchic dislikes darkness because it\n"
-    "can't see its surroundings.");
+    "De nature indisciplinée, il cherche\n"
+    "toujours à brutaliser ses ennemis et\n"
+    "vapote sa queue afin de se reposer après\n"
+    "avoir acquis le territoire ennemi.");
 
 const u8 gCombuskenPokedexText[] = _(
     "It lashes out with 10 kicks per second.\n"

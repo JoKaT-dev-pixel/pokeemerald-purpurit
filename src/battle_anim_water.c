@@ -19,6 +19,10 @@ static void AnimWaterBubbleProjectile(struct Sprite *);
 static void AnimWaterBubbleProjectile_Step1(struct Sprite *);
 static void AnimWaterBubbleProjectile_Step2(struct Sprite *);
 static void AnimWaterBubbleProjectile_Step3(struct Sprite *);
+static void AnimTearGasCloud(struct Sprite *);
+static void AnimTearGasCloud_Step1(struct Sprite *);
+static void AnimTearGasCloud_Step2(struct Sprite *);
+static void AnimTearGasCloud_Step3(struct Sprite *);
 static void AnimAuroraBeamRings(struct Sprite *);
 static void AnimAuroraBeamRings_Step(struct Sprite *);
 void AnimFlyUpTarget(struct Sprite *);
@@ -113,6 +117,18 @@ const union AnimCmd *const gAnims_WaterBubbleProjectile[] =
     sAnim_WaterBubbleProjectile,
 };
 
+static const union AnimCmd sAnim_TearGasCloud[] =
+{
+    ANIMCMD_FRAME(0, 0),
+    ANIMCMD_END,
+};
+
+const union AnimCmd *const gAnims_TearGasCloud[] =
+{
+    sAnim_TearGasCloud,
+};
+
+
 const struct SpriteTemplate gWaterBubbleProjectileSpriteTemplate =
 {
     .tileTag = ANIM_TAG_BUBBLE,
@@ -122,6 +138,18 @@ const struct SpriteTemplate gWaterBubbleProjectileSpriteTemplate =
     .images = NULL,
     .affineAnims = sAffineAnims_WaterBubbleProjectile,
     .callback = AnimWaterBubbleProjectile,
+};
+
+//tear gas
+const struct SpriteTemplate gTearGasCloudSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PINK_CLOUD,
+    .paletteTag = ANIM_TAG_PINK_CLOUD,
+    .oam = &gOamData_AffineOff_ObjBlend_32x32,
+    .anims = gAnims_TearGasCloud,
+    .images = NULL,
+    .affineAnims = sAffineAnims_WaterBubbleProjectile,
+    .callback = AnimTearGasCloud,
 };
 
 static const union AnimCmd sAnim_AuroraBeamRing_0[] =
@@ -741,6 +769,79 @@ static void AnimWaterBubbleProjectile_Step3(struct Sprite *sprite)
     sprite->data[0] = 10;
     sprite->callback = WaitAnimForDuration;
     StoreSpriteCallbackInData6(sprite, DestroySpriteAndMatrix);
+}
+
+static void AnimTearGasCloud(struct Sprite *sprite)
+{
+    u8 spriteId;
+
+    if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)
+    {
+        sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) - gBattleAnimArgs[0];
+        sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[1];
+        sprite->animPaused = FALSE;
+    }
+    else
+    {
+        sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
+        sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[1];
+        sprite->animPaused = FALSE;
+    }
+    if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)
+        gBattleAnimArgs[2] = -gBattleAnimArgs[2];
+    sprite->data[0] = gBattleAnimArgs[6];
+    sprite->data[1] = sprite->x;
+    sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    sprite->data[3] = sprite->y;
+    sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+    InitAnimLinearTranslation(sprite);
+    spriteId = CreateInvisibleSpriteWithCallback(SpriteCallbackDummy);
+    sprite->data[5] = spriteId;
+    sprite->x -= Sin((u8)gBattleAnimArgs[4], gBattleAnimArgs[2]);
+    sprite->y -= Cos((u8)gBattleAnimArgs[4], gBattleAnimArgs[3]);
+    gSprites[spriteId].data[0] = gBattleAnimArgs[2];
+    gSprites[spriteId].data[1] = gBattleAnimArgs[3];
+    gSprites[spriteId].data[2] = gBattleAnimArgs[5];
+    gSprites[spriteId].data[3] = (u8)gBattleAnimArgs[4] * 256;
+    gSprites[spriteId].data[4] = gBattleAnimArgs[6];
+    sprite->callback = AnimTearGasCloud_Step1;
+    sprite->callback(sprite);
+}
+
+static void AnimTearGasCloud_Step1(struct Sprite *sprite)
+{
+    u8 otherSpriteId = sprite->data[5];
+    u8 timer = gSprites[otherSpriteId].data[4];
+    u16 trigIndex = gSprites[otherSpriteId].data[3];
+
+    sprite->data[0] = 1;
+    AnimTranslateLinear(sprite);
+    sprite->x2 += Sin(trigIndex >> 8, gSprites[otherSpriteId].data[0]);
+    sprite->y2 += Cos(trigIndex >> 8, gSprites[otherSpriteId].data[1]);
+    gSprites[otherSpriteId].data[3] = trigIndex + gSprites[otherSpriteId].data[2];
+    if (--timer != 0)
+    {
+        gSprites[otherSpriteId].data[4] = timer;
+    }
+    else
+    {
+        sprite->callback = AnimTearGasCloud_Step2;
+        DestroySprite(&gSprites[otherSpriteId]);
+    }
+}
+
+static void AnimTearGasCloud_Step2(struct Sprite *sprite)
+{
+    sprite->animPaused = FALSE;
+    sprite->invisible ^= 1;
+    sprite->callback = RunStoredCallbackWhenAnimEnds;
+    StoreSpriteCallbackInData6(sprite, AnimTearGasCloud_Step3);
+}
+
+static void AnimTearGasCloud_Step3(struct Sprite *sprite)
+{
+    sprite->callback = WaitAnimForDuration;
+    DestroyAnimSprite(sprite);
 }
 
 static void AnimAuroraBeamRings(struct Sprite *sprite)

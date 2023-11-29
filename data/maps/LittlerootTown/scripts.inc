@@ -961,10 +961,10 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Go on, go get them, honey!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "Mmm...\p"
-	.string "Dis-moi {PLAYER}, la mère de Simon\n"
-	.string "est-elle célibataire?\p"
-	.string "Mmm...!$"
+	.string "Elle est seule, ta mère?\p"
+	.string "Hmm…\p"
+	.string "Je prendrai bien soin d'elle pendant\n"
+	.string "que tu seras parti!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "PROF. BIRCH spends days in his LAB\n"

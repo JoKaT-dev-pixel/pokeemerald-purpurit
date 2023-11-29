@@ -407,8 +407,10 @@
 #define EFFECT_REVIVAL_BLESSING             401
 #define EFFECT_FROSTBITE_HIT                402
 #define EFFECT_SNOWSCAPE                    403
-#define EFFECT_OIL_BOMB                     404
+#define EFFECT_EXCALIBUR                    404
+#define EFFECT_OIL_BOMB                     405
+#define EFFECT_TRANS_LOVE                   406
 
-#define NUM_BATTLE_MOVE_EFFECTS             405
+#define NUM_BATTLE_MOVE_EFFECTS             407
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

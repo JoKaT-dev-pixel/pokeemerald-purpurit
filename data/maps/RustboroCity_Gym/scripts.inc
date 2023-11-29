@@ -2,6 +2,7 @@ RustboroCity_Gym_MapScripts::
 	.byte 0
 
 RustboroCity_Gym_EventScript_Roxanne::
+	setvar VAR_MUGSHOT_ID, MUGSHOT_ROXANNE
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
@@ -56,6 +57,16 @@ RustboroCity_Gym_EventScript_Marc::
 RustboroCity_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
+	goto_if_set FLAG_FRESH_WATER_GYM_1, RustboroCity_Gym_EventScript_ReceivedFreshWater
+	msgbox RustboroCity_Gym_Text_GymGuideFreshWater, MSGBOX_DEFAULT
+	giveitem ITEM_FRESH_WATER
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	setflag FLAG_FRESH_WATER_GYM_1
+	release
+	end
+
+RustboroCity_Gym_EventScript_ReceivedFreshWater::
 	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
 	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
@@ -103,9 +114,12 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	releaseall
 	end
 
-RustboroCity_Gym_Text_GymGuideAdvice:
+RustboroCity_Gym_Text_GymGuideFreshWater:
 	.string "Yo, how's it going?\p"
-	.string "Listen, my friend!\n"
+	.string "Prends ça!$"
+
+RustboroCity_Gym_Text_GymGuideAdvice:
+	.string "Listen, my friend!\p"
 	.string "Would you like to become the CHAMPION?\p"
 	.string "I'm no TRAINER, not me, but I can\n"
 	.string "sure give you winning advice.\p"

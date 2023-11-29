@@ -327,7 +327,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
         if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         {
             u16 ability = GetMonAbility(&gPlayerParty[0]);
-            if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
+            if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE || ability == ABILITY_PHEROMONE)
             {
                 if (Random() % 2 == 0)
                     return max;
@@ -1010,7 +1010,7 @@ static bool8 IsAbilityAllowingEncounter(u8 level)
         return TRUE;
 
     ability = GetMonAbility(&gPlayerParty[0]);
-    if (ability == ABILITY_KEEN_EYE || ability == ABILITY_INTIMIDATE || ability == ABILITY_FRIENDZONE)
+    if (ability == ABILITY_KEEN_EYE || ability == ABILITY_INTIMIDATE || ability == ABILITY_PHEROMONE)
     {
         u8 playerMonLevel = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL);
         if (playerMonLevel > 5 && level <= playerMonLevel - 5 && !(Random() % 2))

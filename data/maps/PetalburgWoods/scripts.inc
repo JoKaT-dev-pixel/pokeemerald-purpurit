@@ -397,8 +397,8 @@ PetalburgWoods_Text_ImOutOfPokeBalls:
 	.string "Now I'm out of POKé BALLS.$"
 
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon:
-	.string "If you take BUG POKéMON to school,\n"
-	.string "you get to be instantly popular!$"
+	.string "Ho, ho, hoooo…\p"
+	.string "Veux-tu voir ma hache?!$"
 
 PetalburgWoods_Text_CantBePopularIfILose:
 	.string "I can't be popular if I lose.$"
@@ -430,11 +430,15 @@ PetalburgWoods_Text_IveBeenTrainingHard:
 	.string "So, I've been training hard.$"
 
 PetalburgWoods_Text_StayOutOfTallGrass:
-	.string "Yo, there!\n"
-	.string "Your POKéMON doing okay?\p"
-	.string "If your POKéMON are weak and you want\n"
-	.string "to avoid battles, you should stay out\l"
-	.string "of tall grass.$"
+	.string "J'ai entendu des faits divers\n"
+	.string "à propos de cette forêt!\p"
+	.string "Un mec aurait buté sa copine en\n"
+	.string "étranglant par erreur parce\l"
+	.string "qu'elle a refusé le mariage.\p"
+	.string "Voilà, elle a refusé de se marier\n"
+	.string "avec lui parce que c'était un\l"
+	.string "bouffon et du coup lui il l'a tué\l"
+	.string "dans la forêt.$"
 
 PetalburgWoods_Text_HiddenItemsExplanation:
 	.string "Sometimes, there are things on the\n"

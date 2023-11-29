@@ -1,6 +1,9 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+// gTileset_Apple
+#define METATILE_Apple_Inc_Door  0x3C3
+
 // gTileset_BattleArena
 #define METATILE_BattleArena_Door  0x21B
 
@@ -133,6 +136,9 @@
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
 
+// gTileset_Chantiville
+#define METATILE_Chantiville_Door  0x2C1
+
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9
 #define METATILE_Contest_CounterFlap_Top     0x2D1
@@ -203,6 +209,9 @@
 #define METATILE_Fortree_SecretBase_ShrubOpen              0x278
 #define METATILE_Fortree_WoodBridge1_Bottom                0x29F
 #define METATILE_Fortree_WoodBridge1_Top                   0x297
+
+// gTileset_Fourqueue
+#define METATILE_Fourqueue_Door  0x2E1
 
 // gTileset_General
 #define METATILE_General_BlueCaveIndent        0x1B0

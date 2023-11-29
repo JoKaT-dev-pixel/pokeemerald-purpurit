@@ -322,24 +322,24 @@ static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
 const u8 gTypeNames[NUMBER_OF_MON_TYPES][TYPE_NAME_LENGTH + 1] =
 {
     [TYPE_NORMAL] = _("Normal"),
-    [TYPE_FIGHTING] = _("Fight"),
-    [TYPE_FLYING] = _("Flying"),
+    [TYPE_FIGHTING] = _("Combat"),
+    [TYPE_FLYING] = _("Vol"),
     [TYPE_POISON] = _("Poison"),
-    [TYPE_GROUND] = _("Ground"),
-    [TYPE_ROCK] = _("Rock"),
-    [TYPE_BUG] = _("Bug"),
-    [TYPE_GHOST] = _("Ghost"),
-    [TYPE_STEEL] = _("Steel"),
+    [TYPE_GROUND] = _("Sol"),
+    [TYPE_ROCK] = _("Roche"),
+    [TYPE_BUG] = _("Insect"),
+    [TYPE_GHOST] = _("Spectr"),
+    [TYPE_STEEL] = _("Acier"),
     [TYPE_MYSTERY] = _("???"),
-    [TYPE_FIRE] = _("Fire"),
-    [TYPE_WATER] = _("Water"),
-    [TYPE_GRASS] = _("Grass"),
+    [TYPE_FIRE] = _("Feu"),
+    [TYPE_WATER] = _("Eau"),
+    [TYPE_GRASS] = _("Plante"),
     [TYPE_ELECTRIC] = _("Electr"),
-    [TYPE_PSYCHIC] = _("Psychc"),
-    [TYPE_ICE] = _("Ice"),
+    [TYPE_PSYCHIC] = _("Psy"),
+    [TYPE_ICE] = _("Glace"),
     [TYPE_DRAGON] = _("Dragon"),
-    [TYPE_DARK] = _("Dark"),
-    [TYPE_FAIRY] = _("Fairy"),
+    [TYPE_DARK] = _("Ténèbr"),
+    [TYPE_FAIRY] = _("Fée"),
 };
 
 // This is a factor in how much money you get for beating a trainer.
@@ -400,6 +400,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_HIKER, 10},
     {TRAINER_CLASS_YOUNG_COUPLE, 8},
     {TRAINER_CLASS_WINSTRATE, 10},
+    {TRAINER_CLASS_NUN, 6},
     {0xFF, 5}, // Any trainer class not listed above uses this
 };
 
@@ -426,6 +427,7 @@ static const u16 sTrainerBallTable[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_SWIMMER_F] = ITEM_DIVE_BALL,
     [TRAINER_CLASS_COOLTRAINER_2] = ITEM_ULTRA_BALL,
     [TRAINER_CLASS_MAGMA_LEADER] = ITEM_MASTER_BALL,
+    [TRAINER_CLASS_NUN] = ITEM_HEAL_BALL,
 };
 #endif
 
@@ -3389,6 +3391,7 @@ void FaintClearSetData(void)
     gProtectStructs[gActiveBattler].statRaised = FALSE;
     gProtectStructs[gActiveBattler].statFell = FALSE;
     gProtectStructs[gActiveBattler].pranksterElevated = FALSE;
+    gProtectStructs[gActiveBattler].regalElevated = FALSE;
 
     gDisableStructs[gActiveBattler].isFirstTurn = 2;
 
@@ -4865,6 +4868,16 @@ s8 GetMovePriority(u32 battlerId, u16 move)
             priority += 3;
             break;
         }
+    }
+    else if (ability == ABILITY_REGAL && IS_MOVE_PHYSICAL(move))
+    {
+        gProtectStructs[battlerId].regalElevated = 1;
+        priority++;
+    }
+    else if (ability == ABILITY_REGAL && IS_MOVE_SPECIAL(move))
+    {
+        gProtectStructs[battlerId].regalElevated = 1;
+        priority++;
     }
 
     if (gProtectStructs[battlerId].quash)

@@ -142,8 +142,8 @@ Route116_EventScript_ItemHPUp::
 	finditem ITEM_HP_UP
 	end
 
-Route116_EventScript_ItemPotion::
-	finditem ITEM_POTION
+Route116_EventScript_ItemNestBall::
+	finditem ITEM_NEST_BALL
 	end
 
 Route117_EventScript_ItemGreatBall::
@@ -307,15 +307,15 @@ PetalburgCity_EventScript_ItemMaxRevive::
 	end
 
 PetalburgCity_EventScript_ItemEther::
-	finditem ITEM_ETHER
+	finditem ITEM_POTION
 	end
 
 MauvilleCity_EventScript_ItemXSpeed::
 	finditem ITEM_X_SPEED
 	end
 
-RustboroCity_EventScript_ItemXDefend::
-	finditem ITEM_X_DEFENSE
+RustboroCity_EventScript_ItemRepel::
+	finditem ITEM_REPEL
 	end
 
 LilycoveCity_EventScript_ItemMaxRepel::
@@ -326,20 +326,20 @@ MossdeepCity_EventScript_ItemNetBall::
 	finditem ITEM_NET_BALL
 	end
 
-PetalburgWoods_EventScript_ItemXAttack::
-	finditem ITEM_X_ATTACK
+PetalburgWoods_EventScript_ItemPokeBall::
+	finditem ITEM_POKE_BALL
 	end
 
 PetalburgWoods_EventScript_ItemGreatBall::
 	finditem ITEM_GREAT_BALL
 	end
 
-PetalburgWoods_EventScript_ItemEther::
-	finditem ITEM_ETHER
+PetalburgWoods_EventScript_ItemXDefense::
+	finditem ITEM_X_DEFENSE
 	end
 
-PetalburgWoods_EventScript_ItemParalyzeHeal::
-	finditem ITEM_PARALYZE_HEAL
+PetalburgWoods_EventScript_ItemAntidote::
+	finditem ITEM_ANTIDOTE
 	end
 
 RusturfTunnel_EventScript_ItemPokeBall::

@@ -152,6 +152,7 @@ struct ProtectStruct
     u32 specialDmg;
     u8 physicalBattlerId;
     u8 specialBattlerId;
+    u16 regalElevated:1;
 };
 
 struct SpecialStatus

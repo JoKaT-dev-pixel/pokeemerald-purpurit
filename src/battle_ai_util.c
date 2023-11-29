@@ -71,6 +71,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DROUGHT] = 9,
     [ABILITY_DRY_SKIN] = 6,
     [ABILITY_EARLY_BIRD] = 4,
+    [ABILITY_ECCENTRIC] = 7,
     [ABILITY_EFFECT_SPORE] = 4,
     [ABILITY_ELECTRIC_SURGE] = 8,
     [ABILITY_EMERGENCY_EXIT] = 3,
@@ -84,7 +85,6 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_FLUFFY] = 5,
     [ABILITY_FORECAST] = 6,
     [ABILITY_FOREWARN] = 2,
-    [ABILITY_FRIENDZONE] = 7,
     [ABILITY_FRIEND_GUARD] = 0,
     [ABILITY_FRISK] = 3,
     [ABILITY_FULL_METAL_BODY] = 4,
@@ -153,7 +153,9 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_OVERCOAT] = 5,
     [ABILITY_OVERGROW] = 5,
     [ABILITY_OWN_TEMPO] = 3,
+    [ABILITY_PANIC_ATTACK] = 4,
     [ABILITY_PARENTAL_BOND] = 10,
+    [ABILITY_PHEROMONE] = 7,
     [ABILITY_PICKUP] = 1,
     [ABILITY_PICKPOCKET] = 3,
     [ABILITY_PIXILATE] = 8,
@@ -180,6 +182,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_REGENERATOR] = 8,
     [ABILITY_RIVALRY] = 1,
     [ABILITY_RKS_SYSTEM] = 8,
+    [ABILITY_ROBUST] = 2,
     [ABILITY_ROCK_HEAD] = 5,
     [ABILITY_ROUGH_SKIN] = 6,
     [ABILITY_RUN_AWAY] = 0,
@@ -208,6 +211,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SOLAR_POWER] = 3,
     [ABILITY_SOLID_ROCK] = 6,
     [ABILITY_SOUL_HEART] = 7,
+    [ABILITY_SOUL_SAP] = 7,
     [ABILITY_SOUNDPROOF] = 4,
     [ABILITY_SPEED_BOOST] = 9,
     [ABILITY_STAKEOUT] = 6,
@@ -284,6 +288,8 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_PERISH_BODY] = -1,
     [ABILITY_WANDERING_SPIRIT] = 2,
     [ABILITY_GORILLA_TACTICS] = 4,
+    [ABILITY_SOLAR_PANELS] = 3,
+    [ABILITY_AMPLIFIER] = 2,
 };
 
 static const u16 sEncouragedEncoreEffects[] =
@@ -1657,6 +1663,8 @@ bool32 ShouldSetSun(u8 battlerAtk, u16 atkAbility, u16 holdEffect)
       || atkAbility == ABILITY_LEAF_GUARD
       || atkAbility == ABILITY_SOLAR_POWER
       || atkAbility == ABILITY_HARVEST
+      || atkAbility == ABILITY_MIRAGE
+      || atkAbility == ABILITY_SOLAR_PANELS
       || HasMoveEffect(battlerAtk, EFFECT_SOLAR_BEAM)
       || HasMoveEffect(battlerAtk, EFFECT_MORNING_SUN)
       || HasMoveEffect(battlerAtk, EFFECT_SYNTHESIS)

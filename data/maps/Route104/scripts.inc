@@ -1029,18 +1029,19 @@ Route104_Text_ImNotATrainer:
 	.string "of their sight.$"
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
-	.string "I like filling my mouth with seeds,\n"
-	.string "then spitting them out fast!\p"
-	.string "You can have this, so you try it out!\p"
-	.string "Use it on a POKéMON, and it will learn\n"
-	.string "a move for firing seeds rapidly.$"
+	.string "J'adore manger des pastèques bien\n"
+	.string "juteuses.\p"
+	.string "Mais surtout, j'aime cracher des graines\n"
+	.string "sur les gens qui me font chier.\p"
+	.string "Tu devrais en prendre aussi et en manger\n"
+	.string "avec ton POKéMON!$"
 
 Route104_Text_TMsAreOneTimeUse:
-	.string "A word of advice!\p"
-	.string "A TM, TECHNICAL MACHINE, is good only\n"
-	.string "for one-time use.\p"
-	.string "Once you use it, it's gone.\n"
-	.string "Think twice before using it!$"
+	.string "Ceci est une Capsule Technique!\p"
+	.string "Avec ça, tu pourras apprendre des\n"
+	.string "nouvelles capacités à ton équipe.\p"
+	.string "J'ai juste lu ce qui est écrit sur\n"
+	.string "la notice.$"
 
 Route104_Text_DontNeedThisTakeIt:
 	.string "This FLOWER SHOP started selling\n"

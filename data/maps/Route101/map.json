@@ -84,10 +84,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 36,
-      "y": 9,
+      "x": 34,
+      "y": 6,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -109,7 +109,7 @@
       "flag": "FLAG_HIDE_OLDALE_TOWN_RIVAL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 26,
       "y": 9,
       "elevation": 3,

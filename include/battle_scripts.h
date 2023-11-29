@@ -471,7 +471,9 @@ extern const u8 BattleScript_StealthRockActivates[];
 extern const u8 BattleScript_SpikesActivates[];
 extern const u8 BattleScript_BerserkGeneRet[];
 extern const u8 BattleScript_TargetFormChangeWithStringNoPopup[];
-extern const u8 BattleScript_FriendzoneActivates[];
+extern const u8 BattleScript_PheromoneActivates[];
+extern const u8 BattleScript_SolarPanelsActivates[];
+extern const u8 BattleScript_TyrantActivates[];
 
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];

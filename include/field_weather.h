@@ -48,6 +48,7 @@ struct Weather
     u8 colorMapStepDelay;
     u8 colorMapStepCounter;
     u16 fadeDestColor;
+    u16 hasShadows:1; // Certain weathers require blend coeffs that do not work nice with shadows
     u8 palProcessingState;
     u8 fadeScreenCounter;
     bool8 readyForInit;
@@ -230,5 +231,7 @@ void SetWeather(u32 weather);
 void DoCurrentWeather(void);
 void UpdateWeatherPerDay(u16 increment);
 void ResumePausedWeather(void);
+
+u8 UpdateShadowColor(u16 color);
 
 #endif // GUARD_WEATHER_H
