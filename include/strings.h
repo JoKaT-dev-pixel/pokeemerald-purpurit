@@ -3027,6 +3027,8 @@ extern const u8 gText_PkmnForSwap[];
 extern const u8 gText_SamePkmnInPartyAlready[];
 extern const u8 gText_Cancel3[];
 
+extern const u8 gText_Medicine[];
+
 // Naming Screen
 extern const u8 gText_MoveOkBack[];
 extern const u8 gText_YourName[];
@@ -3043,7 +3045,7 @@ extern const u8 gText_FontShort[];
 extern const u8 gText_TMCase_Blue[];
 
 // Exp. Share
-extern const u8 gText_ExpShareTurnOn[];
-extern const u8 gText_ExpShareTurnOff[];
+extern const u8 gText_ExpShareOn[];
+extern const u8 gText_ExpShareOff[];
 
 #endif // GUARD_STRINGS_H

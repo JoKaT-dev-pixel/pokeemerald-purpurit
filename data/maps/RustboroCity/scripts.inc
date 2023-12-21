@@ -20,11 +20,11 @@ RustboroCity_OnTransition:
 
 RustboroCity_EventScript_PositionScientistForExit::
 	goto_if_eq VAR_TEMP_0, 11, RustboroCity_EventScript_PositionScientistLeftExit
-	setobjectxyperm LOCALID_SCIENTIST, 12, 15
+	setobjectxyperm LOCALID_SCIENTIST, 13, 15
 	end
 
 RustboroCity_EventScript_PositionScientistLeftExit::
-	setobjectxyperm LOCALID_SCIENTIST, 11, 15
+	setobjectxyperm LOCALID_SCIENTIST, 13, 15
 	end
 
 RustboroCity_EventScript_HideMapNamePopup::
@@ -1111,8 +1111,8 @@ RustboroCity_Text_OutOfTheWay:
 	.string "Out of the way!$"
 
 RustboroCity_Text_WaitDontTakeMyGoods:
-	.string "REVIENS ICI PUTAIN D'ÉCOLO DE\n"
-	.string "MERDE!$"
+	.string "REVIENS ICI SATANÉ ÉCOLO DE\n"
+	.string "MERDE !!$"
 
 RustboroCity_Text_HelpMeIWasRobbed:
 	.string "Oh, it's you!\p"
@@ -1249,9 +1249,9 @@ RustboroCity_Text_DevonCorpSign:
 	.string "“Think Different”$"
 
 RustboroCity_Text_GymSign:
-	.string "RUSTBORO CITY POKéMON GYM\n"
+	.string "Arène de Larochelle\n"
 	.string "CHAMPION: Didier Raoult\l"
-	.string "“Je suis un grand scientifique!”$"
+	.string "“Je suis un grand scientifique !”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
 	.string "DEVON CORP. BRANCH OFFICE\p"
@@ -1259,9 +1259,8 @@ RustboroCity_Text_DevonCorpBranchOfficeSign:
 	.string "and authorized personnel.”$"
 
 RustboroCity_Text_CitySign:
-	.string "RUSTBORO CITY\p"
-	.string "“The city probing the integration of\n"
-	.string "nature and science.”$"
+	.string "LAROCHELLE\n"
+	.string "“Ici, ici, c'est Larochelle.”$"
 
 RustboroCity_Text_TrainersSchoolSign:
 	.string "CATHÉDRALE$"

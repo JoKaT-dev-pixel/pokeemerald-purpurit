@@ -280,15 +280,17 @@ const u8 *const gPyramidBagMenu_ReturnToStrings[] =
 };
 
 const u8 gText_ReturnToVar1[] = _("Return to\n{STR_VAR_1}.");
-const u8 gText_ItemsPocket[] = _("ITEMS");
-const u8 gText_PokeBallsPocket[] = _("POKé BALLS");
+const u8 gText_ItemsPocket[] = _("Objets");
+const u8 gText_MedicinePocket[] = _("Soins");
+const u8 gText_PokeBallsPocket[] = _("Poké Balls");
 const u8 gText_TMHMPocket[] = _("TMs & HMs");
-const u8 gText_BerriesPocket[] = _("BERRIES");
-const u8 gText_KeyItemsPocket[] = _("KEY ITEMS");
+const u8 gText_BerriesPocket[] = _("Baies");
+const u8 gText_KeyItemsPocket[] = _("Obj. rares");
 
 const u8 *const gPocketNamesStringsTable[] =
 {
     [ITEMS_POCKET] = gText_ItemsPocket,
+    [MEDICINE_POCKET] = gText_MedicinePocket,
     [BALLS_POCKET] = gText_PokeBallsPocket,
     [TMHM_POCKET]  = gText_TMHMPocket,
     [BERRIES_POCKET] = gText_BerriesPocket,
@@ -734,14 +736,14 @@ const u8 gText_AboutE_Mode[] = _("ABOUT E-MODE");
 const u8 gText_AboutG_Mode[] = _("ABOUT G-MODE");
 const u8 gText_E_Mode[] = _("E-MODE");
 const u8 gText_G_Mode[] = _("G-MODE");
-const u8 gText_MenuOptionPokedex[] = _("POKéDEX");
-const u8 gText_MenuOptionPokemon[] = _("POKéMON");
-const u8 gText_MenuOptionBag[] = _("BAG");
+const u8 gText_MenuOptionPokedex[] = _("Pokédex");
+const u8 gText_MenuOptionPokemon[] = _("Équipe");
+const u8 gText_MenuOptionBag[] = _("Sac");
 const u8 gText_MenuOptionPokenav[] = _("POKéNAV");
 const u8 gText_Blank[] = _("");
-const u8 gText_MenuOptionSave[] = _("SAVE");
-const u8 gText_MenuOptionOption[] = _("OPTION");
-const u8 gText_MenuOptionExit[] = _("EXIT");
+const u8 gText_MenuOptionSave[] = _("Sauver");
+const u8 gText_MenuOptionOption[] = _("Options");
+const u8 gText_MenuOptionExit[] = _("Quitter");
 const u8 gText_5BP[] = _("  5BP");
 const u8 gText_10BP[] = _("10BP");
 const u8 gText_15BP[] = _("15BP");
@@ -1519,14 +1521,14 @@ const u8 gText_TimeColon2[] = _("Time:"); // Unused
 const u8 gText_GameTime[] = _("Game time"); // Unused
 const u8 gText_RTCTime[] = _("RTC time"); // Unused
 const u8 gText_UpdatedTime[] = _("Updated time"); // Unused
-const u8 gText_MenuPokedex[] = _("POKéDEX");
-const u8 gText_MenuPokemon[] = _("POKéMON");
-const u8 gText_MenuBag[] = _("BAG");
+const u8 gText_MenuPokedex[] = _("Pokédex");
+const u8 gText_MenuPokemon[] = _("Équipe");
+const u8 gText_MenuBag[] = _("Sac");
 const u8 gText_MenuPokenav[] = _("POKéNAV");
 const u8 gText_MenuPlayer[] = _("{PLAYER}");
-const u8 gText_MenuSave[] = _("SAVE");
-const u8 gText_MenuOption[] = _("OPTION");
-const u8 gText_MenuExit[] = _("EXIT");
+const u8 gText_MenuSave[] = _("Sauver");
+const u8 gText_MenuOption[] = _("Options");
+const u8 gText_MenuExit[] = _("Quitter");
 const u8 gText_MenuRetire[] = _("RETIRE");
 const u8 gText_MenuRest[] = _("REST");
 const u8 gText_SafariBallStock[] = _("SAFARI BALLS\nStock: {STR_VAR_1}");
@@ -1832,6 +1834,8 @@ const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_Berry[] = _("Baie");
 const u8 gText_Berries[] = _("Baies");
 
+const u8 gText_Medicine[] = _("Soins");
+
 // frlg_tm_case_port
 const u8 gText_TMCase[] =               _("CT & CS");
 const u8 gText_Close[] =                _("CLOSE");
@@ -1841,5 +1845,5 @@ const u8 gText_FontShort[] =            _("{FONT_SHORT}");
 const u8 gText_TMCase_Blue[] =          _("{COLOR_HIGHLIGHT_SHADOW BLUE TRANSPARENT LIGHT_BLUE}{STR_VAR_2}");
 
 // Exp. Share
-const u8 gText_ExpShareTurnOn[] = _("Turned on the Exp. Share.\pParty will now gain a portion\nof the Experience Points.{PAUSE_UNTIL_PRESS}");
-const u8 gText_ExpShareTurnOff[] = _("Turned off the Exp. Share.\pParty will no longer gain a portion\nof any Experience Points.{PAUSE_UNTIL_PRESS}");
+const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
+const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");

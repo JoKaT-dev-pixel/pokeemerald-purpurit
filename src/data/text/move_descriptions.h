@@ -9,7 +9,7 @@ static const u8 sNullDescription[] = _(
     "");
 
 static const u8 sPoundDescription[] = _(
-    "Écrase la cible avec l'un de\n"
+    "Écrase l'ennemi avec l'un de\n"
     "ses membres, tels qu'une de ses\n"
     "pattes avant ou sa longue queue.");
 
@@ -2009,8 +2009,9 @@ static const u8 sChipAwayDescription[] = _(
     "stat changes.");
 
 static const u8 sClearSmogDescription[] = _(
-    "Attacks with white haze that\n"
-    "eliminates all stat changes.");
+    "Jette un tas de détritus spéciaux\n"
+    "sur l'ennemi. Les changements de\n"
+    "stats de l'ennemi sont annulés.");
 
 static const u8 sStoredPowerDescription[] = _(
     "The higher the user's stats\n"
@@ -3405,8 +3406,9 @@ static const u8 sTransLoveDescription[] = _(
     "alors à attaquer.");
 
 static const u8 sDropletsDescription[] = _(
-    "Envoie des gouttes sur la\n"
-    "cible et baisse sa Vitesse.");
+    "Attaque en projetant des\n"
+    "gouttes collantes sur l'ennemi\n"
+    "et réduit aussi sa Vitesse.");
 
 static const u8 sRainbowBeamDescription[] = _(
     "Un puissant rayon irisé\n"

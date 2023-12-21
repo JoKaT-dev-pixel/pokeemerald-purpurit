@@ -2304,6 +2304,11 @@ static const u8 sMetalCoatDesc[] = _(
     "raises the power of\n"
     "Steel-type moves.");
 
+static const u8 sAnalPlugDesc[] = _(
+    "A hold item that\n"
+    "raises the power of\n"
+    "Dark-type moves.");
+
 // Choice Items
 static const u8 sChoiceBandDesc[] = _(
     "Raises a move's\n"
@@ -2406,9 +2411,15 @@ static const u8 sWhiteHerbDesc[] = _(
     "lowered stat.");
 
 static const u8 sExpShareDesc[] = _(
+#if I_EXP_SHARE_ITEM >= GEN_6
     "Objet à activer\n"
     "pour partager l'Exp\n"
     "à tous les Pokémon.");
+#else
+    "A hold item that\n"
+    "gets Exp. points\n"
+    "from battles.");
+#endif
 
 static const u8 sQuickClawDesc[] = _(
     "A hold item that\n"
