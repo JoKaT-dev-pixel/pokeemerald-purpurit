@@ -6511,7 +6511,7 @@ bool8 MovementAction_JumpDown_Step1(struct ObjectEvent *objectEvent, struct Spri
 {
     if (DoJumpAnim(objectEvent, sprite))
     {
-        objectEvent->hasShadow = 0;
+        objectEvent->hasShadow = FALSE;
         sprite->sActionFuncId = 2;
         return TRUE;
     }
@@ -6528,7 +6528,7 @@ bool8 MovementAction_JumpUp_Step1(struct ObjectEvent *objectEvent, struct Sprite
 {
     if (DoJumpAnim(objectEvent, sprite))
     {
-        objectEvent->hasShadow = 0;
+        objectEvent->hasShadow = FALSE;
         sprite->sActionFuncId = 2;
         return TRUE;
     }
@@ -6545,7 +6545,7 @@ bool8 MovementAction_JumpLeft_Step1(struct ObjectEvent *objectEvent, struct Spri
 {
     if (DoJumpAnim(objectEvent, sprite))
     {
-        objectEvent->hasShadow = 0;
+        objectEvent->hasShadow = FALSE;
         sprite->sActionFuncId = 2;
         return TRUE;
     }
@@ -6562,7 +6562,7 @@ bool8 MovementAction_JumpRight_Step1(struct ObjectEvent *objectEvent, struct Spr
 {
     if (DoJumpAnim(objectEvent, sprite))
     {
-        objectEvent->hasShadow = 0;
+        objectEvent->hasShadow = FALSE;
         sprite->sActionFuncId = 2;
         return TRUE;
     }

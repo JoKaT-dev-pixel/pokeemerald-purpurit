@@ -185,7 +185,8 @@ bool8 SetUpFieldMove_Cut(void)
                 {
                     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
                     if (MetatileBehavior_IsPokeGrass(tileBehavior) == TRUE
-                    || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE)
+                    || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE
+                    || MetatileBehavior_IsForestEncounter(tileBehavior) == TRUE)
                     {
                         // Standing in front of grass.
                         sHyperCutTiles[6 + (i * 5) + j] = TRUE;
@@ -248,7 +249,8 @@ bool8 SetUpFieldMove_Cut(void)
                         u8 tileArrayId = ((sHyperCutStruct[i].y * 5) + 12) + (sHyperCutStruct[i].x);
                         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
                         if (MetatileBehavior_IsPokeGrass(tileBehavior) == TRUE
-                        || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE)
+                        || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE
+                        || MetatileBehavior_IsForestEncounter(tileBehavior) == TRUE)
                         {
                             gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
                             gPostMenuFieldCallback = FieldCallback_CutGrass;

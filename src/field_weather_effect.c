@@ -157,7 +157,7 @@ void Sunny_InitVars(void)
 {
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
-    Weather_SetBlendCoeffs(8, 9); // Right parameter from 0 to 15, where lower is darker
+    Weather_SetBlendCoeffs(15, 5); // Right parameter from 0 to 15, where lower is darker
     gWeatherPtr->hasShadows = FALSE;
 }
 
@@ -485,7 +485,7 @@ void Rain_InitVars(void)
     gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
     SetRainStrengthFromSoundEffect(SE_RAIN);
-    Weather_SetBlendCoeffs(8, 9); // preserve shadow darkness
+    Weather_SetBlendCoeffs(15, 5); // preserve shadow darkness
     gWeatherPtr->hasShadows = FALSE;
 }
 
@@ -780,7 +780,7 @@ void Snow_InitVars(void)
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->targetSnowflakeSpriteCount = 16;
     gWeatherPtr->snowflakeVisibleCounter = 0;
-    Weather_SetBlendCoeffs(8, 9); // preserve shadow darkness
+    Weather_SetBlendCoeffs(15, 5); // preserve shadow darkness
     gWeatherPtr->hasShadows = FALSE;
 }
 
@@ -1029,7 +1029,7 @@ void Thunderstorm_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;  // duplicate assignment
     gWeatherPtr->thunderEnqueued = FALSE;
     SetRainStrengthFromSoundEffect(SE_THUNDERSTORM);
-    Weather_SetBlendCoeffs(8, 9); // preserve shadow darkness
+    Weather_SetBlendCoeffs(15, 5); // preserve shadow darkness
     gWeatherPtr->hasShadows = FALSE;
 }
 
@@ -1059,7 +1059,7 @@ void Downpour_InitVars(void)
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->weatherGfxLoaded = FALSE;  // duplicate assignment
     SetRainStrengthFromSoundEffect(SE_DOWNPOUR);
-    Weather_SetBlendCoeffs(8, 9); // preserve shadow darkness
+    Weather_SetBlendCoeffs(15, 5); // preserve shadow darkness
     gWeatherPtr->hasShadows = FALSE;
 }
 
@@ -2246,7 +2246,7 @@ void Shade_InitVars(void)
     gWeatherPtr->initStep = 0;
     gWeatherPtr->targetColorMapIndex = 3;
     gWeatherPtr->colorMapStepDelay = 20;
-    Weather_SetBlendCoeffs(8, 9); // preserve shadow darkness
+    Weather_SetBlendCoeffs(15, 5); // preserve shadow darkness
     gWeatherPtr->hasShadows = FALSE;
 }
 
