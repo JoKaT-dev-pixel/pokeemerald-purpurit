@@ -149,6 +149,7 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	delay 10
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerAtTruck
 	waitmovement 0
+	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox LittlerootTown_Text_OurNewHomeLetsGoInside, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachDoor
@@ -502,11 +503,13 @@ LittlerootTown_EventScript_SetHomeDoorCoordsFemale::
 	return
 
 LittlerootTown_EventScript_MomNoticePlayerMale::
+	textcolor NPC_TEXT_COLOR_FEMALE
 	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	return
 
 LittlerootTown_EventScript_MomNoticePlayerFemale::
+	textcolor NPC_TEXT_COLOR_FEMALE
 	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	return
@@ -961,10 +964,10 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Go on, go get them, honey!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "Elle est seule, ta mère?\p"
+	.string "Elle est seule, ta mère ?\p"
 	.string "Hmm…\p"
-	.string "Je prendrai bien soin d'elle pendant\n"
-	.string "que tu seras parti!$"
+	.string "Je prendrai bien soin d'elle après\n"
+	.string "ton départ.$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "PROF. BIRCH spends days in his LAB\n"

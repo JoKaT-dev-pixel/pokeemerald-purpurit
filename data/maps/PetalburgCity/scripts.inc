@@ -297,12 +297,14 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_BoyApproachPlayer1
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_BoyApproachPlayer2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_BoyApproachPlayer3
+	textcolor NPC_TEXT_COLOR_MALE
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_LeadPlayerToGym0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_LeadPlayerToGym1
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_LeadPlayerToGym2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_LeadPlayerToGym3
+	textcolor NPC_TEXT_COLOR_MALE
 	msgbox PetalburgCity_Text_ThisIsPetalburgGym, MSGBOX_DEFAULT
 	applymovement LOCALID_GYM_BOY, Common_Movement_WalkInPlaceFasterLeft
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
@@ -747,11 +749,11 @@ PetalburgCity_Text_FullPartyExplanation:
 PetalburgCity_Text_GymSign:
 	.string "Arène de Chantiville\n"
 	.string "CHAMPION: Pascal\l"
-	.string "“Énerve-moi, j'vais te taper!”$"
+	.string "“Énerve-moi, j'vais te taper !”$"
 
 PetalburgCity_Text_CitySign:
-	.string "CHANTIVILLE\n"
-	.string "“Ville d'Art et d'Histoire.”$"
+	.string "Chantiville\n"
+	.string "“Une ville connue par sa crème.”$"
 
 PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"

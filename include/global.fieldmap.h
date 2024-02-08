@@ -234,6 +234,7 @@ struct ObjectEventGraphicsInfo
     /*0x06*/ u16 size;
     /*0x08*/ s16 width;
     /*0x0A*/ s16 height;
+    /*0x09*/ u8 textColor:4;
     /*0x0C*/ u8 paletteSlot:4;
              u8 shadowSize:2;
              u8 inanimate:1;

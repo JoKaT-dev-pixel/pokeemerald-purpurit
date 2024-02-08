@@ -280,20 +280,20 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
 // The keys shown on the keyboard are handled separately by sNamingScreenKeyboardText
 static const u8 sKeyboardChars[KBPAGE_COUNT][KBROW_COUNT][KBCOL_COUNT] = {
     [KEYBOARD_LETTERS_LOWER] = {
-        __("abcdef ."),
-        __("ghijkl ,"),
+        __("abcdefé "),
+        __("ghijklë "),
         __("mnopqrs "),
         __("tuvwxyz "),
     },
     [KEYBOARD_LETTERS_UPPER] = {
-        __("ABCDEF ."),
-        __("GHIJKL ,"),
+        __("ABCDEFÉ "),
+        __("GHIJKLË "),
         __("MNOPQRS "),
         __("TUVWXYZ "),
     },
     [KEYBOARD_SYMBOLS] = {
-        __("01234   "),
-        __("56789   "),
+        __("01234.  "),
+        __("56789,  "),
         __("!?♂♀/-  "),
         __("…“”‘'   "),
     }
@@ -458,7 +458,7 @@ void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGende
         sNamingScreen->destBuffer = destBuffer;
         sNamingScreen->returnCallback = returnCallback;
 
-        if (templateNum == NAMING_SCREEN_PLAYER)
+        if (templateNum == NAMING_SCREEN_PLAYER || NAMING_SCREEN_RIVAL)
             StartTimer1();
 
         SetMainCallback2(CB2_LoadNamingScreen);

@@ -664,25 +664,25 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
 #if P_FAMILY_ZIGZAGOON
 #define ZIGZAGOON_MISC_INFO                                                     \
-        .baseHP        = 38,                                                    \
-        .baseAttack    = 30,                                                    \
-        .baseDefense   = 41,                                                    \
+        .baseHP        = 55,                                                    \
+        .baseAttack    = 80,                                                    \
+        .baseDefense   = 50,                                                    \
         .baseSpeed     = 60,                                                    \
-        .baseSpAttack  = 30,                                                    \
-        .baseSpDefense = 41,                                                    \
+        .baseSpAttack  = 40,                                                    \
+        .baseSpDefense = 40,                                                    \
         .catchRate = 255,                                                       \
         .expYield = 56,                                                         \
-        .evYield_Speed = 1,                                                     \
+        .evYield_Attack = 1,                                                     \
         .genderRatio = PERCENT_FEMALE(50),                                      \
         .eggCycles = 15,                                                        \
         .friendship = STANDARD_FRIENDSHIP,                                      \
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },                      \
-        .abilities = { ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET },  \
-        .speciesName = _("Zigzagoon"),                                          \
+        .abilities = { ABILITY_BALL_FETCH, ABILITY_SCRAPPY, ABILITY_STRONG_JAW },  \
+        .speciesName = _("Castoutou"),                                          \
         .cryId = CRY_ZIGZAGOON,                                                 \
         .natDexNum = NATIONAL_DEX_ZIGZAGOON,                                    \
-        .categoryName = _("Tiny Raccoon"),                                      \
+        .categoryName = _("Bagarre"),                                      \
         .height = 4,                                                            \
         .weight = 175,                                                          \
         .pokemonScale = 560,                                                    \
@@ -725,9 +725,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_ZIGZAGOON] =
     {
         ZIGZAGOON_MISC_INFO,
-        .types = { TYPE_NORMAL, TYPE_NORMAL },
-        .itemCommon = ITEM_POTION,
-        .itemRare = ITEM_REVIVE,
+        .types = { TYPE_NORMAL, TYPE_FIGHTING },
         .bodyColor = BODY_COLOR_BROWN,
         .description = COMPOUND_STRING(
             "Rubbing its nose against the ground, it\n"
@@ -744,7 +742,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         PALETTES(Zigzagoon),
         ICON(Zigzagoon, 2),
         LEARNSETS(Zigzagoon),
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_LINOONE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_LINOONE}),
     },
 
     [SPECIES_LINOONE] =

@@ -1065,8 +1065,8 @@ Route104_Text_RouteSignPetalburg:
 	.string "{RIGHT_ARROW} PETALBURG CITY$"
 
 Route104_Text_RouteSignRustboro:
-	.string "ROUTE 1O4\n"
-	.string "{UP_ARROW} RUSTBORO CITY$"
+	.string "{UP_ARROW} Larochelle\n"
+	.string "{DOWN_ARROW} Bois Chantilly$"
 
 Route104_Text_PrettyPetalFlowShop:
 	.string "PRETTY PETAL FLOWER SHOP$"

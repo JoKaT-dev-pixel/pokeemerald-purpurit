@@ -1259,8 +1259,8 @@ RustboroCity_Text_DevonCorpBranchOfficeSign:
 	.string "and authorized personnel.”$"
 
 RustboroCity_Text_CitySign:
-	.string "LAROCHELLE\n"
-	.string "“Ici, ici, c'est Larochelle.”$"
+	.string "Larochelle\n"
+	.string "“Des ruelles au charme d’antan.”$"
 
 RustboroCity_Text_TrainersSchoolSign:
 	.string "CATHÉDRALE$"

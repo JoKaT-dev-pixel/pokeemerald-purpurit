@@ -98,12 +98,39 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	applymovement LOCALID_RIVAL_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
 	special GetRivalSonDaughterString
+	textcolor NPC_TEXT_COLOR_MALE
 	msgbox RivalsHouse_1F_Text_OhYoureTheNewNeighbor, MSGBOX_DEFAULT
+	waitmessage
 	special SetRivalsName
+	waitstate
+	msgbox RivalsHouse_1F_Text_RivalNicknameChoice, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, RivalsHouse_1F_EventScript_RivalNicknameCheck
+	goto_if_eq VAR_RESULT, NO, RivalsHouse_1F_EventScript_RivalNicknameNoCheck
 	waitstate
 	setflag FLAG_MET_RIVAL_MOM
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
 	releaseall
+	end
+
+RivalsHouse_1F_EventScript_RivalNicknameCheck::
+	msgbox RivalsHouse_1F_Text_RivalNicknameCheck, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_MET_RIVAL_MOM
+	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
+	releaseall
+	end
+
+RivalsHouse_1F_EventScript_RivalNicknameNoCheck::
+	msgbox RivalsHouse_1F_Text_RivalNicknameNoCheck, MSGBOX_DEFAULT
+	special SetRivalsName
+	waitstate
+	goto RivalsHouse_1F_EventScript_EventScript_RivalNicknameReset
+	end
+
+RivalsHouse_1F_EventScript_EventScript_RivalNicknameReset::
+	msgbox RivalsHouse_1F_Text_RivalNicknameChoice, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, RivalsHouse_1F_EventScript_RivalNicknameCheck
+	goto_if_eq VAR_RESULT, NO, RivalsHouse_1F_EventScript_RivalNicknameNoCheck
 	end
 
 LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
@@ -333,6 +360,15 @@ RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
 	.string "Our {STR_VAR_1} was excited about making\n"
 	.string "a new friend.\p"
 	.string "Our {STR_VAR_1} is upstairs, I think.$"
+
+RivalsHouse_1F_Text_RivalNicknameChoice:
+	.string "{RIVAL} ?!$"
+
+RivalsHouse_1F_Text_RivalNicknameCheck:
+	.string "My {STR_VAR_1} is upstairs.$"
+
+RivalsHouse_1F_Text_RivalNicknameNoCheck:
+	.string "Quel est son prénom déjà…?$"
 
 RivalsHouse_1F_Text_LikeChildLikeFather:
 	.string "Like child, like father.\p"

@@ -1681,6 +1681,31 @@ bool8 ScrCmd_bufferboxname(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_textcolor(struct ScriptContext *ctx)
+{
+    u8 textColor = ScriptReadByte(ctx);
+    if (textColor == NPC_TEXT_COLOR_PREVIOUS)
+    {
+        gSpecialVar_TextColor = gSpecialVar_PrevTextColor;
+    }
+    else
+    {
+        gSpecialVar_PrevTextColor = gSpecialVar_TextColor;
+        if (textColor == NPC_TEXT_COLOR_RIVAL)
+        {
+            if (gSaveBlock2Ptr->playerGender != MALE)
+                gSpecialVar_TextColor = NPC_TEXT_COLOR_MALE;
+            else
+                gSpecialVar_TextColor = NPC_TEXT_COLOR_FEMALE;
+        }
+        else
+        {
+            gSpecialVar_TextColor = textColor;
+        }
+    }
+    return FALSE;
+}
+
 bool8 ScrCmd_givemon(struct ScriptContext *ctx)
 {
     u16 species = VarGet(ScriptReadHalfword(ctx));

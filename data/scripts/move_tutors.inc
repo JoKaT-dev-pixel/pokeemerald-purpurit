@@ -266,5 +266,7 @@ MoveTutor_EventScript_OpenPartyMenu::
 	return
 
 MoveTutor_EventScript_CanOnlyBeLearnedOnce::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce, MSGBOX_YESNO
+	textcolor NPC_TEXT_COLOR_PREVIOUS
 	return
