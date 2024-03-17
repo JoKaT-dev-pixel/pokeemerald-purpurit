@@ -946,8 +946,9 @@ static const u8 sEncoreDescription[] = _(
     "last move over 2 to 6 turns.");
 
 static const u8 sPursuitDescription[] = _(
-    "Inflicts bad damage if used\n"
-    "on a foe switching out.");
+    "Une attaque qui inflige deux\n"
+    "fois plus de dégâts à un\n"
+    "ennemi qui quitte le combat.");
 
 static const u8 sRapidSpinDescription[] = _(
     "Spins the body at high\n"
@@ -2833,8 +2834,9 @@ static const u8 sBreakingSwipeDescription[] = _(
     "Lowers the Atk of those hit.");
 
 static const u8 sBranchPokeDescription[] = _(
-    "The user pokes the target\n"
-    "with a pointed branch.");
+    "Le lanceur attaque l'ennemi en\n"
+    "le piquant avec une branche\n"
+    "pointue.");
 
 static const u8 sOverdriveDescription[] = _(
     "The user twangs its guitar,\n"
@@ -2921,8 +2923,9 @@ static const u8 sSkitterSmackDescription[] = _(
     "attack. Lowers foe's Sp. Atk.");
 
 static const u8 sBurningJealousyDescription[] = _(
-    "Foes that have stats upped\n"
-    "during the turn get burned.");
+    "Brûle tout Pokémon dont les\n"
+    "stats ont augmenté pendant\n"
+    "ce tour.");
 
 static const u8 sLashOutDescription[] = _(
     "If stats lowered during this\n"
@@ -3005,8 +3008,9 @@ static const u8 sEerieSpellDescription[] = _(
     "Foe's last move has 3 PP cut.");
 
 static const u8 sDireClawDescription[] = _(
-    "High critical hit chance. May\n"
-    "paralyze, poison or drowse.");
+    "Attaque l'ennemi avec des griffes\n"
+    "solides. Peut empoisonner,\n"
+    "paralyser, ou endormir.");
 
 static const u8 sPsyshieldBashDescription[] = _(
     "Hits a foe with psychic\n"

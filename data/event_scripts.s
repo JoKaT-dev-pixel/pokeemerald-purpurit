@@ -729,6 +729,21 @@ Common_EventScript_OutOfCenterPartyHeal::
 	fadescreen FADE_FROM_BLACK
 	return
 
+Common_EventScript_Buzzcut::
+	fadescreen FADE_TO_BLACK
+	playse SE_M_SCRATCH
+	waitse
+	playse SE_M_SCRATCH
+	waitse
+	playse SE_M_SCRATCH
+	waitse
+	playse SE_M_SCRATCH
+	waitse
+	playse SE_M_CUT
+	waitse
+	fadescreen FADE_FROM_BLACK
+	return
+
 EventScript_RegionMap::
 	lockall
 	msgbox Common_Text_LookCloserAtMap, MSGBOX_DEFAULT

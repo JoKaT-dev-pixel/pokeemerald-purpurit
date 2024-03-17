@@ -1344,7 +1344,7 @@
     {
       "id": "LAYOUT_PETALBURG_WOODS",
       "name": "PetalburgWoods_Layout",
-      "width": 48,
+      "width": 58,
       "height": 58,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",

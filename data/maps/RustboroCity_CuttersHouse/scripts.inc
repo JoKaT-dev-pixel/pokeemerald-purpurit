@@ -6,6 +6,9 @@ RustboroCity_CuttersHouse_EventScript_Cutter::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_HM_CUT, RustboroCity_CuttersHouse_EventScript_ExplainCut
 	msgbox RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse, MSGBOX_DEFAULT
+	closemessage
+	call Common_EventScript_Buzzcut
+	delay 30
 	giveitem ITEM_HM_CUT
 	setflag FLAG_RECEIVED_HM_CUT
 	msgbox RustboroCity_CuttersHouse_Text_ExplainCut, MSGBOX_DEFAULT
@@ -22,16 +25,14 @@ RustboroCity_CuttersHouse_EventScript_Lass::
 	end
 
 RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse:
-	.string "That determined expression…\n"
-	.string "That limber way you move…\l"
-	.string "And your well-trained POKéMON…\p"
-	.string "You're obviously a skilled TRAINER!\p"
-	.string "No, wait, don't say a word.\n"
-	.string "I can tell just by looking at you.\p"
-	.string "I'm sure that you can put this\n"
-	.string "HIDDEN MACHINE to good use.\p"
-	.string "No need to be modest or shy.\n"
-	.string "Go on, take it!$"
+	.string "Jr.Golden Hands: Alors mon gars,\n"
+	.string "comment ça va ?\p"
+	.string "Alors dis-moi, tu veux faire quoi\n"
+	.string "comme coupe ?\p"
+	.string "… … … … … … … … …\p"
+	.string "Une Buzzcut ?\p"
+	.string "C'est carré mon gars. C'est parti,\n"
+	.string "LET'S GO !$"
 
 RustboroCity_CuttersHouse_Text_ExplainCut:
 	.string "That HIDDEN MACHINE, or HM for\n"

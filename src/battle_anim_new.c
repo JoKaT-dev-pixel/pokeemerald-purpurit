@@ -99,6 +99,7 @@ static void SpriteCB_GlacialLance_Step1(struct Sprite* sprite);
 static void SpriteCB_GlacialLance_Step2(struct Sprite* sprite);
 static void SpriteCB_GlacialLance(struct Sprite* sprite);
 static void SpriteCB_TripleArrowKick(struct Sprite* sprite);
+static void AnimBranchHitProjectile(struct Sprite *);
 
 // const data
 // general
@@ -3920,6 +3921,18 @@ const struct SpriteTemplate gBranchPokeBranchTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimShadowBall
+};
+
+//New animation branch poke
+const struct SpriteTemplate gSpinningBranchSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BRANCH,
+    .paletteTag = ANIM_TAG_BRANCH,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gAffineAnims_SpinningBone,
+    .callback = AnimBranchHitProjectile
 };
 
 //apple acid
@@ -9160,4 +9173,24 @@ void AnimTask_StickySyrup(u8 taskId)
 {
     gBattleAnimArgs[0] = gAnimDisableStructPtr->syrupBombIsShiny;
     DestroyAnimVisualTask(taskId);
+}
+
+// Moves a branch projectile towards the target mon, starting right next to
+// the target mon.
+// arg 0: initial x pixel offset
+// arg 1: initial y pixel offset
+// arg 2: target x pixel offset
+// arg 3: target y pixel offset
+// arg 4: duration
+static void AnimBranchHitProjectile(struct Sprite *sprite)
+{
+    InitSpritePosToAnimTarget(sprite, TRUE);
+    if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)
+        gBattleAnimArgs[2] = -gBattleAnimArgs[2];
+
+    sprite->data[0] = gBattleAnimArgs[4];
+    sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2) + gBattleAnimArgs[2];
+    sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[3];
+    sprite->callback = StartAnimLinearTranslation;
+    StoreSpriteCallbackInData6(sprite, DestroyAnimSprite);
 }

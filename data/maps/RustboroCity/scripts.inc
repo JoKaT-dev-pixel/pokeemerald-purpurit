@@ -1263,10 +1263,10 @@ RustboroCity_Text_CitySign:
 	.string "“Des ruelles au charme d’antan.”$"
 
 RustboroCity_Text_TrainersSchoolSign:
-	.string "CATHÉDRALE$"
+	.string "Cathédrale$"
 
 RustboroCity_Text_CuttersHouse:
-	.string "BARBER SHOP$"
+	.string "Golden Barber$"
 
 RustboroCity_Text_DevelopedNewPokenavFeature:
 	.string "I've been developing an added feature\n"
