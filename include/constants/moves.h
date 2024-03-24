@@ -926,7 +926,7 @@
 #define MOVE_FIRE_BREATH 859
 #define MOVE_OIL_BOMB 860
 #define MOVE_KAMIKAZE 861
-#define MOVE_BUBBLE_JET 862
+#define MOVE_CRAB_RAVE 862
 #define MOVE_PSYCHO_HERB 863
 #define MOVE_PEPPER_POWDER 864
 #define MOVE_MAGIC_BEAN 865
@@ -1053,6 +1053,8 @@
 #define LAST_MAX_MOVE         MOVE_G_MAX_RAPID_FLOW
 
 #define MOVES_COUNT_DYNAMAX       (LAST_MAX_MOVE + 1)
+
+#define MOVES_COUNT_ALL         MOVES_COUNT_DYNAMAX
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

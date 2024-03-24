@@ -20,7 +20,7 @@ EventScript_BufferPocketNameAndTryFanfare::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	switch VAR_RESULT
 	case POCKET_ITEMS,      EventScript_BufferItemsPocket
-	case POCKET_MEDICINE,   EventScript_BufferMedicinePocket
+	case POCKET_MEDICINES,  EventScript_BufferMedicinesPocket
 	case POCKET_KEY_ITEMS,  EventScript_BufferKeyItemsPocket
 	case POCKET_POKE_BALLS, EventScript_BufferPokeballsPocket
 	case POCKET_TM_HM,      EventScript_BufferTMHMsPocket
@@ -32,8 +32,8 @@ EventScript_BufferItemsPocket::
 	call_if_eq VAR_0x8007, TRUE, EventScript_PlayFanfareObtainedItem
 	return
 
-EventScript_BufferMedicinePocket::
-	bufferstdstring STR_VAR_3, STDSTRING_MEDICINE
+EventScript_BufferMedicinesPocket::
+	bufferstdstring STR_VAR_3, STDSTRING_MEDICINES
 	call_if_eq VAR_0x8007, TRUE, EventScript_PlayFanfareObtainedItem
 	return
 
@@ -58,7 +58,14 @@ EventScript_BufferBerriesPocket::
 	return
 
 EventScript_ObtainedItem::
+	compare VAR_0x8001, TRUE
+	goto_if_eq EventScript_ObtainedItemMessage
+	buffernumberstring 0, VAR_0x8001
+	message gText_ObtainedTheItems
+	goto EventScript_ContinueObtainedItem
+EventScript_ObtainedItemMessage:
 	message gText_ObtainedTheItem
+EventScript_ContinueObtainedItem:
 	waitfanfare
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	setvar VAR_RESULT, TRUE
@@ -139,10 +146,23 @@ EventScript_PutBattlePyramidItemInBag::
 
 EventScript_FoundTMHM::
 	bufferitemnameplural STR_VAR_1, VAR_0x8004, VAR_0x8005
+	compare VAR_0x8005, 2
+	goto_if_lt EventScript_FoundTMHMMessage
+	buffernumberstring STR_VAR_3, VAR_0x8005
+	message gText_PlayerFoundTMHMs
+	goto EventScript_BufferTMHMsPocket
+	return
+EventScript_FoundTMHMMessage::
 	message gText_PlayerFoundOneTMHM
 	return
 
 EventScript_FoundItem::
+	compare VAR_0x8001, TRUE
+	goto_if_eq EventScript_FoundItemMessage
+	buffernumberstring 0, VAR_0x8001
+	message gText_PlayerFoundItems
+	return
+EventScript_FoundItemMessage::
 	message gText_PlayerFoundOneItem
 	return
 

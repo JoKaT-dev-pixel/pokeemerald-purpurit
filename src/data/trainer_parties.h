@@ -3224,17 +3224,15 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     {
     .iv = TRAINER_PARTY_IVS(16, 16, 16, 16, 16, 16),
     .ev = TRAINER_PARTY_EVS(4, 4, 4, 4, 4, 16),
-    .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
     .lvl = 12,
     .species = SPECIES_GEODUDE,
-    .ability = ABILITY_UNAWARE,
+    .ability = ABILITY_STURDY,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_ROCK_TOMB, MOVE_PETRIFY, MOVE_MUD_SLAP, MOVE_ROCK_SMASH}
     },
     {
     .iv = TRAINER_PARTY_IVS(16, 16, 16, 16, 16, 16),
     .ev = TRAINER_PARTY_EVS(4, 4, 4, 4, 4, 4),
-    .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
     .lvl = 13,
     .species = SPECIES_LILEEP,
     .ability = ABILITY_SOLID_ROCK,
@@ -3244,7 +3242,6 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     {
     .iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20),
     .ev = TRAINER_PARTY_EVS(8, 8, 8, 8, 8, 8),
-    .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
     .lvl = 15,
     .species = SPECIES_NOSEPASS,
     .ability = ABILITY_ROCK_HEAD,
@@ -3257,7 +3254,6 @@ static const struct TrainerMon sParty_Brawly1[] = {
     {
     .iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20),
     .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
-    .nature = TRAINER_PARTY_NATURE(NATURE_JOLLY),
     .lvl = 17,
     .species = SPECIES_MACHOP,
     .ability = ABILITY_LIMBER,
@@ -3268,7 +3264,6 @@ static const struct TrainerMon sParty_Brawly1[] = {
     {
     .iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20),
     .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
-    .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
     .lvl = 18,
     .species = SPECIES_ANORITH,
     .ability = ABILITY_DEFIANT,
@@ -3279,7 +3274,6 @@ static const struct TrainerMon sParty_Brawly1[] = {
     {
     .iv = TRAINER_PARTY_IVS(22, 22, 22, 22, 22, 22),
     .ev = TRAINER_PARTY_EVS(40, 8, 8, 12, 0, 0),
-    .nature = TRAINER_PARTY_NATURE(NATURE_IMPISH),
     .lvl = 20,
     .species = SPECIES_MACHOKE,
     .ability = ABILITY_HUGE_POWER,
@@ -4107,13 +4101,11 @@ static const struct TrainerMon sParty_Josh[] = {
     .iv = 0,
     .lvl = 10,
     .species = SPECIES_SLAKOTH,
-    .moves = {MOVE_TACKLE, MOVE_FOCUS_ENERGY, MOVE_SMOKESCREEN, MOVE_HEADBUTT}
     },
     {
     .iv = 0,
     .lvl = 11,
     .species = SPECIES_GEODUDE,
-    .moves = {MOVE_ROCK_THROW, MOVE_TACKLE, MOVE_HARDEN, MOVE_ROCK_SMASH}
     }
 };
 
@@ -7673,14 +7665,14 @@ static const struct TrainerMon sParty_Haley1[] = {
 static const struct TrainerMon sParty_Janice[] = {
     {
     .lvl = 9,
-    .ability = ABILITY_BAD_LUCK,
     .species = SPECIES_TAILLOW,
+    .ability = ABILITY_BAD_LUCK,
     .moves = {MOVE_PECK, MOVE_LEER, MOVE_PURSUIT, MOVE_NONE}
     },
     {
     .lvl = 9,
-    .ability = ABILITY_CLEAR_BODY,
     .species = SPECIES_RALTS,
+    .ability = ABILITY_CLEAR_BODY,
     .moves = {MOVE_ECHOED_VOICE, MOVE_HEAL_PULSE, MOVE_SING, MOVE_NONE}
     }
 };

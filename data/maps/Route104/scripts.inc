@@ -1033,11 +1033,10 @@ Route104_Text_LikeFillingMouthWithSeedsTakeThis:
 	.string "juteuses.\p"
 	.string "Mais surtout, j'aime cracher des graines\n"
 	.string "sur les gens qui me font chier.\p"
-	.string "Tu devrais en prendre aussi et en manger\n"
-	.string "avec ton POKéMON!$"
+	.string "Tu devrais en prendre toi aussi !$"
 
 Route104_Text_TMsAreOneTimeUse:
-	.string "Ceci est une Capsule Technique!\p"
+	.string "Ceci est une Capsule Technique !\p"
 	.string "Avec ça, tu pourras apprendre des\n"
 	.string "nouvelles capacités à ton équipe.\p"
 	.string "J'ai juste lu ce qui est écrit sur\n"
