@@ -110,6 +110,8 @@ static void AnimWavyMusicNotes_Step(struct Sprite *);
 static void AnimWavyMusicNotes_CalcVelocity(s16, s16, s16 *, s16 *, s8);
 static void AnimFlyingMusicNotes(struct Sprite *);
 static void AnimFlyingMusicNotes_Step(struct Sprite *);
+static void AnimFlyingBubblesDance(struct Sprite *);
+static void AnimFlyingBubblesDance_Step(struct Sprite *);
 static void AnimBellyDrumHand(struct Sprite *);
 static void AnimSlowFlyingMusicNotes(struct Sprite *);
 static void AnimSlowFlyingMusicNotes_Step(struct Sprite *);
@@ -2297,6 +2299,17 @@ const struct SpriteTemplate gFastFlyingMusicNotesSpriteTemplate =
     .images = NULL,
     .affineAnims = gMusicNotesAffineAnimTable,
     .callback = AnimFlyingMusicNotes,
+};
+
+const struct SpriteTemplate gFastFlyingBubblesDanceSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ICE_CRYSTALS,
+    .paletteTag = ANIM_TAG_ICE_CRYSTALS,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gAnims_SmallBubblePair,
+    .images = NULL,
+    .affineAnims = gMusicNotesAffineAnimTable,
+    .callback = AnimFlyingBubblesDance,
 };
 
 const struct SpriteTemplate gBellyDrumHandSpriteTemplate =
@@ -6865,6 +6878,42 @@ static void AnimFlyingMusicNotes(struct Sprite *sprite)
 }
 
 static void AnimFlyingMusicNotes_Step(struct Sprite *sprite)
+{
+    sprite->data[4] += sprite->data[6];
+    sprite->data[5] += sprite->data[7];
+    sprite->x = sprite->data[4] >> 4;
+    sprite->y = sprite->data[5] >> 4;
+    if (sprite->data[0] > 5 && sprite->data[3] == 0)
+    {
+        sprite->data[2] = (sprite->data[2] + 16) & 0xFF;
+        sprite->x2 = Cos(sprite->data[2], 18);
+        sprite->y2 = Sin(sprite->data[2], 18);
+        if (sprite->data[2] == 0)
+            sprite->data[3] = 1;
+    }
+
+    if (++sprite->data[0] == 48)
+        DestroySpriteAndMatrix(sprite);
+}
+
+static void AnimFlyingBubblesDance(struct Sprite *sprite)
+{
+    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_OPPONENT)
+        gBattleAnimArgs[1] *= -1;
+
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + gBattleAnimArgs[1];
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[2];
+    StartSpriteAnim(sprite, gBattleAnimArgs[0]);
+    sprite->data[2] = 0;
+    sprite->data[3] = 0;
+    sprite->data[4] = sprite->x << 4;
+    sprite->data[5] = sprite->y << 4;
+    sprite->data[6] = (gBattleAnimArgs[1] << 4) / 5;
+    sprite->data[7] = (gBattleAnimArgs[2] << 7) / 5;
+    sprite->callback = AnimFlyingBubblesDance_Step;
+}
+
+static void AnimFlyingBubblesDance_Step(struct Sprite *sprite)
 {
     sprite->data[4] += sprite->data[6];
     sprite->data[5] += sprite->data[7];

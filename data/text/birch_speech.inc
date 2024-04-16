@@ -39,14 +39,15 @@ gText_Birch_SoItsPlayer::
 	.string "{PLAYER}{KUN} ?$"
 
 gText_Birch_YourePlayer::
-	.string "Désormais tu seras le protagoniste\n"
-	.string "de cette nouvelle aventure palpitante\l"
-	.string "et inoubliable.\p"
+	.string "D'accord {PLAYER}{KUN}.\p"
+	.string "Je serai dans mon labo demain matin à\n"
+	.string "Bourg Paumé. Ne sois pas en retard.\p"
 	.string "$"
 
 gText_Birch_AreYouReady::
-	.string "On se donne rendez-vous demain matin\n"
-	.string "dans mon labo.\p"
+	.string "Désormais tu seras le protagoniste\n"
+	.string "de cette nouvelle aventure palpitante\l"
+	.string "et inoubliable.\p"
 	.string "En attendant, vous autres je vais\n"
 	.string "devoir vous laisser et je vous dis,\l"
 	.string "à la prochaine !\p"

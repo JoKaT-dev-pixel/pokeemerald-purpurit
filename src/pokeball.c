@@ -72,6 +72,8 @@ static u16 GetBattlerPokeballItemId(u8 battlerId);
 #define GFX_TAG_PARK_BALL    55024
 #define GFX_TAG_BEAST_BALL   55025
 #define GFX_TAG_CHERISH_BALL 55026
+#define GFX_TAG_RUST_BALL    55027
+#define GFX_TAG_BLACK_BALL   55028
 
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
@@ -102,6 +104,8 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_PARK]    = {gBallGfx_Park,    384, GFX_TAG_PARK_BALL},
     [BALL_BEAST]   = {gBallGfx_Beast,   384, GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallGfx_Cherish, 384, GFX_TAG_CHERISH_BALL},
+    [BALL_RUST]    = {gBallGfx_Rust,    384, GFX_TAG_RUST_BALL},
+    [BALL_BLACK]   = {gBallGfx_Black,   384, GFX_TAG_BLACK_BALL},
 };
 
 const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
@@ -133,6 +137,8 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_PARK]    = {gBallPal_Park,    GFX_TAG_PARK_BALL},
     [BALL_BEAST]   = {gBallPal_Beast,   GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallPal_Cherish, GFX_TAG_CHERISH_BALL},
+    [BALL_RUST]    = {gBallPal_Rust,    GFX_TAG_RUST_BALL},
+    [BALL_BLACK]   = {gBallPal_Black,   GFX_TAG_BLACK_BALL},
 };
 
 static const struct OamData sBallOamData =
@@ -514,6 +520,27 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
     {
         .tileTag = GFX_TAG_CHERISH_BALL,
         .paletteTag = GFX_TAG_CHERISH_BALL,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+    [BALL_RUST] =
+    {
+        .tileTag = GFX_TAG_RUST_BALL,
+        .paletteTag = GFX_TAG_RUST_BALL,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+
+    [BALL_BLACK] =
+    {
+        .tileTag = GFX_TAG_BLACK_BALL,
+        .paletteTag = GFX_TAG_BLACK_BALL,
         .oam = &sBallOamData,
         .anims = sBallAnimSequences,
         .images = NULL,

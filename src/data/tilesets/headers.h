@@ -836,3 +836,14 @@ const struct Tileset gTileset_NewOdale =
     .metatileAttributes = gMetatileAttributes_NewOdale,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Cathedral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Cathedral,
+    .palettes = gTilesetPalettes_Cathedral,
+    .metatiles = gMetatiles_Cathedral,
+    .metatileAttributes = gMetatileAttributes_Cathedral,
+    .callback = NULL,
+};

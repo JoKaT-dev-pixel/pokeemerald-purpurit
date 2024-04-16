@@ -159,9 +159,9 @@ const struct Item gItemsInfo[] =
         .name = _("Poké Ball"),
         .price = 200,
         .description = COMPOUND_STRING(
-            "A tool used for\n"
-            "catching wild\n"
-            "Pokémon."),
+            "Un objet qui permet\n"
+            "d'attraper les\n"
+            "Pokémon sauvages."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
@@ -533,6 +533,34 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
         .secondaryId = ITEM_CHERISH_BALL - FIRST_BALL,
+    },
+
+    [ITEM_RUST_BALL] =
+    {
+        .name = _("Crasse Ball"),
+        .price = 5,
+        .description = COMPOUND_STRING(
+            "Un objet bousiller\n"
+            "qui se jète comme\n"
+            "comme une balle."),
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_RUST_BALL - FIRST_BALL,
+    },
+
+    [ITEM_BLACK_BALL] =
+    {
+        .name = _("Street Ball"),
+        .price = (I_PRICE < GEN_3 || I_PRICE >= GEN_9) ? 0 : 300,
+        .description = COMPOUND_STRING(
+            "A special Ball used\n"
+            "in the Bug-Catching\n"
+            "Contest."),
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_BLACK_BALL - FIRST_BALL,
     },
 
 // Medicine
@@ -6688,15 +6716,15 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SILK_SCARF] =
     {
-        .name = _("Silk Scarf"),
+        .name = _("Mouchoir Soie"),
         .pluralName = _("Silk Scarves"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_NORMAL_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "raises the power of\n"
-            "Normal-type moves."),
+            "Objet tenu montant\n"
+            "la puissance des\n"
+            "attaques Normal."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -9813,7 +9841,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_TM_ROCK_TOMB] =
     {
-        .name = _("TM39"),
+        .name = _("CT39"),
         .price = 3000,
         .description = COMPOUND_STRING(
             "Stops the foe from\n"

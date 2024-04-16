@@ -7,8 +7,9 @@ Route102_Text_CalvinDefeated:
 	.string "Je veux mon skin…$"
 
 Route102_Text_CalvinPostBattle:
-	.string "Listen, you. If you're strong,\n"
-	.string "you should have told me before!$"
+	.string "La prochaine fois je gagnerai et\n"
+	.string "j'aurai mon super skin Fortnite.\p"
+	.string "C'est sûr !$"
 
 Route102_Text_CalvinRegister:
 	.string "I've been working hard at this since\n"
@@ -294,7 +295,8 @@ Route104_Text_IvanPostBattle:
 	.string "I forgot I had to raise my POKéMON…$"
 
 Route104_Text_BillyIntro:
-	.string "NARUTO RUUUUUUUUUUN !!!!$"
+	.string "Toi aussi tu cherches une trèfle\n"
+	.string "à quatre feuilles ?!$"
 
 Route104_Text_BillyDefeat:
 	.string "Waah! I got sand in my runners!\n"

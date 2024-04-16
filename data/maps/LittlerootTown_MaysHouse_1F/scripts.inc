@@ -362,7 +362,7 @@ RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
 	.string "Our {STR_VAR_1} is upstairs, I think.$"
 
 RivalsHouse_1F_Text_RivalNicknameChoice:
-	.string "{RIVAL} ?!$"
+	.string "As-tu dit “{RIVAL}” ?!$"
 
 RivalsHouse_1F_Text_RivalNicknameCheck:
 	.string "My {STR_VAR_1} is upstairs.$"

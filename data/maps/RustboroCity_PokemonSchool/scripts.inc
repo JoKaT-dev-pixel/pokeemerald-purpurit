@@ -81,6 +81,8 @@ RustboroCity_PokemonSchool_EventScript_Teacher::
 	call_if_eq VAR_FACING, DIR_EAST, RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsEast
 	call_if_eq VAR_FACING, DIR_WEST, RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsWest
 	msgbox RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_OLD_MAN_CATHEDRAL, RustboroCity_Text_OldmanDefeat
+	msgbox RustboroCity_PokemonSchool_Text_ExplainQuickClaw, MSGBOX_DEFAULT
 	giveitem ITEM_SILK_SCARF
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	closemessage
@@ -110,6 +112,8 @@ RustboroCity_PokemonSchool_EventScript_GaveQuickClaw::
 
 RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsWest:
 	walk_left
+	walk_left
+	walk_down
 	walk_down
 	walk_down
 	walk_right
@@ -130,12 +134,16 @@ RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsWest:
 	walk_left
 	walk_up
 	walk_up
+	walk_up
+	walk_right
 	walk_right
 	step_end
 
 RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast:
 	walk_right
 	walk_right
+	walk_right
+	walk_down
 	walk_down
 	walk_down
 	walk_left
@@ -156,6 +164,8 @@ RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast:
 	walk_right
 	walk_up
 	walk_up
+	walk_up
+	walk_left
 	walk_left
 	walk_left
 	step_end
@@ -244,11 +254,16 @@ RustboroCity_PokemonSchool_Text_ExplainFreeze:
 	.string "Thaw it out using an ICE HEAL.$"
 
 RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw:
-	.string "Students who don't study get a little\n"
-	.string "taste of my QUICK CLAW.\p"
-	.string "Whether or not you are a good student \n"
-	.string "will be evident from the way you use\l"
-	.string "this item.$"
+	.string "Bienvenue à toi mon enfant !\p"
+	.string "Cette cathédrale est un lieu sacré\n"
+	.string "où Pokémon et humains se réunissent\l"
+	.string "en priant notre seigneur.\p"
+	.string "Tu es là aujourd'hui car tu sais\n"
+	.string "qu'au fond de toi, tu as commis\l"
+	.string "des erreurs et tu es venu ici\l"
+	.string "pour que notre seigneur te pardonne.\p"
+	.string "À moi de te tester si tu es digne\n"
+	.string "d'expier tes péchés.$"
 
 RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 	.string "A POKéMON holding the QUICK CLAW will\n"
@@ -258,6 +273,10 @@ RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 	.string "meant to be held by POKéMON.\p"
 	.string "Just those alone will give you many\n"
 	.string "topics to study!$"
+
+RustboroCity_Text_OldmanDefeat:
+	.string "Que notre seigneur te guide.\p"
+	.string "Amen !$"
 
 RustboroCity_PokemonSchool_Text_TradingRightNow:
 	.string "I'm trading POKéMON with my friend\n"

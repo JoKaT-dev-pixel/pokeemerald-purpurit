@@ -1653,3 +1653,22 @@ const u16 gTilesetPalettes_NewOdale[][16] =
 };
 
 const u32 gTilesetTiles_NewOdale[] = INCBIN_U32("data/tilesets/secondary/new_odale/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Cathedral[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/cathedral/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Cathedral[] = INCBIN_U32("data/tilesets/secondary/cathedral/tiles.4bpp.lz");

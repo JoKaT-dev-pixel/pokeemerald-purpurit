@@ -191,7 +191,37 @@ RustboroCity_EventScript_Twin::
 	end
 
 RustboroCity_EventScript_NinjaBoy::
-	msgbox RustboroCity_Text_CatchRarePokemonIfIGoToSchool, MSGBOX_SIGN
+	showmoneybox 0, 0
+	msgbox RustboroCity_Text_CatchRarePokemonIfIGoToSchool, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, RustboroCity_SDF_EventScript_BuyRustBall
+	msgbox RustboroCity_SDF_Text_ThatsTooBad, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+RustboroCity_SDF_EventScript_BuyRustBall::
+	checkmoney 100
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_SDF_EventScript_NotEnoughMoney
+	checkitemspace ITEM_RUST_BALL
+	goto_if_eq VAR_RESULT, FALSE, RustboroCity_SDF_EventScript_NotEnoughSpace
+	msgbox RustboroCity_SDF_Text_HereYouGo, MSGBOX_DEFAULT
+	removemoney 100
+	updatemoneybox
+	giveitem ITEM_RUST_BALL, 5
+	hidemoneybox
+	release
+	end
+
+RustboroCity_SDF_EventScript_NotEnoughMoney::
+	msgbox RustboroCity_SDF_Text_NotEnoughMoney, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+RustboroCity_SDF_EventScript_NotEnoughSpace::
+	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+	hidemoneybox
+	release
 	end
 
 RustboroCity_EventScript_TunnelSign::
@@ -250,7 +280,7 @@ RustboroCity_EventScript_Man2::
 
 RustboroCity_EventScript_StolenGoodsTrigger0::
 	lockall
-	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 19
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 20
 	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
 	setvar VAR_0x8004, 0
 	goto RustboroCity_EventScript_StolenGoodsScene
@@ -258,7 +288,7 @@ RustboroCity_EventScript_StolenGoodsTrigger0::
 
 RustboroCity_EventScript_StolenGoodsTrigger1::
 	lockall
-	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 19
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 20
 	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
 	setvar VAR_0x8004, 1
 	goto RustboroCity_EventScript_StolenGoodsScene
@@ -266,7 +296,7 @@ RustboroCity_EventScript_StolenGoodsTrigger1::
 
 RustboroCity_EventScript_StolenGoodsTrigger2::
 	lockall
-	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 19
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 20
 	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
 	setvar VAR_0x8004, 2
 	goto RustboroCity_EventScript_StolenGoodsScene
@@ -274,7 +304,7 @@ RustboroCity_EventScript_StolenGoodsTrigger2::
 
 RustboroCity_EventScript_StolenGoodsTrigger3::
 	lockall
-	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 19
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 20
 	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
 	setvar VAR_0x8004, 3
 	goto RustboroCity_EventScript_StolenGoodsScene
@@ -282,7 +312,7 @@ RustboroCity_EventScript_StolenGoodsTrigger3::
 
 RustboroCity_EventScript_StolenGoodsTrigger4::
 	lockall
-	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 19
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 13, 20
 	setobjectmovementtype LOCALID_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
 	setvar VAR_0x8004, 4
 	goto RustboroCity_EventScript_StolenGoodsScene
@@ -305,7 +335,7 @@ RustboroCity_EventScript_StolenGoodsScene::
 	waitmovement 0
 	fadedefaultbgm
 	removeobject LOCALID_DEVON_EMPLOYEE
-	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 30, 10
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 30, 9
 	clearflag FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1
 	setflag FLAG_DEVON_GOODS_STOLEN
 	setvar VAR_RUSTBORO_CITY_STATE, 2
@@ -415,6 +445,8 @@ RustboroCity_Movement_EmployeeChaseGrunt1:
 	step_end
 
 RustboroCity_Movement_EmployeeChaseGrunt2:
+	walk_fast_up
+	walk_fast_up
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -1087,9 +1119,23 @@ RustboroCity_Text_WowYouHavePokemon:
 	.string "places with POKéMON, too.$"
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
-	.string "POKéMON TRAINER'S SCHOOL!\p"
-	.string "If I go to this school, will I be able\n"
-	.string "to catch rare POKéMON easily?$"
+	.string "Je vends des Poké Ball très spéciales\n"
+	.string "et très résistantes.\p"
+	.string "Ça te fera seulement 100 ¥ pour 5\n"
+	.string "Poké Ball, ça marche ?$"
+
+RustboroCity_SDF_Text_HereYouGo:
+	.string "Hehehe…\p"
+	.string "Quel pigeon celui-là.\p"
+	.string "Euh je veux dire…\p"
+	.string "Voilà tes Poké Ball !$"
+
+RustboroCity_SDF_Text_NotEnoughMoney:
+	.string "You don't have the money.$"
+
+RustboroCity_SDF_Text_ThatsTooBad:
+	.string "No?\n"
+	.string "That's too bad.$"
 
 RustboroCity_Text_PokemonCanChangeLookFromExp:
 	.string "If a POKéMON gains experience in\n"

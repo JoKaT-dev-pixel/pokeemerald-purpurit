@@ -260,7 +260,7 @@ static const u16 sBirchSpeechBgPals[][16] = {
 static const u32 sBirchSpeechShadowGfx[] = INCBIN_U32("graphics/birch_speech/shadow.4bpp.lz");
 static const u32 sBirchSpeechBgMap[] = INCBIN_U32("graphics/birch_speech/map.bin.lz");
 static const u16 sBirchSpeechBgGradientPal[] = INCBIN_U16("graphics/birch_speech/bg2.gbapal");
-static const u16 sBirchSpeechPlatformBlackPal[] = {RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK, RGB_BLACK};
+static const u16 sBirchSpeechPlatformBlackPal[] = {RGB2GBA(244, 220, 255), RGB2GBA(244, 220, 255), RGB2GBA(244, 220, 255), RGB2GBA(244, 220, 255), RGB2GBA(244, 220, 255), RGB2GBA(244, 220, 255), RGB2GBA(244, 220, 255), RGB2GBA(244, 220, 255)};
 
 #define MENU_LEFT 2
 #define MENU_TOP_WIN0 1

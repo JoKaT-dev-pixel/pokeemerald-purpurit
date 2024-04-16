@@ -11,8 +11,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_STENCH] =
     {
-        .name = _("Stench"),
-        .description = COMPOUND_STRING("May cause a foe to flinch."),
+        .name = _("Puanteur"),
+        .description = COMPOUND_STRING("Émet une odeur si nauséabonde\nqu'il peut effrayer sa cible."),
         .aiRating = 1,
     },
 
@@ -103,8 +103,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_CLOUD_NINE] =
     {
-        .name = _("Cloud Nine"),
-        .description = COMPOUND_STRING("Negates weather effects."),
+        .name = _("Ciel Gris"),
+        .description = COMPOUND_STRING("Annule tous les effets liés\nà la météo."),
         .aiRating = 5,
     },
 
@@ -428,8 +428,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_HUSTLE] =
     {
-        .name = _("Hustle"),
-        .description = COMPOUND_STRING("Trades accuracy for power."),
+        .name = _("Agitation"),
+        .description = COMPOUND_STRING("Améliore l'Attaque du Pokémon,\nmais diminue la Précision."),
         .aiRating = 7,
     },
 
@@ -664,8 +664,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DRY_SKIN] =
     {
-        .name = _("Dry Skin"),
-        .description = COMPOUND_STRING("Prefers moisture to heat."),
+        .name = _("Peau Sèche"),
+        .description = COMPOUND_STRING("Perd des PV à la chaleur, mais\nl'eau les restaure."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -850,8 +850,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_SCRAPPY] =
     {
-        .name = _("Scrappy"),
-        .description = COMPOUND_STRING("Hits Ghost-type Pokémon."),
+        .name = _("Querelleur"),
+        .description = COMPOUND_STRING("Les capacités Normal et Combat\ntouchent les Pokémon Spectre."),
         .aiRating = 6,
     },
 
@@ -1598,7 +1598,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DISGUISE] =
     {
-        .name = _("Disguise"),
+        .name = _("Cache-Boîte"),
         .description = COMPOUND_STRING("Decoy protects it once."),
         .aiRating = 8,
         .cantBeCopied = TRUE,
@@ -1866,8 +1866,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_BALL_FETCH] =
     {
-        .name = _("Ball Fetch"),
-        .description = COMPOUND_STRING("Fetches failed Poké Ball."),
+        .name = _("Ramasse Ball"),
+        .description = COMPOUND_STRING("Ramasse la Poké Ball lors du\npremier lancer raté."),
         .aiRating = 0,
     },
 

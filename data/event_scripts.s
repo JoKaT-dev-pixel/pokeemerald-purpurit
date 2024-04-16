@@ -744,6 +744,50 @@ Common_EventScript_Buzzcut::
 	fadescreen FADE_FROM_BLACK
 	return
 
+Common_EventScript_FastWallyTutorial::
+	fadescreen FADE_TO_BLACK
+	fadedefaultbgm
+	playse SE_BALL_OPEN
+	waitse
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	waitmoncry
+	playse SE_M_COMET_PUNCH
+	waitse
+	playse SE_SUPER_EFFECTIVE
+	waitse
+	playse SE_BALL_THROW
+	waitse
+	playse SE_BALL_OPEN
+	waitse
+	playse SE_BALL_BOUNCE_1
+	delay 20
+	waitse
+	playse SE_BALL_BOUNCE_2
+	delay 20
+	waitse
+	playse SE_BALL_BOUNCE_3
+	delay 20
+	waitse
+	playse SE_BALL_BOUNCE_4
+	delay 20
+	waitse
+	playse SE_BALL
+	delay 40
+	waitse
+	playse SE_BALL
+	delay 40
+	waitse
+	playse SE_BALL
+	delay 40
+	waitse
+	playse SE_RG_BALL_CLICK
+	delay 25
+	waitse
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	fadescreen FADE_FROM_BLACK
+	return
+
 EventScript_RegionMap::
 	lockall
 	msgbox Common_Text_LookCloserAtMap, MSGBOX_DEFAULT

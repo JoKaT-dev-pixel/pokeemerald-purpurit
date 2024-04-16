@@ -57,7 +57,7 @@ const union AnimCmd sAnim_GeneralFrame0[] =
 
 const union AnimCmd sAnim_GeneralFrame3[] =
 {
-    ANIMCMD_FRAME(3, 0),
+    ANIMCMD_FRAME(4, 0),
     ANIMCMD_END,
 };
 

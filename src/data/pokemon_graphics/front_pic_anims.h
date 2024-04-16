@@ -3538,11 +3538,9 @@ static const union AnimCmd sAnim_Mightyena_1[] =
 #if P_FAMILY_ZIGZAGOON
 static const union AnimCmd sAnim_Zigzagoon_1[] =
 {
-    ANIMCMD_FRAME(0, 27),
-    ANIMCMD_FRAME(1, 6),
-    ANIMCMD_FRAME(0, 6),
-    ANIMCMD_FRAME(1, 6),
     ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
@@ -3880,8 +3878,8 @@ static const union AnimCmd sAnim_Slaking_1[] =
 #if P_FAMILY_NINCADA
 static const union AnimCmd sAnim_Nincada_1[] =
 {
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 55),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 25),
     ANIMCMD_FRAME(0, 11),
     ANIMCMD_END,
 };
@@ -3923,16 +3921,11 @@ static const union AnimCmd sAnim_Shedinja_1[] =
 #if P_FAMILY_WHISMUR
 static const union AnimCmd sAnim_Whismur_1[] =
 {
-    ANIMCMD_FRAME(0, 9),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(0, 9),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(0, 33),
-    ANIMCMD_FRAME(0, 9),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(0, 9),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 15),
     ANIMCMD_END,
 };
 
@@ -3984,12 +3977,6 @@ static const union AnimCmd sAnim_Hariyama_1[] =
 static const union AnimCmd sAnim_Nosepass_1[] =
 {
     ANIMCMD_FRAME(0, 27),
-    ANIMCMD_FRAME(1, 27),
-    ANIMCMD_FRAME(0, 27),
-    ANIMCMD_FRAME(1, 27),
-    ANIMCMD_FRAME(0, 27),
-    ANIMCMD_FRAME(1, 27),
-    ANIMCMD_FRAME(0, 3),
     ANIMCMD_END,
 };
 

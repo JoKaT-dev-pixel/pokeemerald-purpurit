@@ -5661,6 +5661,7 @@ Move_ECHOED_VOICE:
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 2, 0, 8, 1
+	createvisualtask SoundTask_PlayCryHighPitch, 2, ANIM_ATTACKER, 3
 	call MetalSoundPlayNote
 	call MetalSoundPlayNote
 	call MetalSoundPlayNote
@@ -9391,11 +9392,24 @@ Move_KINGS_SHIELD::
 	goto Move_PROTECT
 
 Move_PLAY_NICE::
-	loadspritegfx ANIM_TAG_RED_HEART
-	loopsewithpan SE_M_SANDSTORM, SOUND_PAN_ATTACKER, 0xc, 0x3
-	createvisualtask AnimTask_SwayMon, 5, 0, 12, 4096, 4, ANIM_ATTACKER
-	delay 0xF
-	createsprite gRedHeartProjectileSpriteTemplate, ANIM_TARGET, 3, 0x14, 0xfff8
+	loadspritegfx ANIM_TAG_MAGENTA_HEART
+	createvisualtask AnimTask_RockMonBackAndForth, 5, ANIM_ATTACKER, 2, 0
+	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, 0, 20
+	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
+	delay 15
+	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, -20, 20
+	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
+	delay 15
+	createsprite gMagentaHeartSpriteTemplate, ANIM_ATTACKER, 3, 20, 20
+	playsewithpan SE_M_CHARM, SOUND_PAN_ATTACKER
+	delay 15
+	createvisualtask AnimTask_RockMonBackAndForth, 5, ANIM_TARGET, 2, 0
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
+	delay 15
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
+	delay 15
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
+	waitforvisualfinish
 	end
 
 Move_CONFIDE::
@@ -18524,8 +18538,30 @@ Move_KAMIKAZE:
 	blendoff
 	end
 
-Move_CRAB_RAVE::
-	end @to do:
+Move_CRAB_RAVE:
+	loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	loadspritegfx ANIM_TAG_MUSIC_NOTES
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_MUSIC_NOTES, 0x0, 0xC, 0xC, 0x7960 
+	createvisualtask AnimTask_TeeterDanceMovement, 5
+	createsprite gFastFlyingMusicNotesSpriteTemplate, ANIM_ATTACKER, 2, 0, 16, -2
+	createsprite gFastFlyingBubblesDanceSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, -2
+	playsewithpan SE_M_CRABHAMMER, SOUND_PAN_ATTACKER
+	delay 24
+	createsprite gFastFlyingMusicNotesSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, -2
+	createsprite gFastFlyingBubblesDanceSpriteTemplate, ANIM_ATTACKER, 2, 0, 16, -2
+	playsewithpan SE_M_CRABHAMMER, SOUND_PAN_ATTACKER
+	delay 24
+	createsprite gFastFlyingBubblesDanceSpriteTemplate, ANIM_ATTACKER, 2, 0, -16, -2
+	createsprite gFastFlyingMusicNotesSpriteTemplate, ANIM_ATTACKER, 2, 1, -8, -2
+	playsewithpan SE_M_CRABHAMMER, SOUND_PAN_ATTACKER
+	delay 24
+	createsprite gFastFlyingMusicNotesSpriteTemplate, ANIM_ATTACKER, 2, 1, -8, -2
+	createsprite gFastFlyingBubblesDanceSpriteTemplate, ANIM_ATTACKER, 2, 0, -16, -2
+	playsewithpan SE_M_CRABHAMMER, SOUND_PAN_ATTACKER
+	delay 24
+	createsprite gFastFlyingMusicNotesSpriteTemplate, ANIM_ATTACKER, 2, 2, 8, -2
+	playsewithpan SE_M_CRABHAMMER, SOUND_PAN_ATTACKER
+	end
 
 Move_PSYCHO_HERB:
 	loadspritegfx ANIM_TAG_SPIRAL

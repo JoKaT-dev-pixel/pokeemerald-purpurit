@@ -405,11 +405,11 @@ const struct TrainerSprite gTrainerSprites[] =
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
 {
-    ANIMCMD_FRAME(0, 24),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(2, 24),
-    ANIMCMD_FRAME(0, 9),
-    ANIMCMD_FRAME(3, 50),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(2, 6),
+    ANIMCMD_FRAME(3, 24),
+    ANIMCMD_FRAME(4, 50),
     ANIMCMD_END,
 };
 
@@ -441,6 +441,7 @@ const struct SpriteFrameImage gTrainerBackPicTable_Brendan[] =
     {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
     {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
     {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_Brendan + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE},
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_May[] =
@@ -449,6 +450,7 @@ const struct SpriteFrameImage gTrainerBackPicTable_May[] =
     {gTrainerBackPic_May + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
     {gTrainerBackPic_May + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
     {gTrainerBackPic_May + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_May + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE},
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_Red[] =

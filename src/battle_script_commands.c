@@ -15093,6 +15093,13 @@ static void Cmd_handleballthrow(void)
             case ITEM_BEAST_BALL:
                 ballMultiplier = 10;
                 break;
+            case ITEM_RUST_BALL:
+                ballMultiplier /= 150;
+                break;
+            case ITEM_BLACK_BALL:
+                if (GetCurrentMapType() == MAP_TYPE_CITY)
+                    ballMultiplier = 350;
+                break;
             }
         }
 
