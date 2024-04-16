@@ -1756,6 +1756,22 @@ extern const u32 gItemIconPalette_SwapSnack[];
 extern const u32 gItemIcon_TwiceSpicedRadish[];
 extern const u32 gItemIconPalette_TwiceSpicedRadish[];
 
+// Start Pokevial Branch
+extern const u32 gItemIcon_Pokevial0[];
+extern const u32 gItemIcon_Pokevial1[];
+extern const u32 gItemIcon_Pokevial2[];
+extern const u32 gItemIcon_Pokevial3[];
+extern const u32 gItemIcon_Pokevial4[];
+extern const u32 gItemIcon_Pokevial5[];
+extern const u32 gItemIcon_Pokevial6[];
+extern const u32 gItemIcon_Pokevial7[];
+extern const u32 gItemIcon_Pokevial8[];
+extern const u32 gItemIcon_Pokevial9[];
+extern const u32 gItemIcon_Pokevial[];
+
+extern const u32 gItemIconPalette_Pokevial[];
+// End Pokevial Branch
+
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 

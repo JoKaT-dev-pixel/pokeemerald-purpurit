@@ -556,3 +556,8 @@ gSpecials::
 	def_special Script_GetChosenMonOffensiveIVs
 	def_special Script_GetChosenMonDefensiveIVs
 
+    //Start Pokevial Branch
+    def_special PokevialGetDose
+    def_special PokevialGetSize
+    def_special PokevialRefill
+    //End Pokevial Branch

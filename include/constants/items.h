@@ -987,27 +987,28 @@
 #define ITEM_SWIFT_MOCHI 813
 #define ITEM_FRESH_START_MOCHI 814
 #define ITEM_GLIMMERING_CHARM 815
-#define ITEM_METAL_ALLOY 816
-#define ITEM_STELLAR_TERA_SHARD 817
+#define ITEM_ANAL_PLUG 816
+#define ITEM_POKEVIAL 817 // Pokevial Branch
+#define ITEM_METAL_ALLOY 818
+#define ITEM_STELLAR_TERA_SHARD 819
 
-#define ITEM_JUBILIFE_MUFFIN 818
-#define ITEM_REMEDY 819
-#define ITEM_FINE_REMEDY 820
-#define ITEM_SUPERB_REMEDY 821
-#define ITEM_AUX_EVASION 822
-#define ITEM_AUX_GUARD 823
-#define ITEM_AUX_POWER 824
-#define ITEM_AUX_POWERGUARD 825
-#define ITEM_CHOICE_DUMPLING 826
-#define ITEM_SWAP_SNACK 827
-#define ITEM_TWICE_SPICED_RADISH 828
-#define ITEM_POKESHI_DOLL 829
-#define ITEM_ANAL_PLUG 830
+#define ITEM_JUBILIFE_MUFFIN 820
+#define ITEM_REMEDY 821
+#define ITEM_FINE_REMEDY 822
+#define ITEM_SUPERB_REMEDY 823
+#define ITEM_AUX_EVASION 824
+#define ITEM_AUX_GUARD 825
+#define ITEM_AUX_POWER 826
+#define ITEM_AUX_POWERGUARD 827
+#define ITEM_CHOICE_DUMPLING 828
+#define ITEM_SWAP_SNACK 829
+#define ITEM_TWICE_SPICED_RADISH 830
+#define ITEM_POKESHI_DOLL 831
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 831
+#define ITEMS_COUNT 832
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
@@ -1086,5 +1087,13 @@
 
 // Enigma Berry dummy constant
 #define EFFECT_ITEM_ENIGMA_BERRY_EREADER    1
+
+// Item battle usage IDs (only checked to see if nonzero)
+#define ITEM_B_USE_MEDICINE 1
+#define ITEM_B_USE_OTHER    2
+
+// Check if the item is one that can be used on a Pokémon.
+//#define ITEM_HAS_EFFECT(item) ((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX)
+#define ITEM_HAS_EFFECT(item) (((item) == ITEM_POKEVIAL) || ((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX)) //Modified by Pokevial Branch
 
 #endif  // GUARD_CONSTANTS_ITEMS_H

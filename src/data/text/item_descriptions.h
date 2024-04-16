@@ -297,6 +297,13 @@ static const u8 sSacredAshDesc[] = _(
     "restores all\n"
     "fainted Pokémon.");
 
+//Start Pokevial Branch
+static const u8 sPokevialDesc[] = _(
+    "Restores all\n"
+    "POKéMON to full\n"
+    "health.");
+//End Pokevial Branch
+
 static const u8 sSweetHeartDesc[] = _(
     "A sweet chocolate\n"
     "that restores HP\n"

@@ -6984,22 +6984,6 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
     },
 
-    [ITEM_ANAL_PLUG] =
-    {
-        .name = _("Plug Anal"),
-        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_FAIRY_POWER,
-        .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "raises the power of\n"
-            "Dark-type moves."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 30,
-    },
-
 // Choice Items
 
     [ITEM_CHOICE_BAND] =
@@ -12442,222 +12426,35 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_METAL_ALLOY] =
+    [ITEM_ANAL_PLUG] =
     {
-        .name = _("Metal Alloy"),
-        .price = 6000,
+        .name = _("Plug Anal"),
+        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
+        .holdEffect = HOLD_EFFECT_FAIRY_POWER,
+        .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
-            "A peculiar metal\n"
-            "that makes certain\n"
-            "Pokémon evolve."),
+            "A hold item that\n"
+            "raises the power of\n"
+            "Dark-type moves."),
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
-        .effect = gItemEffect_EvoItem,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
     },
 
-    [ITEM_STELLAR_TERA_SHARD] =
+    //Start Pokevial Branch
+    [ITEM_POKEVIAL] =
     {
-        .name = _("StllrTeraShrd"),
+        .name = _("Mixture"),
         .price = 0,
-        .description = sTeraShardDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
-
-    [ITEM_JUBILIFE_MUFFIN] =
-    {
-        .name = _("JublifeMuffin"),
-        .price = 250,
-        .description = sFullHealDesc,
-        .pocket = POCKET_ITEMS,
+        .description = COMPOUND_STRING(
+            "Restores all\n"
+            "POKéMON to full\n"
+            "health."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .flingPower = 30,
+        .fieldUseFunc = ItemUseOutOfBattle_Pokevial,
     },
-
-    [ITEM_REMEDY] =
-    {
-        .name = _("Remedy"),
-        .price = 150,
-        .description = COMPOUND_STRING(
-            "A bitter powder\n"
-            "that restores HP\n"
-            "by 20 points."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_Remedy,
-        .flingPower = 30,
-    },
-
-    [ITEM_FINE_REMEDY] =
-    {
-        .name = _("Fine Remedy"),
-        .price = 150,
-        .description = COMPOUND_STRING(
-            "A bitter powder\n"
-            "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "by 60 points."),
-        #else
-            "by 50 points."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_FineRemedy,
-        .flingPower = 30,
-    },
-
-    [ITEM_SUPERB_REMEDY] =
-    {
-        .name = _("Superb Remedy"),
-        .price = 750,
-        .description = COMPOUND_STRING(
-            "A bitter powder\n"
-            "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "by 120 points."),
-        #else
-            "by 200 points."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_SuperbRemedy,
-        .flingPower = 30,
-    },
-
-    [ITEM_AUX_EVASION] =
-    {
-        .name = _("Aux Evasion"),
-        .price = 800,
-        .holdEffectParam = X_ITEM_STAGES,
-        .description = COMPOUND_STRING(
-        #if B_X_ITEMS_BUFF >= GEN_7
-            "Sharply raises\n"
-            "evasiveness during\n"
-            "one battle."),
-        #else
-            "Raises evasiveness\n"
-            "during one battle."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        //.effect = currently missing
-    },
-
-    [ITEM_AUX_GUARD] =
-    {
-        .name = _("Aux Guard"),
-        .price = 400,
-        .holdEffectParam = X_ITEM_STAGES,
-        .description = COMPOUND_STRING(
-        #if B_X_ITEMS_BUFF >= GEN_7
-            "Sharply raises\n"
-            "defenses during\n"
-            "one battle."),
-        #else
-            "Raises defenses\n"
-            "during one battle."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        //.effect = currently missing
-    },
-
-    [ITEM_AUX_POWER] =
-    {
-        .name = _("Aux Power"),
-        .price = 400,
-        .holdEffectParam = X_ITEM_STAGES,
-        .description = COMPOUND_STRING(
-        #if B_X_ITEMS_BUFF >= GEN_7
-            "Sharply raises\n"
-            "offenses during\n"
-            "one battle."),
-        #else
-            "Raises offenses\n"
-            "during one battle."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        //.effect = currently missing
-    },
-
-    [ITEM_AUX_POWERGUARD] =
-    {
-        .name = _("AuxPowerguard"),
-        .price = 1200,
-        .holdEffectParam = X_ITEM_STAGES,
-        .description = COMPOUND_STRING(
-        #if B_X_ITEMS_BUFF >= GEN_7
-            "Sharply raises\n"
-            "offenses & defenses\n"
-            "during one battle."),
-        #else
-            "Raises offenses\n"
-            "and defenses during\n"
-            "one battle."),
-        #endif
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        //.effect = currently missing
-    },
-
-    [ITEM_CHOICE_DUMPLING] =
-    {
-        .name = _("ChoiceDumplng"),
-        .price = 1200,
-        .description = sQuestionMarksDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        //.effect = currently missing
-    },
-
-    [ITEM_SWAP_SNACK] =
-    {
-        .name = _("Swap Snack"),
-        .price = 1200,
-        .description = sQuestionMarksDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        //.effect = currently missing
-    },
-
-    [ITEM_TWICE_SPICED_RADISH] =
-    {
-        .name = _("2xSpicedRadsh"),
-        .price = 1600,
-        .description = sQuestionMarksDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        //.effect = currently missing
-    },
-
-    [ITEM_POKESHI_DOLL] =
-    {
-        .name = _("Pokéshi Doll"),
-        .price = 2000,
-        .description = COMPOUND_STRING(
-            "A wooden toy carved\n"
-            "in the image of a\n"
-            "Pokémon. Can be sold."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
+    //End Pokevial Branch
 };
