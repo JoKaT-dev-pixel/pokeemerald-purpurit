@@ -1358,6 +1358,8 @@ extern const u32 gItemIcon_RoomService[];
 extern const u32 gItemIconPalette_RoomService[];
 extern const u32 gItemIcon_UtilityUmbrella[];
 extern const u32 gItemIconPalette_UtilityUmbrella[];
+extern const u32 gItemIcon_CokePowder[];
+extern const u32 gItemIconPalette_CokePowder[];
 // Berries
 extern const u32 gItemIcon_CheriBerry[];
 extern const u32 gItemIconPalette_CheriBerry[];

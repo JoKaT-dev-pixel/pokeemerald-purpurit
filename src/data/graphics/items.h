@@ -1505,6 +1505,9 @@ const u32 gItemIconPalette_RoomService[] = INCBIN_U32("graphics/items/icon_palet
 const u32 gItemIcon_UtilityUmbrella[] = INCBIN_U32("graphics/items/icons/utility_umbrella.4bpp.lz");
 const u32 gItemIconPalette_UtilityUmbrella[] = INCBIN_U32("graphics/items/icon_palettes/utility_umbrella.gbapal.lz");
 
+const u32 gItemIcon_CokePowder[] = INCBIN_U32("graphics/items/icons/coke_powder.4bpp.lz");
+const u32 gItemIconPalette_CokePowder[] = INCBIN_U32("graphics/items/icon_palettes/coke_powder.gbapal.lz");
+
 // Berries
 
 const u32 gItemIcon_CheriBerry[] = INCBIN_U32("graphics/items/icons/cheri_berry.4bpp.lz");

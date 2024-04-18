@@ -3500,7 +3500,7 @@ static const struct TrainerMon sParty_Jerry1[] = {
     {
     .iv = 0,
     .lvl = 9,
-    .species = SPECIES_WHISMUR,
+    .species = SPECIES_PIKACHU,
     },
     {
     .iv = 0,
@@ -3611,7 +3611,7 @@ static const struct TrainerMon sParty_Karen1[] = {
     {
     .iv = 0,
     .lvl = 10,
-    .species = SPECIES_PIKACHU,
+    .species = SPECIES_WHISMUR,
     }
 };
 

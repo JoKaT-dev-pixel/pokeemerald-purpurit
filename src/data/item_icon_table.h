@@ -555,6 +555,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_BLUNDER_POLICY] = {gItemIcon_BlunderPolicy, gItemIconPalette_BlunderPolicy},
     [ITEM_ROOM_SERVICE] = {gItemIcon_RoomService, gItemIconPalette_RoomService},
     [ITEM_UTILITY_UMBRELLA] = {gItemIcon_UtilityUmbrella, gItemIconPalette_UtilityUmbrella},
+    [ITEM_COKE_POWDER] = {gItemIcon_CokePowder, gItemIconPalette_CokePowder},
     // Berries
     [ITEM_CHERI_BERRY] = {gItemIcon_CheriBerry, gItemIconPalette_CheriBerry},
     [ITEM_CHESTO_BERRY] = {gItemIcon_ChestoBerry, gItemIconPalette_ChestoBerry},

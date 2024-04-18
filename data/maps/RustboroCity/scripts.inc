@@ -200,12 +200,12 @@ RustboroCity_EventScript_NinjaBoy::
 	end
 
 RustboroCity_SDF_EventScript_BuyRustBall::
-	checkmoney 100
+	checkmoney 200
 	goto_if_eq VAR_RESULT, FALSE, RustboroCity_SDF_EventScript_NotEnoughMoney
 	checkitemspace ITEM_RUST_BALL
 	goto_if_eq VAR_RESULT, FALSE, RustboroCity_SDF_EventScript_NotEnoughSpace
 	msgbox RustboroCity_SDF_Text_HereYouGo, MSGBOX_DEFAULT
-	removemoney 100
+	removemoney 200
 	updatemoneybox
 	giveitem ITEM_RUST_BALL, 5
 	hidemoneybox

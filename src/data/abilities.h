@@ -1902,6 +1902,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Gulp Missile"),
         .description = COMPOUND_STRING("If hit, spits prey from sea."),
         .aiRating = 3,
+        .cantBeCopied = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
         .failsOnImposter = TRUE,
@@ -2265,6 +2266,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
+        .cantBeSuppressed = TRUE,
     },
 
     [ABILITY_ELECTROMORPHOSIS] =
@@ -2720,7 +2722,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     #else
         .name = _("Amplifier"),
     #endif
-        .description = COMPOUND_STRING("Booste les capacités et réduit\nles dégâts basés sur le son."),
+        .description = COMPOUND_STRING("Booste et immunise toutes les\ncapacités sonores."),
         .aiRating = 2,
         .breakable = TRUE,
     },

@@ -74,7 +74,7 @@ enum
     HEALTHBOX_GFX_STATUS_BRN_BATTLER0,  //status brn
     HEALTHBOX_GFX_34,
     HEALTHBOX_GFX_35,
-    HEALTHBOX_GFX_STATUS_FSB_BATTLER0,  //status fsb
+    HEALTHBOX_GFX_STATUS_FRB_BATTLER0,  //status frb
     HEALTHBOX_GFX_116,
     HEALTHBOX_GFX_117,
     HEALTHBOX_GFX_36, //misc [Black section]
@@ -127,7 +127,7 @@ enum
     HEALTHBOX_GFX_STATUS_BRN_BATTLER1, //status2 "BRN"
     HEALTHBOX_GFX_84,
     HEALTHBOX_GFX_85,
-    HEALTHBOX_GFX_STATUS_FSB_BATTLER1, //status2 "FSB"
+    HEALTHBOX_GFX_STATUS_FRB_BATTLER1, //status2 "FRB"
     HEALTHBOX_GFX_118,
     HEALTHBOX_GFX_119,
     HEALTHBOX_GFX_STATUS_PSN_BATTLER2, //status3 "PSN"
@@ -145,7 +145,7 @@ enum
     HEALTHBOX_GFX_STATUS_BRN_BATTLER2, //status3 "BRN"
     HEALTHBOX_GFX_99,
     HEALTHBOX_GFX_100,
-    HEALTHBOX_GFX_STATUS_FSB_BATTLER2, //status3 "FSB"
+    HEALTHBOX_GFX_STATUS_FRB_BATTLER2, //status3 "FRB"
     HEALTHBOX_GFX_120,
     HEALTHBOX_GFX_121,
     HEALTHBOX_GFX_STATUS_PSN_BATTLER3, //status4 "PSN"
@@ -163,7 +163,7 @@ enum
     HEALTHBOX_GFX_STATUS_BRN_BATTLER3, //status4 "BRN"
     HEALTHBOX_GFX_114,
     HEALTHBOX_GFX_115,
-    HEALTHBOX_GFX_STATUS_FSB_BATTLER3, //status4 "FSB"
+    HEALTHBOX_GFX_STATUS_FRB_BATTLER3, //status4 "FRB"
     HEALTHBOX_GFX_122,
     HEALTHBOX_GFX_123,
     HEALTHBOX_GFX_FRAME_END,
@@ -603,7 +603,7 @@ enum
 static const u16 sStatusIconColors[] =
 {
     [PAL_STATUS_PSN] = RGB(24, 12, 24),
-    [PAL_STATUS_PAR] = RGB(26, 23, 3),
+    [PAL_STATUS_PAR] = RGB2GBA(232, 202, 64),
     [PAL_STATUS_SLP] = RGB(20, 20, 17),
     [PAL_STATUS_FRZ] = RGB(17, 22, 28),
     [PAL_STATUS_BRN] = RGB(28, 14, 10),
@@ -2389,7 +2389,7 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
     }
     else if (status & STATUS1_FROSTBITE)
     {
-        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_FSB_BATTLER0, battlerId));
+        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_FRB_BATTLER0, battlerId));
         statusPalId = PAL_STATUS_FRZ;
     }
     else if (status & STATUS1_PARALYSIS)
@@ -2474,15 +2474,15 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battlerId)
         else
             ret = HEALTHBOX_GFX_STATUS_FRZ_BATTLER3;
         break;
-    case HEALTHBOX_GFX_STATUS_FSB_BATTLER0:
+    case HEALTHBOX_GFX_STATUS_FRB_BATTLER0:
         if (battlerId == 0)
-            ret = HEALTHBOX_GFX_STATUS_FSB_BATTLER0;
+            ret = HEALTHBOX_GFX_STATUS_FRB_BATTLER0;
         else if (battlerId == 1)
-            ret = HEALTHBOX_GFX_STATUS_FSB_BATTLER1;
+            ret = HEALTHBOX_GFX_STATUS_FRB_BATTLER1;
         else if (battlerId == 2)
-            ret = HEALTHBOX_GFX_STATUS_FSB_BATTLER2;
+            ret = HEALTHBOX_GFX_STATUS_FRB_BATTLER2;
         else
-            ret = HEALTHBOX_GFX_STATUS_FSB_BATTLER3;
+            ret = HEALTHBOX_GFX_STATUS_FRB_BATTLER3;
         break;
     case HEALTHBOX_GFX_STATUS_BRN_BATTLER0:
         if (battlerId == 0)
@@ -2692,7 +2692,7 @@ static void MoveBattleBarGraphically(u8 battlerId, u8 whichBar)
                     &gBattleSpritesDataPtr->battleBars[battlerId].currValue,
                     array, B_EXPBAR_PIXELS / 8);
         level = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_LEVEL);
-        if (level >= GetCurrentLevelCap())
+        if (level >= MAX_LEVEL)
         {
             for (i = 0; i < 8; i++)
                 array[i] = 0;
@@ -3096,15 +3096,6 @@ static void PrintBattlerOnAbilityPopUp(u8 battlerId, u8 spriteId1, u8 spriteId2)
         textPtr--;
 
     lastChar = *(textPtr - 1);
-
-    // Make the string say "[NAME]'s" instead of "[NAME]"
-    textPtr[0] = CHAR_SGL_QUOTE_RIGHT; // apostraphe
-    textPtr++;
-    if (lastChar != CHAR_S && lastChar != CHAR_s)
-    {
-        textPtr[0] = CHAR_s;
-        textPtr++;
-    }
 
     textPtr[0] = EOS;
 
