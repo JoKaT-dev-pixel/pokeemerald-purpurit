@@ -508,10 +508,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_WING_ATTACK] =
     {
-        .name = COMPOUND_STRING("Wing Attack"),
+        .name = COMPOUND_STRING("Cru-Ailes"),
         .description = COMPOUND_STRING(
-            "Strikes the foe with wings\n"
-            "spread wide."),
+            "L'ennemi est frappé par de\n"
+            "larges ailes déployées pour\n"
+            "infliger des dégâts."),
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_FLYING,
@@ -1644,10 +1645,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_PECK] =
     {
-        .name = COMPOUND_STRING("Peck"),
+        .name = COMPOUND_STRING("Picpic"),
         .description = COMPOUND_STRING(
-            "Attacks the foe with a\n"
-            "jabbing beak, etc."),
+            "Frappe l'ennemi d'un bec\n"
+            "pointu ou d'une corne pour\n"
+            "infliger des dégâts."),
         .effect = EFFECT_HIT,
         .power = 35,
         .type = TYPE_FLYING,
@@ -2449,10 +2451,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_RAGE] =
     {
-        .name = COMPOUND_STRING("Rage"),
+        .name = COMPOUND_STRING("Frénésie"),
         .description = COMPOUND_STRING(
-            "Raises the user's Attack\n"
-            "every time it is hit."),
+            "Cette capacité gagne en\n"
+            "efficacité à mesure que le\n"
+            "lanceur subit des dégâts."),
         .effect = EFFECT_RAGE,
         .power = 20,
         .type = TYPE_NORMAL,
@@ -5558,10 +5561,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_PURSUIT] =
     {
-        .name = COMPOUND_STRING("Pursuit"),
+        .name = COMPOUND_STRING("Poursuite"),
         .description = COMPOUND_STRING(
-            "Inflicts bad damage if used\n"
-            "on a foe switching out."),
+            "Une attaque qui inflige deux\n"
+            "fois plus de dégâts à un\n"
+            "ennemi qui quitte le combat."),
         .effect = EFFECT_PURSUIT,
         .power = 40,
         .type = TYPE_DARK,
@@ -9008,8 +9012,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Assurance"),
         .description = COMPOUND_STRING(
-            "An attack that gains power\n"
-            "if the foe has been hurt."),
+            "Cette attaque est deux fois\n"
+            "plus efficace si l'ennemi a\n"
+            "déjà été blessé durant ce tour."),
         .effect = EFFECT_ASSURANCE,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 50,
         .type = TYPE_DARK,
@@ -20173,6 +20178,92 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {0}
+    },
+
+    [MOVE_PSYCHO_HERB] =
+    {
+        .name = COMPOUND_STRING("Psycho-Herbe"),
+        .description = COMPOUND_STRING(
+            "A psychic attack that may\n"
+            "cause confusion."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = COMBO_STARTER_CONFUSION,
+        .contestComboMoves = {0}
+    },
+
+    [MOVE_PEPPER_POWDER] =
+    {
+        .name = HANDLE_EXPANDED_MOVE_NAME("PepperPowder", "Poudre Piquante"),
+        .description = COMPOUND_STRING(
+            "Scatters a powder that may\n"
+            "cause the foe to sleep."),
+        .effect = EFFECT_WILL_O_WISP,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 75,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .magicCoatAffected = TRUE,
+        .powderMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SWEET_SCENT},
+    },
+
+    [MOVE_MAGIC_BEAN] =
+    {
+        .name = HANDLE_EXPANDED_MOVE_NAME("HaricotMagik", "Haricot Magique"),
+        .description = COMPOUND_STRING(
+            "Giant stalk scatters seeds\n"
+            "that drain HP every turn."),
+        .effect = EFFECT_SAPPY_SEED,
+        .power = 90,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 105,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .mirrorMoveBanned = B_UPDATED_MOVE_FLAGS < GEN_8,
+        .magicCoatAffected = TRUE,
+    },
+
+    [MOVE_JUMPSTART] =
+    {
+        .name = COMPOUND_STRING("Démarrage"),
+        .description = COMPOUND_STRING(
+            "An extremely fast attack\n"
+            "that always strikes first."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_CHARGE},
     },
 
     // Z-Moves

@@ -771,6 +771,10 @@ u8 BattleSetup_GetTerrainId(void)
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_TERRAIN_POND;
         return BATTLE_TERRAIN_FOREST;
+    case MAP_TYPE_SEWER:
+        if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
+            return BATTLE_TERRAIN_SEWER;
+        return BATTLE_TERRAIN_SEWER;
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
         return BATTLE_TERRAIN_WATER;
@@ -812,6 +816,7 @@ static u8 GetBattleTransitionTypeByMap(void)
     switch (gMapHeader.mapType)
     {
     case MAP_TYPE_UNDERGROUND:
+    case MAP_TYPE_SEWER:
         return TRANSITION_TYPE_CAVE;
     case MAP_TYPE_UNDERWATER:
         return TRANSITION_TYPE_WATER;

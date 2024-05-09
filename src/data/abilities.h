@@ -1077,8 +1077,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_POISON_TOUCH] =
     {
-        .name = _("Poison Touch"),
-        .description = COMPOUND_STRING("Poisons foe on contact."),
+        .name = _("Toxitouche"),
+        .description = COMPOUND_STRING("Peut empoisonner l'ennemi par\nsimple contact."),
         .aiRating = 4,
     },
 

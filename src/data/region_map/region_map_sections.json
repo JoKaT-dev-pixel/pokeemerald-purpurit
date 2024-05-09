@@ -18,7 +18,7 @@
     },
     {
       "map_section": "MAPSEC_DEWFORD_TOWN",
-      "name": "DEWFORD TOWN",
+      "name": "Kohlanta",
       "x": 2,
       "y": 14,
       "width": 1,
@@ -154,7 +154,7 @@
     },
     {
       "map_section": "MAPSEC_ROUTE_104",
-      "name": "ROUTE 104",
+      "name": "Route D-3",
       "x": 0,
       "y": 7,
       "width": 1,
@@ -482,7 +482,7 @@
     },
     {
       "map_section": "MAPSEC_RUSTURF_TUNNEL",
-      "name": "RUSTURF TUNNEL",
+      "name": "Catacombes",
       "x": 2,
       "y": 5,
       "width": 1,

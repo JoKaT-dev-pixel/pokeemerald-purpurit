@@ -297,6 +297,9 @@ extern const u32 gBattleTerrainPalette_Gym[];
 extern const u32 gBattleTerrainTiles_City[];
 extern const u32 gBattleTerrainTilemap_City[];
 extern const u32 gBattleTerrainPalette_City[];
+extern const u32 gBattleTerrainTiles_Sewer[];
+extern const u32 gBattleTerrainTilemap_Sewer[];
+extern const u32 gBattleTerrainPalette_Sewer[];
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];

@@ -1056,6 +1056,7 @@ static const u16 sNaturePowerMoves[BATTLE_TERRAIN_COUNT] =
     [BATTLE_TERRAIN_ULTRA_SPACE]      = MOVE_PSYSHOCK,
     [BATTLE_TERRAIN_FOREST]           = MOVE_ENERGY_BALL,
     [BATTLE_TERRAIN_CITY]             = MOVE_FLASH_CANNON,
+    [BATTLE_TERRAIN_SEWER]            = MOVE_SLUDGE_BOMB,
 };
 
 #define _ 0
@@ -1120,6 +1121,7 @@ static const u8 sTerrainToType[BATTLE_TERRAIN_COUNT] =
     [BATTLE_TERRAIN_ULTRA_SPACE]      = TYPE_PSYCHIC,
     [BATTLE_TERRAIN_FOREST]           = TYPE_GRASS,
     [BATTLE_TERRAIN_CITY]             = TYPE_STEEL,
+    [BATTLE_TERRAIN_SEWER]            = TYPE_POISON,
 #if B_CAMOUFLAGE_TYPES >= GEN_5
     [BATTLE_TERRAIN_MOUNTAIN]         = (B_CAMOUFLAGE_TYPES >= GEN_5 ? TYPE_GROUND : TYPE_ROCK),
     [BATTLE_TERRAIN_PLAIN]            = TYPE_GROUND,
@@ -1910,6 +1912,7 @@ static void Cmd_ppreduce(void)
 #endif // B_CRIT_CHANCE
 
 #define BENEFITS_FROM_LEEK(battler, holdEffect)((holdEffect == HOLD_EFFECT_LEEK) && (GET_BASE_SPECIES_ID(gBattleMons[battler].species) == SPECIES_FARFETCHD || gBattleMons[battler].species == SPECIES_SIRFETCHD))
+#define BENEFITS_FROM_DUMBBELL(battler, holdEffect)((holdEffect == HOLD_EFFECT_DUMBBELL) && (GET_BASE_SPECIES_ID(gBattleMons[battler].species) == SPECIES_MACHOP))
 s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, u32 abilityAtk, u32 abilityDef, u32 holdEffectAtk)
 {
     s32 critChance = 0;
@@ -1933,6 +1936,7 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
                     + (holdEffectAtk == HOLD_EFFECT_SCOPE_LENS)
                     + 2 * (holdEffectAtk == HOLD_EFFECT_LUCKY_PUNCH && gBattleMons[battlerAtk].species == SPECIES_CHANSEY)
                     + 2 * BENEFITS_FROM_LEEK(battlerAtk, holdEffectAtk)
+                    + 2 * BENEFITS_FROM_DUMBBELL(battlerAtk, holdEffectAtk)
                     + 2 * (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS)
                     + (abilityAtk == ABILITY_SUPER_LUCK)
                     + gBattleStruct->bonusCritStages[gBattlerAttacker];
@@ -1956,6 +1960,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     return CalcCritChanceStageArgs(battlerAtk, battlerDef, move, recordAbility, abilityAtk, abilityDef, holdEffectAtk);
 }
 #undef BENEFITS_FROM_LEEK
+#undef BENEFITS_FROM_DUMBBELL
 
 s32 GetCritHitChance(s32 critChanceIndex)
 {
@@ -2065,6 +2070,11 @@ static void Cmd_adjustdamage(void)
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
         gSpecialStatuses[gBattlerTarget].focusSashed = TRUE;
     }
+    else if (holdEffect == HOLD_EFFECT_DUMBBELL && BATTLER_MAX_HP(gBattlerTarget))
+    {
+        RecordItemEffectBattle(gBattlerTarget, holdEffect);
+        gSpecialStatuses[gBattlerTarget].dumbbelled = TRUE;
+    }
     else if (B_AFFECTION_MECHANICS == TRUE && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER && affectionScore >= AFFECTION_THREE_HEARTS)
     {
         if ((affectionScore == AFFECTION_FIVE_HEARTS && rand < 20)
@@ -2077,6 +2087,7 @@ static void Cmd_adjustdamage(void)
         && !gProtectStructs[gBattlerTarget].endured
         && !gSpecialStatuses[gBattlerTarget].focusBanded
         && !gSpecialStatuses[gBattlerTarget].focusSashed
+        && !gSpecialStatuses[gBattlerTarget].dumbbelled
         && (B_AFFECTION_MECHANICS == FALSE || !gSpecialStatuses[gBattlerTarget].affectionEndured)
         && !gSpecialStatuses[gBattlerTarget].sturdied)
         goto END;
@@ -2089,7 +2100,8 @@ static void Cmd_adjustdamage(void)
     {
         gMoveResultFlags |= MOVE_RESULT_FOE_ENDURED;
     }
-    else if (gSpecialStatuses[gBattlerTarget].focusBanded || gSpecialStatuses[gBattlerTarget].focusSashed)
+    else if (gSpecialStatuses[gBattlerTarget].focusBanded || gSpecialStatuses[gBattlerTarget].focusSashed
+    || gSpecialStatuses[gBattlerTarget].dumbbelled)
     {
         gMoveResultFlags |= MOVE_RESULT_FOE_HUNG_ON;
         gLastUsedItem = gBattleMons[gBattlerTarget].item;
@@ -2172,6 +2184,7 @@ static void Cmd_multihitresultmessage(void)
             gMoveResultFlags &= ~(MOVE_RESULT_STURDIED | MOVE_RESULT_FOE_HUNG_ON);
             gSpecialStatuses[gBattlerTarget].focusBanded = FALSE; // Delete this line to make Focus Band last for the duration of the whole move turn.
             gSpecialStatuses[gBattlerTarget].focusSashed = FALSE; // Delete this line to make Focus Sash last for the duration of the whole move turn.
+            gSpecialStatuses[gBattlerTarget].dumbbelled = FALSE; // Delete this line to make Focus Sash last for the duration of the whole move turn.
             BattleScriptPushCursor();
             gBattlescriptCurrInstr = BattleScript_HangedOnMsg;
             return;
@@ -5999,6 +6012,7 @@ static void Cmd_moveend(void)
                         gSpecialStatuses[gBattlerTarget].sturdied = 0;
                         gSpecialStatuses[gBattlerTarget].focusBanded = 0; // Delete this line to make Focus Band last for the duration of the whole move turn.
                         gSpecialStatuses[gBattlerTarget].focusSashed = 0; // Delete this line to make Focus Sash last for the duration of the whole move turn.
+                        gSpecialStatuses[gBattlerTarget].dumbbelled = 0; // Delete this line to make Focus Sash last for the duration of the whole move turn.
                         gSpecialStatuses[gBattlerAttacker].multiHitOn = TRUE;
                         MoveValuesCleanUp();
                         BattleScriptPush(GET_MOVE_BATTLESCRIPT(gCurrentMove));
@@ -12236,6 +12250,11 @@ static void Cmd_tryKO(void)
         gSpecialStatuses[gBattlerTarget].focusSashed = TRUE;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
     }
+    else if (holdEffect == HOLD_EFFECT_DUMBBELL && BATTLER_MAX_HP(gBattlerTarget))
+    {
+        gSpecialStatuses[gBattlerTarget].dumbbelled = TRUE;
+        RecordItemEffectBattle(gBattlerTarget, holdEffect);
+    }
 
     if (targetAbility == ABILITY_STURDY)
     {
@@ -12270,7 +12289,8 @@ static void Cmd_tryKO(void)
                 gBattleMoveDamage = gBattleMons[gBattlerTarget].hp - 1;
                 gMoveResultFlags |= MOVE_RESULT_FOE_ENDURED;
             }
-            else if (gSpecialStatuses[gBattlerTarget].focusBanded || gSpecialStatuses[gBattlerTarget].focusSashed)
+            else if (gSpecialStatuses[gBattlerTarget].focusBanded || gSpecialStatuses[gBattlerTarget].focusSashed
+            || gSpecialStatuses[gBattlerTarget].dumbbelled)
             {
                 gBattleMoveDamage = gBattleMons[gBattlerTarget].hp - 1;
                 gMoveResultFlags |= MOVE_RESULT_FOE_HUNG_ON;
@@ -15059,7 +15079,8 @@ static void Cmd_handleballthrow(void)
                 break;
             case ITEM_DUSK_BALL:
                 i = GetTimeOfDay();
-                if (i == TIME_EVENING || i == TIME_NIGHT || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+                if (i == TIME_EVENING || i == TIME_NIGHT || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND
+                || gMapHeader.mapType == MAP_TYPE_SEWER)
                     ballMultiplier = (B_DUSK_BALL_MODIFIER >= GEN_7 ? 300 : 350);
                 break;
             case ITEM_QUICK_BALL:
@@ -15158,7 +15179,7 @@ static void Cmd_handleballthrow(void)
                 ballMultiplier = 10;
                 break;
             case ITEM_RUST_BALL:
-                ballMultiplier /= 150;
+                ballMultiplier /= 4;
                 break;
             case ITEM_BLACK_BALL:
                 if (GetCurrentMapType() == MAP_TYPE_CITY)

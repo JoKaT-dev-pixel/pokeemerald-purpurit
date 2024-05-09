@@ -15,7 +15,7 @@ Route116_OnTransition:
 	end
 
 Route116_EventScript_SetWandasBoyfriendPos::
-	setobjectxyperm LOCALID_WANDAS_BF_OUTSIDE, 47, 11
+	setobjectxyperm LOCALID_WANDAS_BF_OUTSIDE, 49, 11
 	return
 
 Route116_OnLoad:
@@ -447,7 +447,7 @@ Route116_Text_RouteSignRustboro:
 	.string "{LEFT_ARROW} RUSTBORO CITY$"
 
 Route116_Text_RusturfTunnelSign:
-	.string "CATACOMBES\n"
+	.string "Catacombes\n"
 	.string "“La cité des Cataphiles”\p"
 	.string "Carrières souterraines de la ville de\n"
 	.string "Pariviar.$"

@@ -900,12 +900,10 @@ gBattleAnims_Moves::
 	.4byte Move_MALWARE
 	.4byte Move_POWER_SURGE
 	.4byte Move_MIGRAINE
-	.4byte Move_PSYCHOTISM
 	.4byte Move_FROSTBITE
 	.4byte Move_TRANS_LOVE
 	.4byte Move_DROPLETS
 	.4byte Move_RAINBOW_BEAM
-	.4byte Move_CUPID_ARROW
 	.4byte Move_PEEKABOO
 	.4byte Move_TWERK
 	.4byte Move_FAIR_PLAY
@@ -1519,9 +1517,12 @@ Move_ASSURANCE:
 	waitbgfadein
 	delay 0
 	setalpha 12, 8
+	playsewithpan SE_M_SWAGGER, -64
 	createsprite gPalmSpriteTemplate, ANIM_TARGET, 3, 0, 0, 8, 1, 0
-	playsewithpan SE_M_VITAL_THROW2, -64
+	waitforvisualfinish
+	playsewithpan SE_M_DOUBLE_SLAP, -64
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, 1, 1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 6, 1
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
@@ -3077,11 +3078,11 @@ Move_FIRE_FANG:
 	createsprite gFireSpiralInwardSpriteTemplate, ANIM_TARGET, 1, 64
 	createsprite gFireSpiralInwardSpriteTemplate, ANIM_TARGET, 1, 128
 	createsprite gFireSpiralInwardSpriteTemplate, ANIM_TARGET, 1, 196
+	delay 10
+	waitforvisualfinish
 	createsprite gSharpTeethSpriteTemplate, ANIM_ATTACKER, 2, 0, -32, 0, 0, 819, 10
 	createsprite gSharpTeethSpriteTemplate, ANIM_ATTACKER, 2, 0, 32, 4, 0, -819, 10
 	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
-	delay 10
-	waitforvisualfinish
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 1, 2
 	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 4, 7, 1
 	call FireSpreadEffect
@@ -18581,14 +18582,26 @@ Move_PSYCHO_HERB:
 	delay 20
 	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 0, 10, RGB(25, 31, 0)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_DEF_PARTNER, 1, 0, 10, RGB(25, 31, 0)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATK_PARTNER, 1, 0, 10, RGB(25, 31, 0)
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 5, 0, 15, 1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_DEF_PARTNER, 5, 0, 15, 1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATK_PARTNER, 5, 0, 15, 1
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -6, -6, 15, ANIM_TARGET, 1
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -6, -6, 15, ANIM_DEF_PARTNER, 1
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -6, -6, 15, ANIM_ATK_PARTNER, 1
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 10, 0, RGB(25, 31, 0)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_DEF_PARTNER, 1, 10, 0, RGB(25, 31, 0)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATK_PARTNER, 1, 10, 0, RGB(25, 31, 0)
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	end
+
+createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 32, 1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_DEF_PARTNER, 1, 0, 32, 1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATK_PARTNER, 1, 0, 32, 1
 
 Move_PEPPER_POWDER:
 	loadspritegfx ANIM_TAG_STUN_SPORE
@@ -18652,7 +18665,7 @@ Move_MAGIC_BEAN:
 Move_JUMPSTART:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_SPARK_2
-	monbg ANIM_TARGET
+	monbg ANIM_ATK_PARTNER
 	setalpha 12, 8
 	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 9, 1
@@ -18673,7 +18686,7 @@ Move_JUMPSTART:
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 6, 1
 	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
 	waitforvisualfinish
-	clearmonbg ANIM_TARGET
+	clearmonbg ANIM_ATK_PARTNER
 	blendoff
 	end
 
@@ -18953,37 +18966,6 @@ Move_MIGRAINE:
 	blendoff
 	end
 
-Move_PSYCHOTISM:
-	loadspritegfx ANIM_TAG_IMPACT
-	monbg ANIM_DEF_PARTNER
-	call SetPsychicBackground
-	setalpha 12, 8
-	playsewithpan SE_M_HEADBUTT, SOUND_PAN_ATTACKER
-	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 10, 1
-	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 0, 2, 0, 8, RGB_RED
-	waitforvisualfinish
-	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
-	waitplaysewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET, 10
-	waitplaysewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER, 20
-	waitplaysewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET, 30
-	waitplaysewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER, 40
-	waitplaysewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET, 50
-	waitplaysewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER, 60
-	waitplaysewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET, 70
-	waitplaysewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER, 80
-	waitplaysewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET, 90
-	createvisualtask AnimTask_TranslateMonElliptical, 2, 0, -18, 6, 6, 4
-	createvisualtask AnimTask_TranslateMonElliptical, 2, 1, 18, 6, 6, 4
-	call SubmissionHit
-	call SubmissionHit
-	call SubmissionHit
-	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
-	blendoff
-	delay 1
-	call UnsetPsychicBg
-	end
-
 Move_FROSTBITE:
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
 	loadspritegfx ANIM_TAG_ICE_CUBE
@@ -19127,9 +19109,6 @@ Move_RAINBOW_BEAM:
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	end
-
-Move_CUPID_ARROW::
-	end @to do:
 
 Move_PEEKABOO:
 	choosetwoturnanim PeekabooSetUp, PeekabooUnleash

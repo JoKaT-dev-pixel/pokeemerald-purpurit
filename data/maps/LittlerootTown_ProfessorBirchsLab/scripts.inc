@@ -702,11 +702,12 @@ LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "Oh, yes. As thanks for rescuing me,\n"
 	.string "I'd like you to have the POKéMON you\l"
 	.string "used earlier.\p"
-	.string "{PLAYER} received the {STR_VAR_1}!$"
+	.string "{PLAYER} reçoit {STR_VAR_1}\n"
+	.string "de la part du Professeur Fildrong !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
-	.string "PROF. BIRCH: While you're at it, why not\n"
-	.string "give a nickname to that {STR_VAR_1}?$"
+	.string "Voulez-vous donnez un surnom au\n"
+	.string "{STR_VAR_1} obtenu ?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "PROF. BIRCH: If you work at POKéMON\n"
@@ -748,7 +749,8 @@ LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "this POKéDEX.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex:
-	.string "{PLAYER} received the POKéDEX!$"
+	.string "{PLAYER} reçoit un Pokédex\n"
+	.string "de la part du Professeur Fildrong !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 	.string "PROF. BIRCH: The POKéDEX is a high-tech\n"

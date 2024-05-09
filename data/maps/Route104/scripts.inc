@@ -36,7 +36,7 @@ Route104_EventScript_TrySetRivalPos::
 	goto_if_ge VAR_BOARD_BRINEY_BOAT_STATE, 1, Route104_EventScript_DontSetRivalPos
 	goto_if_set FLAG_MET_RIVAL_RUSTBORO, Route104_EventScript_DontSetRivalPos
 	goto_if_unset FLAG_REGISTER_RIVAL_POKENAV, Route104_EventScript_DontSetRivalPos
-	setobjectxyperm LOCALID_RIVAL, 17, 52
+	setobjectxyperm LOCALID_RIVAL, 17, 64
 	return
 
 Route104_EventScript_DontSetRivalPos::
@@ -291,7 +291,7 @@ Route104_EventScript_ReceivedWhiteHerb::
 	end
 
 Route104_EventScript_Girl1::
-	msgbox Route104_Text_BrineyLivesInSeasideCottage, MSGBOX_NPC
+	msgbox Route104_Text_BrineyLivesInSeasideCottage, MSGBOX_SIGN
 	end
 
 Route104_EventScript_BugCatcher::
@@ -626,22 +626,8 @@ Route104_Movement_SailToDewfordAfterDadCalls:
 Route104_Movement_SailToDewford:
 	walk_down
 	walk_down
-	walk_down
-	walk_down
 	walk_fast_down
 	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
 	walk_faster_down
 	walk_faster_down
 	walk_fast_down
@@ -1005,9 +991,8 @@ Route104_Text_BrineyLivesInSeasideCottage:
 	.string "feared the sea, however stormy.$"
 
 Route104_Text_WhatsItLikeAtBottomOfSea:
-	.string "The sea, huh?\p"
-	.string "I wonder what it's like at the bottom\n"
-	.string "of the sea?$"
+	.string "Dégage de là !\p"
+	.string "Laisse-moi pisser dans la flotte.$"
 
 Route104_Text_ThrowBallAtWeakenedPokemon:
 	.string "If you're going to throw a POKé BALL,\n"

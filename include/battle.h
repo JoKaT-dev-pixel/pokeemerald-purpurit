@@ -202,6 +202,7 @@ struct SpecialStatus
     u8 faintedHasReplacement:1;
     u8 focusBanded:1;
     u8 focusSashed:1;
+    u8 dumbbelled:1;
     // End of byte
     u8 sturdied:1;
     u8 stormDrainRedirected:1;

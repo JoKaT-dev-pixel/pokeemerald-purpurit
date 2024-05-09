@@ -58,9 +58,9 @@ static const u8 sBigMushroomDesc[]    = _("A rare mushroom\n"
                                           "that would sell at a\n"
                                           "high price.");
 
-static const u8 sShardsDesc[]         = _("A shard from an\n"
-                                          "ancient item. Can\n"
-                                          "be sold cheaply.");
+static const u8 sShardsDesc[]         = _("Fragment d'objet\n"
+                                          "antique. Peut être\n"
+                                          "vendu à bas prix.");
 
 static const u8 sRootFossilDesc[]     = _("A fossil of an\n"
                                           "ancient, seafloor-\n"
@@ -2492,7 +2492,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_YELLOW_SHARD] =
     {
-        .name = _("Yellow Shard"),
+        .name = _("Tesson Jaune"),
         .price = (I_PRICE >= GEN_7) ? 1000 : 200,
         .description = sShardsDesc,
         .pocket = POCKET_ITEMS,
@@ -12463,6 +12463,21 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
+    },
+
+    [ITEM_DUMBBELL] =
+    {
+        .name = _("Haltère"),
+        .price = (I_PRICE >= GEN_7) ? 1000 : 500,
+        .holdEffect = HOLD_EFFECT_DUMBBELL,
+        .description = COMPOUND_STRING(
+            "A hold item that \n"
+            "raises Cubone or\n"
+            "Marowak's Attack."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 90,
     },
 
     //Start Pokevial Branch

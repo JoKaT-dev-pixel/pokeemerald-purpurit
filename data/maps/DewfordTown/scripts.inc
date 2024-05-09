@@ -645,13 +645,13 @@ DewfordTown_Text_TinyIslandCommunity:
 	.string "everyone picks up on it right away.$"
 
 DewfordTown_Text_TownSign:
-	.string "DEWFORD TOWN\n"
-	.string "“A tiny island in the blue sea.”$"
+	.string "Kohlanta\n"
+	.string "“Une ile remplie de défis extrêmes.”$"
 
 DewfordTown_Text_GymSign:
-	.string "DEWFORD TOWN POKéMON GYM\n"
-	.string "LEADER: BRAWLY\l"
-	.string "“A big wave in fighting!”$"
+	.string "Arène de Kohlanta\n"
+	.string "CHAMPION: Tibo Inshape\l"
+	.string "“N'oubliez pas de rester ÉNORME ET SEC !”$"
 
 DewfordTown_Text_HallSign:
 	.string "DEWFORD HALL\n"

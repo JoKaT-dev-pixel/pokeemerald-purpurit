@@ -1,15 +1,15 @@
 gText_ObtainedTheItem::
-	.string "Obtained the {STR_VAR_2}!$"
+	.string "{PLAYER} reçoit: {STR_VAR_2} !$"
 
 gText_TheBagIsFull::
 	.string "The BAG is full…$"
 
 gText_PutItemInPocket::
-	.string "{PLAYER} put away the {STR_VAR_2}\n"
-	.string "in the {STR_VAR_3} POCKET.$"
+	.string "{PLAYER} met {STR_VAR_2} dans\n"
+	.string "la Poche {STR_VAR_3}.$"
 
 gText_PlayerFoundOneItem::
-	.string "{PLAYER} found one {STR_VAR_2}!$"
+	.string "{PLAYER} trouve {STR_VAR_2} !$"
 
 gText_TooBadBagIsFull::
 	.string "Too bad!\n"

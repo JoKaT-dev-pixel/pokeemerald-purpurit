@@ -431,8 +431,9 @@
 #define BATTLE_TERRAIN_ULTRA_SPACE      21
 #define BATTLE_TERRAIN_FOREST           22
 #define BATTLE_TERRAIN_CITY             23
+#define BATTLE_TERRAIN_SEWER            24
 
-#define BATTLE_TERRAIN_COUNT            24
+#define BATTLE_TERRAIN_COUNT            25
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)

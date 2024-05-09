@@ -3564,9 +3564,14 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(Obstagoon);
 #if P_FAMILY_WURMPLE
 static const union AnimCmd sAnim_Wurmple_1[] =
 {
-    ANIMCMD_FRAME(0, 22),
-    ANIMCMD_FRAME(1, 35),
-    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(0, 6),
     ANIMCMD_END,
 };
 
@@ -3696,15 +3701,9 @@ static const union AnimCmd sAnim_Shiftry_1[] =
 #if P_FAMILY_TAILLOW
 static const union AnimCmd sAnim_Taillow_1[] =
 {
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 15),
-    ANIMCMD_FRAME(0, 2),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(0, 2),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(0, 2),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(0, 30),
     ANIMCMD_END,
 };
 

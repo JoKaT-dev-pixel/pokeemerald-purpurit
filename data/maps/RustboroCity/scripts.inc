@@ -1119,23 +1119,23 @@ RustboroCity_Text_WowYouHavePokemon:
 	.string "places with POKéMON, too.$"
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
-	.string "Je vends des Poké Ball très spéciales\n"
+	.string "Je vends des Poké Balls très spéciales\n"
 	.string "et très résistantes.\p"
-	.string "Ça te fera seulement 100 ¥ pour 5\n"
-	.string "Poké Ball, ça marche ?$"
+	.string "Ça te fera seulement 200 ¥ pour 5\n"
+	.string "Poké Balls, ça marche ?$"
 
 RustboroCity_SDF_Text_HereYouGo:
 	.string "Hehehe…\p"
 	.string "Quel pigeon celui-là.\p"
 	.string "Euh je veux dire…\p"
-	.string "Voilà tes Poké Ball !$"
+	.string "Voilà tes Poké Balls l'ami !$"
 
 RustboroCity_SDF_Text_NotEnoughMoney:
 	.string "You don't have the money.$"
 
 RustboroCity_SDF_Text_ThatsTooBad:
-	.string "No?\n"
-	.string "That's too bad.$"
+	.string "Non ?\n"
+	.string "Va te faire foutre !$"
 
 RustboroCity_Text_PokemonCanChangeLookFromExp:
 	.string "If a POKéMON gains experience in\n"
