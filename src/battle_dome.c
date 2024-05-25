@@ -4043,6 +4043,7 @@ static bool32 IsDomeStatusMoveEffect(u32 move)
     case EFFECT_WILL_O_WISP:
     case EFFECT_ENCORE:
     case EFFECT_ATTRACT:
+    case EFFECT_COMING_OUT:
     case EFFECT_NIGHTMARE:
     case EFFECT_YAWN:
     case EFFECT_CURSE:

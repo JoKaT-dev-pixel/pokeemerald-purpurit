@@ -571,7 +571,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_BrendanNoRoomForPokeBalls::
 	return
 
 LittlerootTown_ProfessorBirchsLab_Movement_RivalApproachPlayer:
-	walk_down
 	walk_in_place_faster_left
 	step_end
 

@@ -1007,7 +1007,7 @@ LittlerootTown_Text_TownSign:
 	.string "“Une vie tranquille dans un trou perdu.”$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "Labo Pokémon du Professeur Fildrong$"
 
 LittlerootTown_Text_PlayersHouse:
 	.string "{PLAYER}'s HOUSE$"

@@ -1648,6 +1648,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (!AI_CanBeInfatuated(battlerAtk, battlerDef, aiData->abilities[battlerDef]))
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_COMING_OUT:
+            if (!AI_CanBeInfatuated(battlerAtk, battlerDef, aiData->abilities[battlerDef]))
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_SAFEGUARD:
             if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_SAFEGUARD
               || PartnerHasSameMoveEffectWithoutTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
@@ -3815,6 +3819,7 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_ATTRACT:
+    case EFFECT_COMING_OUT:
         if (!isDoubleBattle
         && (AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_SLOWER)
         && BattlerWillFaintFromSecondaryDamage(battlerDef, aiData->abilities[battlerDef]))
@@ -4797,6 +4802,7 @@ static s32 AI_Risky(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     case EFFECT_DESTINY_BOND:
     case EFFECT_SWAGGER:
     case EFFECT_ATTRACT:
+    case EFFECT_COMING_OUT:
     case EFFECT_PRESENT:
     case EFFECT_BELLY_DRUM:
     case EFFECT_MIRROR_COAT:

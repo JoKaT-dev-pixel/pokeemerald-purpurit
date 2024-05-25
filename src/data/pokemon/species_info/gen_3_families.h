@@ -6,34 +6,35 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_TREECKO
     [SPECIES_TREECKO] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 45,
-        .baseDefense   = 35,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 55,
+        .baseHP        = 50,
+        .baseAttack    = 58,
+        .baseDefense   = 44,
+        .baseSpeed     = 59,
+        .baseSpAttack  = 63,
+        .baseSpDefense = 44,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
-        .evYield_Speed = 1,
+        .evYield_SpAttack = 1,
         .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_UNBURDEN },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_OVERGROW, ABILITY_OWN_TEMPO, ABILITY_TANGLED_FEET },
         .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Treecko"),
+        .noFlip = TRUE,
+        .speciesName = _("Microrge"),
         .cryId = CRY_TREECKO,
         .natDexNum = NATIONAL_DEX_TREECKO,
-        .categoryName = _("Wood Gecko"),
+        .categoryName = _("Lémur"),
         .height = 5,
         .weight = 50,
         .description = COMPOUND_STRING(
-            "It makes its nest in a giant tree in the\n"
-            "forest. It ferociously guards against\n"
-            "anything nearing its territory. It is said\n"
-            "to be the protector of the forest's trees."),
+            "Ce Pokémon est capable d'ingurgiter\n"
+            "d'importantes quantités d'alcools\n"
+            "supérieures à celles des humains sans\n"
+            "subir de fâcheuses conséquences."),
         .pokemonScale = 541,
         .pokemonOffset = 19,
         .trainerScale = 256,
@@ -42,7 +43,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 8,
         .frontAnimFrames = sAnims_Treecko,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
         .backPic = gMonBackPic_Treecko,
         .backPicSize = MON_COORDS_SIZE(56, 48),
         .backPicYOffset = 8,
@@ -257,8 +258,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .description = COMPOUND_STRING(
             "De nature indisciplinée, il cherche\n"
             "toujours à brutaliser ses ennemis et\n"
-            "vapote sa queue afin de se reposer une\n"
-            "fois avoir acquis le territoire ennemi."),
+            "vapote sa queue afin de se reposer\n"
+            "après avoir acquis le territoire ennemi."),
         .pokemonScale = 566,
         .pokemonOffset = 19,
         .trainerScale = 256,
@@ -490,10 +491,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 4,
         .weight = 76,
         .description = COMPOUND_STRING(
-            "On land, it can powerfully lift large\n"
-            "boulders by planting its four feet and\n"
-            "heaving. It sleeps by burying itself in soil\n"
-            "at the water's edge."),
+            "Son corps sécrète un liquide blanchâtre\n"
+            "et visqueux ressemblant à de la glaire\n"
+            "cervicale. Sa peau est tellement lisse\n"
+            "qu'il est difficile à le blesser."),
         .pokemonScale = 535,
         .pokemonOffset = 20,
         .trainerScale = 256,

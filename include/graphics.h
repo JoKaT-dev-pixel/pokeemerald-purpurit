@@ -2907,6 +2907,7 @@ extern const u32 gBattleAnimSpriteGfx_SyrupShell[];
 extern const u32 gBattleAnimSpriteGfx_SyrupSplat[];
 extern const u32 gBattleAnimSpritePal_SyrupRed[];
 extern const u32 gBattleAnimSpritePal_SyrupYellow[];
+extern const u32 gBattleAnimSpritePal_BlueHeart[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];
@@ -3006,6 +3007,9 @@ extern const u32 gBattleAnimBgImage_FocusBlast[];
 extern const u32 gBattleAnimBgPalette_FocusBlast[];
 extern const u32 gBattleAnimBgTilemap_FocusBlast[];
 extern const u32 gBattleAnimBgPalette_GarbageFalls[];
+extern const u32 gBattleAnimBgImage_Gay[];
+extern const u32 gBattleAnimBgPalette_Gay[];
+extern const u32 gBattleAnimBgTilemap_Gay[];
 extern const u32 gBattleAnimBgImage_GrassyTerrain[];
 extern const u32 gBattleAnimBgPalette_GrassyTerrain[];
 extern const u32 gBattleAnimBgTilemap_GrassyTerrain[];

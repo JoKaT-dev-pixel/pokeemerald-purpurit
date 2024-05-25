@@ -1334,6 +1334,17 @@ const u16 gMagicalLeafBlendColors[] =
     RGB(22, 21, 31),
 };
 
+const u16 gRainbowBeamBlendColors[] =
+{
+    RGB_RED,
+    RGB(31, 19, 0),
+    RGB_YELLOW,
+    RGB_GREEN,
+    RGB(5, 14, 31),
+    RGB(22, 10, 31),
+    RGB(22, 21, 31),
+};
+
 const struct SpriteTemplate gNeedleArmSpikeSpriteTemplate =
 {
     .tileTag = ANIM_TAG_GREEN_SPIKE,
@@ -4965,6 +4976,36 @@ void AnimTask_CycleMagicalLeafPal(u8 taskId)
             task->data[9] = 0;
             BlendPalette(task->data[8], 16, task->data[10], gMagicalLeafBlendColors[task->data[11]]);
             BlendPalette(task->data[12], 16, task->data[10], gMagicalLeafBlendColors[task->data[11]]);
+            if (++task->data[10] == 17)
+            {
+                task->data[10] = 0;
+                if (++task->data[11] == 7)
+                    task->data[11] = 0;
+            }
+        }
+        break;
+    }
+
+    if (gBattleAnimArgs[7] == -1)
+        DestroyAnimVisualTask(taskId);
+}
+
+void AnimTask_CycleRainbowBeamPal(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    switch (task->data[0])
+    {
+    case 0:
+        task->data[8] = OBJ_PLTT_ID(IndexOfSpritePaletteTag(ANIM_TAG_SMALL_BUBBLES));
+        task->data[12] = OBJ_PLTT_ID(IndexOfSpritePaletteTag(ANIM_TAG_BLUE_RING_2));
+        task->data[0]++;
+        break;
+    case 1:
+        if (++task->data[9] >= 0)
+        {
+            task->data[9] = 0;
+            BlendPalette(task->data[8], 16, task->data[10], gRainbowBeamBlendColors[task->data[11]]);
+            BlendPalette(task->data[12], 16, task->data[10], gRainbowBeamBlendColors[task->data[11]]);
             if (++task->data[10] == 17)
             {
                 task->data[10] = 0;

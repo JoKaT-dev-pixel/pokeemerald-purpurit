@@ -15032,7 +15032,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .sheerForceBoost = TRUE,
     },
 
-    [MOVE_MALWARE] =
+    [MOVE_GLITCH_FORCE] =
     {
         .effect = EFFECT_TWO_TYPED_MOVE,
         .power = 100,
@@ -15111,9 +15111,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .sheerForceBoost = TRUE,
     },
 
-    [MOVE_TRANS_LOVE] =
+    [MOVE_COMING_OUT] =
     {
-        .effect = EFFECT_TRANS_LOVE,
+        .effect = EFFECT_COMING_OUT,
         .power = 0,
         .type = TYPE_FAIRY,
         .accuracy = 100,

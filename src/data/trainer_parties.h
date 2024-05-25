@@ -3487,11 +3487,14 @@ static const struct TrainerMon sParty_Juan1[] = {
     .moves = {MOVE_WATER_PULSE, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_LEER}
     },
     {
-    .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
-    .lvl = 46,
-    .species = SPECIES_KINGDRA,
-    .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_WATER_PULSE, MOVE_DOUBLE_TEAM, MOVE_ICE_BEAM, MOVE_REST}
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 6),
+    .lvl = 62,
+    .species = SPECIES_VAPOREON,
+    .ability = ABILITY_LIQUID_VOICE,
+    .nature = NATURE_MODEST,
+    .heldItem = ITEM_PETAYA_BERRY,
+    .moves = {MOVE_BOOMBURST, MOVE_SHADOW_BALL, MOVE_GLITCH_FORCE, MOVE_MOONBLAST}
     }
 };
 

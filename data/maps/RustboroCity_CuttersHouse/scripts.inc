@@ -26,9 +26,7 @@ RustboroCity_CuttersHouse_EventScript_Lass::
 
 RustboroCity_CuttersHouse_Text_YouCanPutThisHMToGoodUse:
 	.string "Jr.Golden Hands: Alors mon gars,\n"
-	.string "comment ça va ?\p"
-	.string "Alors dis-moi, tu veux faire quoi\n"
-	.string "comme coupe ?\p"
+	.string "tu veux faire quoi comme coupe ?\p"
 	.string "… … … … … … … … …\p"
 	.string "Une Buzzcut ?\p"
 	.string "C'est carré mon gars. C'est parti,\n"

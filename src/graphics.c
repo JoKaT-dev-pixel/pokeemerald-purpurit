@@ -1042,6 +1042,7 @@ const u32 gBattleAnimSpriteGfx_MagentaHeart[] = INCBIN_U32("graphics/battle_anim
 const u32 gBattleAnimSpritePal_PinkHeart[] = INCBIN_U32("graphics/battle_anims/sprites/pink_heart.gbapal.lz");
 const u32 gBattleAnimSpritePal_MagentaHeart[] = INCBIN_U32("graphics/battle_anims/sprites/magenta_heart.gbapal.lz");
 const u32 gBattleAnimSpritePal_RedHeart[] = INCBIN_U32("graphics/battle_anims/sprites/red_heart.gbapal.lz");
+const u32 gBattleAnimSpritePal_BlueHeart[] = INCBIN_U32("graphics/battle_anims/sprites/blue_heart.gbapal.lz");
 
 const u32 gBattleAnimBgImage_Attract[] = INCBIN_U32("graphics/battle_anims/backgrounds/attract.4bpp.lz");
 const u32 gBattleAnimBgPalette_Attract[] = INCBIN_U32("graphics/battle_anims/backgrounds/attract.gbapal.lz");
@@ -1169,6 +1170,10 @@ const u32 gBattleAnimBgPalette_Guillotine[] = INCBIN_U32("graphics/battle_anims/
 const u32 gBattleAnimBgImage_Thunder[] = INCBIN_U32("graphics/battle_anims/backgrounds/thunder.4bpp.lz");
 const u32 gBattleAnimBgPalette_Thunder[] = INCBIN_U32("graphics/battle_anims/backgrounds/thunder.gbapal.lz");
 const u32 gBattleAnimBgTilemap_Thunder[] = INCBIN_U32("graphics/battle_anims/backgrounds/thunder.bin.lz");
+
+const u32 gBattleAnimBgImage_Gay[] = INCBIN_U32("graphics/battle_anims/backgrounds/gay.4bpp.lz");
+const u32 gBattleAnimBgPalette_Gay[] = INCBIN_U32("graphics/battle_anims/backgrounds/gay.gbapal.lz");
+const u32 gBattleAnimBgTilemap_Gay[] = INCBIN_U32("graphics/battle_anims/backgrounds/gay.bin.lz");
 
 const u32 gBattleAnimSpriteGfx_PainSplit[] = INCBIN_U32("graphics/battle_anims/sprites/pain_split.4bpp.lz");
 const u32 gBattleAnimSpritePal_PainSplit[] = INCBIN_U32("graphics/battle_anims/sprites/pain_split.gbapal.lz");

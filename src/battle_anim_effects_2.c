@@ -63,6 +63,10 @@ static void AnimRedHeartProjectile(struct Sprite *);
 static void AnimRedHeartProjectile_Step(struct Sprite *);
 static void AnimRedHeartRising(struct Sprite *);
 static void AnimRedHeartRising_Step(struct Sprite *);
+static void AnimBlueHeartProjectile(struct Sprite *);
+static void AnimBlueHeartProjectile_Step(struct Sprite *);
+static void AnimBlueHeartRising(struct Sprite *);
+static void AnimBlueHeartRising_Step(struct Sprite *);
 static void AnimOrbitFast_Step(struct Sprite *);
 static void AnimOrbitScatter_Step(struct Sprite *);
 static void AnimSpitUpOrb(struct Sprite *);
@@ -99,6 +103,7 @@ static void AnimTask_SpeedDust_Step(u8);
 static void AnimTask_FakeOut_Step1(u8);
 static void AnimTask_FakeOut_Step2(u8);
 static void AnimTask_HeartsBackground_Step(u8);
+static void AnimTask_GayBackground_Step(u8);
 static void AnimTask_ScaryFace_Step(u8);
 static void AnimTask_UproarDistortion_Step(u8);
 
@@ -951,6 +956,39 @@ const struct SpriteTemplate gRedHeartRisingSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimRedHeartRising,
+};
+
+const struct SpriteTemplate gBlueHeartProjectileSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BLUE_HEART,
+    .paletteTag = ANIM_TAG_BLUE_HEART,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimBlueHeartProjectile,
+};
+
+const struct SpriteTemplate gBlueHeartBurstSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BLUE_HEART,
+    .paletteTag = ANIM_TAG_BLUE_HEART,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimParticleBurst,
+};
+
+const struct SpriteTemplate gBlueHeartRisingSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BLUE_HEART,
+    .paletteTag = ANIM_TAG_BLUE_HEART,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimBlueHeartRising,
 };
 
 const union AffineAnimCmd gHiddenPowerOrbAffineAnimCmds[] =
@@ -3296,6 +3334,57 @@ static void AnimRedHeartRising_Step(struct Sprite *sprite)
     }
 }
 
+static void AnimBlueHeartProjectile(struct Sprite *sprite)
+{
+    InitSpritePosToAnimAttacker(sprite, TRUE);
+    sprite->data[0] = 95;
+    sprite->data[1] = sprite->x;
+    sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    sprite->data[3] = sprite->y;
+    sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+    InitAnimLinearTranslation(sprite);
+    sprite->callback = AnimBlueHeartProjectile_Step;
+}
+
+static void AnimBlueHeartProjectile_Step(struct Sprite *sprite)
+{
+    if (!AnimTranslateLinear(sprite))
+    {
+        sprite->y2 += Sin(sprite->data[5], 14);
+        sprite->data[5] = (sprite->data[5] + 4) & 0xFF;
+    }
+    else
+    {
+        DestroyAnimSprite(sprite);
+    }
+}
+
+static void AnimBlueHeartRising(struct Sprite *sprite)
+{
+    sprite->x = gBattleAnimArgs[0];
+    sprite->y = DISPLAY_HEIGHT;
+    sprite->data[0] = gBattleAnimArgs[2];
+    sprite->data[1] = gBattleAnimArgs[1];
+    sprite->callback = WaitAnimForDuration;
+    StoreSpriteCallbackInData6(sprite, AnimBlueHeartRising_Step);
+}
+
+static void AnimBlueHeartRising_Step(struct Sprite *sprite)
+{
+    s16 y;
+    sprite->data[2] += sprite->data[1];
+    sprite->y2 = -((u16)sprite->data[2] >> 8);
+    sprite->x2 = Sin(sprite->data[3], 4);
+    sprite->data[3] = (sprite->data[3] + 3) & 0xFF;
+    y = sprite->y + sprite->y2;
+    if (y <= 72)
+    {
+        sprite->invisible = sprite->data[3] % 2;
+        if (y <= 64)
+            DestroyAnimSprite(sprite);
+    }
+}
+
 void AnimTask_HeartsBackground(u8 taskId)
 {
     struct BattleAnimBgData animBg;
@@ -3319,6 +3408,84 @@ void AnimTask_HeartsBackground(u8 taskId)
 }
 
 static void AnimTask_HeartsBackground_Step(u8 taskId)
+{
+    struct BattleAnimBgData animBg;
+
+    switch (gTasks[taskId].data[12])
+    {
+    case 0:
+        if (++gTasks[taskId].data[10] == 4)
+        {
+            gTasks[taskId].data[10] = 0;
+            gTasks[taskId].data[11]++;
+            SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[11], 16 - gTasks[taskId].data[11]));
+            if (gTasks[taskId].data[11] == 16)
+            {
+                gTasks[taskId].data[12]++;
+                gTasks[taskId].data[11] = 0;
+            }
+        }
+        break;
+    case 1:
+        if (++gTasks[taskId].data[11] == 141)
+        {
+            gTasks[taskId].data[11] = 16;
+            gTasks[taskId].data[12]++;
+        }
+        break;
+    case 2:
+        if (++gTasks[taskId].data[10] == 4)
+        {
+            gTasks[taskId].data[10] = 0;
+            gTasks[taskId].data[11]--;
+            SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[11], 16 - gTasks[taskId].data[11]));
+            if (gTasks[taskId].data[11] == 0)
+            {
+                gTasks[taskId].data[12]++;
+                gTasks[taskId].data[11] = 0;
+            }
+        }
+        break;
+    case 3:
+        GetBattleAnimBg1Data(&animBg);
+        ClearBattleAnimBg(animBg.bgId);
+        gTasks[taskId].data[12]++;
+        break;
+    case 4:
+        if (!IsContest())
+            SetAnimBgAttribute(1, BG_ANIM_CHAR_BASE_BLOCK, 0);
+
+        SetGpuReg(REG_OFFSET_BLDCNT, 0);
+        SetGpuReg(REG_OFFSET_BLDALPHA, 0);
+        SetAnimBgAttribute(1, BG_ANIM_PRIORITY, 1);
+        DestroyAnimVisualTask(taskId);
+        break;
+    }
+}
+
+void AnimTask_GayBackground(u8 taskId)
+{
+    struct BattleAnimBgData animBg;
+
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL | BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, 16));
+    SetAnimBgAttribute(1, BG_ANIM_PRIORITY, 3);
+    SetAnimBgAttribute(1, BG_ANIM_SCREEN_SIZE, 0);
+    if (!IsContest())
+        SetAnimBgAttribute(1, BG_ANIM_CHAR_BASE_BLOCK, 1);
+
+    gBattle_BG1_X = 0;
+    gBattle_BG1_Y = 0;
+    SetGpuReg(REG_OFFSET_BG1HOFS, gBattle_BG1_X);
+    SetGpuReg(REG_OFFSET_BG1VOFS, gBattle_BG1_Y);
+    GetBattleAnimBg1Data(&animBg);
+    AnimLoadCompressedBgGfx(animBg.bgId, gBattleAnimBgImage_Gay, animBg.tilesOffset);
+    AnimLoadCompressedBgTilemapHandleContest(&animBg, gBattleAnimBgTilemap_Gay, FALSE);
+    LoadCompressedPalette(gBattleAnimBgPalette_Gay, BG_PLTT_ID(animBg.paletteId), PLTT_SIZE_4BPP);
+    gTasks[taskId].func = AnimTask_GayBackground_Step;
+}
+
+static void AnimTask_GayBackground_Step(u8 taskId)
 {
     struct BattleAnimBgData animBg;
 

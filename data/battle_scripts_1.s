@@ -4397,7 +4397,7 @@ BattleScript_EffectAttract::
 	call BattleScript_TryDestinyKnotAttacker
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectTransLove::
+BattleScript_EffectComingOut::
 	attackcanceler
 	attackstring
 	ppreduce

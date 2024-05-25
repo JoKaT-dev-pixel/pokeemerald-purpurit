@@ -160,8 +160,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_OWN_TEMPO] =
     {
-        .name = _("Own Tempo"),
-        .description = COMPOUND_STRING("Prevents confusion."),
+        .name = _("Tempo Perso"),
+        .description = COMPOUND_STRING("Vit sa vie à son propre rythme,\nce qui empêche la confusion."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -495,15 +495,15 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_LIQUID_OOZE] =
     {
-        .name = _("Liquid Ooze"),
-        .description = COMPOUND_STRING("Draining causes injury."),
+        .name = _("Suintement"),
+        .description = COMPOUND_STRING("Blesse l'attaquant qui draine\nl'énergie du Pokémon."),
         .aiRating = 3,
     },
 
     [ABILITY_OVERGROW] =
     {
-        .name = _("Overgrow"),
-        .description = COMPOUND_STRING("Ups Grass moves in a pinch."),
+        .name = _("Engrais"),
+        .description = COMPOUND_STRING("Booste les capacités de type\nPlante en cas de besoin."),
         .aiRating = 5,
     },
 
