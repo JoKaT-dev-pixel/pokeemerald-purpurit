@@ -373,26 +373,12 @@ DewfordTown_Movement_SailToPetalburg:
 	walk_fast_left
 	walk_fast_up
 	walk_fast_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
+	walk_fast_up
+	walk_fast_up
 	walk_faster_up
 	walk_faster_up
 	walk_fast_up
 	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_up
-	walk_up
 	walk_up
 	walk_up
 	step_end
@@ -651,7 +637,7 @@ DewfordTown_Text_TownSign:
 DewfordTown_Text_GymSign:
 	.string "Arène de Kohlanta\n"
 	.string "CHAMPION: Tibo Inshape\l"
-	.string "“N'oubliez pas de rester ÉNORME ET SEC !”$"
+	.string "“N'oublie pas de rester ÉNORME ET SEC !”$"
 
 DewfordTown_Text_HallSign:
 	.string "DEWFORD HALL\n"

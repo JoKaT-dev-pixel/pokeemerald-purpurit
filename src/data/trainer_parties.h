@@ -3256,32 +3256,32 @@ static const struct TrainerMon sParty_Brawly1[] = {
     {
     .iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20),
     .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
-    .lvl = 17,
+    .lvl = 18,
     .species = SPECIES_MACHOP,
     .ability = ABILITY_LIMBER,
     .nature = NATURE_ADAMANT,
     .heldItem = ITEM_DUMBBELL,
-    .moves = {MOVE_POWER_UP_PUNCH, MOVE_ENDEAVOR, MOVE_BONE_RUSH, MOVE_KNOCK_OFF}
+    .moves = {MOVE_POWER_UP_PUNCH, MOVE_ENDEAVOR, MOVE_BONE_RUSH, MOVE_BULK_UP}
     },
     {
     .iv = TRAINER_PARTY_IVS(20, 20, 20, 20, 20, 20),
     .ev = TRAINER_PARTY_EVS(40, 40, 40, 40, 40, 40),
-    .lvl = 18,
+    .lvl = 19,
     .species = SPECIES_ANORITH,
     .ability = ABILITY_DEFIANT,
     .nature = NATURE_JOLLY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SMACK_DOWN, MOVE_MACH_PUNCH, MOVE_KARATE_CHOP, MOVE_POUNCE}
+    .moves = {MOVE_SMACK_DOWN, MOVE_MACH_PUNCH, MOVE_FORCE_PALM, MOVE_POUNCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(22, 22, 22, 22, 22, 22),
     .ev = TRAINER_PARTY_EVS(40, 8, 0, 12, 0, 8),
-    .lvl = 20,
+    .lvl = 21,
     .species = SPECIES_MACHOKE,
-    .ability = ABILITY_STAMINA,
+    .ability = ABILITY_SHEER_FORCE,
     .nature = NATURE_CAREFUL,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_VITAL_THROW, MOVE_CHIP_AWAY, MOVE_BONE_CLUB, MOVE_BULK_UP}
+    .moves = {MOVE_VITAL_THROW, MOVE_RETALIATE, MOVE_BONE_CLUB, MOVE_FIRE_PUNCH}
     }
 };
 

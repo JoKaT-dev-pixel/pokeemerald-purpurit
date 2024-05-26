@@ -695,6 +695,7 @@ u32 FldEff_SandFootprints(void)
         sprite->oam.priority = gFieldEffectArguments[3];
         sprite->sFldEff = FLDEFF_SAND_FOOTPRINTS;
         StartSpriteAnim(sprite, gFieldEffectArguments[4]);
+        PlaySE(SE_SANDSTEPS);
     }
     return 0;
 }
