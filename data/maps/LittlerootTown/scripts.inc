@@ -970,11 +970,11 @@ LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "ton départ.$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
+	.string "Je n'arrive pas à y croire que le\n"
+	.string "professeur Fildrong vient s'installer\l"
+	.string "dans ce trou paumé.\p"
+	.string "Je me demande ce qui lui est passé\n"
+	.string "par la tête ?$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
@@ -1010,7 +1010,7 @@ LittlerootTown_Text_ProfBirchsLab:
 	.string "Labo Pokémon du Professeur Fildrong$"
 
 LittlerootTown_Text_PlayersHouse:
-	.string "{PLAYER}'s HOUSE$"
+	.string "Maison de {PLAYER}$"
 
 LittlerootTown_Text_ProfBirchsHouse:
 	.string "PROF. BIRCH'S HOUSE$"
