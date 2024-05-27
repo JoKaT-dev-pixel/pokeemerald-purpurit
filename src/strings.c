@@ -2,7 +2,6 @@
 #include "strings.h"
 #include "battle_pyramid_bag.h"
 #include "item_menu.h"
-#include "text.h"
 
 ALIGNED(4)
 const u8 gText_ExpandedPlaceholder_Empty[] = _("");
@@ -176,7 +175,7 @@ const u8 gText_Number[] = _("No. ");
 const u8 gText_Level[] = _("N. ");
 const u8 gText_IdNumberSlash[] = _("IDNo. /"); // Unused
 const u8 gText_Name[] = _("NAME");
-const u8 gText_IDNumber[] = _C("No.ID");
+const u8 gText_IDNumber[] = ("No.ID");
 const u8 gText_BirchInTrouble[] = _("Le Prof. Fildrong a des ennuis !\nChoisis un Pokémon et sauve-le !");
 const u8 gText_ConfirmStarterChoice[] = _("Prendre ce Pokémon ?");
 const u8 gText_Pokemon4[] = _("POKéMON"); // Unused
@@ -507,7 +506,7 @@ const u8 gText_SpDef4[] = _("DÉF. SP.");
 const u8 gText_Speed2[] = _("VITESSE");
 const u8 gText_HP4[] = _("PV");
 const u8 gText_EmptyString8[] = _(""); // Unused
-const u8 gText_OTSlash[] = _C("DO/");
+const u8 gText_OTSlash[] = _("DO/");
 const u8 gText_RentalPkmn[] = _("RENTAL POKéMON");
 const u8 gText_TypeSlash[] = _("TYPE:");
 const u8 gText_Power[] = _("Puis.");
@@ -1110,15 +1109,9 @@ const u8 gText_GamePlayCannotBeContinued[] = _("{COLOR RED}“Game play cannot b
 const u8 gText_CheckCompleted[] = _("Check completed.\nAttempting to save again.\nPlease wait.");
 const u8 gText_SaveCompleteGameCannotContinue[] = _("Save completed.\n{COLOR RED}“Game play cannot be continued.\nReturning to the title screen.”");
 const u8 gText_SaveCompletePressA[] = _("Save completed.\n{COLOR RED}“Please press the A Button.”");
-#if (DECAP_ENABLED) && !(DECAP_MAP_NAMES)
-const u8 gText_Ferry[] = _C("FERRY");
-const u8 gText_SecretBase[] = _C("SECRET BASE");
-const u8 gText_Hideout[] = _C("HIDEOUT");
-#else
 const u8 gText_Ferry[] = _("FERRY");
 const u8 gText_SecretBase[] = _("SECRET BASE");
 const u8 gText_Hideout[] = _("HIDEOUT");
-#endif
 const u8 gText_ResetRTCConfirmCancel[] = _("Reset RTC?\nA: Confirm, B: Cancel");
 const u8 gText_PresentTime[] = _("Present time in game");
 const u8 gText_PreviousTime[] = _("Previous time in game");
@@ -1216,7 +1209,7 @@ const u8 gText_PkmnFainted_FldPsn[] = _("{STR_VAR_1} survived the poisoning.\nTh
 #endif
 const u8 gText_Marco[] = _("MARCO");
 const u8 gText_TrainerCardName[] = _("NOM ");
-const u8 gText_TrainerCardIDNo[] = _C("NoID / ");
+const u8 gText_TrainerCardIDNo[] = ("NoID / ");
 const u8 gText_TrainerCardMoney[] = _("Argent");
 const u8 gText_PokeDollar[] = _("¥"); // Unused
 const u8 gText_TrainerCardPokedex[] = _("Pokédex");
