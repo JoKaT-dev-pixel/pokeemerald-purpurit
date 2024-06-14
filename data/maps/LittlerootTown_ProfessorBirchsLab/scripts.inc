@@ -664,23 +664,24 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
 	end
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
-	.string "Hunh? PROF. BIRCH?\p"
-	.string "The PROF's away on fieldwork.\n"
-	.string "Ergo, he isn't here.\p"
-	.string "Oh, let me explain what fieldwork is.\p"
-	.string "It is to study things in the natural\n"
-	.string "environment, like fields and mountains,\l"
-	.string "instead of a laboratory.\p"
-	.string "The PROF isn't one for doing desk work.\n"
-	.string "He's the type of person who would\l"
-	.string "rather go outside and experience\l"
-	.string "things than read about them here.$"
+	.string "Hein ? Le Professeur Fildrong ?\p"
+	.string "Le Professeur est parti se promener\n"
+	.string "mais il ne devrait pas tarder.\p"
+	.string "C'est pas tout à fait son genre de\n"
+	.string "rester derrière un bureau.\p"
+	.string "Autre fois, il était vidéaste mais il\n"
+	.string "a tellement été tourmenté par sa\l"
+	.string "calvitie que d'un coup, il a décidé\l"
+	.string "de tout arrêter et découvre une\l"
+	.string "toute autre nouvelle passion.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
-	.string "The PROF isn't one for doing desk work.\n"
-	.string "He's the type of person who would\l"
-	.string "rather go outside and experience\l"
-	.string "things than read about them here.$"
+	.string "Le Professeur Fildrong étudie\n"
+	.string "les combats Pokémon depuis sa\l"
+	.string "jeunesse.\p"
+	.string "Apparement, c'est un stratège !\p"
+	.string "J'aimerai bien le voir à l'oeuvre un\n"
+	.string "de ces quatres !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 	.string "PROF. BIRCH is studying the habitats\n"

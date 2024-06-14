@@ -3834,11 +3834,10 @@ static const union AnimCmd sAnim_Breloom_1[] =
 #if P_FAMILY_SLAKOTH
 static const union AnimCmd sAnim_Slakoth_1[] =
 {
-    ANIMCMD_FRAME(0, 13),
-    ANIMCMD_FRAME(1, 22),
-    ANIMCMD_FRAME(0, 8),
-    ANIMCMD_FRAME(1, 22),
-    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(1, 18),
     ANIMCMD_FRAME(0, 11),
     ANIMCMD_END,
 };

@@ -326,18 +326,19 @@ BrendansHouse_1F_Text_RivalNicknameNoCheck:
 	.string "Quel est son prénom déjà…?$"
 
 PlayersHouse_1F_Text_IsntItNiceInHere:
-	.string "MOM: See, {PLAYER}?\n"
-	.string "Isn't it nice in here, too?$"
+	.string "Maman: Alors, {PLAYER} ?\n"
+	.string "Elle te plait ma nouvelle déco ?$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
-	.string "The mover's POKéMON do all the work\n"
-	.string "of moving us in and cleaning up after.\l"
-	.string "This is so convenient!\p"
-	.string "{PLAYER}, your room is upstairs.\n"
-	.string "Go check it out, dear!\p"
-	.string "DAD bought you a new clock to mark\n"
-	.string "our move here.\l"
-	.string "Don't forget to set it!$"
+	.string "Ne t'inquiète pas pour mes colis.\n"
+	.string "Les Pokémon du livreur se chargerons\l"
+	.string "de cette tâche et à vrai dire ça nous\l"
+	.string "soulage beaucoup !\p"
+	.string "D'ailleurs {PLAYER}, je t'ai acheté une\n"
+	.string "une nouvelle horloge pour fêter\l"
+	.string "ton retour !\p"
+	.string "Elle se trouve à l'étage. Va voir\n"
+	.string "à quoi elle ressemble, mon chou !$"
 
 PlayersHouse_1F_Text_ArentYouInterestedInRoom:
 	.string "MOM: Well, {PLAYER}?\p"
@@ -349,27 +350,30 @@ PlayersHouse_1F_Text_GoSetTheClock:
 	.string "Go set the clock in your room, honey.$"
 
 PlayersHouse_1F_Text_OhComeQuickly:
-	.string "MOM: Oh! {PLAYER}, {PLAYER}!\n"
-	.string "Quick! Come quickly!$"
+	.string "Maman: Oh ! {PLAYER}, {PLAYER} !\n"
+	.string "Vite ! Viens voir !$"
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn:
-	.string "MOM: Look! It's PETALBURG GYM!\n"
-	.string "Maybe DAD will be on!$"
+	.string "Maman: Regarde !\p"
+	.string "On dirait bien que le professeur\n"
+	.string "Fildrong vient de s'installer ici !$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
-	.string "MOM: Oh… It's over.\p"
-	.string "I think DAD was on, but we missed him.\n"
-	.string "Too bad.$"
+	.string "Maman: Oh… C’est déjà terminé.\p"
+	.string "Faut que tu profites de cette occasion\n"
+	.string "pour recevoir ton premier Pokémon\l"
+	.string "de compagnie.$"
 
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
-	.string "Oh, yes.\n"
-	.string "One of DAD's friends lives in town.\p"
-	.string "PROF. BIRCH is his name.\p"
-	.string "He lives right next door, so you should\n"
-	.string "go over and introduce yourself.$"
+	.string "Ah, tiens !\n"
+	.string "Tu as aussi de nouveau voisin.\p"
+	.string "L'enfant de la voisine a le même âge que\n"
+	.string "toi.\p"
+	.string "Tu pourrais aller lui dire bonjour et\n"
+	.string "te faire un nouveau camarade.$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
-	.string "MOM: See you, honey!$"
+	.string "Maman: À plus tard, mon chou !$"
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
 	.string "MOM: Did you introduce yourself to\n"

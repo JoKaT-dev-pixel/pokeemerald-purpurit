@@ -14834,7 +14834,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .strikeCount = 2,
     },
 
-    [MOVE_PETRIFY] =
+    [MOVE_T_POSE] =
     {
         .effect = EFFECT_PARALYZE,
         .power = 0,

@@ -901,12 +901,14 @@ Common_EventScript_PlayerHandedOverTheItem::
 
 @ The below and surf.inc could be split into some text/notices.inc
 gText_PokemartSign::
-	.string "“Selected items for your convenience!”\n"
-	.string "POKéMON MART$"
+	.string "“Objets sélectionnés pour\n"
+    .string "votre commodité !”\l"
+    .string "Boutique Pokémon$"
 
 gText_PokemonCenterSign::
-	.string "“Rejuvenate your tired partners!”\n"
-	.string "POKéMON CENTER$"
+	.string "“Rajeunissez vos partenaires\n"
+    .string "fatigués !”\l"
+    .string "Centre Pokémon$"
 
 gText_MomOrDadMightLikeThisProgram::
 	.string "{STR_VAR_1} might like this program.\n"

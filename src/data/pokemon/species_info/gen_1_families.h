@@ -7239,10 +7239,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
     [SPECIES_GEODUDE] =
     {
-        .baseHP        = 48,
+        .baseHP        = 55,
         .baseAttack    = 55,
         .baseDefense   = 75,
-        .baseSpeed     = 25,
+        .baseSpeed     = 50,
         .baseSpAttack  = 40,
         .baseSpDefense = 35,
         .types = MON_TYPES(TYPE_ROCK, TYPE_GROUND),
@@ -11977,31 +11977,31 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_MIME_JR] =
     {
-        .baseHP        = 20,
-        .baseAttack    = 25,
-        .baseDefense   = 45,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 90,
+        .baseHP        = 51,
+        .baseAttack    = 51,
+        .baseDefense   = 50,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 51,
     #if P_UPDATED_TYPES >= GEN_6
-        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FAIRY),
+        .types = MON_TYPES(TYPE_WATER),
     #else
         .types = MON_TYPES(TYPE_PSYCHIC),
     #endif
-        .catchRate = 145,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 78,
-        .evYield_SpDefense = 1,
+        .catchRate = 120,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 70 : 70,
+        .evYield_SpAttack = 1,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_SOUNDPROOF, ABILITY_FILTER, ABILITY_TECHNICIAN },
-        .bodyColor = BODY_COLOR_PINK,
-        .speciesName = _("Mime Jr."),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_WATER_BUBBLE, ABILITY_AFTERMATH, ABILITY_MAGIC_BOUNCE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Bullown"),
         .cryId = CRY_MIME_JR,
         .natDexNum = NATIONAL_DEX_MIME_JR,
-        .categoryName = _("Mime"),
+        .categoryName = _("Bubulle"),
         .height = 6,
         .weight = 130,
         .description = COMPOUND_STRING(

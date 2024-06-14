@@ -2731,6 +2731,19 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         }
     }
 
+    if (gMovesInfo[aiData->partnerMove].alwaysCriticalHit && aiData->abilities[battlerAtk] == ABILITY_PANIC_ATTACK)
+    {
+        if (AI_WhoStrikesFirst(battlerAtk, battlerAtkPartner, move) == AI_IS_SLOWER)   // Partner moving first
+        {
+            // discourage raising our attack since it's about to be maxed out
+            if (IsAttackBoostMoveEffect(effect))
+                ADJUST_SCORE(-3);
+            // encourage moves hitting multiple opponents
+            if (!IS_MOVE_STATUS(move) && (moveTarget & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY)))
+                ADJUST_SCORE(GOOD_EFFECT);
+        }
+    }
+
     // consider our move effect relative to partner state
     switch (effect)
     {

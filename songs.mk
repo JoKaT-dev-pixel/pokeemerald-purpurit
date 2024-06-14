@@ -52,7 +52,7 @@ $(MID_SUBDIR)/mus_vs_aqua_magma.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G118 -V080 -P1
 
 $(MID_SUBDIR)/mus_vs_gym_leader.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G120 -V080 -P1
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -V087 -P1
 
 $(MID_SUBDIR)/mus_vs_champion.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G121 -V080 -P1
@@ -298,7 +298,7 @@ $(MID_SUBDIR)/mus_lilycove.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G054 -V085
 
 $(MID_SUBDIR)/mus_littleroot.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G051 -V100
+	$(MID) $< $@ -E -R$(STD_REVERB) -G192 -V085
 
 $(MID_SUBDIR)/mus_surf.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G017 -V080

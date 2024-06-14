@@ -122,7 +122,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_INSOMNIA] =
     {
         .name = _("Insomnia"),
-        .description = COMPOUND_STRING("Prevents sleep."),
+        .description = COMPOUND_STRING("Le Pokémon est incapable de\ndormir."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -397,8 +397,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_KEEN_EYE] =
     {
-        .name = _("Keen Eye"),
-        .description = COMPOUND_STRING("Prevents loss of accuracy."),
+        .name = _("Regard Vif"),
+        .description = COMPOUND_STRING("Empêche le Pokémon de perdre\nen précision."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -634,8 +634,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_ANGER_POINT] =
     {
-        .name = _("Anger Point"),
-        .description = COMPOUND_STRING("Critical hits raise Attack."),
+        .name = _("Colérique"),
+        .description = COMPOUND_STRING("Monte l'Attaque au max après\nun coup critique."),
         .aiRating = 4,
     },
 
@@ -700,8 +700,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_SKILL_LINK] =
     {
-        .name = _("Skill Link"),
-        .description = COMPOUND_STRING("Multi-hit moves hit 5 times."),
+        .name = _("Multi-Coups"),
+        .description = COMPOUND_STRING("Augmente la fréquence des\nattaques multiples."),
         .aiRating = 7,
     },
 
@@ -736,7 +736,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SNIPER] =
     {
         .name = _("Sniper"),
-        .description = COMPOUND_STRING("Boosts critical hits."),
+        .description = COMPOUND_STRING("Booste les capacités qui\nsont des coups critiques."),
         .aiRating = 3,
     },
 
@@ -1302,8 +1302,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_STRONG_JAW] =
     {
-        .name = _("Strong Jaw"),
-        .description = COMPOUND_STRING("Boosts biting moves."),
+        .name = _("Prognathe"),
+        .description = COMPOUND_STRING("Grâce à une puissante mâchoire,\nles morsures sont plus fortes."),
         .aiRating = 6,
     },
 
@@ -1462,7 +1462,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_STAMINA] =
     {
-        .name = _("Stamina"),
+        .name = _("Endurance"),
         .description = COMPOUND_STRING("Boosts Defense when hit."),
         .aiRating = 6,
     },
@@ -2072,8 +2072,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_QUICK_DRAW] =
     {
-        .name = _("Quick Draw"),
-        .description = COMPOUND_STRING("Moves first occasionally."),
+        .name = _("Tir Vif"),
+        .description = COMPOUND_STRING("Permet parfois au Pokémon\nd'agir en premier."),
         .aiRating = 4,
     },
 
@@ -2686,11 +2686,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_PANIC_ATTACK] =
     {
-        #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Crise d'Angoisse"),
-    #else
-        .name = _("Crise Panic"),
-    #endif
+        .name = _("Angoisse"),
         .description = COMPOUND_STRING("Monte la Vitesse au max après\nun coup critique."),
         .aiRating = 4,
     },

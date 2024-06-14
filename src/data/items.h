@@ -571,8 +571,8 @@ const struct Item gItemsInfo[] =
         .price = (I_PRICE >= GEN_7) ? 200 : 300,
         .holdEffectParam = 20,
         .description = COMPOUND_STRING(
-            "Restores the HP of\n"
-            "a Pokémon by\n"
+            "Restaure les PV\n"
+            "d'un POKéMON de\n"
             "20 points."),
         .pocket = POCKET_MEDICINES,
         .type = ITEM_USE_PARTY_MENU,

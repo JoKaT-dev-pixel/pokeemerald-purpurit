@@ -494,10 +494,11 @@ Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "règle.$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "Wild POKéMON will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
-	.string "to go into the tall grass and search.$"
+	.string "Je collectionne plusieurs guides\n"
+	.string "de sagesse pour obtenir mon\l"
+	.string "badge scout !\p"
+	.string "Tu dois sûrement en posséder un\n"
+	.string "dans ta chambre.$"
 
 Route101_Text_RouteSign:
 	.string "“ROUTE D-1”\n"

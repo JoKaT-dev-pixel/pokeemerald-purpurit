@@ -350,25 +350,27 @@ LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs2:
 	step_end
 
 RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
-	.string "Oh, hello. And you are?\p"
+	.string "Oh, qui es-tu donc ?\p"
 	.string "… … … … … … … … …\n"
 	.string "… … … … … … … … …\p"
-	.string "Oh, you're {PLAYER}{KUN}, our new next-door\n"
-	.string "neighbor! Hi!\p"
-	.string "We have a {STR_VAR_1} about the same\n"
-	.string "age as you.\p"
-	.string "Our {STR_VAR_1} was excited about making\n"
-	.string "a new friend.\p"
-	.string "Our {STR_VAR_1} is upstairs, I think.$"
+	.string "Tu t'appelles {PLAYER}{KUN} et tu es\n"
+	.string "l'enfant de la voisine ?\p"
+	.string "C'est quand même drôle que tu fasses\n"
+	.string "le même âge que…\p"
+	.string "Hum…\p"
+	.string "Quel était son nom déjà…?$"
 
 RivalsHouse_1F_Text_RivalNicknameChoice:
-	.string "As-tu dit “{RIVAL}” ?!$"
+	.string "As-tu dit “{RIVAL}” ?$"
 
 RivalsHouse_1F_Text_RivalNicknameCheck:
-	.string "My {STR_VAR_1} is upstairs.$"
+	.string "Ah oui, voilà c'est ça !\n"
+	.string "C'est bien {RIVAL} !\p"
+	.string "Mais tu es tombé au mauvais moment.\n"
+	.string "{RIVAL} vient tout juste de partir.$"
 
 RivalsHouse_1F_Text_RivalNicknameNoCheck:
-	.string "Quel est son prénom déjà…?$"
+	.string "Peux-tu répéter ? j'ai pas bien compris…$"
 
 RivalsHouse_1F_Text_LikeChildLikeFather:
 	.string "Like child, like father.\p"

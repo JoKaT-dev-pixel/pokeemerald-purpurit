@@ -281,10 +281,8 @@ Route104_Text_MiaNotEnoughMons:
 	.string "We're too strong for you!$"
 
 Route104_Text_IvanIntro:
-	.string "Why keep it a secret?\n"
-	.string "I'm the WATER POKéMON expert!\p"
-	.string "Huh?\n"
-	.string "You don't know me?$"
+	.string "Attends, laisse-moi finir de pisser\n"
+	.string "dans la flotte !$"
 
 Route104_Text_IvanDefeat:
 	.string "I thought I wasn't too bad, if I may\n"

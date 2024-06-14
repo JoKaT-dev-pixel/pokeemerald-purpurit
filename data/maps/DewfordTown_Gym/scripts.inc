@@ -1,5 +1,4 @@
 DewfordTown_Gym_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_Gym_OnTransition
 	.byte 0
 
 DewfordTown_Gym_OnTransition:
@@ -143,7 +142,6 @@ DewfordTown_Gym_EventScript_Brawly::
 	end
 
 DewfordTown_Gym_EventScript_BrawlyDefeated::
-	call DewfordTown_Gym_EventScript_AnimateFlashFullBrightness
 	message DewfordTown_Gym_Text_ReceivedKnuckleBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -194,8 +192,6 @@ DewfordTown_Gym_EventScript_Takao::
 	end
 
 DewfordTown_Gym_EventScript_TakaoBrightenRoom::
-	call DewfordTown_Gym_EventScript_BrightenRoom
-	release
 	end
 
 DewfordTown_Gym_EventScript_Jocelyn::
@@ -204,8 +200,6 @@ DewfordTown_Gym_EventScript_Jocelyn::
 	end
 
 DewfordTown_Gym_EventScript_JocelynBrightenRoom::
-	call DewfordTown_Gym_EventScript_BrightenRoom
-	release
 	end
 
 DewfordTown_Gym_EventScript_Laura::
@@ -214,8 +208,6 @@ DewfordTown_Gym_EventScript_Laura::
 	end
 
 DewfordTown_Gym_EventScript_LauraBrightenRoom::
-	call DewfordTown_Gym_EventScript_BrightenRoom
-	release
 	end
 
 DewfordTown_Gym_EventScript_Brenden::
@@ -224,8 +216,6 @@ DewfordTown_Gym_EventScript_Brenden::
 	end
 
 DewfordTown_Gym_EventScript_BrendenBrightenRoom::
-	call DewfordTown_Gym_EventScript_BrightenRoom
-	release
 	end
 
 DewfordTown_Gym_EventScript_Cristian::
@@ -234,8 +224,6 @@ DewfordTown_Gym_EventScript_Cristian::
 	end
 
 DewfordTown_Gym_EventScript_CristianBrightenRoom::
-	call DewfordTown_Gym_EventScript_BrightenRoom
-	release
 	end
 
 DewfordTown_Gym_EventScript_Lilith::
@@ -244,13 +232,22 @@ DewfordTown_Gym_EventScript_Lilith::
 	end
 
 DewfordTown_Gym_EventScript_LilithBrightenRoom::
-	call DewfordTown_Gym_EventScript_BrightenRoom
-	release
 	end
 
 DewfordTown_Gym_EventScript_GymGuide::
 	lock
 	faceplayer
+	goto_if_set FLAG_FRESH_WATER_GYM_2, DewfordTown_Gym_EventScript_ReceivedFreshWater
+	msgbox DewfordTown_Gym_Text_GymGuideFreshWater, MSGBOX_DEFAULT
+	giveitem ITEM_FRESH_WATER
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
+	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	setflag FLAG_FRESH_WATER_GYM_2
+	release
+	end
+
+DewfordTown_Gym_EventScript_ReceivedFreshWater::
 	goto_if_set FLAG_DEFEATED_DEWFORD_GYM, DewfordTown_Gym_EventScript_GymGuidePostVictory
 	msgbox DewfordTown_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
@@ -283,21 +280,29 @@ DewfordTown_Gym_EventScript_GymStatue::
 	releaseall
 	end
 
+DewfordTown_Gym_Text_GymGuideFreshWater:
+	.string "Hé, comment ça va {PLAYER} ?\p"
+	.string "Qu'est-ce que je fais là ?\p"
+	.string "Et bien je suis coach !\p"
+	.string "Mais avant toute chose, prends de quoi\n"
+	.string "te rafraichir avant l'entrainement !$"
+
 DewfordTown_Gym_Text_GymGuideAdvice:
-	.string "Hey, how's it going, CHAMPION-\n"
-	.string "bound {PLAYER}?\p"
-	.string "DEWFORD's GYM LEADER BRAWLY commands\n"
-	.string "FIGHTING-type POKéMON.\p"
-	.string "Going against him with NORMAL-type\n"
-	.string "POKéMON is asking for trouble.\p"
-	.string "FIGHTING POKéMON will lay a serious\n"
-	.string "smack down on NORMAL POKéMON,\l"
-	.string "so be careful!\p"
-	.string "What's worse, the GYM is as dark as\n"
-	.string "the ocean floor.\p"
-	.string "But it will get brighter after defeating\n"
-	.string "the TRAINERS in your way.\p"
-	.string "Hey, okay, go for it!$"
+	.string "Tibo Inshape, le Champion d'arène\n"
+	.string "de Kohlanta a des Pokémon de\l"
+	.string "type Combat.\p"
+	.string "Si tu comptes te battre contre ce gros\n"
+	.string "tas de muscle avec des Pokémon de\l"
+	.string "type Normal, tu risques la défaite.\p"
+	.string "Les Pokémon Combat infligent de\n"
+	.string "sérieux dégâts aux Pokémon de type\l"
+	.string "Normal.\p"
+	.string "En plus, j'ai mis plusieurs obstacles\n"
+	.string "pour ton entrainement. Hehe !\p"
+	.string "Il y a des trampolines un peu partout\n"
+	.string "alors sers-toi en pour me faire des\l"
+	.string "montées de genoux.\p"
+	.string "Allez Hop Hop Hop !$"
 
 DewfordTown_Gym_Text_GymGuidePostVictory:
 	.string "Whoah! It's turned too bright in here!\p"
@@ -331,18 +336,17 @@ DewfordTown_Gym_Text_JocelynPostBattle:
 	.string "CHAMPION!$"
 
 DewfordTown_Gym_Text_LauraIntro:
-	.string "Don't you dare brush me off!\n"
-	.string "It's not my fault if you cry!$"
+	.string "Je rêve où tu es en train de\n"
+	.string "maté mes fesses !$"
 
 DewfordTown_Gym_Text_LauraDefeat:
-	.string "Waaaaaaah!\n"
-	.string "I lost!$"
+	.string "Je retourne faire ma séance\n"
+	.string "de squat !$"
 
 DewfordTown_Gym_Text_LauraPostBattle:
-	.string "I battle in the dark to make my heart\n"
-	.string "stronger.\p"
-	.string "But because it's so dark, I can never\n"
-	.string "see BRAWLY's face…$"
+	.string "Je dois dire que je suis très\n"
+	.string "reconnaissante que mon fessier\l"
+	.string "n'ait pas été ton point de focus…$"
 
 DewfordTown_Gym_Text_LilithIntro:
 	.string "Ufufu…\n"

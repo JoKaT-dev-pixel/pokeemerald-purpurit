@@ -221,6 +221,7 @@ SINGLE_BATTLE_TEST("Signature items Leek and Lucky Punch increase the critical h
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LEEK].holdEffect == HOLD_EFFECT_LEEK);
+        ASSUME(gItemsInfo[ITEM_DUMBBELL].holdEffect == HOLD_EFFECT_DUMBBELL);
         ASSUME(gItemsInfo[ITEM_LUCKY_PUNCH].holdEffect == HOLD_EFFECT_LUCKY_PUNCH);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(species) { Item(item); }

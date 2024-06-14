@@ -475,17 +475,17 @@ static const struct WindowTemplate sShowcaseMultiPartyMenuWindowTemplate[] =
 static const struct WindowTemplate sCancelButtonWindowTemplate =
 {
     .bg = 0,
-    .tilemapLeft = 24,
+    .tilemapLeft = 23,
     .tilemapTop = 17,
     .width = 6,
     .height = 2,
     .paletteNum = 3,
-    .baseBlock = 0x1C7,
+    .baseBlock = 0x207,
 };
 static const struct WindowTemplate sCancelButtonWindowTemplate_equal =
 {
     .bg = 0,
-    .tilemapLeft = 24,
+    .tilemapLeft = 23,
     .tilemapTop = 17,
     .width = 6,
     .height = 2,
@@ -496,7 +496,7 @@ static const struct WindowTemplate sCancelButtonWindowTemplate_equal =
 static const struct WindowTemplate sMultiCancelButtonWindowTemplate =
 {
     .bg = 0,
-    .tilemapLeft = 24,
+    .tilemapLeft = 23,
     .tilemapTop = 18,
     .width = 6,
     .height = 2,
@@ -506,7 +506,7 @@ static const struct WindowTemplate sMultiCancelButtonWindowTemplate =
 static const struct WindowTemplate sMultiCancelButtonWindowTemplate_equal =
 {
     .bg = 0,
-    .tilemapLeft = 24,
+    .tilemapLeft = 23,
     .tilemapTop = 18,
     .width = 6,
     .height = 2,
@@ -517,7 +517,7 @@ static const struct WindowTemplate sMultiCancelButtonWindowTemplate_equal =
 static const struct WindowTemplate sConfirmButtonWindowTemplate =
 {
     .bg = 0,
-    .tilemapLeft = 24,
+    .tilemapLeft = 23,
     .tilemapTop = 16,
     .width = 6,
     .height = 2,
@@ -527,7 +527,7 @@ static const struct WindowTemplate sConfirmButtonWindowTemplate =
 static const struct WindowTemplate sConfirmButtonWindowTemplate_equal =
 {
     .bg = 0,
-    .tilemapLeft = 24,
+    .tilemapLeft = 23,
     .tilemapTop = 16,
     .width = 6,
     .height = 2,

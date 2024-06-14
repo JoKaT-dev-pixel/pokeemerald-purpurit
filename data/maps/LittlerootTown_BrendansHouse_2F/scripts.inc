@@ -273,32 +273,35 @@ PlayersHouse_2F_EventScript_GameCube::
 	end
 
 PlayersHouse_2F_Text_ClockIsStopped:
-	.string "The clock is stopped…\p"
-	.string "Better set it and start it!$"
+	.string "Elle est nulle cette horloge…\p"
+	.string "En plus, elle n'est même pas\n"
+	.string "à l'heure !$"
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
-	.string "MOM: {PLAYER}, how do you like your\n"
-	.string "new room?\p"
-	.string "Good! Everything's put away neatly!\p"
-	.string "They finished moving everything in\n"
-	.string "downstairs, too.\p"
-	.string "POKéMON movers are so convenient!\p"
-	.string "Oh, you should make sure that\n"
-	.string "everything's all there on your desk.$"
+	.string "Maman: Ah, je vois que tu finis\n"
+	.string "par régler cette horloge ?\p"
+	.string "C'est parfait ! Je suis contente que\n"
+	.string "tu apprécies ce cadeau !\p"
+	.string "Ils ont aussi fini de tout déposer\n"
+	.string "en bas.\p"
+	.string "D'ailleurs, assure-toi que tes\n"
+	.string "affaires se trouvent bien sur\l"
+	.string "le bureau.$"
 
 PlayersHouse_2F_Text_Notebook:
-	.string "{PLAYER} flipped open the notebook.\p"
-	.string "ADVENTURE RULE NO. 1\n"
-	.string "Open the MENU with START.\p"
-	.string "ADVENTURE RULE NO. 2\n"
-	.string "Record your progress with SAVE.\p"
-	.string "The remaining pages are blank…$"
+	.string "{PLAYER} ouvre le carnet.\p"
+	.string "Savoir Nº 1:\p"
+	.string "Se couper le pénis ne fais pas de\n"
+	.string "toi une femme.\p"
+	.string "Savoir Nº 2:\p"
+	.string "Un historique vide en dit bien plus\n"
+	.string "qu'un historique rempli.\p"
+	.string "Les pages suivantes sont vierges…$"
 
 Common_Text_LookCloserAtMap:
-	.string "{PLAYER} took a closer look at the\n"
-	.string "HOENN region map.$"
+	.string "{PLAYER} regarde attentivement la\n"
+	.string "carte de la région de Gaullia.$"
 
 PlayersHouse_2F_Text_ItsAGameCube:
-	.string "It's a Nintendo GameCube.\p"
-	.string "A Game Boy Advance is connected to\n"
-	.string "serve as the Controller.$"
+	.string "C’est une Nintendo Switch 2 Lite.\p"
+	.string "Elle est même sorti avant GTA 6.$"

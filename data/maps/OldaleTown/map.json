@@ -52,11 +52,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-      "x": 23,
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "x": 22,
       "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -67,7 +67,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
       "x": 15,
-      "y": 3,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
       "movement_range_x": 0,
@@ -76,6 +76,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route101_EventScript_Youngster",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 26,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route101_EventScript_Boy",
+      "flag": "FLAG_HIDE_ROUTE_101_BOY"
     }
   ],
   "warp_events": [
