@@ -2231,4 +2231,11 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 4,
         .encourageEncore = TRUE,
     },
+
+    [EFFECT_TWERKING] =
+    {
+        .battleScript = BattleScript_EffectTwerking,
+        .battleTvScore = 1,
+        .encourageEncore = TRUE,
+    },
 };

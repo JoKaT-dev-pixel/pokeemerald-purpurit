@@ -33,6 +33,8 @@ static void AnimRazorLeafParticle_Step2(struct Sprite *);
 static void AnimLeechSeed(struct Sprite *);
 static void AnimLeechSeed_Step(struct Sprite *);
 static void AnimLeechSeedSprouts(struct Sprite *);
+static void AnimSeed(struct Sprite *);
+static void AnimSeed_Step(struct Sprite *);
 static void AnimTranslateLinearSingleSineWave_Step(struct Sprite *);
 static void AnimConstrictBinding(struct Sprite *);
 static void AnimConstrictBinding_Step1(struct Sprite *);
@@ -641,6 +643,17 @@ const union AnimCmd *const gLeechSeedAnimTable[] =
     gLeechSeedAnimCmds2,
 };
 
+const union AnimCmd gSeedAnimCmds1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+const union AnimCmd *const gSeedAnimTable[] =
+{
+    gSeedAnimCmds1,
+};
+
 const struct SpriteTemplate gLeechSeedSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SEED,
@@ -650,6 +663,17 @@ const struct SpriteTemplate gLeechSeedSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimLeechSeed,
+};
+
+const struct SpriteTemplate gSeedSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SEED,
+    .paletteTag = ANIM_TAG_SEED,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gSeedAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimSeed,
 };
 
 const struct SpriteTemplate gPluckParticleSpriteTemplate =
@@ -1323,6 +1347,39 @@ const struct SpriteTemplate gSilverWindSmallSparkSpriteTemplate =
     .callback = AnimFlyingParticle,
 };
 
+const struct SpriteTemplate gFairyWindBigSparkSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PINK_SPARKLE,
+    .paletteTag = ANIM_TAG_PINK_SPARKLE,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gSilverWindBigSparkAffineAnimTable,
+    .callback = AnimFlyingParticle,
+};
+
+const struct SpriteTemplate gFairyWindMediumSparkSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PINK_SPARKLE,
+    .paletteTag = ANIM_TAG_PINK_SPARKLE,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gSilverWindMediumSparkAffineAnimTable,
+    .callback = AnimFlyingParticle,
+};
+
+const struct SpriteTemplate gFairyWindSmallSparkSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PINK_SPARKLE,
+    .paletteTag = ANIM_TAG_PINK_SPARKLE,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gSilverWindSmallSparkAffineAnimTable,
+    .callback = AnimFlyingParticle,
+};
+
 const u16 gMagicalLeafBlendColors[] =
 {
     RGB_RED,
@@ -1349,6 +1406,17 @@ const struct SpriteTemplate gNeedleArmSpikeSpriteTemplate =
 {
     .tileTag = ANIM_TAG_GREEN_SPIKE,
     .paletteTag = ANIM_TAG_GREEN_SPIKE,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimNeedleArmSpike,
+};
+
+const struct SpriteTemplate gMagnetOrbSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MAGNET_ORB,
+    .paletteTag = ANIM_TAG_MAGNET_ORB,
     .oam = &gOamData_AffineNormal_ObjNormal_16x16,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -3760,6 +3828,31 @@ static void AnimLeechSeedSprouts(struct Sprite *sprite)
     sprite->data[0] = 60;
     sprite->callback = WaitAnimForDuration;
     StoreSpriteCallbackInData6(sprite, DestroyAnimSprite);
+}
+
+static void AnimSeed(struct Sprite *sprite)
+{
+    InitSpritePosToAnimAttacker(sprite, TRUE);
+    if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)
+        gBattleAnimArgs[2] = -gBattleAnimArgs[2];
+
+    sprite->data[0] = gBattleAnimArgs[4];
+    sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X) + gBattleAnimArgs[2];
+    sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y) + gBattleAnimArgs[3];
+    sprite->data[5] = gBattleAnimArgs[5];
+    InitAnimArcTranslation(sprite);
+    sprite->callback = AnimSeed_Step;
+}
+
+static void AnimSeed_Step(struct Sprite *sprite)
+{
+    if (TranslateAnimHorizontalArc(sprite))
+    {
+        sprite->invisible = TRUE;
+        sprite->data[0] = 10;
+        sprite->callback(sprite);
+        DestroyAnimSprite(sprite);
+    }
 }
 
 // Moves a spore particle in a halo around the target mon.

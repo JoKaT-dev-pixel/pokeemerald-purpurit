@@ -4393,6 +4393,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_RAINBOW_BEAM - 1] = sRainbowBeamDescription,
     [MOVE_CUPID_ARROW - 1] = sCupidArrowDescription,
     [MOVE_PEEKABOO - 1] = sPeekabooDescription,
-    [MOVE_TWERK - 1] = sTwerkDescription,
+    [MOVE_TWERKING - 1] = sTwerkDescription,
     [MOVE_FAIR_PLAY - 1] = sFairPlayDescription,
 };

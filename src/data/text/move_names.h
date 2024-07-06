@@ -881,7 +881,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_RAINBOW_BEAM] = _("Onde Coloré"),
     [MOVE_CUPID_ARROW] = _("Cupi-Flèche"),
     [MOVE_PEEKABOO] = _("Cache-Cache"),
-    [MOVE_TWERK] = _("Twerk"),
+    [MOVE_TWERKING] = _("Twerk"),
     [MOVE_FAIR_PLAY] = _("Fair-Play"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("Max Guard"),
@@ -1821,7 +1821,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_RAINBOW_BEAM] = _("Onde Coloré"),
     [MOVE_CUPID_ARROW] = _("Cupi-Flèche"),
     [MOVE_PEEKABOO] = _("Cache-Cache"),
-    [MOVE_TWERK] = _("Twerk"),
+    [MOVE_TWERKING] = _("Twerk"),
     [MOVE_FAIR_PLAY] = _("Fair-Play"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),

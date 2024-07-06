@@ -15188,7 +15188,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .instructBanned = TRUE,
     },
 
-    [MOVE_TWERK] =
+    [MOVE_TWERKING] =
     {
         .effect = EFFECT_DRAGON_DANCE,
         .power = 0,

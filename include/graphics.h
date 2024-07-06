@@ -2911,6 +2911,8 @@ extern const u32 gBattleAnimSpriteGfx_SyrupSplat[];
 extern const u32 gBattleAnimSpritePal_SyrupRed[];
 extern const u32 gBattleAnimSpritePal_SyrupYellow[];
 extern const u32 gBattleAnimSpritePal_BlueHeart[];
+extern const u32 gBattleAnimSpritePal_Pink_Sparkle[];
+extern const u32 gBattleAnimSpritePal_MagnetOrb[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];

@@ -32,8 +32,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_BATTLE_ARMOR] =
     {
-        .name = _("Battle Armor"),
-        .description = COMPOUND_STRING("Blocks critical hits."),
+        .name = _("Armurbaston"),
+        .description = COMPOUND_STRING("Le Pokémon est protégé des\ncoups critiques."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -95,8 +95,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_OBLIVIOUS] =
     {
-        .name = _("Oblivious"),
-        .description = COMPOUND_STRING("Prevents attraction."),
+        .name = _("Benêt"),
+        .description = COMPOUND_STRING("Immunise le Pokémon contre\nl'attraction ou la provocation."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -229,8 +229,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_CLEAR_BODY] =
     {
-        .name = _("Clear Body"),
-        .description = COMPOUND_STRING("Prevents ability reduction."),
+        .name = _("Corps Sain"),
+        .description = COMPOUND_STRING("Empêche les stats du Pokémon\nde baisser"),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -339,8 +339,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_SOUNDPROOF] =
     {
-        .name = _("Soundproof"),
-        .description = COMPOUND_STRING("Avoids sound-based moves."),
+        .name = _("Anti-Bruit"),
+        .description = COMPOUND_STRING("Protège le Pokémon de toutes\nles capacités sonores."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -376,8 +376,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_EARLY_BIRD] =
     {
-        .name = _("Early Bird"),
-        .description = COMPOUND_STRING("Awakens quickly from sleep."),
+        .name = _("Matinal"),
+        .description = COMPOUND_STRING("Se réveille deux fois plus\nrapidement que les autres."),
         .aiRating = 4,
     },
 
@@ -435,8 +435,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_CUTE_CHARM] =
     {
-        .name = _("Cute Charm"),
-        .description = COMPOUND_STRING("Infatuates on contact."),
+        .name = _("Joli Sourire"),
+        .description = COMPOUND_STRING("Séduit parfois l'ennemi au\ncontact."),
         .aiRating = 2,
     },
 
@@ -537,8 +537,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DROUGHT] =
     {
-        .name = _("Drought"),
-        .description = COMPOUND_STRING("Summons sunlight in battle."),
+        .name = _("Sécheresse"),
+        .description = COMPOUND_STRING("Le Pokémon invoque le soleil\nquand il entre au combat."),
         .aiRating = 9,
     },
 
@@ -627,8 +627,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_GLUTTONY] =
     {
-        .name = _("Gluttony"),
-        .description = COMPOUND_STRING("Eats Berries early."),
+        .name = _("Gloutonnerie"),
+        .description = COMPOUND_STRING("Permet d'utiliser plus\nrapidement une Baie tenue."),
         .aiRating = 3,
     },
 
@@ -736,7 +736,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SNIPER] =
     {
         .name = _("Sniper"),
-        .description = COMPOUND_STRING("Booste les capacités qui\nsont des coups critiques."),
+        .description = COMPOUND_STRING("Booste les capacités qui sont\ndes coups critiques."),
         .aiRating = 3,
     },
 
@@ -799,8 +799,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_AFTERMATH] =
     {
-        .name = _("Aftermath"),
-        .description = COMPOUND_STRING("Fainting damages the foe."),
+        .name = _("Boom Final"),
+        .description = COMPOUND_STRING("Blesse l'attaquant qui porte\nle coup de grâce."),
         .aiRating = 5,
     },
 
@@ -1091,8 +1091,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_BIG_PECKS] =
     {
-        .name = _("Big Pecks"),
-        .description = COMPOUND_STRING("Prevents Defense loss."),
+        .name = _("Cœur de Coq"),
+        .description = COMPOUND_STRING("Empêche les capacités adverses\nde baisser la Défense."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -1660,11 +1660,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_QUEENLY_MAJESTY] =
     {
     #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Queenly Majesty"),
+        .name = _("Prestance Royale"),
     #else
         .name = _("QueenlyMjsty"),
     #endif
-        .description = COMPOUND_STRING("Protects from priority."),
+        .description = COMPOUND_STRING("L'adversaire ne peut pas viser\navec une attaque prioritaire."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -1678,8 +1678,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DANCER] =
     {
-        .name = _("Dancer"),
-        .description = COMPOUND_STRING("Dances along with others."),
+        .name = _("Danseuse"),
+        .description = COMPOUND_STRING("Se mets à danser si un Pokémon\nutilise une capacité dansante."),
         .aiRating = 5,
     },
 

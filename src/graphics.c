@@ -1050,6 +1050,7 @@ const u32 gBattleAnimBgTilemap_Attract[] = INCBIN_U32("graphics/battle_anims/bac
 
 const u32 gBattleAnimSpriteGfx_RedOrb[] = INCBIN_U32("graphics/battle_anims/sprites/red_orb.4bpp.lz");
 const u32 gBattleAnimSpritePal_RedOrb[] = INCBIN_U32("graphics/battle_anims/sprites/red_orb.gbapal.lz");
+const u32 gBattleAnimSpritePal_MagnetOrb[] = INCBIN_U32("graphics/battle_anims/sprites/magnet_orb.gbapal.lz");
 
 const u32 gBattleAnimSpriteGfx_CircleOfLight[] = INCBIN_U32("graphics/battle_anims/sprites/circle_of_light.4bpp.lz");
 const u32 gBattleAnimSpriteGfx_ElectricOrbs[] = INCBIN_U32("graphics/battle_anims/sprites/electric_orbs.4bpp.lz");
@@ -1704,6 +1705,7 @@ const u32 gBattleAnimSpriteGfx_WhiteFeather[] = INCBIN_U32("graphics/battle_anim
 
 const u32 gBattleAnimSpritePal_Sparkle6[] = INCBIN_U32("graphics/battle_anims/sprites/sparkle_6.gbapal.lz");
 const u32 gBattleAnimSpriteGfx_Sparkle6[] = INCBIN_U32("graphics/battle_anims/sprites/sparkle_6.4bpp.lz");
+const u32 gBattleAnimSpritePal_Pink_Sparkle[] = INCBIN_U32("graphics/battle_anims/sprites/pink_sparkle.gbapal.lz");
 
 const u16 gCableCarBg_Pal[]    = INCBIN_U16("graphics/cable_car/bg.gbapal");
 const u16 gCableCar_Pal[]      = INCBIN_U16("graphics/cable_car/cable_car.gbapal");

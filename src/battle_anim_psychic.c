@@ -382,6 +382,17 @@ const struct SpriteTemplate gLusterPurgeCircleSpriteTemplate =
     .callback = AnimSpriteOnMonPos,
 };
 
+const struct SpriteTemplate gDischargeCircleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_CIRCLE_OF_LIGHT,
+    .paletteTag = ANIM_TAG_CIRCLE_OF_LIGHT,
+    .oam = &gOamData_AffineDouble_ObjBlend_64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gAffineAnims_LusterPurgeCircle,
+    .callback = AnimSpriteOnMonPos,
+};
+
 static const union AffineAnimCmd sAffineAnim_PsychoBoostOrb_0[] =
 {
     AFFINEANIMCMD_FRAME(0x20, 0x20, 0, 0),

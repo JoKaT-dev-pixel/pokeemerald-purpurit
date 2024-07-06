@@ -4377,24 +4377,23 @@ static const struct TrainerMon sParty_Claude[] = {
 
 static const struct TrainerMon sParty_Elliot1[] = {
     {
-    .lvl = 10,
-    .species = SPECIES_MAGIKARP,
+    .lvl = 18,
+    .species = SPECIES_MACHOP,
     },
     {
-    .lvl = 7,
-    .species = SPECIES_TENTACOOL,
+    .lvl = 19,
+    .species = SPECIES_ZUBAT,
     },
     {
-    .lvl = 10,
-    .species = SPECIES_MAGIKARP,
+    .lvl = 21,
+    .species = SPECIES_ZIGZAGOON,
     }
 };
 
 static const struct TrainerMon sParty_Ned[] = {
     {
-    .iv = 0,
-    .lvl = 18,
-    .species = SPECIES_WAILMER,
+    .lvl = 19,
+    .species = SPECIES_SANDSHREW,
     }
 };
 
