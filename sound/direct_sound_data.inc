@@ -6389,15 +6389,3 @@ DirectSoundWaveData_sd90_classical_whistle::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
-
-	.align 2
-DirectSoundWaveData_sc88pro_lead_square1::
-	.incbin "sound/direct_sound_samples/sc88pro_lead_square1.bin"
-
-	.align 2
-DirectSoundWaveData_sc88pro_synth_brass_2::
-	.incbin "sound/direct_sound_samples/sc88pro_synth_brass_2.bin"
-
-	.align 2
-DirectSoundWaveData_sc88pro_tenor_sax::
-	.incbin "sound/direct_sound_samples/sc88pro_tenor_sax.bin"
