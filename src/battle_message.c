@@ -3572,20 +3572,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 toCpy = gTrainerClasses[GetFrontierOpponentClass(gPartnerTrainerId)].name;
                 break;
             case B_TXT_PARTNER_NAME:
-                 #ifdef BATTLE_ENGINE
-                    if (gPartnerSpriteId == TRAINER_BACK_PIC_BRENDAN
-                      || gPartnerSpriteId == TRAINER_BACK_PIC_MAY)
-                    {
-                        toCpy = gSaveBlock2Ptr->rivalName;
-                    }
-                    else
-                    {
-                        GetFrontierTrainerName(text, gPartnerTrainerId);
-                        toCpy = text;
-                    }
-                #else
-                    toCpy = gTrainers[TRAINER_MAY_ROUTE_103_MUDKIP].trainerName;
-                #endif
+                toCpy = BattleStringGetPlayerName(text, GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT));
                 break;
             case B_TXT_ATK_TRAINER_NAME:
                 toCpy = BattleStringGetTrainerName(text, multiplayerId, gBattlerAttacker);
