@@ -28530,6 +28530,8 @@ Move_SECRET_POWER:
 	jumpargeq 0, BATTLE_TERRAIN_ULTRA_SPACE,    Move_PSYWAVE
 	jumpargeq 0, BATTLE_TERRAIN_FOREST,         Move_WOOD_HAMMER
 	jumpargeq 0, BATTLE_TERRAIN_CITY,         	Move_MIRROR_SHOT
+	jumpargeq 0, BATTLE_TERRAIN_SEWER,          Move_SLUDGE
+	jumpargeq 0, BATTLE_TERRAIN_BEACH,          Move_SAND_TOMB
 .if B_SECRET_POWER_ANIMATION >= GEN_7
 	jumpargeq 0, BATTLE_TERRAIN_SNOW,           Move_ICE_SHARD
 	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       Move_SPIT_UP

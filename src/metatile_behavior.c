@@ -131,6 +131,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_ISOLATED_HORIZONTAL_RAIL]        = TILE_FLAG_UNUSED,
     [MB_VERTICAL_RAIL]                   = TILE_FLAG_UNUSED,
     [MB_HORIZONTAL_RAIL]                 = TILE_FLAG_UNUSED,
+    [MB_SAND_GRASS]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_ROCK_CLIMB]                      = TILE_FLAG_UNUSED,
 };
 
@@ -1288,7 +1289,8 @@ bool8 MetatileBehavior_IsCuttableGrass(u8 metatileBehavior)
      || metatileBehavior == MB_LONG_GRASS
      || metatileBehavior == MB_ASHGRASS
      || metatileBehavior == MB_LONG_GRASS_SOUTH_EDGE
-     || metatileBehavior == MB_FOREST_ENCOUNTER)
+     || metatileBehavior == MB_FOREST_ENCOUNTER
+     || metatileBehavior == MB_SAND_GRASS)
         return TRUE;
     else
         return FALSE;
@@ -1497,6 +1499,14 @@ bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior)
 bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_ROCK_STAIRS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsSandGrass(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SAND_GRASS)
         return TRUE;
     else
         return FALSE;

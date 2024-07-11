@@ -11108,9 +11108,9 @@ const struct Item gItemsInfo[] =
         .name = _("Boîte CT"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A convenient case\n"
-            "that holds TMs and\n"
-            "HMs."),
+            "Une boîte pour\n"
+            "stocker les CT\n"
+            "et CS."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

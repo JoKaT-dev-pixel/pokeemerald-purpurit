@@ -9,7 +9,7 @@ gText_PutItemInPocket::
 	.string "la Poche {STR_VAR_3}.$"
 
 gText_PlayerFoundOneItem::
-	.string "{PLAYER} trouve {STR_VAR_2} !$"
+	.string "{PLAYER} trouve une {STR_VAR_2} !$"
 
 gText_TooBadBagIsFull::
 	.string "Too bad!\n"

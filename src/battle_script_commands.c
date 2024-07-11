@@ -1066,6 +1066,7 @@ static const u16 sNaturePowerMoves[BATTLE_TERRAIN_COUNT] =
     [BATTLE_TERRAIN_FOREST]           = MOVE_ENERGY_BALL,
     [BATTLE_TERRAIN_CITY]             = MOVE_FLASH_CANNON,
     [BATTLE_TERRAIN_SEWER]            = MOVE_SLUDGE_BOMB,
+    [BATTLE_TERRAIN_BEACH]            = MOVE_EARTH_POWER,
 };
 
 #define _ 0
@@ -1131,6 +1132,7 @@ static const u8 sTerrainToType[BATTLE_TERRAIN_COUNT] =
     [BATTLE_TERRAIN_FOREST]           = TYPE_GRASS,
     [BATTLE_TERRAIN_CITY]             = TYPE_STEEL,
     [BATTLE_TERRAIN_SEWER]            = TYPE_POISON,
+    [BATTLE_TERRAIN_BEACH]            = TYPE_GROUND,
 #if B_CAMOUFLAGE_TYPES >= GEN_5
     [BATTLE_TERRAIN_MOUNTAIN]         = (B_CAMOUFLAGE_TYPES >= GEN_5 ? TYPE_GROUND : TYPE_ROCK),
     [BATTLE_TERRAIN_PLAIN]            = TYPE_GROUND,
@@ -3819,6 +3821,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                         gBattleScripting.moveEffect = MOVE_EFFECT_SLEEP;
                         break;
                     case BATTLE_TERRAIN_SAND:
+                    case BATTLE_TERRAIN_BEACH:
                         gBattleScripting.moveEffect = MOVE_EFFECT_ACC_MINUS_1;
                         break;
                     case BATTLE_TERRAIN_WATER:

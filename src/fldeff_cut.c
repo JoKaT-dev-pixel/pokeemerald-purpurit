@@ -186,7 +186,8 @@ bool8 SetUpFieldMove_Cut(void)
                     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
                     if (MetatileBehavior_IsPokeGrass(tileBehavior) == TRUE
                     || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE
-                    || MetatileBehavior_IsForestEncounter(tileBehavior) == TRUE)
+                    || MetatileBehavior_IsForestEncounter(tileBehavior) == TRUE
+                    || MetatileBehavior_IsSandGrass(tileBehavior) == TRUE)
                     {
                         // Standing in front of grass.
                         sHyperCutTiles[6 + (i * 5) + j] = TRUE;
@@ -250,7 +251,8 @@ bool8 SetUpFieldMove_Cut(void)
                         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
                         if (MetatileBehavior_IsPokeGrass(tileBehavior) == TRUE
                         || MetatileBehavior_IsAshGrass(tileBehavior) == TRUE
-                        || MetatileBehavior_IsForestEncounter(tileBehavior) == TRUE)
+                        || MetatileBehavior_IsForestEncounter(tileBehavior) == TRUE
+                        || MetatileBehavior_IsSandGrass(tileBehavior) == TRUE)
                         {
                             gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
                             gPostMenuFieldCallback = FieldCallback_CutGrass;
@@ -389,6 +391,21 @@ static void SetCutGrassMetatile(s16 x, s16 y)
         break;
     case METATILE_General_TallGrass_TreeUp:
         MapGridSetMetatileIdAt(x, y, METATILE_General_Grass_TreeUp);
+        break;
+    case METATILE_General_SandGrass:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_Sand);
+        break;
+    case METATILE_General_SandGrass_TreeLeft:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_Sand_TreeLeft);
+        break;
+    case METATILE_General_SandGrass_TreeRight:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_Sand_TreeRight);
+        break;
+    case METATILE_General_SandGrass_TreeLeftUp:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_Sand_TreeLeftUp);
+        break;
+    case METATILE_General_SandGrass_TreeRightUp:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_Sand_TreeRightUp);
         break;
     }
 }

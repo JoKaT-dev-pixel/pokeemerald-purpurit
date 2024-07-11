@@ -322,7 +322,7 @@ $(MID_SUBDIR)/mus_c_comm_center.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -V080
 
 $(MID_SUBDIR)/mus_poke_center.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G046 -V092
+	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V080
 
 $(MID_SUBDIR)/mus_b_pyramid.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G106 -V079

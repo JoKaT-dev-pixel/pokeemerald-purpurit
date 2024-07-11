@@ -239,7 +239,7 @@
 #define MB_UNUSED_EB 0xEB
 #define MB_UNUSED_EC 0xEC
 #define MB_UNUSED_ED 0xED
-#define MB_UNUSED_EE 0xEE
+#define MB_SAND_GRASS 0xEE
 #define MB_ROCK_CLIMB 0xEF
 
 #define NUM_METATILE_BEHAVIORS 0xF0
