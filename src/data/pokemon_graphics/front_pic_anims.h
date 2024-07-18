@@ -9237,7 +9237,19 @@ static const union AnimCmd sAnim_Togedemaru_1[] =
 #endif //P_FAMILY_TOGEDEMARU
 
 #if P_FAMILY_MIMIKYU
-PLACEHOLDER_ANIM_SINGLE_FRAME(MimikyuDisguised);
+static const union AnimCmd sAnim_MimikyuDisguised_1[] =
+{
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_END,
+};
+
 PLACEHOLDER_ANIM_SINGLE_FRAME(MimikyuBusted);
 #endif //P_FAMILY_MIMIKYU
 

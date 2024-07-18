@@ -1296,7 +1296,7 @@ bool32 IsMoveRedirectionPrevented(u32 move, u32 atkAbility)
 
 bool32 IsSemiInvulnerable(u32 battlerDef, u32 move)
 {
-    if (gStatuses3[battlerDef] & STATUS3_PHANTOM_FORCE)
+    if (gStatuses3[battlerDef] & STATUS3_PHANTOM_FORCE & STATUS3_HIDING)
         return TRUE;
     else if (!gMovesInfo[move].damagesAirborne && gStatuses3[battlerDef] & STATUS3_ON_AIR)
         return TRUE;

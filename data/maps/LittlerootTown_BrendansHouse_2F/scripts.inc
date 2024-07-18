@@ -291,8 +291,9 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} ouvre le carnet.\p"
 	.string "Savoir Nº 1:\p"
-	.string "Se couper le pénis ne fais pas de\n"
-	.string "toi une femme.\p"
+	.string "Le fait que la petite souris te prenne\n"
+	.string "une dent contre une pièce,\l"
+	.string "techniquement c'est du trafic d'organe.\p"
 	.string "Savoir Nº 2:\p"
 	.string "Un historique vide en dit bien plus\n"
 	.string "qu'un historique rempli.\p"

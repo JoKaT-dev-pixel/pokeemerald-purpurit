@@ -1599,8 +1599,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DISGUISE] =
     {
-        .name = _("Cache-Boîte"),
-        .description = COMPOUND_STRING("Decoy protects it once."),
+    #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Renverse-Boîte"),
+    #else
+        .name = _("Disguise"),
+    #endif
+        .description = COMPOUND_STRING("La boîte qui recouvre le\nPokémon protège d'une attaque."),
         .aiRating = 8,
         .breakable = TRUE,
         .cantBeCopied = TRUE,

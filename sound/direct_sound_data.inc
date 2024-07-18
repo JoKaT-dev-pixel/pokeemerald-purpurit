@@ -6389,3 +6389,7 @@ DirectSoundWaveData_sd90_classical_whistle::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
+
+	.align 2
+DirectSoundWaveData_ad_909_layered_kick::
+    .incbin "sound/direct_sound_samples/ad_909_layered_kick.bin"

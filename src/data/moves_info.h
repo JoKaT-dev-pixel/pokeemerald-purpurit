@@ -20679,10 +20679,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_PEEKABOO] =
     {
         .name = COMPOUND_STRING("Cache-Cache"),
-        .description = sShadowForceDescription,
+        .description = COMPOUND_STRING(
+            "Une danse sensuelle dont le\n"
+            "rythme rapide augmente l'Atq.\n"
+            "Spé. et la Vitesse du lanceur."),
         .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = 90,
-        .type = TYPE_GHOST,
+        .power = 80,
+        .type = TYPE_FAIRY,
         .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
@@ -20694,7 +20697,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
         .assistBanned = TRUE,
-        .argument = TWO_TURN_ARG(STRINGID_VANISHEDINSTANTLY, COMPRESS_BITS(STATUS3_PHANTOM_FORCE)),
+        .argument = TWO_TURN_ARG(STRINGID_HIDING, COMPRESS_BITS(STATUS3_HIDING)),
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FEINT,
         }),
