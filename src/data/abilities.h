@@ -190,8 +190,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_ROUGH_SKIN] =
     {
-        .name = _("Rough Skin"),
-        .description = COMPOUND_STRING("Hurts to touch."),
+        .name = _("Peau Dure"),
+        .description = COMPOUND_STRING("Le Pokémon blesse l'ennemi\nqui le touche."),
         .aiRating = 6,
     },
 

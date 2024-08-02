@@ -1,6 +1,6 @@
 Route102_Text_CalvinIntro:
-	.string "Si je te bats, tu m'achètes les\n"
-	.string "13 500 V-Bucks ?!$"
+	.string "Si je te bats, tu m'achètes des\n"
+	.string "V-Bucks ?$"
 
 Route102_Text_CalvinDefeated:
 	.string "Non non et non !\p"
@@ -293,8 +293,8 @@ Route104_Text_IvanPostBattle:
 	.string "I forgot I had to raise my POKéMON…$"
 
 Route104_Text_BillyIntro:
-	.string "Toi aussi tu cherches une trèfle\n"
-	.string "à quatre feuilles ?!$"
+	.string "Toi aussi ton père est parti\n"
+	.string "chercher du lait ?$"
 
 Route104_Text_BillyDefeat:
 	.string "Waah! I got sand in my runners!\n"
