@@ -9054,6 +9054,8 @@ static const u16 sLedianTeachableLearnset[] = {
 #if P_FAMILY_SPINARAK
 static const u16 sSpinarakTeachableLearnset[] = {
     MOVE_ATTRACT,
+    MOVE_BULLET_SEED,
+    MOVE_CUT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
     MOVE_FACADE,
@@ -9078,6 +9080,8 @@ static const u16 sSpinarakTeachableLearnset[] = {
 
 static const u16 sAriadosTeachableLearnset[] = {
     MOVE_ATTRACT,
+    MOVE_BULLET_SEED,
+    MOVE_CUT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
     MOVE_FACADE,
