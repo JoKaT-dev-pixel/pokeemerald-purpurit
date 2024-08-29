@@ -116,7 +116,6 @@ static void HandleEndTurn_MonFled(void);
 static void HandleEndTurn_FinishBattle(void);
 static void SpriteCB_UnusedBattleInit(struct Sprite *sprite);
 static void SpriteCB_UnusedBattleInit_Main(struct Sprite *sprite);
-static void TrySpecialEvolution(void);
 static void PlayerTryEvolution(void);
 static void WaitForEvolutionThenTryAnother(void);
 static void CB2_SetUpReshowBattleScreenAfterEvolution(void);
@@ -643,7 +642,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(GUITARIST, "Punk", 8),
     TRAINER_CLASS(KINDLER, "Toxicomane", 3),
     TRAINER_CLASS(CAMPER, "Artiste", 8),
-    TRAINER_CLASS(PICNICKER, "Féministe", 4),
+    TRAINER_CLASS(PICNICKER, "Misandre", 4),
     TRAINER_CLASS(BUG_MANIAC, "Hackeur", 15, ITEM_CHERISH_BALL),
     TRAINER_CLASS(PSYCHIC, "Kinésiste", 6),
     TRAINER_CLASS(GENTLEMAN, "Enseignant", 10),

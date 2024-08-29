@@ -349,6 +349,17 @@ const struct SpriteTemplate gSeedFlareGreenWavesTemplate =
     .callback = AnimFlyingSandCrescent
 };
 
+const struct SpriteTemplate gSmackDownRockSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ROCKS,
+    .paletteTag = ANIM_TAG_ROCKS,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = &sAnims_BasicRock[2],
+    .images = NULL,
+    .affineAnims = gAffineAnims_BasicRock,
+    .callback = AnimRockBlastRock,
+};
+
 static void AnimStealthRock(struct Sprite *sprite)
 {
     s16 x, y;

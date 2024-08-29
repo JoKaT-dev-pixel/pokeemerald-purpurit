@@ -384,13 +384,14 @@ PetalburgWoods_Text_YoureLoadedWithItems:
 	.string "I can't give you this GREAT BALL.$"
 
 PetalburgWoods_Text_GoBugPokemonTeam:
-	.string "I caught a whole bunch of POKéMON!\p"
-	.string "Go, go, go!\n"
-	.string "My BUG POKéMON team!$"
+	.string "Attention !\p"
+	.string "Il ne faut pas jouer avec des\n"
+	.string "armes à feu, hormis si tu ne\l"
+	.string "loupe pas ta cible…$"
 
 PetalburgWoods_Text_ICouldntWin:
-	.string "I have all these POKéMON,\n"
-	.string "but I couldn't win…$"
+	.string "AARRG !!\p"
+	.string "J'vais te retrouver et te tuer !$"
 
 PetalburgWoods_Text_ImOutOfPokeBalls:
 	.string "I caught a bunch of POKéMON.\n"

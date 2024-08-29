@@ -572,7 +572,7 @@ const struct Item gItemsInfo[] =
         .holdEffectParam = 20,
         .description = COMPOUND_STRING(
             "Restaure les PV\n"
-            "d'un POKéMON de\n"
+            "d'un Pokémon de\n"
             "20 points."),
         .pocket = POCKET_MEDICINES,
         .type = ITEM_USE_PARTY_MENU,
@@ -7302,9 +7302,9 @@ const struct Item gItemsInfo[] =
         #if I_EXP_SHARE_ITEM >= GEN_6
             .price = 0,
             .description = COMPOUND_STRING(
-                "This device gives\n"
-                "exp. to other\n"
-                "party members."),
+                "Partage des Points\n"
+                "Exp. à tous les\n"
+                "{PKMN} de l'équipe."),
         #else
             .price = 3000,
             .description = COMPOUND_STRING(
@@ -11134,12 +11134,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POKEMON_BOX_LINK] =
     {
-        .name = _("{PKMN} Box Link"),
+        .name = _("Boîte Pokémon"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "This device grants\n"
-            "access to the {PKMN}\n"
-            "Storage System."),
+            "Permet d'accéder\n"
+            "aux Boîtes PC à\n"
+            "tout moment."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,

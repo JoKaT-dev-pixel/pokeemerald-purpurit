@@ -25,8 +25,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_SPEED_BOOST] =
     {
-        .name = _("Speed Boost"),
-        .description = COMPOUND_STRING("Gradually boosts Speed."),
+        .name = _("Turbo"),
+        .description = COMPOUND_STRING("La Vitesse du Pokémon augmente\nà chaque tour."),
         .aiRating = 9,
     },
 
@@ -56,8 +56,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_LIMBER] =
     {
-        .name = _("Limber"),
-        .description = COMPOUND_STRING("Prevents paralysis."),
+        .name = _("Échauffement"),
+        .description = COMPOUND_STRING("Protège le Pokémon de la\nparalysie."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -245,11 +245,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIGHTNING_ROD] =
     {
     #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Lightning Rod"),
+        .name = _("Paratonnerre"),
     #else
         .name = _("LightningRod"),
     #endif
-        .description = COMPOUND_STRING("Draws electrical moves."),
+        .description = COMPOUND_STRING("Attire et neutralise l'électricité\net monte l'Atq. Spé."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -480,8 +480,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_GUTS] =
     {
-        .name = _("Guts"),
-        .description = COMPOUND_STRING("Ups Attack if suffering."),
+        .name = _("Cran"),
+        .description = COMPOUND_STRING("Augmente l'Attaque s'il y a un\nproblème de statut."),
         .aiRating = 6,
     },
 
@@ -612,8 +612,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_STEADFAST] =
     {
-        .name = _("Steadfast"),
-        .description = COMPOUND_STRING("Flinching raises Speed."),
+        .name = _("Impassible"),
+        .description = COMPOUND_STRING("Augmente la Vitesse du Pokémon\nquand il a peur."),
         .aiRating = 2,
     },
 
@@ -1502,8 +1502,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_MERCILESS] =
     {
-        .name = _("Merciless"),
-        .description = COMPOUND_STRING("Criticals poisoned foes."),
+        .name = _("Cruauté"),
+        .description = COMPOUND_STRING("Le coup sera forcément critique\nsi l'adversaire est empoisonné."),
         .aiRating = 4,
     },
 
@@ -1570,8 +1570,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_TRIAGE] =
     {
-        .name = _("Triage"),
-        .description = COMPOUND_STRING("Healing moves go first."),
+        .name = _("Prioguérison"),
+        .description = COMPOUND_STRING("Les capacités qui soignent\ndeviennent prioritaires."),
         .aiRating = 7,
     },
 
@@ -2601,11 +2601,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_POISON_PUPPETEER] =
     {
     #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Poison Puppeteer"),
+        .name = _("Emprise Toxique"),
     #else
         .name = _("PoisnPuppter"),
     #endif
-        .description = COMPOUND_STRING("Confuses poisoned foes."),
+        .description = COMPOUND_STRING("Rend confus un Pokémon si\nce dernier est empoisonné."),
         .aiRating = 8,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,

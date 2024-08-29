@@ -2615,16 +2615,12 @@ s32 MoveBattleBar(u8 battlerId, u8 healthboxSpriteId, u8 whichBar, u8 unused)
 
     if (whichBar == HEALTH_BAR) // health bar
     {
-        u16 hpFraction = B_FAST_HP_DRAIN == FALSE ? 1 : max(gBattleSpritesDataPtr->battleBars[battlerId].maxValue / B_HEALTHBAR_PIXELS, 1);
+        u16 hpFraction = B_FAST_HP_DRAIN == FALSE ? 1 : max(gBattleSpritesDataPtr->battleBars[battlerId].maxValue / (B_HEALTHBAR_PIXELS / 2), 1);
         currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battlerId].maxValue,
                     gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
                     gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
                     &gBattleSpritesDataPtr->battleBars[battlerId].currValue,
-                #if B_FAST_HP_DRAIN == TRUE
                     B_HEALTHBAR_PIXELS / 8, hpFraction);
-                #else
-                    B_HEALTHBAR_PIXELS / 8, 1);
-                #endif
     }
     else // exp bar
     {
@@ -2993,7 +2989,7 @@ static const struct SpriteTemplate sSpriteTemplate_AbilityPopUp =
 };
 
 #define ABILITY_POP_UP_POS_X_DIFF (64 - 7) // Hide second sprite underneath to gain proper letter spacing
-#define ABILITY_POP_UP_POS_X_SLIDE 68
+#define ABILITY_POP_UP_POS_X_SLIDE 136
 
 static const s16 sAbilityPopUpCoordsDoubles[MAX_BATTLERS_COUNT][2] =
 {
@@ -3077,7 +3073,6 @@ static void ClearAbilityName(u8 spriteId1, u8 spriteId2)
 static void PrintBattlerOnAbilityPopUp(u8 battlerId, u8 spriteId1, u8 spriteId2)
 {
     int i;
-    u8 lastChar;
     u8* textPtr;
     u8 monName[POKEMON_NAME_LENGTH + 3] = {0};
     u8* nick = gBattleMons[battlerId].nickname; // This needs to be updated for Illusion support
@@ -3091,11 +3086,6 @@ static void PrintBattlerOnAbilityPopUp(u8 battlerId, u8 spriteId1, u8 spriteId2)
     }
 
     textPtr = monName + i + 1;
-
-    if (*(textPtr - 1) == EOS)
-        textPtr--;
-
-    lastChar = *(textPtr - 1);
 
     textPtr[0] = EOS;
 
@@ -3327,7 +3317,7 @@ static void SpriteCb_AbilityPopUp(struct Sprite *sprite)
     if (!sprite->tHide) // Show
     {
         if (sprite->tIsMain && ++sprite->tFrames == 4)
-            PlaySE(SE_BALL_TRAY_ENTER);
+            PlaySE(SE_RG_CARD_FLIPPING);
         if ((!sprite->tRightToLeft && (sprite->x -= 4) <= sprite->tOriginalX)
             || (sprite->tRightToLeft && (sprite->x += 4) >= sprite->tOriginalX)
            )

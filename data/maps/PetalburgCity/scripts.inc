@@ -556,6 +556,7 @@ PetalburgCity_EventScript_Scott::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	setvar VAR_SCOTT_STATE, 1
+	textcolor NPC_TEXT_COLOR_MALE
 	msgbox PetalburgCity_Text_AreYouATrainer, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterRight
@@ -566,6 +567,8 @@ PetalburgCity_EventScript_Scott::
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	delay 30
+	giveitem ITEM_POKEMON_BOX_LINK
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
@@ -760,9 +763,13 @@ PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
 
 PetalburgCity_Text_AreYouATrainer:
-	.string "Excuse me!\p"
-	.string "Let me guess, from the way you're\n"
-	.string "dressed, are you a POKéMON TRAINER?$"
+	.string "Ah, te voilà {PLAYER} !\p"
+	.string "Je t'ai enfin rattraper mais là n'est\n"
+	.string "pas la question !\p"
+	.string "J'ai quelque chose d'important à\n"
+	.string "te dire.$"
+
+Chantiville_Text_CallTalk:
 
 PetalburgCity_Text_WellMaybeNot:
 	.string "… … … … … …\p"

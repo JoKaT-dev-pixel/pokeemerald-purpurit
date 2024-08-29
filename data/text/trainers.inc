@@ -293,31 +293,27 @@ Route104_Text_IvanPostBattle:
 	.string "I forgot I had to raise my POKéMON…$"
 
 Route104_Text_BillyIntro:
-	.string "Toi aussi ton père est parti\n"
-	.string "chercher du lait ?$"
+	.string "Toi aussi ton père est parti chercher\n"
+	.string "du lait ?$"
 
 Route104_Text_BillyDefeat:
-	.string "Waah! I got sand in my runners!\n"
-	.string "They're all gritty!$"
+	.string "Espèce de trouduc !$"
 
 Route104_Text_BillyPostBattle:
-	.string "I want to leave my footprints in\n"
-	.string "the sand everywhere, but they\l"
-	.string "disappear quickly…$"
+	.string "Ta mère est tellement pauvre que\n"
+	.string "ton père l'a abandonnée !$"
 
 Route104_Text_HaleyIntro:
-	.string "Should I…\n"
-	.string "Or shouldn't I?\p"
-	.string "Okay, sure, I will battle!$"
+	.string "Non mais, allô quoi ?\p"
+	.string "T'as 10 ans et tu n'as même pas de\n"
+	.string "téléphone !$"
 
 Route104_Text_HaleyDefeat:
-	.string "I shouldn't have battled…$"
+	.string "Oh merde, j'ai plus de réseau…$"
 
 Route104_Text_HaleyPostBattle:
-	.string "If you're faced with a decision and\n"
-	.string "you let someone else choose for you,\l"
-	.string "you will regret it, however things\l"
-	.string "turn out.$"
+	.string "Heu finalement…\p"
+	.string "T'aurai pas une batterie externe ?$"
 
 Route104_Text_HaleyRegister1:
 	.string "You're strong, but should I register\n"

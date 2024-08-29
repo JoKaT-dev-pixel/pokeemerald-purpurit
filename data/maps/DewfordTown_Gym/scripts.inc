@@ -336,12 +336,12 @@ DewfordTown_Gym_Text_JocelynPostBattle:
 	.string "CHAMPION!$"
 
 DewfordTown_Gym_Text_LauraIntro:
-	.string "Je rêve où tu es en train de\n"
-	.string "maté mes fesses !$"
+	.string "Je rêve où tu es en train de maté\n"
+	.string "mes fesses !$"
 
 DewfordTown_Gym_Text_LauraDefeat:
-	.string "Je retourne faire ma séance\n"
-	.string "de squat !$"
+	.string "Je retourne faire ma séance de\n"
+	.string "squat !$"
 
 DewfordTown_Gym_Text_LauraPostBattle:
 	.string "Je dois dire que je suis très\n"
