@@ -136,8 +136,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_IMMUNITY] =
     {
-        .name = _("Immunity"),
-        .description = COMPOUND_STRING("Prevents poisoning."),
+        .name = _("Vaccin"),
+        .description = COMPOUND_STRING("Empêche le Pokémon d'être\nempoisonné."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -215,8 +215,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_EFFECT_SPORE] =
     {
-        .name = _("Effect Spore"),
-        .description = COMPOUND_STRING("Leaves spores on contact."),
+        .name = _("Pose Spore"),
+        .description = COMPOUND_STRING("Peut paralyser, empoisonner,\nendormir au contact."),
         .aiRating = 4,
     },
 
@@ -294,15 +294,15 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_HUGE_POWER] =
     {
-        .name = _("Huge Power"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .name = _("Coloforce"),
+        .description = COMPOUND_STRING("Double la puissance des attaques\nphysiques."),
         .aiRating = 10,
     },
 
     [ABILITY_POISON_POINT] =
     {
-        .name = _("Poison Point"),
-        .description = COMPOUND_STRING("Poisons foe on contact."),
+        .name = _("Point Poison"),
+        .description = COMPOUND_STRING("Peut empoisonner l'ennemi s'il\ny a contact."),
         .aiRating = 4,
     },
 
@@ -390,8 +390,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_RUN_AWAY] =
     {
-        .name = _("Run Away"),
-        .description = COMPOUND_STRING("Makes escaping easier."),
+        .name = _("Fuite"),
+        .description = COMPOUND_STRING("Permet de fuir n'importe quel\nPokémon sauvage."),
         .aiRating = 0,
     },
 
@@ -641,15 +641,15 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_UNBURDEN] =
     {
-        .name = _("Unburden"),
-        .description = COMPOUND_STRING("Using a hold item ups Speed."),
+        .name = _("Délestage"),
+        .description = COMPOUND_STRING("Augmente la Vit. si l'objet\ntenu est utilisé ou perdu."),
         .aiRating = 7,
     },
 
     [ABILITY_HEATPROOF] =
     {
-        .name = _("Heatproof"),
-        .description = COMPOUND_STRING("Heat and burn protection."),
+        .name = _("Ignifugé"),
+        .description = COMPOUND_STRING("Réduit la puissance des\ncapacités de type Feu."),
         .aiRating = 5,
         .breakable = TRUE,
     },
@@ -991,8 +991,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_HEALER] =
     {
-        .name = _("Healer"),
-        .description = COMPOUND_STRING("Heals partner Pokémon."),
+        .name = _("Cœur Soin"),
+        .description = COMPOUND_STRING("Guérit parfois le statut des\nalliés alentour."),
         .aiRating = 0,
     },
 
@@ -1014,7 +1014,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HEAVY_METAL] =
     {
         .name = _("Heavy Metal"),
-        .description = COMPOUND_STRING("Doubles weight."),
+        .description = COMPOUND_STRING("Double le poids du Pokémon."),
         .aiRating = -1,
         .breakable = TRUE,
     },
@@ -1022,7 +1022,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIGHT_METAL] =
     {
         .name = _("Light Metal"),
-        .description = COMPOUND_STRING("Halves weight."),
+        .description = COMPOUND_STRING("Divise par deux le poids du\nPokémon."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -1073,8 +1073,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_OVERCOAT] =
     {
-        .name = _("Overcoat"),
-        .description = COMPOUND_STRING("Blocks weather and powder."),
+        .name = _("Envelocape"),
+        .description = COMPOUND_STRING("Protège du sable, de la grêle\nou de la poudre."),
         .aiRating = 5,
         .breakable = TRUE,
     },
@@ -1118,8 +1118,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_ANALYTIC] =
     {
-        .name = _("Analytic"),
-        .description = COMPOUND_STRING("Moving last boosts power."),
+        .name = _("Analyste"),
+        .description = COMPOUND_STRING("Booste les capacités s'il\nattaque en dernier."),
         .aiRating = 5,
     },
 
@@ -1195,8 +1195,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_PRANKSTER] =
     {
-        .name = _("Prankster"),
-        .description = COMPOUND_STRING("Status moves go first."),
+        .name = _("Farceur"),
+        .description = COMPOUND_STRING("Rend les capacités de statut\nprioritaires."),
         .aiRating = 8,
     },
 
@@ -1362,8 +1362,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_GRASS_PELT] =
     {
-        .name = _("Grass Pelt"),
-        .description = COMPOUND_STRING("Ups Defense in grass."),
+        .name = _("Toison Herbue"),
+        .description = COMPOUND_STRING("Augmente la Défense du Pokémon\nsi Champ Herbu est actif."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -2163,11 +2163,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LINGERING_AROMA] =
     {
     #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Lingering Aroma"),
+        .name = _("Odeur Tenace"),
     #else
         .name = _("LngerngAroma"),
     #endif
-        .description = COMPOUND_STRING("Spreads with contact."),
+        .description = COMPOUND_STRING("Remplace le talent de\nl'attaquant par Odeur Tenace."),
         .aiRating = 5,
     },
 
@@ -2636,7 +2636,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_NITROGEN] =
     {
-        .name = _("Nitrogène"),
+        .name = _("Cryogénie"),
         .description = COMPOUND_STRING("Peut geler l'attaquant s'il\ny a contact."),
         .aiRating = 4,
     },

@@ -1074,6 +1074,9 @@ extern const u8 gText_Decoration2[];
 extern const u8 gText_PackUp[];
 extern const u8 gText_Registry[];
 extern const u8 gText_Information[];
+extern const u8 gText_10hours[];
+extern const u8 gText_InfiniteHours[];
+extern const u8 gText_IDontKnow[];
 extern const u8 gText_Mach[];
 extern const u8 gText_Acro[];
 extern const u8 gText_Psn[];
@@ -3047,6 +3050,7 @@ extern const u8 gText_SamePkmnInPartyAlready[];
 extern const u8 gText_Cancel3[];
 
 extern const u8 gText_Medicines[];
+extern const u8 gText_BattleItems[];
 
 // Naming Screen
 extern const u8 gText_MoveOkBack[];
@@ -3080,6 +3084,9 @@ extern const u8 gText_PlantBerry[];
 extern const u8 gText_PokevialHasDoses[];
 extern const u8 gText_PokevialIsEmpty[];
 extern const u8 gText_YourPkmnWereRestored[];
-//End Pokevial Branch
+
+// FRLG whiteout
+extern const u8 gText_PlayerScurriedToCenter[];
+extern const u8 gText_PlayerScurriedBackHome[];
 
 #endif // GUARD_STRINGS_H

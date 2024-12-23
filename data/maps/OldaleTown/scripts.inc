@@ -24,7 +24,19 @@ OldaleTown_EventScript_TownSign::
 	end
 
 OldaleTown_EventScript_Girl::
+	msgbox OldaleTown_Text_Girl, MSGBOX_NPC
+	end
+
+OldaleTown_EventScript_Scout::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
+	end
+
+OldaleTown_EventScript_OldWoman::
+	msgbox OldaleTown_Text_OldMan, MSGBOX_NPC
+	end
+
+OldaleTown_EventScript_Geek::
+	msgbox OldaleTown_Text_Geek, MSGBOX_NPC
 	end
 
 OldaleTown_EventScript_MartEmployee::
@@ -242,9 +254,27 @@ OldaleTown_Movement_Unknown2:
 	walk_left
 	step_end
 
+OldaleTown_Text_Girl:
+	.string "Fisé dé poute !\p"
+	.string "Así es como dices hola en francés,\n"
+	.string "¿no?$"
+
 OldaleTown_Text_SavingMyProgress:
-	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
+	.string "À ta place, je devrais plutôt\n"
+	.string "sauvegarder ma partie !$"
+
+OldaleTown_Text_OldMan:
+	.string "J'ai vécu tant d'années ici et c'était\n"
+	.string "très animé.\p"
+	.string "Maintenant, avec le temps, il n'y a\n"
+	.string "plus rien d'intéressant…$"
+
+OldaleTown_Text_Geek:
+	.string "La règle dit qu'il y a une exception\n"
+	.string "à chaque règle.\p"
+	.string "Cette règle n'a pas d'exception.\p"
+	.string "Ce qui fait d'elle l'exception à la\n"
+	.string "règle.$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Pssst, hé toi !\p"
@@ -255,18 +285,18 @@ OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Viens, suis-moi !$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "Tu vois ?!\p"
-	.string "Ça s'est ma Boutique Pokémon.\p"
-	.string "La MEILLEUR de tout le quartier,\n"
-	.string "il n'y a pas photo.\p"
+	.string "Tu vois ?\p"
+	.string "Ça s'est ma Boutique Pokémon !\p"
+	.string "La meilleur de tout le quartier,\n"
+	.string "il n'y a pas photo !\p"
 	.string "Je vends de bons objets très variés et\n"
-	.string "non pas que des vulgaires Poké Balls.\p"
-	.string "Tiens ceci, c'est cadeau de la maison.\n"
-	.string "Reviens dans ma boutique quand tu veux.$"
+	.string "pas des trucs de pacotille !\p"
+	.string "Tiens ceci, c'est cadeau de la maison !\n"
+	.string "Reviens me voir quand tu veux !$"
 
 OldaleTown_Text_PotionExplanation:
 	.string "Ce que je viens de te donner est un\n"
-	.string "Multi Exp.\p"
+	.string "Multi Exp !\p"
 	.string "Bien évidemment, tu peux choisir de\n"
 	.string "l'activer ou non pour qu'il fonctionne.$"
 

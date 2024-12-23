@@ -278,25 +278,25 @@ PlayersHouse_2F_Text_ClockIsStopped:
 	.string "à l'heure !$"
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
-	.string "Maman: Ah, je vois que tu finis\n"
+	.string "{ROCKET}Maman: {MAGMA}Ah, je vois que tu as finis\n"
 	.string "par régler cette horloge ?\p"
 	.string "C'est parfait ! Je suis contente que\n"
 	.string "tu apprécies ce cadeau !\p"
-	.string "Ils ont aussi fini de tout déposer\n"
-	.string "en bas.\p"
-	.string "D'ailleurs, assure-toi que tes\n"
-	.string "affaires se trouvent bien sur\l"
-	.string "le bureau.$"
+	.string "Ils ont fini de tout déposer en bas.\p"
+	.string "Avant de descendre, assure-toi que\n"
+	.string "tes affaires se trouvent bien sur\l"
+	.string "le PC.$"
 
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} ouvre le carnet.\p"
 	.string "Savoir Nº 1:\p"
-	.string "Le fait que la petite souris te prenne\n"
-	.string "une dent contre une pièce,\l"
-	.string "techniquement c'est du trafic d'organe.\p"
+	.string "Le fait que la petite souris prends\n"
+	.string "une dent en échange d'une pièce, c'est\l"
+	.string "considérer comme du trafic d'organes.\p"
 	.string "Savoir Nº 2:\p"
 	.string "Un historique vide en dit bien plus\n"
 	.string "qu'un historique rempli.\p"
+	.string "… … … … … … … … … … … … … … … …\p"
 	.string "Les pages suivantes sont vierges…$"
 
 Common_Text_LookCloserAtMap:
@@ -304,5 +304,5 @@ Common_Text_LookCloserAtMap:
 	.string "carte de la région de Gaullia.$"
 
 PlayersHouse_2F_Text_ItsAGameCube:
-	.string "C’est une Nintendo Switch 2 Lite.\p"
-	.string "Elle est même sorti avant GTA 6.$"
+	.string "C’est une Nintendo Switch 2.\p"
+	.string "Elle a fini par sortir finalement.$"

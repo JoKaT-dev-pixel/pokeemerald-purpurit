@@ -34,28 +34,31 @@ Route102_Text_CalvinRematchPostBattle:
 	.string "If you're going to get stronger,\n"
 	.string "I'll get stronger, too.$"
 
-Route102_Text_AllenIntro:
-	.string "Did you just become a TRAINER?\n"
-	.string "We're both beginners!$"
+BoisChantilly_Text_MatthieuIntro:
+	.string "Bienvenue dans les bois de\n"
+	.string "Chantiville !\p"
+	.string "Je fais le guide, tu me suis ?$"
 
-Route102_Text_AllenDefeated:
+BoisChantilly_Text_MatthieuDefeated:
 	.string "I called you because I thought\n"
 	.string "I could beat you…$"
 
-Route102_Text_AllenPostBattle:
-	.string "I haven't won once yet…\n"
-	.string "I wish I would win soon…$"
+BoisChantilly_Text_MatthieuPostBattle:
+	.string "C'est dangereux de se promener seul\n"
+	.string "dans les bois surtout si tu as\l"
+	.string "un mauvais sens d'orientation.$"
 
-Route102_Text_RickIntro:
-	.string "Hahah! Our eyes met!\n"
-	.string "I'll take you on with my BUG POKéMON!$"
+RouteD2_Text_QuentinIntro:
+	.string "Lorsque les yeux de deux dresseurs\n"
+	.string "se croisent, ils doivent passer\l"
+	.string "à l'attaque !$"
 
-Route102_Text_RickDefeated:
-	.string "Ow! Down and out!$"
+RouteD2_Text_QuentinDefeated:
+	.string "Bon sang, j’ai perdu…$"
 
-Route102_Text_RickPostBattle:
-	.string "If you lock eyes with a TRAINER,\n"
-	.string "you have to challenge! It's a rule!$"
+RouteD2_Text_QuentinPostBattle:
+	.string "Le plus important c'est qu'on est\n"
+	.string "tous des gagnants !$"
 
 Route102_Text_TianaIntro:
 	.string "Wesh !\p"
@@ -65,9 +68,8 @@ Route102_Text_TianaDefeated:
 	.string "Vas-y toi là !$"
 
 Route102_Text_TianaPostBattle:
-	.string "Pas la peine de venir me parler,\n"
-	.string "tu n'auras pas mon Snap.\p"
-	.string "Et non je ne suis pas aigri !!$"
+	.string "Elle est occupée à écrire des\n"
+	.string "messages sur son téléphone.$"
 
 Route103_Text_DaisyIntro:
 	.string "Did you feel the tug of our\n"
@@ -2177,16 +2179,14 @@ Route116_Text_ClarkPostBattle:
 	.string "To a HIKER, mountains are roads!$"
 
 Route116_Text_JoeyIntro:
-	.string "My POKéMON rule!\n"
-	.string "Check them out!$"
+	.string "Oh ! Fait gaffe ?!\p"
+	.string "Je suis ceinture noire moi !$"
 
 Route116_Text_JoeyDefeat:
-	.string "Ouch! A scrape!\n"
-	.string "I have to put on a bandage!$"
+	.string "Je préfère ne pas en parler…$"
 
 Route116_Text_JoeyPostBattle:
-	.string "Bandages are signs of toughness!\n"
-	.string "I've got another one!$"
+	.string "Heu non. Non, non, oublie ça.$"
 
 Route116_Text_JoseIntro:
 	.string "My BUG POKéMON are tough!\n"
@@ -2204,12 +2204,15 @@ Route116_Text_JaniceIntro:
 	.string "Let me teach you how strong my\n"
 	.string "adorable POKéMON is!$"
 
-Route116_Text_JaniceDefeat:
-	.string "You're a notch above me…$"
+Cathedrale_Text_ElisabethDefeat:
+	.string "J'ai l'impression que le destin en\n"
+	.string "avait après toi.$"
 
-Route116_Text_JanicePostBattle:
-	.string "POKéMON that possess cuteness and\n"
-	.string "power, that's ideal, I think.$"
+Cathedrale_Text_ElisabethPostBattle:
+	.string "La chance et la malchance ne se\n"
+	.string "divisent pas, elles vont ensemble,\l"
+	.string "elles sont les deux faces de\l"
+	.string "notre existence.$"
 
 Route116_Text_JerryIntro:
 	.string "We learn all sorts of things at the\n"

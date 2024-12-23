@@ -161,5 +161,8 @@ bool8 MetatileBehavior_IsSidewaysStairsLeftSideBottom(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsRightSideAny(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSandGrass(u8);
+bool32 MetatileBehavior_IsSignpost(u32);
+bool32 MetatileBehavior_IsPokemonCenterSign(u32);
+bool32 MetatileBehavior_IsPokeMartSign(u32);
 
 #endif // GUARD_METATILE_BEHAVIOR_H

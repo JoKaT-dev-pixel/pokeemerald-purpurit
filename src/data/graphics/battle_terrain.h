@@ -73,6 +73,10 @@ const u32 gBattleTerrainTiles_City[] = INCBIN_U32("graphics/battle_terrain/city/
 const u32 gBattleTerrainPalette_City[] = INCBIN_U32("graphics/battle_terrain/city/palette.gbapal.lz");
 const u32 gBattleTerrainTilemap_City[] = INCBIN_U32("graphics/battle_terrain/city/map.bin.lz");
 
+const u32 gBattleTerrainTiles_Birch_Lab[] = INCBIN_U32("graphics/battle_terrain/birch_lab/tiles.4bpp.lz");
+const u32 gBattleTerrainPalette_Birch_Lab[] = INCBIN_U32("graphics/battle_terrain/birch_lab/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_Birch_Lab[] = INCBIN_U32("graphics/battle_terrain/birch_lab/map.bin.lz");
+
 const u32 gBattleTerrainAnimTiles_TallGrass[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_TallGrass[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_map.bin.lz");
 

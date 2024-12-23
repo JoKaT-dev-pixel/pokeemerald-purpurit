@@ -45,6 +45,7 @@ SUPER_ER    = 2C
 LV          = 34
 '='         = 35
 ';'         = 36
+V_D_ARROW   = 38
 '¿'         = 51
 '¡'         = 52
 PK          = 53
@@ -343,7 +344,7 @@ RIVAL          = FD 06
 VERSION        = FD 07 @ "EMERALD"
 AQUA           = FD 08
 MAGMA          = FD 09
-ARCHIE         = FD 0A
+ROCKET         = FD 0A
 MAXIE          = FD 0B
 KYOGRE         = FD 0C
 GROUDON        = FD 0D
@@ -446,6 +447,23 @@ JPN = FC 15
 ENG = FC 16
 PAUSE_MUSIC = FC 17
 RESUME_MUSIC = FC 18
+CREATE_MUGSHOT = FC 19
+DESTROY_MUGSHOT = FC 1A
+
+@ these are basically what include/constants/field_mugshots.h have
+@ but without the x_COUNT and x_NONE ones for strings
+
+@ mugshot stuff begins
+
+MUGSHOT_TEST = 01
+MUGSHOT_OCEANE = 02
+
+EMOTE_NORMAL = 00
+EMOTE_SAD = 01
+EMOTE_ANGRY = 02
+EMOTE_HAPPY = 03
+
+@ mugshot stuff ends
 
 @ fonts
 

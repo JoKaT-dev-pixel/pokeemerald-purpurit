@@ -112,6 +112,7 @@ static void AnimTask_OdorSleuthMovementWaitFinish(u8);
 static void MoveOdorSleuthClone(struct Sprite *);
 static void AnimTask_TeeterDanceMovement_Step(u8);
 static void AnimTask_SlackOffSquish_Step(u8);
+static void AnimMakeItRainCoin(struct Sprite *);
 
 const union AnimCmd gScratchAnimCmds[] =
 {
@@ -578,6 +579,17 @@ const struct SpriteTemplate gSwallowBlueOrbSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimSwallowBlueOrb,
+};
+
+const struct SpriteTemplate gMakeItRainCoinSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_COIN,
+    .paletteTag = ANIM_TAG_COIN,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gCoinAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimMakeItRainCoin,
 };
 
 const union AffineAnimCmd gSwallowDeformMonAffineAnimCmds[] =
@@ -1087,6 +1099,17 @@ const struct SpriteTemplate gBlockXSpriteTemplate =
 {
     .tileTag = ANIM_TAG_X_SIGN,
     .paletteTag = ANIM_TAG_X_SIGN,
+    .oam = &gOamData_AffineOff_ObjNormal_64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimBlockX,
+};
+
+const struct SpriteTemplate gBlockTSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_T_SIGN,
+    .paletteTag = ANIM_TAG_T_SIGN,
     .oam = &gOamData_AffineOff_ObjNormal_64x64,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -2306,6 +2329,25 @@ static void AnimSwallowBlueOrb(struct Sprite *sprite)
         sprite->y2 -= sprite->data[1] >> 8;
         sprite->data[1] -= 96;
         if (sprite->y + sprite->y2 > sprite->data[2])
+            DestroyAnimSprite(sprite);
+        break;
+    }
+}
+
+static void AnimMakeItRainCoin(struct Sprite *sprite)
+{
+    switch (sprite->data[0])
+    {
+    case 0:
+        InitSpritePosToAnimAttacker(sprite, FALSE);
+        sprite->data[1] = 0x900;
+        sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+        sprite->data[0]++;
+        break;
+    case 1:
+        sprite->y2 -= sprite->data[1] >> 8;
+        sprite->data[1] -= 96;
+        if (sprite->y + sprite->y2 > sprite->data[1])
             DestroyAnimSprite(sprite);
         break;
     }
@@ -3987,6 +4029,22 @@ void AnimTask_StatusClearedEffect(u8 taskId)
         gCureBubblesGfx,
         gCureBubblesTilemap,
         gCureBubblesPal);
+}
+
+void AnimTask_UseHeldItemEffect(u8 taskId)
+{
+    StartMonScrollingBgMask(
+        taskId,
+        0,
+        0x1A0,
+        gBattleAnimAttacker,
+        gBattleAnimArgs[0],
+        10,
+        2,
+        30,
+        gItemBubblesGfx,
+        gItemBubblesTilemap,
+        gItemBubblesPal);
 }
 
 // Moves a noise line from the mon.

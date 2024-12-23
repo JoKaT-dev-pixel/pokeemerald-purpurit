@@ -1,17 +1,17 @@
 RustboroCity_Gym_MapScripts::
 	.byte 0
 
-RustboroCity_Gym_EventScript_Roxanne::
+Larochelle_Arene_EventScript_Raoult::
 	setvar VAR_MUGSHOT_ID, MUGSHOT_ROXANNE
-	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_ROXANNE_1, Larochelle_Arene_Text_RaoultIntro, Larochelle_Arene_Text_RaoultDefeat, Larochelle_Arene_EventScript_RaoultDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
+	goto_if_eq VAR_RESULT, TRUE, Larochelle_Arene_EventScript_RaoultRematch
 	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GiveRockTomb
-	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
+	msgbox Larochelle_Arene_Text_RaoultPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-RustboroCity_Gym_EventScript_RoxanneDefeated::
+Larochelle_Arene_EventScript_RaoultDefeated::
 	message RustboroCity_Gym_Text_ReceivedStoneBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -34,9 +34,9 @@ RustboroCity_Gym_EventScript_GiveRockTomb::
 	release
 	end
 
-RustboroCity_Gym_EventScript_RoxanneRematch::
-	trainerbattle_rematch_double TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
-	msgbox RustboroCity_Gym_Text_RoxannePostRematch, MSGBOX_AUTOCLOSE
+Larochelle_Arene_EventScript_RaoultRematch::
+	trainerbattle_rematch_double TRAINER_ROXANNE_1, Larochelle_Arene_Text_RaoultPreRematch, Larochelle_Arene_Text_RaoultRematchDefeat, Larochelle_Arene_Text_RaoultRematchNeedTwoMons
+	msgbox Larochelle_Arene_Text_RaoultPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 RustboroCity_Gym_EventScript_Josh::
@@ -101,7 +101,7 @@ RustboroCity_Gym_EventScript_GymStatue::
 
 RustboroCity_Gym_EventScript_RegisterRoxanne::
 	lockall
-	pokenavcall RustboroCity_Gym_Text_RoxanneRegisterCall
+	pokenavcall Larochelle_Arene_Text_RaoultRegisterCall
 	waitmessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
@@ -189,16 +189,21 @@ RustboroCity_Gym_Text_MarcPostBattle:
 	.string "It took smarts and sense for her to\n"
 	.string "pick the ROCK type at her young age.$"
 
-RustboroCity_Gym_Text_RoxanneIntro:
-	.string "Hello, I am ROXANNE, the RUSTBORO\n"
-	.string "POKéMON GYM LEADER.\p"
-	.string "I became a GYM LEADER so that I might\n"
-	.string "apply what I learned at the POKéMON\l"
-	.string "TRAINER'S SCHOOL in battle.\p"
-	.string "Would you kindly demonstrate how you\n"
-	.string "battle, and with which POKéMON?$"
+Larochelle_Arene_Text_RaoultIntro:
+	.string "Bienvenue dans l'Arène de Larochelle.\n"
+	.string "Je suis le champion Didier Raoult.\p"
+	.string "J'ai un talent dans la science, c'est\n"
+	.string "l'observation.\p"
+	.string "Je suis un bon observateur.\p"
+	.string "Je vois les choses là où les gens\n"
+	.string "ne le voient pas.\p"
+	.string "Je ne suis pas un prophète même si\n"
+	.string "je suis barbu.\p"
+	.string "Trêve de bavardages !\p"
+	.string "Laisse-moi te prouver que la science\n"
+	.string "peut être aussi un sport de combat !$"
 
-RustboroCity_Gym_Text_RoxanneDefeat:
+Larochelle_Arene_Text_RaoultDefeat:
 	.string "So…\n"
 	.string "I lost…\p"
 	.string "It seems that I still have much more\n"
@@ -231,7 +236,7 @@ RustboroCity_Gym_Text_ExplainRockTomb:
 	.string "Remember, a TM can be used only once,\n"
 	.string "so think before you use it.$"
 
-RustboroCity_Gym_Text_RoxannePostBattle:
+Larochelle_Arene_Text_RaoultPostBattle:
 	.string "Since you are so strong, you should\n"
 	.string "challenge other GYM LEADERS.\p"
 	.string "By battling many TRAINERS, you should\n"
@@ -245,7 +250,7 @@ RustboroCity_Gym_Text_GymStatueCertified:
 	.string "ROXANNE'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
-RustboroCity_Gym_Text_RoxanneRegisterCall:
+Larochelle_Arene_Text_RaoultRegisterCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
 	.string "ROXANNE: Oh, hello, {PLAYER}?\n"
@@ -266,7 +271,7 @@ RustboroCity_Gym_Text_RegisteredRoxanne:
 	.string "Registered GYM LEADER ROXANNE\n"
 	.string "in the POKéNAV.$"
 
-RustboroCity_Gym_Text_RoxannePreRematch:
+Larochelle_Arene_Text_RaoultPreRematch:
 	.string "ROXANNE: I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"
@@ -274,17 +279,17 @@ RustboroCity_Gym_Text_RoxannePreRematch:
 	.string "I would like to see how much better\n"
 	.string "we've become. Let us battle!$"
 
-RustboroCity_Gym_Text_RoxanneRematchDefeat:
+Larochelle_Arene_Text_RaoultRematchDefeat:
 	.string "Grr…\n"
 	.string "Again, I have lost…$"
 
-RustboroCity_Gym_Text_RoxannePostRematch:
+Larochelle_Arene_Text_RaoultPostRematch:
 	.string "ROXANNE: I still have much to learn\n"
 	.string "when it comes to battling POKéMON.\p"
 	.string "That awareness makes me love battling\n"
 	.string "all that much more!$"
 
-RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
+Larochelle_Arene_Text_RaoultRematchNeedTwoMons:
 	.string "ROXANNE: I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"

@@ -561,3 +561,5 @@ gSpecials::
     def_special PokevialGetSize
     def_special PokevialRefill
     //End Pokevial Branch
+
+	def_special UseBlankMessageToCancelPokemonPic

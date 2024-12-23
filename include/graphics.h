@@ -2,6 +2,7 @@
 #define GUARD_GRAPHICS_H
 
 // overworld
+extern const u32 gSignpostWindow_Gfx[];
 extern const u32 gMessageBox_Gfx[];
 extern const u16 gMessageBox_Pal[];
 extern const u32 gMessageBoxMale_Gfx[];
@@ -300,6 +301,9 @@ extern const u32 gBattleTerrainPalette_City[];
 extern const u32 gBattleTerrainTiles_Sewer[];
 extern const u32 gBattleTerrainTilemap_Sewer[];
 extern const u32 gBattleTerrainPalette_Sewer[];
+extern const u32 gBattleTerrainTiles_Birch_Lab[];
+extern const u32 gBattleTerrainTilemap_Birch_Lab[];
+extern const u32 gBattleTerrainPalette_Birch_Lab[];
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
@@ -2422,6 +2426,9 @@ extern const u32 gBattleAnimSpriteGfx_PowerGem[];
 extern const u32 gBattleAnimSpriteGfx_StoneEdge[];
 extern const u32 gBattleAnimSpriteGfx_StealthRock[];
 extern const u32 gBattleAnimSpriteGfx_PoisonJab[];
+extern const u32 gBattleAnimSpriteGfx_TSign[];
+extern const u32 gBattleAnimSpriteGfx_YellowSwipe[];
+extern const u32 gBattleAnimSpriteGfx_LevelUpVertical[];
 
 extern const u32 gBattleAnimSpritePal_Bone[];
 extern const u32 gBattleAnimSpritePal_Spark[];
@@ -2670,6 +2677,9 @@ extern const u32 gBattleAnimSpritePal_GuardRing[];
 extern const u32 gCureBubblesGfx[];
 extern const u32 gCureBubblesPal[];
 extern const u32 gCureBubblesTilemap[];
+extern const u32 gItemBubblesGfx[];
+extern const u32 gItemBubblesPal[];
+extern const u32 gItemBubblesTilemap[];
 extern const u32 gBattleAnimSpritePal_PurpleScratch[];
 extern const u32 gBattleAnimSpritePal_SmallRedEye[];
 extern const u32 gBattleAnimSpritePal_HollowOrb[];
@@ -2918,6 +2928,9 @@ extern const u32 gBattleAnimSpritePal_IvyCudgelWater[];
 extern const u32 gBattleAnimSpritePal_BlueHeart[];
 extern const u32 gBattleAnimSpritePal_Pink_Sparkle[];
 extern const u32 gBattleAnimSpritePal_MagnetOrb[];
+extern const u32 gBattleAnimSpriteGfx_NothingScratch[];
+extern const u32 gBattleAnimSpritePal_YellowSwipe[];
+extern const u32 gBattleAnimSpritePal_LevelUpVertical[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];

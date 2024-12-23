@@ -39,7 +39,7 @@ OldaleTown_Mart_Pokemart_Expanded:
 	release
 	end
 
-OldaleTown_Mart_EventScript_Woman::
+OldaleTown_Mart_EventScript_Lass::
 	lock
 	faceplayer
 	goto_if_set FLAG_ADVENTURE_STARTED, OldaleTown_Mart_EventScript_PokeBallsInStock
@@ -57,16 +57,15 @@ OldaleTown_Mart_EventScript_Boy::
 	end
 
 OldaleTown_Mart_Text_PokeBallsAreSoldOut:
-	.string "The clerk says they're all sold out.\n"
-	.string "I can't buy any POKé BALLS.$"
+	.string "Ça y est, j'ai fait mon choix !\p"
+	.string "Heu en fait, je dois encore réfléchir…$"
 
 OldaleTown_Mart_Text_ImGoingToBuyPokeBalls:
-	.string "I'm going to buy a bunch of POKé BALLS\n"
-	.string "and catch a bunch of POKéMON!$"
+	.string "J'ai du mal à choisir tellement il y a\n"
+	.string "du choix dans cette Boutique.$"
 
 OldaleTown_Mart_Text_RestoreHPWithPotion:
-	.string "If a POKéMON gets hurt and loses its HP\n"
-	.string "and faints, it won't be able to battle.\p"
-	.string "To prevent your POKéMON from fainting,\n"
-	.string "restore its HP with a POTION.$"
+	.string "Je ne pense pas que je trouverais ici\n"
+	.string "des outils de construction.\p"
+	.string "C'est vraiment dommage…$"
 

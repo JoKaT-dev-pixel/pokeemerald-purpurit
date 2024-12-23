@@ -719,6 +719,15 @@ const struct BattleBackground sBattleTerrainTable[] =
         .entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
         .palette = gBattleTerrainPalette_Sand,
     },
+
+    [BATTLE_TERRAIN_BIRCH_LAB] =
+    {
+        .tileset = gBattleTerrainTiles_Birch_Lab,
+        .tilemap = gBattleTerrainTilemap_Birch_Lab,
+        .entryTileset = gBattleTerrainAnimTiles_Building,
+        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .palette = gBattleTerrainPalette_Birch_Lab,
+    },
 };
 
 static void UNUSED CB2_UnusedBattleInit(void);

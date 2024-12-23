@@ -412,6 +412,10 @@
 #define ANIM_TAG_BLUE_HEART                 (ANIM_SPRITES_START + 398)
 #define ANIM_TAG_PINK_SPARKLE               (ANIM_SPRITES_START + 399)
 #define ANIM_TAG_MAGNET_ORB                 (ANIM_SPRITES_START + 400)
+#define ANIM_TAG_T_SIGN                     (ANIM_SPRITES_START + 401)
+#define ANIM_TAG_NOTHING_SCRATCH            (ANIM_SPRITES_START + 402)
+#define ANIM_TAG_YELLOW_SWIPE               (ANIM_SPRITES_START + 403)
+#define ANIM_TAG_VERTICAL_STRIPES           (ANIM_SPRITES_START + 404)
 
 // battlers
 #define ANIM_ATTACKER         0
@@ -584,6 +588,7 @@
 #define B_ANIM_SUBSTITUTE_TO_MON        5
 #define B_ANIM_MON_TO_SUBSTITUTE        6
 #define B_ANIM_CRITICAL_CAPTURE_THROW   7
+#define B_ANIM_LVL_UP_VANILLA           8
 
 // status animation table (gBattleAnims_StatusConditions)
 #define B_ANIM_STATUS_PSN               0

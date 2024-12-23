@@ -1,3 +1,5 @@
+.set LOCALID_LASS, 3
+
 Route102_MapScripts::
 	.byte 0
 
@@ -58,19 +60,29 @@ Route102_EventScript_CalvinRematch::
 	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route102_EventScript_Rick::
-	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
-	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+RouteD2_EventScript_Quentin::
+	trainerbattle_single TRAINER_RICK, RouteD2_Text_QuentinIntro, RouteD2_Text_QuentinDefeated
+	msgbox RouteD2_Text_QuentinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_Tiana::
 	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated
+	delay 8
+	playse SE_PIN
+	applymovement LOCALID_LASS, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 5
+	applymovement LOCALID_LASS, Common_Movement_Delay48
+	waitmovement 0
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	applymovement LOCALID_LASS, Common_Movement_FaceAwayPlayer
+	waitmovement 0
 	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route102_EventScript_Allen::
-	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated
-	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+BoisChantilly_EventScript_Matthieu::
+	trainerbattle_single TRAINER_ALLEN, BoisChantilly_Text_MatthieuIntro, BoisChantilly_Text_MatthieuDefeated
+	msgbox BoisChantilly_Text_MatthieuPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route102_Text_WatchMeCatchPokemon:
@@ -101,9 +113,11 @@ Route102_Text_CatchWholeBunchOfPokemon:
 	.string "POKéMON!$"
 
 Route102_Text_RouteSignOldale:
-	.string "Route D-2\n"
-	.string "{RIGHT_ARROW} Fourqueue$"
+	.string "“Route D-2”\p"
+	.string "{LEFT_ARROW} Chantiville à l'Ouest.\n"
+	.string "{RIGHT_ARROW} Fourqueue à l'Est.$"
 
 Route102_Text_RouteSignPetalburg:
-	.string "Route D-2\n"
-	.string "{LEFT_ARROW} Chantiville$"
+	.string "“Route D-2”\p"
+	.string "{RIGHT_ARROW} Fourqueue à l'Est.\n"
+	.string "{LEFT_ARROW} Chantiville à l'Ouest.$"

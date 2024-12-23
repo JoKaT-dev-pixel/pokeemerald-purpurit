@@ -1,10 +1,12 @@
 gText_HowMayIServeYou::
-	.string "Welcome!\p"
-	.string "How may I serve you?$"
+	.string "Bonjour et bienvenue à la Boutique\n"
+	.string "Pokémon !\p"
+	.string "Que puisse-je faire pour vous ?$"
 
 gText_PleaseComeAgain::
-	.string "Please come again!$"
+	.string "À bientôt !$"
 
 gText_PlayerWhatCanIDoForYou::
-	.string "{PLAYER}{STRING 5}, welcome!\p"
-	.string "What can I do for you?$"
+	.string "Bonjour et bienvenue à la Boutique\n"
+	.string "Pokémon {PLAYER}{STRING 5} !\p"
+	.string "Que puisse-je faire pour vous ?$"

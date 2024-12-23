@@ -2615,12 +2615,16 @@ s32 MoveBattleBar(u8 battlerId, u8 healthboxSpriteId, u8 whichBar, u8 unused)
 
     if (whichBar == HEALTH_BAR) // health bar
     {
-        u16 hpFraction = B_FAST_HP_DRAIN == FALSE ? 1 : max(gBattleSpritesDataPtr->battleBars[battlerId].maxValue / (B_HEALTHBAR_PIXELS / 2), 1);
+        u16 hpFraction = B_FAST_HP_DRAIN == FALSE ? 1 : max(gBattleSpritesDataPtr->battleBars[battlerId].maxValue / B_HEALTHBAR_PIXELS, 1);
         currentBarValue = CalcNewBarValue(gBattleSpritesDataPtr->battleBars[battlerId].maxValue,
                     gBattleSpritesDataPtr->battleBars[battlerId].oldValue,
                     gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
                     &gBattleSpritesDataPtr->battleBars[battlerId].currValue,
+                #if B_FAST_HP_DRAIN == TRUE
                     B_HEALTHBAR_PIXELS / 8, hpFraction);
+                #else
+                    B_HEALTHBAR_PIXELS / 8, 1);
+                #endif
     }
     else // exp bar
     {
@@ -3317,7 +3321,7 @@ static void SpriteCb_AbilityPopUp(struct Sprite *sprite)
     if (!sprite->tHide) // Show
     {
         if (sprite->tIsMain && ++sprite->tFrames == 4)
-            PlaySE(SE_RG_CARD_FLIPPING);
+            PlaySE(SE_M_DOUBLE_TEAM);
         if ((!sprite->tRightToLeft && (sprite->x -= 4) <= sprite->tOriginalX)
             || (sprite->tRightToLeft && (sprite->x += 4) >= sprite->tOriginalX)
            )

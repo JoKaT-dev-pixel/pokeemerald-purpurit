@@ -947,6 +947,9 @@ const u32 gBattleAnimSpritePal_Slash[] = INCBIN_U32("graphics/battle_anims/sprit
 const u32 gBattleAnimSpriteGfx_FocusEnergy[] = INCBIN_U32("graphics/battle_anims/sprites/focus_energy.4bpp.lz");
 const u32 gBattleAnimSpritePal_FocusEnergy[] = INCBIN_U32("graphics/battle_anims/sprites/focus_energy.gbapal.lz");
 
+const u32 gBattleAnimSpriteGfx_LevelUpVertical[] = INCBIN_U32("graphics/battle_anims/sprites/blue_stripe.4bpp.lz");
+const u32 gBattleAnimSpritePal_LevelUpVertical[] = INCBIN_U32("graphics/battle_anims/sprites/blue_stripe.gbapal.lz");
+
 const u32 gBattleAnimSpriteGfx_SphereToCube[] = INCBIN_U32("graphics/battle_anims/sprites/sphere_to_cube.4bpp.lz");
 const u32 gBattleAnimSpritePal_SphereToCube[] = INCBIN_U32("graphics/battle_anims/sprites/sphere_to_cube.gbapal.lz");
 
@@ -1223,10 +1226,19 @@ const u32 gCureBubblesGfx[] = INCBIN_U32("graphics/battle_anims/masks/cure_bubbl
 const u32 gCureBubblesPal[] = INCBIN_U32("graphics/battle_anims/masks/cure_bubbles.gbapal.lz");
 const u32 gCureBubblesTilemap[] = INCBIN_U32("graphics/battle_anims/masks/cure_bubbles.bin.lz");
 
+const u32 gItemBubblesGfx[] = INCBIN_U32("graphics/battle_anims/masks/item_bubbles.4bpp.lz");
+const u32 gItemBubblesPal[] = INCBIN_U32("graphics/battle_anims/masks/item_bubbles.gbapal.lz");
+const u32 gItemBubblesTilemap[] = INCBIN_U32("graphics/battle_anims/masks/item_bubbles.bin.lz");
+
 const u32 gBattleAnimSpritePal_PurpleScratch[] = INCBIN_U32("graphics/battle_anims/sprites/purple_scratch.gbapal.lz");
 const u32 gBattleAnimSpriteGfx_PurpleScratch[] = INCBIN_U32("graphics/battle_anims/sprites/purple_scratch.4bpp.lz");
 
 const u32 gBattleAnimSpriteGfx_PurpleSwipe[] = INCBIN_U32("graphics/battle_anims/sprites/purple_swipe.4bpp.lz");
+
+const u32 gBattleAnimSpriteGfx_NothingScratch[] = INCBIN_U32("graphics/battle_anims/sprites/nothing_scratch.4bpp.lz");
+
+const u32 gBattleAnimSpritePal_YellowSwipe[] = INCBIN_U32("graphics/battle_anims/sprites/yellow_swipe.gbapal.lz");
+const u32 gBattleAnimSpriteGfx_YellowSwipe[] = INCBIN_U32("graphics/battle_anims/sprites/yellow_swipe.4bpp.lz");
 
 const u32 gBattleAnimSpriteGfx_GuardRing[] = INCBIN_U32("graphics/battle_anims/sprites/guard_ring.4bpp.lz");
 const u32 gBattleAnimSpritePal_GuardRing[] = INCBIN_U32("graphics/battle_anims/sprites/guard_ring.gbapal.lz");
@@ -1245,6 +1257,7 @@ const u32 gBattleAnimSpriteGfx_HollowOrb[] = INCBIN_U32("graphics/battle_anims/s
 const u32 gBattleAnimSpritePal_HollowOrb[] = INCBIN_U32("graphics/battle_anims/sprites/hollow_orb.gbapal.lz");
 
 const u32 gBattleAnimSpriteGfx_XSign[] = INCBIN_U32("graphics/battle_anims/sprites/x_sign.4bpp.lz");
+const u32 gBattleAnimSpriteGfx_TSign[] = INCBIN_U32("graphics/battle_anims/sprites/t_sign.4bpp.lz");
 
 const u32 gBattleAnimSpriteGfx_BluegreenOrb[] = INCBIN_U32("graphics/battle_anims/sprites/bluegreen_orb.4bpp.lz");
 const u32 gBattleAnimSpritePal_BluegreenOrb[] = INCBIN_U32("graphics/battle_anims/sprites/bluegreen_orb.gbapal.lz");
@@ -1986,6 +1999,7 @@ const u16 gTradeMenuMonBox_Tilemap[] = INCBIN_U16("graphics/trade/menu_mon_box.b
 
 const u16 gMessageBox_Pal[] = INCBIN_U16("graphics/text_window/message_box.gbapal");
 const u8 gMessageBox_Gfx[] = INCBIN_U8("graphics/text_window/message_box.4bpp");
+const u8 gSignpostWindow_Gfx[] = INCBIN_U8("graphics/text_window/signpost.4bpp");
 const u16 gMessageBoxMale_Pal[] = INCBIN_U16("graphics/text_window/male_message_box.gbapal");
 const u8 gMessageBoxMale_Gfx[] = INCBIN_U8("graphics/text_window/male_message_box.4bpp");
 const u16 gMessageBoxFemale_Pal[] = INCBIN_U16("graphics/text_window/female_message_box.gbapal");

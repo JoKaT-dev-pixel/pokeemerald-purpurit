@@ -2044,6 +2044,17 @@ const struct SpriteTemplate gYellowEndureEnergySpriteTemplate =
     .callback = AnimEndureEnergy,
 };
 
+const struct SpriteTemplate gVerticalStripesSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_VERTICAL_STRIPES,
+    .paletteTag = ANIM_TAG_VERTICAL_STRIPES,
+    .oam = &gOamData_AffineOff_ObjBlend_16x32,
+    .anims = gEndureEnergyAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimEndureEnergy,
+};
+
 const union AnimCmd gSharpenSphereAnimCmds[] =
 {
     ANIMCMD_FRAME(0, 18),

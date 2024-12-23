@@ -378,6 +378,56 @@ const struct SpriteTemplate gRevengeBigScratchSpriteTemplate =
     .callback = AnimRevengeScratch,
 };
 
+const struct SpriteTemplate gNothingScratchSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_NOTHING_SCRATCH,
+    .paletteTag = ANIM_TAG_NOTHING_SCRATCH,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_RevengeSmallScratch,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimRevengeScratch,
+};
+
+static const union AnimCmd sAnim_MegaSlapBigScratch_0[] =
+{
+    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_FRAME(64, 6),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MegaSlapBigScratch_1[] =
+{
+    ANIMCMD_FRAME(0, 6, .vFlip = FALSE, .hFlip = FALSE),
+    ANIMCMD_FRAME(64, 6, .vFlip = FALSE, .hFlip = FALSE),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MegaSlapBigScratch_2[] =
+{
+    ANIMCMD_FRAME(0, 6, .hFlip = FALSE),
+    ANIMCMD_FRAME(64, 6, .hFlip = FALSE),
+    ANIMCMD_END,
+};
+
+const union AnimCmd *const gAnims_MegaSlapBigScratch[] =
+{
+    sAnim_MegaSlapBigScratch_0,
+    sAnim_MegaSlapBigScratch_1,
+    sAnim_MegaSlapBigScratch_2,
+};
+
+const struct SpriteTemplate gMegaSlapBigScratchSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_YELLOW_SWIPE,
+    .paletteTag = ANIM_TAG_YELLOW_SWIPE,
+    .oam = &gOamData_AffineOff_ObjNormal_64x64,
+    .anims = gAnims_MegaSlapBigScratch,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimRevengeScratch,
+};
+
 static const union AffineAnimCmd sAffineAnim_FocusPunchFist[] =
 {
     AFFINEANIMCMD_FRAME(0x200, 0x200, 0, 0),

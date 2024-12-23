@@ -149,6 +149,9 @@ void AnimTask_SetCamouflageBlend(u8 taskId)
     case BATTLE_TERRAIN_BEACH:
         gBattleAnimArgs[4] = RGB(30, 24, 11);
         break;
+    case BATTLE_TERRAIN_BIRCH_LAB:
+        gBattleAnimArgs[4] = RGB_WHITE;
+        break;
     }
 
     StartBlendAnimSpriteColor(taskId, selectedPalettes);

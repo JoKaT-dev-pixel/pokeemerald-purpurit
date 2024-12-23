@@ -5930,7 +5930,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_POISON_PUPPETEER:
-            if ((gBattleMons[gBattlerAttacker].species == SPECIES_SWABLU || gBattleMons[gBattlerAttacker].species == SPECIES_ALTARIA)
+            if ((gBattleMons[gBattlerAttacker].species == SPECIES_NATU || gBattleMons[gBattlerAttacker].species == SPECIES_XATU)
              && gBattleStruct->poisonPuppeteerConfusion == TRUE
              && CanBeConfused(gBattlerTarget))
             {

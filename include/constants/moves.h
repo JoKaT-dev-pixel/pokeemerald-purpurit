@@ -2,7 +2,6 @@
 #define GUARD_CONSTANTS_MOVES_H
 
 #ifndef BATTLE_ENGINE
-    #define MOVE_ROCK_CLIMB 1
 #endif
 
 #define MOVE_NONE 0
@@ -941,8 +940,8 @@
 #define MOVE_DROPLETS 874
 #define MOVE_RAINBOW_BEAM 875
 #define MOVE_PEEKABOO 876
-#define MOVE_TWERKING 877
-#define MOVE_FAIR_PLAY 878
+#define MOVE_MEGA_SLAP 877
+#define MOVE_TWERKING 878
 
 #define MOVES_COUNT_GEN9 879
 

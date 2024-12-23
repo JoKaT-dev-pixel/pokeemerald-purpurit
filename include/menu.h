@@ -5,6 +5,12 @@
 #include "text.h"
 #include "window.h"
 
+#define DLG_WINDOW_PALETTE_NUM 15
+#define DLG_WINDOW_BASE_TILE_NUM 0x200
+#define STD_WINDOW_PALETTE_NUM 14
+#define STD_WINDOW_PALETTE_SIZE PLTT_SIZEOF(10)
+#define STD_WINDOW_BASE_TILE_NUM 0x214
+
 #define MENU_NOTHING_CHOSEN -2
 #define MENU_B_PRESSED -1
 
@@ -94,6 +100,7 @@ u8 InitMenuActionGrid(u8 windowId, u8 optionWidth, u8 columns, u8 rows, u8 initi
 u8 ChangeMenuGridCursorPosition(s8 deltaX, s8 deltaY);
 u8 GetStartMenuWindowId(void);
 void ListMenuLoadStdPalAt(u8 palOffset, u8 palId);
+void DrawCursorParamaterized(u8 x, u8 y);
 u8 Menu_MoveCursor(s8 cursorDelta);
 u8 Menu_MoveCursorNoWrapAround(s8 cursorDelta);
 void DrawStdWindowFrame(u8 windowId, bool8 CopyToVram);

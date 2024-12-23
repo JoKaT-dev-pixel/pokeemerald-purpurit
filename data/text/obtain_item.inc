@@ -1,5 +1,5 @@
 gText_ObtainedTheItem::
-	.string "{PLAYER} reçoit: {STR_VAR_2} !$"
+	.string "{PLAYER} reçoit {STR_VAR_2} !$"
 
 gText_TheBagIsFull::
 	.string "The BAG is full…$"
@@ -31,7 +31,7 @@ gText_TheDecorWasTransferredToThePC::
 	.string "to the PC.$"
 
 gText_ObtainedTheItems::
-	.string "Obtained {STR_VAR_1} {STR_VAR_2}!$"
+	.string "{PLAYER} reçoit {STR_VAR_1} {STR_VAR_2} !$"
 
 gText_PlayerFoundItems::
 	.string "{PLAYER} found {STR_VAR_1} {STR_VAR_2}!$"

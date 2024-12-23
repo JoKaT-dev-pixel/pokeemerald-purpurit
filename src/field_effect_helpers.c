@@ -297,6 +297,7 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
          || gWeatherPtr->hasShadows
          || MetatileBehavior_IsPokeGrass(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsForestEncounter(objectEvent->currentMetatileBehavior)
+         || MetatileBehavior_IsSandGrass(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior))
         {
@@ -310,7 +311,7 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
 #undef sMapGroup
 #undef sYOffset
 
-// Sprite data for FLDEFF_TALL_GRASS, FLDEFF_LONG_GRASS and FLDEFF_FOREST_GRASS
+// Sprite data for FLDEFF_TALL_GRASS, FLDEFF_LONG_GRASS, FLDEFF_FOREST_GRASS and FLDEFF_SAND_GRASS
 #define sElevation   data[0]
 #define sX           data[1]
 #define sY           data[2]

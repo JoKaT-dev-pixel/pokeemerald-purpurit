@@ -7,11 +7,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_TREECKO] =
     {
         .baseHP        = 50,
-        .baseAttack    = 58,
-        .baseDefense   = 44,
+        .baseAttack    = 53,
+        .baseDefense   = 45,
         .baseSpeed     = 70,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 44,
+        .baseSpAttack  = 63,
+        .baseSpDefense = 45,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
@@ -31,10 +31,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 5,
         .weight = 50,
         .description = COMPOUND_STRING(
-            "Ce Pokémon est capable d'ingurgiter\n"
-            "d'importantes quantités d'alcools\n"
-            "supérieures à celles des humains sans\n"
-            "subir de fâcheuses conséquences."),
+            "Ce Pokémon adore manger des fruits\n"
+            "fermentés qui contiennent de l'alcool.\n"
+            "Il arrive à être conscient de ses\n"
+            "actions malgré qu'il soit ivre."),
         .pokemonScale = 541,
         .pokemonOffset = 19,
         .trainerScale = 256,
@@ -61,11 +61,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_GROVYLE] =
     {
         .baseHP        = 60,
-        .baseAttack    = 78,
-        .baseDefense   = 52,
-        .baseSpeed     = 100,
+        .baseAttack    = 70,
+        .baseDefense   = 50,
+        .baseSpeed     = 95,
         .baseSpAttack  = 80,
-        .baseSpDefense = 52,
+        .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_GRASS, TYPE_PSYCHIC),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 141,
@@ -232,10 +232,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_TORCHIC
     [SPECIES_TORCHIC] =
     {
-        .baseHP        = 47,
-        .baseAttack    = 63,
-        .baseDefense   = 50,
-        .baseSpeed     = 62,
+        .baseHP        = 55,
+        .baseAttack    = 60,
+        .baseDefense   = 47,
+        .baseSpeed     = 59,
         .baseSpAttack  = 57,
         .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_FIRE),
@@ -257,16 +257,16 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .weight = 25,
         .description = COMPOUND_STRING(
             "De nature indisciplinée, il cherche\n"
-            "toujours à brutaliser ses ennemis et\n"
-            "vapote sa queue afin de se reposer\n"
-            "après avoir acquis le territoire ennemi."),
+            "toujours à brutaliser ses ennemis. Il\n"
+            "vapote sa queue quand il se repose après\n"
+            "avoir acquis un territoire ennemi."),
         .pokemonScale = 566,
         .pokemonOffset = 19,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Torchic,
         .frontPicSize = MON_COORDS_SIZE(32, 48),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 7,
         .frontAnimFrames = sAnims_Torchic,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Torchic,
@@ -287,12 +287,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_COMBUSKEN] =
     {
-        .baseHP        = 65,
-        .baseAttack    = 93,
-        .baseDefense   = 55,
+        .baseHP        = 75,
+        .baseAttack    = 85,
+        .baseDefense   = 60,
         .baseSpeed     = 75,
         .baseSpAttack  = 70,
-        .baseSpDefense = 50,
+        .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_FIRE, TYPE_POISON),
         .catchRate = 45,
         .expYield = 142,
@@ -325,13 +325,13 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .frontPicSizeFemale = MON_COORDS_SIZE(48, 64),
         .frontPicYOffset = 3,
         .frontAnimFrames = sAnims_Combusken,
-        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+        .frontAnimId = ANIM_GROW_VIBRATE,
         .backPic = gMonBackPic_Combusken,
         .backPicFemale = gMonBackPic_CombuskenF,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 1,
-        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
+        .backPicYOffset = 5,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
         .palette = gMonPalette_Combusken,
         .shinyPalette = gMonShinyPalette_Combusken,
         .iconSprite = gMonIcon_Combusken,
@@ -467,12 +467,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_MUDKIP
     [SPECIES_MUDKIP] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 47,
-        .baseDefense   = 48,
+        .baseHP        = 65,
+        .baseAttack    = 50,
+        .baseDefense   = 50,
         .baseSpeed     = 45,
         .baseSpAttack  = 50,
-        .baseSpDefense = 58,
+        .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 65,
@@ -494,14 +494,14 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             "Son corps sécrète un liquide blanchâtre\n"
             "et visqueux ressemblant à de la glaire\n"
             "cervicale. Sa peau est tellement lisse\n"
-            "qu'il est difficile à le blesser."),
+            "qu'il est difficile à transpercer."),
         .pokemonScale = 535,
         .pokemonOffset = 20,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Mudkip,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 13,
+        .frontPicYOffset = 8,
         .frontAnimFrames = sAnims_Mudkip,
         .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
         .backPic = gMonBackPic_Mudkip,
@@ -520,12 +520,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_MARSHTOMP] =
     {
-        .baseHP        = 85,
-        .baseAttack    = 60,
-        .baseDefense   = 63,
+        .baseHP        = 90,
+        .baseAttack    = 55,
+        .baseDefense   = 70,
         .baseSpeed     = 64,
         .baseSpAttack  = 64,
-        .baseSpDefense = 72,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_WATER, TYPE_FAIRY),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 143,
@@ -693,10 +693,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_POOCHYENA] =
     {
         .baseHP        = 40,
-        .baseAttack    = 40,
+        .baseAttack    = 43,
         .baseDefense   = 50,
         .baseSpeed     = 58,
-        .baseSpAttack  = 43,
+        .baseSpAttack  = 40,
         .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 255,
@@ -709,26 +709,27 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_PRANKSTER, ABILITY_RUN_AWAY, ABILITY_UNBURDEN },
         .bodyColor = BODY_COLOR_BROWN,
-        .speciesName = _("Muloust"),
+        .speciesName = _("Tamioche"),
         .cryId = CRY_POOCHYENA,
         .natDexNum = NATIONAL_DEX_POOCHYENA,
         .categoryName = _("Plaisantin"),
         .height = 5,
         .weight = 136,
         .description = COMPOUND_STRING(
-            "It savagely threatens foes with bared\n"
-            "fangs. It chases after fleeing targets\n"
+            "Il aime beaucoup faire des blagues\n"
+            "quotidiennement. Son côté farceur\n"
             "tenaciously. It turns tail and runs,\n"
             "however, if the foe strikes back."),
         .pokemonScale = 481,
-        .pokemonOffset = 19,
+        .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Poochyena,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
-        .frontPicYOffset = 11,
+        .frontPicYOffset = 6,
         .frontAnimFrames = sAnims_Poochyena,
-        .frontAnimId = ANIM_V_SHAKE,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .frontAnimDelay = 25,
         .backPic = gMonBackPic_Poochyena,
         .backPicSize = MON_COORDS_SIZE(64, 48),
         .backPicYOffset = 11,
@@ -1131,13 +1132,13 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Wurmple,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 12,
+        .frontPicYOffset = 9,
         .frontAnimFrames = sAnims_Wurmple,
-        .frontAnimId = ANIM_CIRCLE_C_CLOCKWISE_SLOW,
+        .frontAnimId = ANIM_H_SLIDE,
         .backPic = gMonBackPic_Wurmple,
         .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 6,
-        .backAnimId = BACK_ANIM_V_STRETCH,
+        .backPicYOffset = 5,
+        .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_Wurmple,
         .shinyPalette = gMonShinyPalette_Wurmple,
         .iconSprite = gMonIcon_Wurmple,
@@ -1146,8 +1147,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .tmIlliterate = TRUE,
         .levelUpLearnset = sWurmpleLevelUpLearnset,
         .teachableLearnset = sWurmpleTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_SILCOON, 7, SPECIES_SILCOON},
-                                {EVO_LEVEL_CASCOON, 7, SPECIES_CASCOON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 12, SPECIES_CASCOON}),
     },
 
     [SPECIES_SILCOON] =
@@ -1780,17 +1780,17 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .height = 3,
         .weight = 23,
         .description = COMPOUND_STRING(
-            "Although it is small, it is very courageous.\n"
-            "It will take on a larger Skarmory on an\n"
-            "equal footing. However, its will weakens if\n"
-            "it becomes hungry."),
+            "Ce Pokémon est très rancunier et se\n"
+            "souvient des visages de ses victimes.\n"
+            "Il gardera un sentiment hostile envers\n"
+            "quiconque passera près de son nid."),
         .pokemonScale = 465,
-        .pokemonOffset = 21,
+        .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Taillow,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
-        .frontPicYOffset = 11,
+        .frontPicYOffset = 7,
         .frontAnimFrames = sAnims_Taillow,
         .frontAnimId = ANIM_BACK_AND_LUNGE,
         .backPic = gMonBackPic_Taillow,
@@ -1880,7 +1880,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 58 : 58,
         .evYield_Attack = 1,
-        .itemCommon = ITEM_PRETTY_FEATHER,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
@@ -1920,43 +1919,32 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Wingull)
         .levelUpLearnset = sWingullLevelUpLearnset,
         .teachableLearnset = sWingullTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PELIPPER}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_PELIPPER}),
     },
 
     [SPECIES_PELIPPER] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 50,
-        .baseDefense   = 100,
-        .baseSpeed     = 65,
-        .baseSpAttack  = P_UPDATED_STATS >= GEN_7 ? 95 : 85,
-        .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_WATER, TYPE_FLYING),
-        .catchRate = 45,
-    #if P_UPDATED_EXP_YIELDS >= GEN_7
-        .expYield = 154,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_5
-        .expYield = 151,
-    #else
-        .expYield = 164,
-    #endif
-        .evYield_Defense = 2,
-        .itemCommon = ITEM_PRETTY_FEATHER,
+        .baseHP        = 70,
+        .baseAttack    = 125,
+        .baseDefense   = 77,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_WATER, TYPE_FIGHTING),
+        .catchRate = 120,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 162 : 162,
+        .evYield_Attack = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FLYING),
-    #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_DRIZZLE, ABILITY_RAIN_DISH },
-    #else
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_RAIN_DISH },
-    #endif
-        .bodyColor = BODY_COLOR_YELLOW,
-        .speciesName = _("Pelipper"),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_GUTS, ABILITY_IRON_FIST, ABILITY_RECKLESS },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("Barbatross"),
         .cryId = CRY_PELIPPER,
         .natDexNum = NATIONAL_DEX_PELIPPER,
-        .categoryName = _("Water Bird"),
+        .categoryName = _("Capitaine"),
         .height = 12,
         .weight = 280,
         .description = COMPOUND_STRING(
@@ -2017,7 +2005,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggGroups = RALTS_FAMILY_EGG_GROUPS,
         .abilities = { ABILITY_CLEAR_BODY, ABILITY_SOUNDPROOF, ABILITY_WONDER_GUARD },
         .bodyColor = BODY_COLOR_WHITE,
-        .speciesName = _("Clochubin"),
+        .speciesName = _("Arcloche"),
         .cryId = CRY_RALTS,
         .natDexNum = NATIONAL_DEX_RALTS,
         .categoryName = _("Clochette"),
@@ -2483,12 +2471,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_NATURAL_CURE, ABILITY_GRASS_PELT, ABILITY_SUPER_LUCK },
-        .bodyColor = BODY_COLOR_BROWN,
-        .speciesName = _("Jardinain"),
+        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_GRASS_PELT, ABILITY_NATURAL_CURE },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Sporgnome"),
         .cryId = CRY_SHROOMISH,
         .natDexNum = NATIONAL_DEX_SHROOMISH,
-        .categoryName = _("Lutin"),
+        .categoryName = _("Champinain"),
         .height = 4,
         .weight = 45,
         .description = COMPOUND_STRING(
@@ -2596,9 +2584,9 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_INSOMNIA, ABILITY_PANIC_ATTACK, ABILITY_STEADFAST },
+        .abilities = { ABILITY_INSOMNIA, ABILITY_PANIC_ATTACK, ABILITY_HEATPROOF },
         .bodyColor = BODY_COLOR_GRAY,
-        .speciesName = _("Muguccino"),
+        .speciesName = _("Caféccino"),
         .cryId = CRY_SLAKOTH,
         .natDexNum = NATIONAL_DEX_SLAKOTH,
         .categoryName = _("Infusion"),
@@ -2615,7 +2603,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Slakoth,
         .frontPicSize = MON_COORDS_SIZE(56, 40),
-        .frontPicYOffset = 15,
+        .frontPicYOffset = 10,
         .frontAnimFrames = sAnims_Slakoth,
         .frontAnimId = ANIM_SWING_CONCAVE,
         .backPic = gMonBackPic_Slakoth,
@@ -2753,7 +2741,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseSpeed     = 40,
         .baseSpAttack  = 50,
         .baseSpDefense = 75,
-        .types = MON_TYPES(TYPE_GROUND, TYPE_GROUND),
+        .types = MON_TYPES(TYPE_GROUND),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 71 : 71,
         .evYield_HP = 1,
@@ -2796,8 +2784,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Nincada)
         .levelUpLearnset = sNincadaLevelUpLearnset,
         .teachableLearnset = sNincadaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_NINJASK, 20, SPECIES_NINJASK},
-                                {EVO_LEVEL_SHEDINJA, 20, SPECIES_SHEDINJA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_WOOPER}),
     },
 
     [SPECIES_NINJASK] =
@@ -2910,34 +2897,34 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_WHISMUR
     [SPECIES_WHISMUR] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 60,
-        .baseDefense   = 50,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 49,
+        .baseHP        = 60,
+        .baseAttack    = 74,
+        .baseDefense   = 65,
+        .baseSpeed     = 51,
+        .baseSpAttack  = 25,
+        .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_DARK, TYPE_FAIRY),
         .catchRate = 160,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 62 : 62,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 48 : 48,
         .evYield_Attack = 1,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_HUSTLE, ABILITY_CLOUD_NINE, ABILITY_MIMICRY },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_HUSTLE, ABILITY_CLOUD_NINE, ABILITY_BULLETPROOF },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Mimicule"),
         .cryId = CRY_WHISMUR,
         .natDexNum = NATIONAL_DEX_WHISMUR,
         .categoryName = _("Toon"),
-        .height = 6,
-        .weight = 163,
+        .height = 4,
+        .weight = 63,
         .description = COMPOUND_STRING(
-            "Its cries equal a jet plane in volume.\n"
-            "It inhales through its ear canals. Because\n"
-            "of this system, it can cry continually\n"
-            "without having to catch its breath."),
+            "Il aime divertir les enfants avec une série\n"
+            "de mouvements mimiques amusantes et loufoques.\n"
+            "Les scientifiques pensent que c'est en fait\n"
+            "la façon dont ils communiquent."),
         .pokemonScale = 373,
         .pokemonOffset = 17,
         .trainerScale = 256,
@@ -2958,39 +2945,39 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Whismur)
         .levelUpLearnset = sWhismurLevelUpLearnset,
         .teachableLearnset = sWhismurTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_LOUDRED}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_LOUDRED}),
     },
 
     [SPECIES_LOUDRED] =
     {
-        .baseHP        = 84,
-        .baseAttack    = 71,
-        .baseDefense   = 43,
-        .baseSpeed     = 48,
-        .baseSpAttack  = 71,
-        .baseSpDefense = 43,
-        .types = MON_TYPES(TYPE_NORMAL),
-        .catchRate = 120,
-        .expYield = 126,
-        .evYield_HP = 2,
+        .baseHP        = 70,
+        .baseAttack    = 94,
+        .baseDefense   = 75,
+        .baseSpeed     = 71,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_DARK, TYPE_FAIRY),
+        .catchRate = 90,
+        .expYield = 127,
+        .evYield_Attack = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_SCRAPPY },
-        .bodyColor = BODY_COLOR_BLUE,
-        .speciesName = _("Loudred"),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_CLOUD_NINE, ABILITY_BULLETPROOF },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Inkatoon"),
         .cryId = CRY_LOUDRED,
         .natDexNum = NATIONAL_DEX_LOUDRED,
-        .categoryName = _("Big Voice"),
+        .categoryName = _("Toon"),
         .height = 10,
         .weight = 405,
         .description = COMPOUND_STRING(
-            "It positions the round speakers on its\n"
-            "head to assail foes with ultrasonic waves\n"
-            "at massive volume. It builds power by\n"
-            "stomping the ground."),
+            "Inkatoon est un Pokémon imprévisible et\n"
+            "possède une incroyable capacité à s'étirer\n"
+            "et agrandir ses membres à volonté. Il aime\n"
+            "faire toutes sortes de choses folles."),
         .pokemonScale = 356,
         .pokemonOffset = 10,
         .trainerScale = 256,
@@ -3011,7 +2998,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Loudred)
         .levelUpLearnset = sLoudredLevelUpLearnset,
         .teachableLearnset = sLoudredTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_EXPLOUD}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 44, SPECIES_EXPLOUD}),
     },
 
     [SPECIES_EXPLOUD] =
@@ -3081,7 +3068,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseHP        = 55,
         .baseAttack    = 60,
         .baseDefense   = 50,
-        .baseSpeed     = 85,
+        .baseSpeed     = 90,
         .baseSpAttack  = 45,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FIGHTING),
@@ -3095,7 +3082,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_SPEED_BOOST, ABILITY_STEADFAST, ABILITY_QUICK_FEET },
         .bodyColor = BODY_COLOR_BLUE,
-        .speciesName = _("Accélériss"),
+        .speciesName = _("Vitérisse"),
         .cryId = CRY_MAKUHITA,
         .natDexNum = NATIONAL_DEX_MAKUHITA,
         .categoryName = _("Sprinter"),
@@ -3890,11 +3877,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_MEDITITE
     [SPECIES_MEDITITE] =
     {
-        .baseHP        = 60,
+        .baseHP        = 50,
         .baseAttack    = 40,
         .baseDefense   = 41,
-        .baseSpeed     = 42,
-        .baseSpAttack  = 64,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 69,
         .baseSpDefense = 70,
         .types = MON_TYPES(TYPE_FAIRY, TYPE_FIRE),
         .catchRate = 75,
@@ -3903,7 +3890,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .genderRatio = MON_FEMALE,
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
+        .growthRate = GROWTH_SLOW,
+        .noFlip = TRUE,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_DANCER, ABILITY_PHEROMONE },
         .bodyColor = BODY_COLOR_BLUE,
@@ -3911,8 +3899,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .cryId = CRY_MEDITITE,
         .natDexNum = NATIONAL_DEX_MEDITITE,
         .categoryName = _("Bunny Girl"),
-        .height = 6,
-        .weight = 112,
+        .height = 15,
+        .weight = 344,
         .description = COMPOUND_STRING(
             "It continually meditates for hours every\n"
             "day. As a result of rigorous and dedicated\n"
@@ -3923,18 +3911,14 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Meditite,
-        .frontPicFemale = gMonFrontPic_MedititeF,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
-        .frontPicSizeFemale = MON_COORDS_SIZE(48, 48),
-        .frontPicYOffset = 10,
+        .frontPicYOffset = 4,
         .frontAnimFrames = sAnims_Meditite,
-        .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES,
+        .frontAnimId = ANIM_H_REPEATED_SPRING_SLOW,
         .backPic = gMonBackPic_Meditite,
-        .backPicFemale = gMonBackPic_MedititeF,
         .backPicSize = MON_COORDS_SIZE(48, 48),
-        .backPicSizeFemale = MON_COORDS_SIZE(48, 48),
-        .backPicYOffset = 9,
-        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .backPicYOffset = 5,
+        .backAnimId = BACK_ANIM_H_SPRING,
         .palette = gMonPalette_Meditite,
         .shinyPalette = gMonShinyPalette_Meditite,
         .iconSprite = gMonIcon_Meditite,
@@ -3942,7 +3926,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Meditite)
         .levelUpLearnset = sMedititeLevelUpLearnset,
         .teachableLearnset = sMedititeTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_MEDICHAM}),
+        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_MEDICHAM}),
     },
 
     [SPECIES_MEDICHAM] =
@@ -5758,24 +5742,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_SWABLU
     [SPECIES_SWABLU] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 55,
-        .baseDefense   = 35,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_POISON, TYPE_FLYING),
-        .catchRate = 120,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 72 : 72,
-        .evYield_SpDefense = 1,
+        .baseHP        = 50,
+        .baseAttack    = 60,
+        .baseDefense   = 37,
+        .baseSpeed     = 61,
+        .baseSpAttack  = 73,
+        .baseSpDefense = 34,
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
+        .catchRate = 190,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 57 : 57,
+        .evYield_Speed = 1,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING, EGG_GROUP_FLYING),
-        .abilities = { ABILITY_MERCILESS, ABILITY_TRIAGE, ABILITY_POISON_PUPPETEER },
-        .bodyColor = BODY_COLOR_BLACK,
-        .speciesName = _("Miasmask"),
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_RATTLED, ABILITY_STALL, ABILITY_SIMPLE },
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Perroqueer"),
         .cryId = CRY_SWABLU,
         .natDexNum = NATIONAL_DEX_SWABLU,
         .categoryName = _("Symptôme"),
@@ -6498,33 +6482,27 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_LILEEP
     [SPECIES_LILEEP] =
     {
-        .baseHP        = 60,
+        .baseHP        = 70,
         .baseAttack    = 60,
-        .baseDefense   = 100,
+        .baseDefense   = 60,
         .baseSpeed     = 35,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 75,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_ROCK, TYPE_DRAGON),
         .catchRate = 45,
-    #if P_UPDATED_EXP_YIELDS >= GEN_5
         .expYield = 74,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_4
-        .expYield = 74,
-    #else
-        .expYield = 74,
-    #endif
-        .evYield_Defense = 1,
+        .evYield_HP = 1,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 30,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_DRAGON, EGG_GROUP_MINERAL),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_DRAGON),
         .abilities = { ABILITY_SOLID_ROCK, ABILITY_BERSERK, ABILITY_MULTISCALE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Repzilla"),
         .cryId = CRY_LILEEP,
         .natDexNum = NATIONAL_DEX_LILEEP,
-        .categoryName = _("Sea Lily"),
+        .categoryName = _("Écaille"),
         .height = 10,
         .weight = 238,
         .description = COMPOUND_STRING(

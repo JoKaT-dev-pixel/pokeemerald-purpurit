@@ -114,8 +114,12 @@ BattleScript_EffectDoodle_CopyAbility:
 .if B_ABILITY_POP_UP == TRUE
 	setbyte sFIXED_ABILITY_POPUP, TRUE
 	showabilitypopup BS_ATTACKER
+	pause 30
+	destroyabilitypopup
 	pause 60
 	sethword sABILITY_OVERWRITE, 0
+	pause 10
+	showabilitypopup BS_ATTACKER
 	updateabilitypopup BS_ATTACKER
 	pause 20
 	destroyabilitypopup

@@ -18,15 +18,15 @@ OldaleTown_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
-OldaleTown_PokemonCenter_1F_EventScript_Gentleman::
-	msgbox OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC, MSGBOX_NPC
+OldaleTown_PokemonCenter_1F_EventScript_Man::
+	msgbox OldaleTown_PokemonCenter_1F_Text_TrainersHealsPokemon, MSGBOX_NPC
 	end
 
-OldaleTown_PokemonCenter_1F_EventScript_Boy::
-	msgbox OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat, MSGBOX_NPC
+OldaleTown_PokemonCenter_1F_EventScript_Woman::
+	msgbox OldaleTown_PokemonCenter_1F_Text_Woman, MSGBOX_NPC
 	end
 
-OldaleTown_PokemonCenter_1F_EventScript_Girl::
+OldaleTown_PokemonCenter_1F_EventScript_Youngster::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_POKEDEX_GET, OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable
@@ -39,26 +39,26 @@ OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable::
 	release
 	end
 
-OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC:
-	.string "That PC in the corner there is\n"
-	.string "for any POKéMON TRAINER to use.\p"
-	.string "Naturally, that means you're welcome\n"
-	.string "to use it, too.$"
+OldaleTown_PokemonCenter_1F_Text_TrainersHealsPokemon:
+	.string "Le Centre Pokémon est un endroit\n"
+	.string "idéal pour soigner ses Pokémon.\p"
+	.string "Non seulement c'est génial, mais en\n"
+	.string "plus, c'est gratuit !$"
 
-OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat:
+OldaleTown_PokemonCenter_1F_Text_Woman:
 	.string "Décidément vous les arabes, vous avez\n"
-	.string "toujours un problème avec tout ce\l"
-	.string "qui vole.\p"
+	.string "toujours un problème avec tout ce qui\l"
+	.string "vole.\p"
 	.string "T'es pas arabe hein ?$"
 
 OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable:
-	.string "The POKéMON WIRELESS CLUB on\n"
-	.string "the second floor was built recently.\p"
-	.string "But they say they're still making\n"
-	.string "adjustments.$"
+	.string "Finalement, tu as pu voir ce qu'il y a\n"
+	.string "au 2e étage !\p"
+	.string "C'est cool !$"
 
 OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
-	.string "The POKéMON WIRELESS CLUB on\n"
-	.string "the second floor was built recently.\p"
-	.string "I traded POKéMON right away.$"
+	.string "Je ne suis jamais monté voir ce qu'il\n"
+	.string "y a au 2e étage.\p"
+	.string "Je suis tout près de l'escalator mais\n"
+	.string "j'ai la flemme.$"
 

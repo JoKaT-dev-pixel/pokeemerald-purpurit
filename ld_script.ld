@@ -359,7 +359,6 @@ SECTIONS {
         src/international_string_util.o(.text);
         src/pokemon_debug.o(.text);
         src/expansion_intro.o(.text);
-        src/ui_startmenu_full.o(.text);
     } > ROM =0
 
     script_data :
@@ -384,6 +383,7 @@ SECTIONS {
         src/agb_flash_1m.o(.text);
         src/agb_flash_mx.o(.text);
         src/siirtc.o(.text);
+        src/field_mugshot.o(.text);
         src/librfu_stwi.o(.text);
         src/librfu_intr.o(.text);
         src/librfu_rfu.o(.text);
@@ -727,7 +727,7 @@ SECTIONS {
         data/sound_data.o(.rodata);
         src/pokemon_debug.o(.rodata);
         src/expansion_intro.o(.rodata);
-        src/ui_startmenu_full.o(.rodata);
+        src/field_mugshot.o(.rodata);
     } > ROM =0
 
     song_data :

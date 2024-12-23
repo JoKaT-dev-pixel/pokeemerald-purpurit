@@ -133,6 +133,9 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_HORIZONTAL_RAIL]                 = TILE_FLAG_UNUSED,
     [MB_SAND_GRASS]                      = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_ROCK_CLIMB]                      = TILE_FLAG_UNUSED,
+    [MB_SIGNPOST]                        = TILE_FLAG_UNUSED,
+    [MB_POKEMON_CENTER_SIGN]             = TILE_FLAG_UNUSED,
+    [MB_POKEMART_SIGN]                   = TILE_FLAG_UNUSED,
 };
 
 bool8 MetatileBehavior_IsATile(u8 metatileBehavior)
@@ -182,7 +185,7 @@ bool8 MetatileBehavior_IsJumpSouth(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsPokeGrass(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_LONG_GRASS || metatileBehavior == MB_FOREST_ENCOUNTER)
+    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_LONG_GRASS || metatileBehavior == MB_FOREST_ENCOUNTER || metatileBehavior == MB_SAND_GRASS)
         return TRUE;
     else
         return FALSE;
@@ -1512,3 +1515,17 @@ bool8 MetatileBehavior_IsSandGrass(u8 metatileBehavior)
         return FALSE;
 }
 
+bool32 MetatileBehavior_IsSignpost(u32 metatileBehavior)
+{
+    return (metatileBehavior == MB_SIGNPOST);
+}
+
+bool32 MetatileBehavior_IsPokemonCenterSign(u32 metatileBehavior)
+{
+    return (metatileBehavior == MB_POKEMON_CENTER_SIGN);
+}
+
+bool32 MetatileBehavior_IsPokeMartSign(u32 metatileBehavior)
+{
+    return (metatileBehavior == MB_POKEMART_SIGN);
+}

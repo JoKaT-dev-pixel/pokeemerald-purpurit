@@ -378,10 +378,10 @@ gFieldEffectScript_ForestGrass::
 	field_eff_end
 
 gFieldEffectScript_SandGrass::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_SandGrass
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandGrass
 	field_eff_end
 
 gFieldEffectScript_JumpSandGrass::
-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_JumpSandGrass
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_JumpSandGrass
 	field_eff_end
 

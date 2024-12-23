@@ -101,8 +101,8 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox RivalsHouse_1F_Text_OhYoureTheNewNeighbor, MSGBOX_DEFAULT
 	waitmessage
-	special SetRivalsName
-	waitstate
+	call Common_EventScript_RivalNameScreen
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox RivalsHouse_1F_Text_RivalNicknameChoice, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, RivalsHouse_1F_EventScript_RivalNicknameCheck
 	goto_if_eq VAR_RESULT, NO, RivalsHouse_1F_EventScript_RivalNicknameNoCheck
@@ -113,6 +113,7 @@ LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	end
 
 RivalsHouse_1F_EventScript_RivalNicknameCheck::
+	textcolor NPC_TEXT_COLOR_MALE
 	msgbox RivalsHouse_1F_Text_RivalNicknameCheck, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_MET_RIVAL_MOM
@@ -121,13 +122,14 @@ RivalsHouse_1F_EventScript_RivalNicknameCheck::
 	end
 
 RivalsHouse_1F_EventScript_RivalNicknameNoCheck::
+	textcolor NPC_TEXT_COLOR_MALE
 	msgbox RivalsHouse_1F_Text_RivalNicknameNoCheck, MSGBOX_DEFAULT
-	special SetRivalsName
-	waitstate
+	call Common_EventScript_RivalNameScreen
 	goto RivalsHouse_1F_EventScript_EventScript_RivalNicknameReset
 	end
 
 RivalsHouse_1F_EventScript_EventScript_RivalNicknameReset::
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox RivalsHouse_1F_Text_RivalNicknameChoice, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, RivalsHouse_1F_EventScript_RivalNicknameCheck
 	goto_if_eq VAR_RESULT, NO, RivalsHouse_1F_EventScript_RivalNicknameNoCheck
@@ -218,7 +220,10 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	call_if_eq VAR_0x8008, 0, LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer0
 	call_if_eq VAR_0x8008, 1, LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer1
 	call_if_eq VAR_0x8008, 2, LittlerootTown_MaysHouse_1F_EventScript_MayApproachPlayer2
+	setvar VAR_0x8000, MUGSHOT_FEMALE_ANGRY
+	callnative DrawMugshot
 	msgbox RivalsHouse_1F_Text_MayWhoAreYou, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	call_if_eq VAR_0x8008, 0, LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs0
 	call_if_eq VAR_0x8008, 1, LittlerootTown_MaysHouse_1F_EventScript_MayGoUpstairs1
@@ -353,43 +358,45 @@ RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
 	.string "Oh, qui es-tu donc ?\p"
 	.string "… … … … … … … … …\n"
 	.string "… … … … … … … … …\p"
-	.string "Tu t'appelles {PLAYER}{KUN} et tu es\n"
-	.string "l'enfant de la voisine ?\p"
-	.string "C'est quand même drôle que tu fasses\n"
-	.string "le même âge que…\p"
+	.string "Tu es {PLAYER}{KUN} et tu habites dans la\n"
+	.string "maison voisine, c'est celà ?\p"
+	.string "Ma petite fille et toi vous avez le\n"
+	.string "même âge.\p"
 	.string "Hum…\p"
-	.string "Quel était son nom déjà…?$"
+	.string "Comment elle s'appelle déjà…?$"
 
 RivalsHouse_1F_Text_RivalNicknameChoice:
-	.string "As-tu dit “{RIVAL}” ?$"
+	.string "Vous avez choisis “{MAGMA}{RIVAL}{ROCKET}”.\n"
+	.string "Confirmez-vous ce choix ?$"
 
 RivalsHouse_1F_Text_RivalNicknameCheck:
-	.string "Ah oui, voilà c'est ça !\n"
-	.string "C'est bien {RIVAL} !\p"
-	.string "Mais tu es tombé au mauvais moment.\n"
-	.string "{RIVAL} vient tout juste de partir.$"
+	.string "Ah mais oui bien sûr, ça me reviens,\n"
+	.string "c'est Martine !\p"
+	.string "Je suis désolé mon garçon mais tu es\n"
+	.string "tombé au mauvais moment…\p"
+	.string "Je crois que je l'ai vu partir tout à\n"
+	.string "l'heure.\p"
+	.string "Tu peux toujours aller voir dans sa\n"
+	.string "chambre si elle est de retour.$"
 
 RivalsHouse_1F_Text_RivalNicknameNoCheck:
-	.string "Peux-tu répéter ? j'ai pas bien compris…$"
+	.string "Peux-tu répéter ? j'ai pas bien\n"
+	.string "compris…$"
 
 RivalsHouse_1F_Text_LikeChildLikeFather:
-	.string "Like child, like father.\p"
-	.string "My husband is as wild about POKéMON\n"
-	.string "as our child.\p"
-	.string "If he's not at his LAB, he's likely\n"
-	.string "scrabbling about in grassy places.$"
+	.string "Qui êtes-vous et que faites-vous\n"
+	.string "dans ma maison ?!$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
-	.string "That {RIVAL}!\p"
-	.string "I guess our child is too busy with\n"
-	.string "POKéMON to notice that you came\l"
-	.string "to visit, {PLAYER}{KUN}.$"
+	.string "C'est Agnès !\p"
+	.string "Je suppose qu'elle s’occupe de ses\n"
+	.string "Pokémon et n’a pas le temps de\l"
+	.string "discuter avec toi.$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
-	.string "Oh, {RIVAL} went out to ROUTE 103\n"
-	.string "just a little while ago.\p"
-	.string "Like father, like child.\n"
-	.string "{RIVAL} can't stay quietly at home.$"
+	.string "Oh, tu cherches Charlotte ?\p"
+	.string "Elle a dit qu'elle va sur le\n"
+	.string "Chenal 9.$"
 
 RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
 	.string "I think it's wonderful for people to\n"
@@ -400,28 +407,18 @@ RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
 	.string "worries about you, {PLAYER}{KUN}.$"
 
 RivalsHouse_1F_Text_MayWhoAreYou:
-	.string "Huh?\n"
-	.string "Who… Who are you?\p"
+	.string "{ROCKET}{RIVAL}: {MAGMA}What the fuck ?\n"
+	.string "Que… Que fais-tu chez moi ?\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
-	.string "Oh, you're {PLAYER}{KUN}.\n"
-	.string "So your move was today.\p"
-	.string "Um… I'm MAY.\n"
-	.string "Glad to meet you!\p"
-	.string "I…\n"
-	.string "I have this dream of becoming friends\l"
-	.string "with POKéMON all over the world.\p"
-	.string "I… I heard about you, {PLAYER}{KUN}, from\n"
-	.string "my dad, PROF. BIRCH.\p"
-	.string "I was hoping that you would be nice,\n"
-	.string "{PLAYER}{KUN}, and that we could be friends.\p"
-	.string "Oh, this is silly, isn't it?\n"
-	.string "I… I've just met you, {PLAYER}{KUN}.\p"
-	.string "Eheheh…\p"
-	.string "Oh, no! I forgot!\p"
-	.string "I was supposed to go help Dad catch\n"
-	.string "some wild POKéMON!\p"
-	.string "{PLAYER}{KUN}, I'll catch you later!$"
+	.string "Donc, tu as emménagé aujourd’hui.\n"
+	.string "Je vois…\p"
+	.string "Alors comme ça, toi aussi tu vas visiter\n"
+	.string "le labo ?\p"
+	.string "Pff… Ce n'est pas un rat comme toi qui\n"
+	.string "gâchera mon jour à choisir mon Starter.\p"
+	.string "Alors si tu veux bien m'excuser, j'ai\n"
+	.string "d'autres Meouwu à fouetter !$"
 
 RivalsHouse_1F_Text_BrendanWhoAreYou:
 	.string "Hey!\n"
@@ -444,6 +441,6 @@ RivalsHouse_1F_Text_BrendanWhoAreYou:
 	.string "Some other time, okay?$"
 
 RivalsHouse_1F_Text_DoYouHavePokemon:
-	.string "Hi, neighbor!\p"
-	.string "Do you already have your\n"
-	.string "own POKéMON?$"
+	.string "Ne fait pas attention à lui.\p"
+	.string "Ce n'est pas de sa faute s'il n'a plus\n"
+	.string "toute sa tête, le pauvre…$"

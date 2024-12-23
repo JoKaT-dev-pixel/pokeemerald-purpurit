@@ -25,6 +25,7 @@
 #include "constants/event_objects.h"
 #include "constants/event_object_movement.h"
 #include "constants/field_effects.h"
+#include "constants/field_mugshots.h"
 #include "constants/field_poison.h"
 #include "constants/field_specials.h"
 #include "constants/field_tasks.h"
@@ -57,6 +58,7 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/field_mugshots.h"
 #include "constants/pokevial.h" //Pokevial Branch
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
@@ -590,6 +592,41 @@ EventScript_WhiteOut::
 	goto EventScript_ResetMrBriney
 	end
 
+EventScript_AfterWhiteOutHeal::
+	lockall
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox gText_FirstShouldRestoreMonsHealth
+	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
+	call_if_unset FLAG_DEFEATED_RUSTBORO_GYM, EventScript_AfterWhiteOutHealMsgPreRoxanne
+	call_if_set FLAG_DEFEATED_RUSTBORO_GYM, EventScript_AfterWhiteOutHealMsg
+	applymovement VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow
+	waitmovement 0
+	fadedefaultbgm
+	releaseall
+	end
+
+EventScript_AfterWhiteOutHealMsgPreRoxanne::
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox gText_MonsHealedShouldBuyPotions
+	return
+
+EventScript_AfterWhiteOutHealMsg::
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox gText_MonsHealed
+	return
+
+EventScript_AfterWhiteOutMomHeal::
+	lockall
+	textcolor NPC_TEXT_COLOR_FEMALE
+	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	msgbox gText_HadQuiteAnExperienceTakeRest
+	call Common_EventScript_OutOfCenterPartyHeal
+	msgbox gText_MomExplainHPGetPotions
+	fadedefaultbgm
+	releaseall
+	end
+
 EventScript_ResetMrBriney::
 	goto_if_eq VAR_BRINEY_LOCATION, 1, EventScript_MoveMrBrineyToHouse
 	goto_if_eq VAR_BRINEY_LOCATION, 2, EventScript_MoveMrBrineyToDewford
@@ -695,6 +732,11 @@ EventScript_BackupMrBrineyLocation::
 	.include "data/scripts/surf.inc"
 	.include "data/scripts/rival_graphics.inc"
 	.include "data/scripts/set_gym_trainers.inc"
+
+EventScript_CancelMessageBox::
+	special UseBlankMessageToCancelPokemonPic
+	release
+	end
 
 Common_EventScript_ShowBagIsFull::
 	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
@@ -881,6 +923,12 @@ Common_EventScript_NameReceivedPartyMon::
 	waitstate
 	return
 
+Common_EventScript_RivalNameScreen::
+	fadescreen FADE_TO_BLACK
+	special SetRivalsName
+	waitstate
+	return
+
 Common_EventScript_PlayerHandedOverTheItem::
 	bufferitemname STR_VAR_1, VAR_0x8004
 	playfanfare MUS_OBTAIN_TMHM
@@ -911,9 +959,9 @@ gText_PokemonCenterSign::
     .string "Centre Pokémon$"
 
 gText_MomOrDadMightLikeThisProgram::
-	.string "{STR_VAR_1} might like this program.\n"
-	.string "… … … … … … … … … … … … … … … …\p"
-	.string "Better get going!$"
+	.string "Cette émission plairait à {STR_VAR_1}.\n"
+    .string "… … … … … … … … … … … … … … … …\p"
+    .string "Je ferais mieux de filer !$"
 
 gText_WhichFloorWouldYouLike::
 	.string "Welcome to LILYCOVE DEPARTMENT STORE.\p"
@@ -937,7 +985,7 @@ gText_PokemonTrainerSchoolEmail::
 	.string "… … … … … …$"
 
 gText_PlayerHouseBootPC::
-	.string "{PLAYER} booted up the PC.$"
+	.string "{PLAYER} allume le PC.$"
 
 gText_PokeblockLinkCanceled::
 	.string "The link was canceled.$"
@@ -949,6 +997,48 @@ gText_UnusedNicknameReceivedPokemon::
 gText_PlayerWhitedOut::
 	.string "{PLAYER} is out of usable\n"
 	.string "POKéMON!\p{PLAYER} whited out!$"
+
+gText_FirstShouldRestoreMonsHealth::
+	.string "Avant toute chose, vous devriez\n"
+	.string "faire soigner vos Pokémon.$"
+
+gText_MonsHealedShouldBuyPotions::
+	.string "Vos Pokémon ont été soignés.\p"
+	.string "Si les PV de vos Pokémon sont\n"
+	.string "faibles, venez nous voir.\p"
+	.string "Si vous prévoyez de partir loin,\p"
+	.string "vous devriez acheter des Potions\n"
+	.string "dans une Boutique Pokémon.\p"
+	.string "Nous vous souhaitons\n"
+	.string "bonne chance.$"
+
+gText_MonsHealed::
+	.string "Vos Pokémon ont été soignés.\p"
+	.string "Nous vous souhaitons\n"
+	.string "bonne chance.$"
+
+gText_HadQuiteAnExperienceTakeRest::
+	.string "Maman: Comment ça va,\n"
+	.string "{PLAYER} ?\p"
+	.string "Tu as dû vivre des aventures\n"
+	.string "épuisantes.\p"
+	.string "Tu devrais faire une sieste.$"
+
+gText_MomExplainHPGetPotions::
+	.string "Maman: Eh bien, toi et tes\n"
+	.string "Pokémon avez l'air d'aller mieux.\p"
+	.string "Je viens d'avoir des nouvelles\n"
+	.string "du Professeur Fildrong.\p"
+	.string "Il dit que l'énergie d'un Pokémon\n"
+	.string "se mesure en PV.\p"
+	.string "Si tes Pokémon manquent de PV,\n"
+	.string "tu peux les restaurer en allant\l"
+	.string "dans un centre Pokémon.\p"
+	.string "Et si tu prévois de voyager loin,\n"
+	.string "n'oublie pas d'acheter des Potions\l"
+	.string "dans une Boutique Pokémon.\p"
+	.string "Rends-moi fière, mon trésor.\p"
+	.string "Fais attention à toi !$"
 
 gText_RegisteredTrainerinPokeNav::
 	.string "Registered {STR_VAR_1} {STR_VAR_2}\n"
@@ -1138,3 +1228,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/Route135/scripts.inc"
+
+	.include "data/maps/OldaleTown_House3/scripts.inc"

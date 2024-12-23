@@ -1461,6 +1461,10 @@ const struct CompressedSpriteSheet gBattleAnimPicTable[] =
     {gBattleAnimSpriteGfx_MagentaHeart, 0x0080, ANIM_TAG_BLUE_HEART},
     {gBattleAnimSpriteGfx_Sparkle6, 0x0080, ANIM_TAG_PINK_SPARKLE},
     {gBattleAnimSpriteGfx_RedOrb, 0x0080, ANIM_TAG_MAGNET_ORB},
+    {gBattleAnimSpriteGfx_TSign, 0x0800, ANIM_TAG_T_SIGN},
+    {gBattleAnimSpriteGfx_NothingScratch, 0x1000, ANIM_TAG_NOTHING_SCRATCH},
+    {gBattleAnimSpriteGfx_YellowSwipe, 0x1000, ANIM_TAG_YELLOW_SWIPE},
+    {gBattleAnimSpriteGfx_LevelUpVertical, 0x0400, ANIM_TAG_VERTICAL_STRIPES},
 };
 
 const struct CompressedSpritePalette gBattleAnimPaletteTable[] =
@@ -1923,6 +1927,10 @@ const struct CompressedSpritePalette gBattleAnimPaletteTable[] =
     {gBattleAnimSpritePal_BlueHeart, ANIM_TAG_BLUE_HEART},
     {gBattleAnimSpritePal_Pink_Sparkle, ANIM_TAG_PINK_SPARKLE},
     {gBattleAnimSpritePal_MagnetOrb, ANIM_TAG_MAGNET_ORB},
+    {gBattleAnimSpritePal_HollowOrb, ANIM_TAG_T_SIGN},
+    {gBattleAnimSpritePal_PurpleScratch, ANIM_TAG_NOTHING_SCRATCH},
+    {gBattleAnimSpritePal_YellowSwipe, ANIM_TAG_YELLOW_SWIPE},
+    {gBattleAnimSpritePal_LevelUpVertical, ANIM_TAG_VERTICAL_STRIPES},
 };
 
 const struct BattleAnimBackground gBattleAnimBackgroundTable[] =

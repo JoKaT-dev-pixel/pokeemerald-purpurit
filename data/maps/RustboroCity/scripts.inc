@@ -152,7 +152,31 @@ RustboroCity_EventScript_FatManSawGrunt::
 RustboroCity_EventScript_DevonEmployee2::
 	lock
 	faceplayer
-	msgbox RustboroCity_Text_YoureNewAroundHere, MSGBOX_DEFAULT
+	msgbox RustboroCity_Text_YoureNewAroundHere
+	waitmessage
+	multichoicedefault 21, 6, MULTI_SALARYMAN, 0, FALSE
+	switch VAR_RESULT
+	case 0, Larochelle_EventScript_Choose10Hours
+	case 1, Larochelle_EventScript_ChooseInfiniteHours
+	case 2, Larochelle_EventScript_ChooseIDontKnow
+	case MULTI_B_PRESSED, Larochelle_EventScript_ChooseIDontKnow
+	end
+
+Larochelle_EventScript_Choose10Hours::
+	msgbox Larochelle_Text_10Hours, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Larochelle_EventScript_ChooseInfiniteHours::
+	msgbox Larochelle_Text_InfiniteHours, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Larochelle_EventScript_ChooseIDontKnow::
+	msgbox Larochelle_Text_IDontKnow, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -1087,10 +1111,29 @@ RustboroCity_Text_HeyThatsRustborosGymBadge:
 	.string "RUSTBORO's is the coolest, I'd say.$"
 
 RustboroCity_Text_YoureNewAroundHere:
-	.string "Oh? Who might you be?\n"
-	.string "You're a new face around these parts.\p"
-	.string "Have you just transferred into the\n"
-	.string "POKéMON TRAINER'S SCHOOL?$"
+	.string "Hé toi, j'ai perdu ma montre.\n"
+	.string "Quelle heure est-il ?$"
+
+Larochelle_Text_10Hours:
+	.string "Mince !\p"
+	.string "J'étais censé commencer à 9 heures…\p"
+	.string "On est d'accord que j'suis pas\n"
+	.string "assez en retard hein ?\p"
+	.string "… … … … … … … … …$"
+
+Larochelle_Text_InfiniteHours:
+	.string "Mince !\p"
+	.string "Je suis en retard pour le boulot !\p"
+	.string "Oh et puis merde, j'suis mal payer\n"
+	.string "de toute façon…\p"
+	.string "Je fais le mur !$"
+
+Larochelle_Text_IDontKnow:
+	.string "Dis-moi…\p"
+	.string "Est-ce que tu sers à quelque chose\n"
+	.string "dans ta vie ?\p"
+	.string "Parce que là tu me sers à rien !\p"
+	.string "Bouffon va !$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
 	.string "I challenged the GYM LEADER, but…\p"

@@ -111,16 +111,6 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_ForestGrass = {
     .callback = UpdateForestGrassFieldEffect,
 };
 
-const struct SpriteTemplate gFieldEffectObjectTemplate_SandGrass = {
-    .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
-    .oam = &gObjectEventBaseOam_16x16,
-    .anims = sAnimTable_TallGrass,
-    .images = sPicTable_TallGrass,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = UpdateSandGrassFieldEffect,
-};
-
 static const struct SpriteFrameImage sPicTable_Ripple[] = {
     overworld_frame(gFieldEffectObjectPic_Ripple, 2, 2, 0),
     overworld_frame(gFieldEffectObjectPic_Ripple, 2, 2, 1),
@@ -346,16 +336,6 @@ static const union AnimCmd *const sAnimTable_JumpTallGrass[] =
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_JumpTallGrass = {
-    .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
-    .oam = &gObjectEventBaseOam_16x8,
-    .anims = sAnimTable_JumpTallGrass,
-    .images = sPicTable_JumpTallGrass,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = UpdateJumpImpactEffect,
-};
-
-const struct SpriteTemplate gFieldEffectObjectTemplate_JumpSandGrass = {
     .tileTag = TAG_NONE,
     .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
     .oam = &gObjectEventBaseOam_16x8,
@@ -1362,3 +1342,67 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_RockClimbDust = {
 };
 
 const struct SpritePalette gSpritePalette_BigDust = {gFieldEffectPal_DustCloud, FLDEFF_PAL_TAG_DUST_CLOUD};
+
+static const struct SpriteFrameImage sPicTable_SandGrass[] = {
+    overworld_frame(gFieldEffectObjectPic_SandGrass, 2, 2, 0),
+    overworld_frame(gFieldEffectObjectPic_SandGrass, 2, 2, 1),
+    overworld_frame(gFieldEffectObjectPic_SandGrass, 2, 2, 2),
+    overworld_frame(gFieldEffectObjectPic_SandGrass, 2, 2, 3),
+    overworld_frame(gFieldEffectObjectPic_SandGrass, 2, 2, 4),
+};
+
+static const union AnimCmd sAnim_SandGrass[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(2, 10),
+    ANIMCMD_FRAME(3, 10),
+    ANIMCMD_FRAME(4, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_SandGrass[] =
+{
+    sAnim_SandGrass,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_SandGrass = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_GENERAL_0,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_SandGrass,
+    .images = sPicTable_SandGrass,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateSandGrassFieldEffect,
+};
+
+static const struct SpriteFrameImage sPicTable_JumpSandGrass[] = {
+    overworld_frame(gFieldEffectObjectPic_JumpSandGrass, 2, 1, 0),
+    overworld_frame(gFieldEffectObjectPic_JumpSandGrass, 2, 1, 1),
+    overworld_frame(gFieldEffectObjectPic_JumpSandGrass, 2, 1, 2),
+    overworld_frame(gFieldEffectObjectPic_JumpSandGrass, 2, 1, 3),
+};
+
+static const union AnimCmd sAnim_JumpSandGrass[] =
+{
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(2, 8),
+    ANIMCMD_FRAME(3, 8),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_JumpSandGrass[] =
+{
+    sAnim_JumpSandGrass,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_JumpSandGrass = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_GENERAL_0,
+    .oam = &gObjectEventBaseOam_16x8,
+    .anims = sAnimTable_JumpSandGrass,
+    .images = sPicTable_JumpSandGrass,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateJumpImpactEffect,
+};

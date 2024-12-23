@@ -3511,8 +3511,7 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(SwampertMega);
 #if P_FAMILY_POOCHYENA
 static const union AnimCmd sAnim_Poochyena_1[] =
 {
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 44),
+    ANIMCMD_FRAME(1, 27),
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
@@ -4073,9 +4072,13 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(AggronMega);
 #if P_FAMILY_MEDITITE
 static const union AnimCmd sAnim_Meditite_1[] =
 {
-    ANIMCMD_FRAME(0, 22),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(0, 22),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_FRAME(1, 11),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_FRAME(1, 11),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_FRAME(1, 11),
+    ANIMCMD_FRAME(0, 11),
     ANIMCMD_END,
 };
 
@@ -7140,10 +7143,11 @@ static const union AnimCmd sAnim_Gothitelle_1[] =
 #if P_FAMILY_SOLOSIS
 static const union AnimCmd sAnim_Solosis_1[] =
 {
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 45),
-    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
     ANIMCMD_END,
 };
 

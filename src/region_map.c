@@ -1035,6 +1035,7 @@ static void InitMapBasedOnPlayerLocation(void)
         y = gSaveBlock1Ptr->dynamicWarp.y;
         break;
     case MAP_TYPE_INDOOR:
+    case MAP_TYPE_BIRCH_LAB:
         sRegionMap->mapSecId = gMapHeader.regionMapSectionId;
         if (sRegionMap->mapSecId != MAPSEC_DYNAMIC)
         {

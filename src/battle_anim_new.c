@@ -100,6 +100,7 @@ static void SpriteCB_GlacialLance_Step2(struct Sprite* sprite);
 static void SpriteCB_GlacialLance(struct Sprite* sprite);
 static void SpriteCB_TripleArrowKick(struct Sprite* sprite);
 static void AnimBranchHitProjectile(struct Sprite *);
+static void AnimMakingItRain(struct Sprite *sprite);
 
 // const data
 // general
@@ -7217,6 +7218,18 @@ const struct SpriteTemplate gBitterBladeImpactTemplate =
     .callback = AnimClawSlash
 };
 
+// Make It Rain
+const struct SpriteTemplate gMakingItRainTemplate =
+{
+    .tileTag = ANIM_TAG_COIN,
+    .paletteTag = ANIM_TAG_COIN,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gCoinAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimMakingItRain,
+};
+
 // functions
 //general
 void AnimTask_IsTargetPartner(u8 taskId)
@@ -9221,4 +9234,34 @@ static void AnimBranchHitProjectile(struct Sprite *sprite)
     sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[3];
     sprite->callback = StartAnimLinearTranslation;
     StoreSpriteCallbackInData6(sprite, DestroyAnimSprite);
+}
+
+static void AnimMakingItRain(struct Sprite *sprite)
+{
+    if (gBattleAnimArgs[3] != 0)
+        SetAverageBattlerPositions(gBattleAnimTarget, FALSE, &sprite->x, &sprite->y);   //coin shower on target
+
+    sprite->x += gBattleAnimArgs[0];
+    sprite->y += 14;
+    StartSpriteAnim(sprite, gBattleAnimArgs[1]);
+    AnimateSprite(sprite);
+    sprite->data[0] = 0;
+    sprite->data[1] = 0;
+    sprite->data[2] = 4;
+    sprite->data[3] = 16;
+    sprite->data[4] = -70;
+    sprite->data[5] = gBattleAnimArgs[2];
+    StoreSpriteCallbackInData6(sprite, AnimFallingRock_Step);
+    sprite->callback = TranslateSpriteInEllipse;
+    sprite->callback(sprite);
+}
+
+void AnimTask_RandomBool(u8 taskId)
+{
+    if (RandomPercentage(RNG_NONE, 50))
+        gBattleAnimArgs[ARG_RET_ID] = TRUE;
+    else
+        gBattleAnimArgs[ARG_RET_ID] = FALSE;
+
+    DestroyAnimVisualTask(taskId);
 }
