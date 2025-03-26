@@ -3059,7 +3059,7 @@ extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
 
-// BSBob map pop-ups
+// Map name pop-up
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
 

@@ -310,15 +310,14 @@ BerryTree_Text_CareAdverbGood:
 
 BerryTree_Text_WantToPick:
 	.string "L'arbuste a donné {STR_VAR_2} {STR_VAR_1} !\p"
-	.string "Do you want to pick the\n"
-	.string "{STR_VAR_1}?$"
+	.string "Voulez-vous cueillir les {STR_VAR_1} ?$"
 
 BerryTree_Text_PickedTheBerry:
 	.string "{PLAYER} récolte {STR_VAR_2} {STR_VAR_1}.$"
 
 BerryTree_Text_PutAwayBerry:
 	.string "{PLAYER} met les {STR_VAR_1} dans la\n"
-	.string "Poche Baies du Sac.\p"
+	.string "Poche {EMERALD}Baies {ROCKET}du Sac.\p"
 	.string "Le sol est à nouveau meuble et fertile.$"
 
 BerryTree_Text_BerryPocketFull:

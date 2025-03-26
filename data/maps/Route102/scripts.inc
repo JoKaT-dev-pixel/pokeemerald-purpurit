@@ -15,10 +15,6 @@ Route102_EventScript_RouteSignPetalburg::
 	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
 	end
 
-Route102_EventScript_Boy::
-	msgbox Route102_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
-	end
-
 Route102_EventScript_Calvin::
 	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -80,37 +76,29 @@ Route102_EventScript_Tiana::
 	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-BoisChantilly_EventScript_Matthieu::
-	trainerbattle_single TRAINER_ALLEN, BoisChantilly_Text_MatthieuIntro, BoisChantilly_Text_MatthieuDefeated
-	msgbox BoisChantilly_Text_MatthieuPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route102_Text_WatchMeCatchPokemon:
-	.string "WALLY: {PLAYER}…\n"
-	.string "POKéMON hide in tall grass like this,\l"
-	.string "don't they?\p"
-	.string "Please watch me and see if I can\n"
-	.string "catch one properly.\p"
-	.string "…Whoa!$"
+	.string "{ROCKET}Oréletta: {MAGMA}Maintenant que nous sommes\n"
+	.string "là, il nous suffit d'attendre qu'un\l"
+	.string "Pokémon sauvage fasse son apparition !\p"
+	.string "… … … … … … … …\n"
+	.string "… … … … … … … …\p"
+	.string "Let's go bitch !$"
 
 Route102_Text_WallyIDidIt:
-	.string "WALLY: I did it… It's my…\n"
-	.string "My POKéMON!$"
+	.string "{ROCKET}Oréletta: {MAGMA}Oh putain…!\p"
+	.string "J'ai eu mon tout premier Pokémon !$"
 
 Route102_Text_LetsGoBack:
-	.string "{PLAYER}, thank you!\n"
-	.string "Let's go back to the GYM!$"
+	.string "{MAGMA}T'as vu comment j'ai slay ?!\n"
+	.string "J'ai capturé un Pokémon sale couillon !\p"
+	.string "Hum hum…\p"
+	.string "Retournons voir Pascal !$"
 
 Route102_Text_ImNotVeryTall:
-	.string "I'm…not very tall, so I sink right\n"
-	.string "into tall grass.\p"
-	.string "The grass goes up my nose and…\n"
-	.string "Fwafwafwafwafwa…\p"
-	.string "Fwatchoo!$"
-
-Route102_Text_CatchWholeBunchOfPokemon:
-	.string "I'm going to catch a whole bunch of\n"
-	.string "POKéMON!$"
+	.string "Et non ! Je t'ai eu !\p"
+	.string "Tu as cru que j'allais éternuer à\n"
+	.string "cause des herbes ?\p"
+	.string "Et bien, CHEH !$"
 
 Route102_Text_RouteSignOldale:
 	.string "“Route D-2”\p"

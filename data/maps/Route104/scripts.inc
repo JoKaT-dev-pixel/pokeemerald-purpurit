@@ -318,10 +318,6 @@ Route104_EventScript_TrainerTipsDoubleBattles::
 	msgbox Route104_Text_TrainerTipsDoubleBattles, MSGBOX_SIGN
 	end
 
-Route104_EventScript_Boy1::
-	msgbox Route104_Text_ThrowBallAtWeakenedPokemon, MSGBOX_NPC
-	end
-
 Route104_EventScript_Woman::
 	msgbox Route104_Text_OnlyThrowBallAtWildPokemon, MSGBOX_NPC
 	end
@@ -980,12 +976,6 @@ Route104_Text_WhatsItLikeAtBottomOfSea:
 	.string "Dégage de là !\p"
 	.string "Laisse-moi pisser dans la flotte.$"
 
-Route104_Text_ThrowBallAtWeakenedPokemon:
-	.string "If you're going to throw a POKé BALL,\n"
-	.string "weaken the wild POKéMON first.\p"
-	.string "It will be easier to catch if it's been\n"
-	.string "poisoned, burned, or lulled to sleep.$"
-
 Route104_Text_OnlyThrowBallAtWildPokemon:
 	.string "You're a thief if you try to steal\n"
 	.string "someone else's POKéMON.\p"
@@ -1035,8 +1025,8 @@ Route104_Text_RouteSignPetalburg:
 	.string "{RIGHT_ARROW} PETALBURG CITY$"
 
 Route104_Text_RouteSignRustboro:
-	.string "{UP_ARROW} Larochelle\n"
-	.string "{DOWN_ARROW} Bois Chantilly$"
+	.string "{UP_ARROW} Larochelle au Nord.\n"
+	.string "{DOWN_ARROW} Bois Chantilly au Sud.$"
 
 Route104_Text_PrettyPetalFlowShop:
 	.string "PRETTY PETAL FLOWER SHOP$"

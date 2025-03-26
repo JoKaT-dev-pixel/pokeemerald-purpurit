@@ -1573,7 +1573,7 @@ static void Task_LaunchLvlUpAnim(u8 taskId)
     if (IsDoubleBattle() == TRUE && monIndex == gBattlerPartyIndexes[BATTLE_PARTNER(battler)])
         battler ^= BIT_FLANK;
 
-    InitAndLaunchSpecialAnimation(battler, battler, battler, B_ANIM_LVL_UP);
+    InitAndLaunchSpecialAnimation(battler, battler, battler, B_ANIM_LVL_UP_VANILLA);
     gTasks[taskId].func = Task_UpdateLvlInHealthbox;
 
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
@@ -1596,6 +1596,7 @@ static void Task_UpdateLvlInHealthbox(u8 taskId)
         else
             UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], &gPlayerParty[monIndex], HEALTHBOX_ALL);
 
+        InitAndLaunchSpecialAnimation(battler, battler, battler, B_ANIM_LVL_UP);
         gTasks[taskId].func = Task_SetControllerToWaitForString;
     }
 }

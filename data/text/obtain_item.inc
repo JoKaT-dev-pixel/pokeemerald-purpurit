@@ -6,10 +6,10 @@ gText_TheBagIsFull::
 
 gText_PutItemInPocket::
 	.string "{PLAYER} met {STR_VAR_2} dans\n"
-	.string "la Poche {STR_VAR_3}.$"
+	.string "la Poche {EMERALD}{STR_VAR_3}{ROCKET}.$"
 
 gText_PlayerFoundOneItem::
-	.string "{PLAYER} trouve une {STR_VAR_2} !$"
+	.string "{PLAYER} trouve {STR_VAR_2} !$"
 
 gText_TooBadBagIsFull::
 	.string "Too bad!\n"

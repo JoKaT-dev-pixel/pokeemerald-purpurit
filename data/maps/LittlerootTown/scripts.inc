@@ -941,7 +941,7 @@ LittlerootTown_Text_SwitchShoesWithRunningShoes:
 	.string "mettre les Chaussures de Sécurité.$"
 
 LittlerootTown_Text_ExplainRunningShoes:
-	.string "{ROCKET}Maman: {MAGMA}Elles te serviront\n"
+	.string "{ROCKET}Maman: {MAGMA}Ces chaussures te serviront\n"
 	.string "pour courir en toute sécurité !\p"
 	.string "Je vais te lire le mode d'emploi…\p"
 	.string "“Avec ces Chaussures de Sécurité,\n"
@@ -949,16 +949,15 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "plus vite !”\p"
 	.string "“Une fois les Chaussures de Sécurité\n"
 	.string "enfilées, vous pourrez désormais\l"
-	.string "courir n'importe tout !”$"
+	.string "courir n'importe où !”$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
-	.string "Très bien, tout à l'air niquel !\p"
-	.string "Je vais devoir te laisser mon\n"
-	.string "chou…\p"
+	.string "Très bien, tout à l'air nickel !\p"
+	.string "Je suis désolée mais je vais devoir\n"
+	.string "te laisser mon chou !\p"
 	.string "J'ai un gâteau qui m'attends dans\n"
 	.string "le four !\p"
-	.string "Bon, je file ! Bonne chance et soit\n"
-	.string "prudent mon chou !$"
+	.string "Bonne chance et sois prudent !$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "Elle est seule, ta mère ?\p"
@@ -994,7 +993,7 @@ LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 
 LittlerootTown_Text_YouSavedBirch:
 	.string "Tu as réussi à sauver le Professeur !\n"
-	.string "Je suis tellement soulagé !$"
+	.string "Je suis tellement soulagée !$"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "Ton Pokémon, il est trop mignon !\p"

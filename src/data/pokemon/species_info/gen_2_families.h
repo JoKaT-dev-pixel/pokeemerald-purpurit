@@ -937,10 +937,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .height = 5,
         .weight = 85,
         .description = COMPOUND_STRING(
-            "The web it spins can be considered its\n"
-            "second nervous system. It is said that a\n"
-            "Spinarak determines its prey by the tiny\n"
-            "vibrations it feels through the web."),
+            "Pour se défendre, il possède un pistolet\n"
+            "se situant sur son abdomen. Il est capable\n"
+            "de tirer des projectiles sur un rayon de\n"
+            "100 mètres."),
         .pokemonScale = 414,
         .pokemonOffset = 21,
         .trainerScale = 256,
@@ -2465,16 +2465,16 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_WOOPER
     [SPECIES_WOOPER] =
     {
-        .baseHP        = 55,
-        .baseAttack    = 45,
-        .baseDefense   = 45,
-        .baseSpeed     = 15,
-        .baseSpAttack  = 25,
-        .baseSpDefense = 25,
+        .baseHP        = 100,
+        .baseAttack    = 60,
+        .baseDefense   = 75,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_GROUND, TYPE_POISON),
-        .catchRate = 255,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 42 : 52,
-        .evYield_HP = 1,
+        .catchRate = 60,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 131 : 131,
+        .evYield_HP = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
@@ -2486,7 +2486,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .cryId = CRY_WOOPER,
         .natDexNum = NATIONAL_DEX_WOOPER,
         .categoryName = _("Excrément"),
-        .height = 4,
+        .height = 10,
         .weight = 85,
         .description = COMPOUND_STRING(
             "Wooper usually live in water but come\n"
@@ -2501,9 +2501,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .frontPicFemale = gMonFrontPic_WooperF,
         .frontPicSize = MON_COORDS_SIZE(40, 32),
         .frontPicSizeFemale = MON_COORDS_SIZE(40, 32),
-        .frontPicYOffset = 16,
+        .frontPicYOffset = 7,
         .frontAnimFrames = sAnims_Wooper,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_H_SPRING_SLOW,
         .backPic = gMonBackPic_Wooper,
         .backPicFemale = gMonBackPic_WooperF,
         .backPicSize = MON_COORDS_SIZE(64, 40),
@@ -4706,10 +4706,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
         .abilities = { ABILITY_OBLIVIOUS, ABILITY_THICK_FAT, ABILITY_GLUTTONY },
         .bodyColor = BODY_COLOR_BROWN,
-        .speciesName = _("Marcrassin"),
+        .speciesName = _("Porcrassin"),
         .cryId = CRY_SWINUB,
         .natDexNum = NATIONAL_DEX_SWINUB,
-        .categoryName = _("Cochonnerie"),
+        .categoryName = _("Grassouillet"),
         .height = 4,
         .weight = 65,
         .description = COMPOUND_STRING(

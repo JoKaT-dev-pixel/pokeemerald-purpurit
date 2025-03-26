@@ -58,8 +58,8 @@ PetalburgCity_Mart_EventScript_Woman::
 	msgbox PetalburgCity_Mart_Text_WeakWillGrowStronger, MSGBOX_NPC
 	end
 
-PetalburgCity_Mart_EventScript_Boy::
-	msgbox PetalburgCity_Mart_Text_RepelIsUseful, MSGBOX_NPC
+Chantiville_Mart_EventScript_Gameboy_Boy::
+	msgbox PetalburgCity_Mart_Text_PlayGameboy, MSGBOX_NPC
 	end
 
 PetalburgCity_Mart_EventScript_Man::
@@ -67,20 +67,19 @@ PetalburgCity_Mart_EventScript_Man::
 	end
 
 PetalburgCity_Mart_Text_WeakWillGrowStronger:
-	.string "Even if a POKéMON is weak now,\n"
-	.string "it will grow stronger.\p"
-	.string "The most important thing is love!\n"
-	.string "Love for your POKéMON!$"
+	.string "Faut s'occuper des Pokémon avec\n"
+	.string "amour.\p"
+	.string "C'est comme ça qu'ils deviendront\n"
+	.string "plus grands et plus forts !$"
 
-PetalburgCity_Mart_Text_RepelIsUseful:
-	.string "Do you use REPEL?\n"
-	.string "It keeps POKéMON away, so it's\l"
-	.string "useful when you're in a hurry.$"
+PetalburgCity_Mart_Text_PlayGameboy:
+	.string "Tu t'en rends compte que je joue à la\n"
+	.string "Gameboy dans un jeu Gameboy ?\p"
+	.string "C'est complètement what the fuck !$"
 
 PetalburgCity_Mart_Text_TakeSomeAntidotesWithYou:
-	.string "Do you have any ANTIDOTES with\n"
-	.string "you?\p"
-	.string "If you walk around with a poisoned\n"
-	.string "POKéMON, it will lose HP until it faints.\l"
-	.string "Take some ANTIDOTES with you.$"
+	.string "Un Pokémon empoisonner peut perdre\n"
+	.string "des PV à chaque tour.\p"
+	.string "Heureusement que nous avons des\n"
+	.string "Antidotes pour les guérir !$"
 

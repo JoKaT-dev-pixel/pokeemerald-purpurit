@@ -49,6 +49,7 @@ static void QueueAnimTiles_General_SandWaterEdge(u16);
 static void QueueAnimTiles_General_Waterfall(u16);
 static void QueueAnimTiles_General_LandWaterEdge(u16);
 static void QueueAnimTiles_Building_TVTurnedOn(u16);
+static void QueueAnimTiles_Rustboro_BarberShop(u16);
 static void QueueAnimTiles_Rustboro_WindyWater(u16, u8);
 static void QueueAnimTiles_Rustboro_Fountain(u16);
 static void QueueAnimTiles_Dewford_Flag(u16);
@@ -283,6 +284,34 @@ const u16 *const gTilesetAnims_Mauville_Flower2_B[] = {
     gTilesetAnims_Mauville_Flower2_Frame0,
     gTilesetAnims_Mauville_Flower2_Frame4,
     gTilesetAnims_Mauville_Flower2_Frame4
+};
+
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame0[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/0.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame1[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/1.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame2[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/2.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame3[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/3.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame4[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/4.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame5[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/5.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame6[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/6.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame7[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/7.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame8[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/8.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame9[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/9.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame10[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/10.4bpp");
+const u16 gTilesetAnims_Rustboro_BarberShop_Frame11[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/barber_shop/11.4bpp");
+
+const u16 *const gTilesetAnims_Rustboro_BarberShop[] = {
+    gTilesetAnims_Rustboro_BarberShop_Frame0,
+    gTilesetAnims_Rustboro_BarberShop_Frame1,
+    gTilesetAnims_Rustboro_BarberShop_Frame2,
+    gTilesetAnims_Rustboro_BarberShop_Frame3,
+    gTilesetAnims_Rustboro_BarberShop_Frame4,
+    gTilesetAnims_Rustboro_BarberShop_Frame5,
+    gTilesetAnims_Rustboro_BarberShop_Frame6,
+    gTilesetAnims_Rustboro_BarberShop_Frame7,
+    gTilesetAnims_Rustboro_BarberShop_Frame8,
+    gTilesetAnims_Rustboro_BarberShop_Frame9,
+    gTilesetAnims_Rustboro_BarberShop_Frame10,
+    gTilesetAnims_Rustboro_BarberShop_Frame11
 };
 
 const u16 gTilesetAnims_Rustboro_WindyWater_Frame0[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/windy_water/0.4bpp");
@@ -839,6 +868,9 @@ void InitTilesetAnim_BattleDome(void)
 
 static void TilesetAnim_Rustboro(u16 timer)
 {
+    if (timer % 11 == 0)
+        QueueAnimTiles_Rustboro_BarberShop(timer / 11);
+
     if (timer % 8 == 0)
     {
         QueueAnimTiles_Rustboro_WindyWater(timer / 8, 0);
@@ -1006,6 +1038,12 @@ static void QueueAnimTiles_Mauville_Flowers(u16 timer_div, u8 timer_mod)
         AppendTilesetAnimToBuffer(gTilesetAnims_Mauville_Flower1_B[timer_div], gTilesetAnims_Mauville_Flower1_VDests[timer_mod], 4 * TILE_SIZE_4BPP);
         AppendTilesetAnimToBuffer(gTilesetAnims_Mauville_Flower2_B[timer_div], gTilesetAnims_Mauville_Flower2_VDests[timer_mod], 4 * TILE_SIZE_4BPP);
     }
+}
+
+static void QueueAnimTiles_Rustboro_BarberShop(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Rustboro_BarberShop);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Rustboro_BarberShop[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Rustboro_WindyWater(u16 timer_div, u8 timer_mod)

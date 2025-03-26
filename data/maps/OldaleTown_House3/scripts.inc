@@ -36,4 +36,4 @@ Fourqueue_House3_Text_Twin:
 	.string "il joue jamais avec nous…!$"
 
 Fourqueue_House3_Text_Castoutou:
-	.string "Castoutou: Ouaf ouaf ?!$"
+	.string "Castoutou: Wouaf, wouaf ?!$"

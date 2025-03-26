@@ -1,8 +1,9 @@
 .set LOCALID_WALLY, 2
-.set LOCALID_BOY, 3
+.set LOCALID_LASS, 3
 .set LOCALID_WALLYS_DAD, 5
 .set LOCALID_GYM_BOY, 8
 .set LOCALID_SCOTT, 9
+.set LOCALID_BOY, 10
 
 PetalburgCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCity_OnTransition
@@ -90,11 +91,33 @@ PetalburgCity_EventScript_WalkToWallyHouse::
 PetalburgCity_EventScript_Boy::
 	lock
 	faceplayer
-	msgbox PetalburgCity_Text_WaterReflection, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Text_Boyfriend, MSGBOX_NPC
 	closemessage
 	applymovement LOCALID_BOY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
+	end
+
+PetalburgCity_EventScript_Lass::
+	lock
+	faceplayer
+	msgbox PetalburgCity_Text_FirstDate, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LASS, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PetalburgCity_EventScript_ExpertMale::
+	msgbox PetalburgCity_Text_ExpertMale, MSGBOX_NPC
+	end
+
+PetalburgCity_EventScript_Woman::
+	msgbox PetalburgCity_Text_Woman, MSGBOX_NPC
+	end
+
+PetalburgCity_EventScript_Twin::
+	msgbox PetalburgCity_Text_Twin, MSGBOX_NPC
 	end
 
 PetalburgCity_EventScript_WallysMom::
@@ -253,12 +276,12 @@ PetalburgCity_EventScript_CitySign::
 	msgbox PetalburgCity_Text_CitySign, MSGBOX_SIGN
 	end
 
-PetalburgCity_EventScript_Gentleman::
-	msgbox PetalburgCity_Text_FullPartyExplanation, MSGBOX_NPC
+PetalburgCity_EventScript_Man::
+	msgbox PetalburgCity_Text_Man, MSGBOX_NPC
 	end
 
-PetalburgCity_EventScript_WallyHouseSign::
-	msgbox PetalburgCity_Text_WallyHouseSign, MSGBOX_SIGN
+PetalburgCity_EventScript_PokecoffeeSign::
+	msgbox PetalburgCity_Text_PokecoffeeSign, MSGBOX_SIGN
 	end
 
 PetalburgCity_EventScript_ShowGymToPlayer0::
@@ -294,10 +317,10 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	waitmovement 0
 	applymovement LOCALID_GYM_BOY, Common_Movement_Delay48
 	waitmovement 0
-	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_BoyApproachPlayer0
-	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_BoyApproachPlayer1
-	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_BoyApproachPlayer2
-	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_BoyApproachPlayer3
+	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_LassApproachPlayer0
+	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_LassApproachPlayer1
+	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_LassApproachPlayer2
+	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_LassApproachPlayer3
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_DEFAULT
 	closemessage
@@ -318,28 +341,28 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	releaseall
 	end
 
-PetalburgCity_EventScript_BoyApproachPlayer0::
+PetalburgCity_EventScript_LassApproachPlayer0::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer0
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
-PetalburgCity_EventScript_BoyApproachPlayer1::
+PetalburgCity_EventScript_LassApproachPlayer1::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	return
 
-PetalburgCity_EventScript_BoyApproachPlayer2::
+PetalburgCity_EventScript_LassApproachPlayer2::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer2
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	return
 
-PetalburgCity_EventScript_BoyApproachPlayer3::
+PetalburgCity_EventScript_LassApproachPlayer3::
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyApproachPlayer3
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
@@ -556,17 +579,34 @@ PetalburgCity_EventScript_Scott::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	setvar VAR_SCOTT_STATE, 1
-	textcolor NPC_TEXT_COLOR_MALE
 	msgbox PetalburgCity_Text_AreYouATrainer, MSGBOX_DEFAULT
 	closemessage
+	playse SE_POKENAV_CALL
+	applymovement LOCALID_SCOTT, Common_Movement_QuestionMark
+	waitmovement 0
+	applymovement LOCALID_SCOTT, Common_Movement_Delay48
+	waitmovement 0
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	delay 30
-	msgbox PetalburgCity_Text_WellMaybeNot, MSGBOX_DEFAULT
+	msgbox Chantiville_Text_AssistantMatchCall, MSGBOX_DEFAULT
+	waitmovement 0
+	msgbox Chantiville_Text_FildrongCallTalk, MSGBOX_DEFAULT
+	waitmovement 0
+	msgbox Chantiville_Text_AngryAssistantMatchCall, MSGBOX_DEFAULT
+	waitmovement 0
+	msgbox Chantiville_Text_FildrongClosedCall, MSGBOX_DEFAULT
+	waitmovement 0
+	playse SE_POKENAV_HANG_UP
+	msgbox Chantiville_Text_CloseCall, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	msgbox Chantiville_Text_FildrongAfterCall, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	delay 30
+	msgbox PetalburgCity_Text_WellMaybeNot, MSGBOX_DEFAULT
 	giveitem ITEM_POKEMON_BOX_LINK
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
@@ -718,67 +758,133 @@ PetalburgCity_EventScript_GymBoy::
 	end
 
 PetalburgCity_Text_WhereIsWally:
-	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF TOWN\n"
-	.string "very soon…$"
+	.string "{ROCKET}???: {AQUA}Salut !\p"
+	.string "Je ne sais pas comment j'ai atterri\n"
+	.string "ici…\p"
+	.string "J'ai vu un écran de sauvegarde, puis\n"
+	.string "soudain, je me suis téléporté dans\l"
+	.string "cette ville.\p"
+	.string "Tout est encore confus dans ma\n"
+	.string "tête…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
-	.string "Hiya! Are you maybe…\n"
-	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
-	.string "do when they reach a new town?\p"
-	.string "They first check what kind of GYM\n"
-	.string "is in the town.$"
+	.string "Oh, un noob !\n"
+	.string "Tu viens de Bourg Paumé, ça se voit !\p"
+	.string "Je vais t'expliquer deux, trois trucs\n"
+	.string "quand on est un Dresseur.\p"
+	.string "Pour progresser et devenir le meilleur\n"
+	.string "Dresseur, tu dois défier les Champions\l"
+	.string "d'Arène se trouvant dans chaque ville.$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "See? This is PETALBURG CITY's GYM.$"
+	.string "Ça ? C'est l'Arène de Chantiville !$"
 
 PetalburgCity_Text_ThisIsGymSign:
-	.string "This is the GYM's sign. Look for it\n"
-	.string "whenever you're looking for a GYM.$"
+	.string "Toutes les informations sont indiquées\n"
+	.string "sur ce type de panneau.\p"
+	.string "Bonne chance, parce que le Champion\n"
+	.string "me fait vraiment flipper !$"
 
-PetalburgCity_Text_WaterReflection:
-	.string "My face is reflected in the water.\p"
-	.string "It's a shining grin full of hope…\p"
-	.string "Or it could be a look of somber silence\n"
-	.string "struggling with fear…\p"
-	.string "What do you see reflected in your face?$"
+PetalburgCity_Text_Boyfriend:
+	.string "Pitié, aide-moi…!\p"
+	.string "Elle est folle !$"
 
-PetalburgCity_Text_FullPartyExplanation:
-	.string "Let's say you have six POKéMON.\n"
-	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
+PetalburgCity_Text_FirstDate:
+	.string "Mon mec c'est trop un homme capable !\p"
+	.string "Il m'a offert un sac de luxe et m'a\n"
+	.string "ensuite emmené au restaurant.$"
+
+PetalburgCity_Text_ExpertMale:
+	.string "Les Pokémon ont embelli la vie de\n"
+	.string "nombreuses personnes.\p"
+	.string "Ils sont partout, dans les montagnes,\n"
+	.string "dans les mers et même dans le ciel.$"
+
+PetalburgCity_Text_Man:
+	.string "Ma calvitie est un signe de virilité.\p"
+	.string "C'est pour ça que je n'en porterais\n"
+	.string "jamais de faux cheveux.$"
+
+PetalburgCity_Text_Woman:
+	.string "Le café servi au Pokécafé est\n"
+	.string "vraiment délicieux.\p"
+	.string "Ce bar est un bon endroit pour bien\n"
+	.string "commencer une journée.$"
+
+PetalburgCity_Text_Twin:
+	.string "Ma maman m'a dit de ne pas parler aux\n"
+	.string "étrangers.\p"
+	.string "Du coup, je te parle pas !$"
 
 PetalburgCity_Text_GymSign:
-	.string "Arène de Chantiville\n"
-	.string "CHAMPION: Pascal\l"
+	.string "Arène de Chantiville\p"
+	.string "Champion: Pascal\n"
 	.string "“Énerve-moi, j'vais te taper !”$"
 
 PetalburgCity_Text_CitySign:
 	.string "Chantiville\n"
-	.string "“Une ville connue par sa crème.”$"
+	.string "“Une ville connue pour sa douceur.”$"
 
-PetalburgCity_Text_WallyHouseSign:
-	.string "WALLY'S HOUSE$"
+PetalburgCity_Text_PokecoffeeSign:
+	.string "Pokécafé\p"
+	.string "“Venez faire une pause café.”$"
 
 PetalburgCity_Text_AreYouATrainer:
-	.string "Ah, te voilà {PLAYER} !\p"
-	.string "Je t'ai enfin rattraper mais là n'est\n"
+	.string "{ROCKET}Fildrong: {AQUA}Ah, te voilà {PLAYER} !\p"
+	.string "Je t'ai enfin rattrapé mais là n'est\n"
 	.string "pas la question !\p"
 	.string "J'ai quelque chose d'important à\n"
 	.string "te dire.$"
 
-Chantiville_Text_CallTalk:
+Chantiville_Text_AssistantMatchCall:
+	.string "………………\p"
+	.string "… … … … … …\n"
+	.string "… … … … … Bip !\p"
+	.string "{ROCKET}Assistante: {MAGMA}Professeur, revenez tout\n"
+	.string "de suite finir vos recherches !$"
+
+Chantiville_Text_FildrongCallTalk:
+	.string "{ROCKET}Fildrong: {AQUA}Pas question !\p"
+	.string "J'ai désormais rallumer la flamme que\n"
+	.string "j'avais perdue depuis bien longtemps !\p"
+	.string "Ma commu a encore besoin de moi !$"
+
+Chantiville_Text_AngryAssistantMatchCall:
+	.string "{ROCKET}Assistante: {MAGMA}Je vous comprends mais\n"
+	.string "vous allez tout de même pas me laisser\l"
+	.string "toute seule ?!$"
+
+Chantiville_Text_FildrongClosedCall:
+	.string "{ROCKET}Fildrong: {AQUA}Je suis sûr que vous allez\n"
+	.string "y arriver sans moi.\p"
+	.string "Je suis désolé, je vous entends pas\n"
+	.string "très bien…!\p"
+	.string "Je passe sous un tunnel…!$"
+
+Chantiville_Text_CloseCall:
+	.string "… … … … … …\n"
+	.string "… … … … … Clic !$"
+
+Chantiville_Text_FildrongAfterCall:
+	.string "{ROCKET}Fildrong: {AQUA}… … … … … …\p"
+	.string "Un jour, elle comprendra vraiment\n"
+	.string "ce que ça fait d'être célibataire…$"
 
 PetalburgCity_Text_WellMaybeNot:
-	.string "… … … … … …\p"
-	.string "Well, maybe not.\n"
-	.string "Your clothes aren't all that dirty.\p"
-	.string "You're either a rookie TRAINER,\n"
-	.string "or maybe you're just an ordinary kid.$"
+	.string "{ROCKET}Fildrong: {AQUA}Hum, hum…!\n"
+	.string "Oublie ce que j'ai dis !\p"
+	.string "La raison de mon interpellation est\n"
+	.string "que je souhaite saisir l'opportunité\l"
+	.string "d'être bien plus qu'un Professeur !\p"
+	.string "Tu m'as donné l'envie de parcourir de\n"
+	.string "nouvelles aventures comme à l'époque\l"
+	.string "où j'avais encore des cheveux !\p"
+	.string "Désormais, je prendrai un nouveau\n"
+	.string "départ une deuxième fois !\p"
+	.string "Et pour te remercier, je t'offre ceci !\n"
+	.string "Je pense que ça te sera très utile.$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
-	.string "I'm roaming the land in search of\n"
-	.string "talented TRAINERS.\p"
-	.string "I'm sorry to have taken your time.$"
+	.string "{ROCKET}Fildrong: {AQUA}Bien !\p"
+	.string "Il est grand temps pour moi de partir\n"
+	.string "à la conquête du lore de cette région !$"

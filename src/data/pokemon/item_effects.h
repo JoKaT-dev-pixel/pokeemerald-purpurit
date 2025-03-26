@@ -63,6 +63,11 @@ const u8 gItemEffect_FreshWater[7] = {
     [6] = I_HEALTH_RECOVERY >= GEN_7 ? 30 : 50, // Amount of HP to recover
 };
 
+const u8 gItemEffect_HotCoffee[7] = {
+    [4] = ITEM4_HEAL_HP,
+    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 40 : 40, // Amount of HP to recover
+};
+
 const u8 gItemEffect_SodaPop[7] = {
     [4] = ITEM4_HEAL_HP,
     [6] = I_HEALTH_RECOVERY >= GEN_7 ? 50 : 60, // Amount of HP to recover

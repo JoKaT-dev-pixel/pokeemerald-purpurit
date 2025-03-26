@@ -332,7 +332,7 @@ PlayersHouse_1F_Text_IsntItNiceInHere:
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
 	.string "Ne t'inquiète pas pour mes colis.\p"
-	.string "Les Pokémon du livreur se chargerons\n"
+	.string "Les Pokémon du livreur se chargeront\n"
 	.string "de cette tâche.\p"
 	.string "Ah, tiens ! Je t'ai acheté une\n"
 	.string "nouvelle horloge pour fêter nos\l"
@@ -354,8 +354,8 @@ PlayersHouse_1F_Text_OhComeQuickly:
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn:
 	.string "{ROCKET}Maman: {MAGMA}Regarde à la télévision !\p"
-	.string "C'est le nouveau professeur que\n"
-	.string "tous les médias en parlent.$"
+	.string "C'est le nouveau professeur dont\n"
+	.string "tous les médias en parlent !$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
 	.string "{ROCKET}Maman: {MAGMA}Oh… C’est déjà terminé…\p"
@@ -416,7 +416,7 @@ PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "Journaliste: … Ce reportage a été\n"
 	.string "diffusé devant le Laboratoire du\l"
 	.string "Professeur Fildrong.\p"
-	.string "C'était BFM TV.$"
+	.string "C'était BFMTV.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "Il y a une pub à la télé.\p"

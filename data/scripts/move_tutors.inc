@@ -1,3 +1,29 @@
+Chantiville_EventScript_PepperPowderTutor::
+	lock
+	faceplayer
+	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_PEPPER_POWDER, MoveTutor_EventScript_PepperPowderTaught
+	msgbox MoveTutor_Text_PepperPowderTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_PepperPowderDeclined
+	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_PepperPowderDeclined
+	msgbox MoveTutor_Text_PepperPowderWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_PEPPER_POWDER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_PepperPowderDeclined
+	setflag FLAG_MOVE_TUTOR_TAUGHT_PEPPER_POWDER
+	goto MoveTutor_EventScript_PepperPowderTaught
+	end
+
+MoveTutor_EventScript_PepperPowderDeclined::
+	msgbox MoveTutor_Text_PepperPowderDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+MoveTutor_EventScript_PepperPowderTaught::
+	msgbox MoveTutor_Text_PepperPowderTaught, MSGBOX_DEFAULT
+	release
+	end
+
 SlateportCity_PokemonFanClub_EventScript_SwaggerTutor::
 	lock
 	faceplayer

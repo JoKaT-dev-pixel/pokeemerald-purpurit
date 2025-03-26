@@ -269,10 +269,10 @@ Route101_Text_PleaseHelp:
 	.string "Reste pas planté là ! Sauve-moi !\p"
 	.string "Là ! Dans mon Sac !\n"
 	.string "Il y a 3 Poké Balls !\p"
-	.string "Dépêches-toi !$"
+	.string "Grouille-toi !$"
 
 Route101_Text_DontLeaveMe:
-	.string "Hé je te jure que si tu me laisses\n"
+	.string "Je te jure que si tu me laisses\n"
 	.string "tomber, je vais niquer ta daronne !$"
 
 Route101_Text_YouSavedMe:
@@ -475,12 +475,12 @@ RouteD1_Text_DiscoveredFootprints:
 
 RouteD1_Text_FinishedSketchingFootprints:
 	.string "J'ai fini de couper les arbres !\p"
-	.string "Avec ça, je pourais faire un bon\n"
+	.string "Avec ça, je pourrais faire un bon\n"
 	.string "feu de cheminée !\p"
 	.string "Vas-y, passe !$"
 
 RouteD1_Text_MayLetsGoBack:
-	.string "{ROCKET}{RIVAL}: {MAGMA}Allez ! Dépèche-toi !\n"
+	.string "{ROCKET}{RIVAL}: {MAGMA}Allez ! Dépêche-toi !\n"
 	.string "J'ai pas que ça à faire !$"
 
 RouteD1_Text_BrendanLetsGoBack:

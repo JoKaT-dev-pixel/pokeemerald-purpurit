@@ -117,7 +117,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	textcolor NPC_TEXT_COLOR_MALE
 	message LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon
 	waitmessage
-	delay 65
+	delay 70
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedYourePokemon
 	waitmessage
@@ -848,7 +848,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
 	.string "devrait pas tarder.\p"
 	.string "C'est pas tout à fait son genre de\n"
 	.string "rester derrière un bureau.\p"
-	.string "Autre fois, il était vidéaste.\p"
+	.string "Autrefois, il était vidéaste.\p"
 	.string "Mais il a tellement été tourmenté par\n"
 	.string "sa chauveté qu'il a décidé de changer\l"
 	.string "de métier.$"
@@ -866,9 +866,9 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 	.string "de ces quatres !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
-	.string "{ROCKET}Prof. Fildrong: {AQUA}Bon, {PLAYER}{KUN}.\p"
-	.string "J'ai vu le potentiel que t'as lorsque\n"
-	.string "tu t'es battu contre ce Cornaigri.\p"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Bon, {PLAYER}{KUN} !\p"
+	.string "J'ai vu le potentiel que tu possèdes\n"
+	.string "quand tu as combattu ce Cornaigri.\p"
 	.string "Tu m'as l'air de savoir t'y prendre\n"
 	.string "avec les Pokémon.\p"
 	.string "Toi et {STR_VAR_1}, vous avez créé un\n"
@@ -889,20 +889,20 @@ LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRivalOceane:
 	.string "j'ai une faveur à te demander.\p"
 	.string "Une autre Dresseuse comme toi était\n"
 	.string "censée passer me voir aujourd'hui.\p"
-	.string "Peux-tu lui dire de venir dans mon labo\n"
-	.string "dès que possible ?$"
+	.string "Peux-tu lui dire de venir dans mon\n"
+	.string "labo dès que possible ?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Avant de t'en aller,\n"
 	.string "j'ai une faveur à te demander.\p"
 	.string "Un autre Dresseur comme toi était censé\n"
 	.string "passer me voir aujourd'hui.\p"
-	.string "Peux-tu lui dire de venir dans mon labo\n"
-	.string "dès que possible ?$"
+	.string "Peux-tu lui dire de venir dans mon\n"
+	.string "labo dès que possible ?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Génial !\n"
-	.string "Tu es donc digne de confiance.\p"
+	.string "Tu es donc digne de confiance !\p"
 	.string "{PLAYER}, je compte sur toi !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay:
@@ -928,11 +928,11 @@ LittlerootTown_ProfessorBirchsLab_Text_BackLab:
 	.string "ça m'est complètement égal !\p"
 	.string "À présent, prouvez-moi tout les deux\n"
 	.string "que vous êtes capables d'être de\l"
-	.string "vrais Dresseurs !$"
+	.string "véritables Dresseurs !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BeginRivalMayBattle:
 	.string "{ROCKET}{RIVAL}: {MAGMA}Parfait !\p"
-	.string "Je vais te montrer à quel point je suis\n"
+	.string "Je vais te montrer à quel point j'suis\n"
 	.string "meilleure que toi !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_RivalMayBattle:
@@ -941,8 +941,8 @@ LittlerootTown_ProfessorBirchsLab_Text_RivalMayBattle:
 LittlerootTown_ProfessorBirchsLab_Text_AfterRivalMayBattle:
 	.string "{ROCKET}{RIVAL}: {MAGMA}Pff… En vrai, c'était un beau\n"
 	.string "combat…!\p"
-	.string "T'es pas si mauvais que ça…\p"
-	.string "Mais ne crois pas que la prochaine fois\n"
+	.string "T'es pas si mauvais que ça…!\p"
+	.string "Mais ne crois pas que la prochaine fois,\n"
 	.string "je vais être autant clémente !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_RivalBrendanBattle:
@@ -957,11 +957,12 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoyBattle:
 	.string "Votre dévouement permet à vos Pokémon\n"
 	.string "d'avoir confiance en vous !\p"
 	.string "Vos futurs adversaires durant votre\n"
-	.string "voyage vous feront obstacles !\p"
+	.string "voyage vous feront obstacle !\p"
 	.string "Entraînez avec amour vos Pokémon au\n"
 	.string "combat pour qu'ils deviennent forts !\p"
-	.string "Ah, en parlant de Pokémon…! Je vais les\n"
-	.string "remettre sur pied tout de suite !$"
+	.string "En parlant de Pokémon…!\p"
+	.string "Donnez-les moi, je vais tout de suite\n"
+	.string "les remettre sur pied !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Une dernière chose !\p"
@@ -972,14 +973,14 @@ LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "Prenez ceci, vous en aurez besoin !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex:
-	.string "{PLAYER} reçoit un Pokédex\n"
-	.string "de la part du Professeur Fildrong !$"
+	.string "{PLAYER} reçoit un {EMERALD}Pokédex\n"
+	.string "{ROCKET}de la part du Professeur Fildrong !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Il s'agit d'un Pokédex,\n"
 	.string "un outil capable d'enregistrer les\l"
 	.string "données sur les Pokémon que vous\l"
-	.string "aller rencontrer.\p"
+	.string "allez rencontrer.\p"
 	.string "Prenez bien le temps de le compléter et\n"
 	.string "réunir toutes les infos possibles !\p"
 	.string "Quant à toi {PLAYER}{KUN}, je t'offre des\n"
@@ -987,8 +988,8 @@ LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Avec ça, tu pourras\n"
-	.string "capturer des Pokémon et pouvoir les\l"
-	.string "transporter par la suite !\p"
+	.string "attraper des Pokémon et pouvoir les\l"
+	.string "transporter durant ton voyage !\p"
 	.string "Sur ce, bonne chance jeunes Dresseurs !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
@@ -1007,7 +1008,7 @@ LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 
 LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext:
 	.string "{ROCKET}{RIVAL}: {MAGMA}Je vais entraîner mes Pokémon\n"
-	.string "et apprendre mes erreurs !\p"
+	.string "et apprendre de mes erreurs !\p"
 	.string "La prochaine fois qu'on se croisera,\n"
 	.string "c'est moi qui gagnerai !$"
 

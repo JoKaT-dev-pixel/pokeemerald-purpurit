@@ -366,17 +366,16 @@ u32 RtcGetLocalDayCount(void)
     return RtcGetDayCount(&sRtc);
 }
 
-void FormatDecimalTimeWithoutSeconds(u8 *txtPtr, s8 hour, s8 minute, bool8 is24Hour)
+void FormatDecimalTimeWithoutSeconds(u8 *txtPtr, s8 hour, s8 minute, bool32 is24Hour)
 {
-    RtcCalcLocalTime();
-    switch (is24Hour)
+    if (is24Hour)
     {
-    case TRUE:
         txtPtr = ConvertIntToDecimalStringN(txtPtr, hour, STR_CONV_MODE_LEADING_ZEROS, 2);
         *txtPtr++ = CHAR_COLON;
         txtPtr = ConvertIntToDecimalStringN(txtPtr, minute, STR_CONV_MODE_LEADING_ZEROS, 2);
-        break;
-    case FALSE:
+    }
+    else
+    {
         if (hour == 0)
             txtPtr = ConvertIntToDecimalStringN(txtPtr, 12, STR_CONV_MODE_LEADING_ZEROS, 2);
         else if (hour < 13)
@@ -391,7 +390,6 @@ void FormatDecimalTimeWithoutSeconds(u8 *txtPtr, s8 hour, s8 minute, bool8 is24H
             txtPtr = StringAppend(txtPtr, gText_AM);
         else
             txtPtr = StringAppend(txtPtr, gText_PM);
-        break;
     }
 
     *txtPtr++ = EOS;

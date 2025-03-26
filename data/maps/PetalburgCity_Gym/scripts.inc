@@ -1142,104 +1142,92 @@ PetalburgCity_Gym_EventScript_GymStatue::
 	end
 
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
-	.string "DAD: Hm?\p"
-	.string "Well, if it isn't {PLAYER}!\n"
-	.string "So you're all finished moving in?\p"
-	.string "I'm surprised that you managed to\n"
-	.string "get here by yourself.\p"
-	.string "Oh, I see.\n"
-	.string "You're with your POKéMON.\p"
-	.string "Hm… Then I guess you're going to\n"
-	.string "become a TRAINER like me, {PLAYER}.\p"
-	.string "That's great news!\n"
-	.string "I'll be looking forward to it!$"
+	.string "{ROCKET}Pascal: {AQUA}HÉ T'ES SÉRIEUX TOI ?!\p"
+	.string "ON T'A JAMAIS APPRIS DE FRAPPER AVANT\n"
+	.string "D'ENTRER ?!\p"
+	.string "TOI ET MOI, ON NE VAS PAS ÊTRE POTE,\n"
+	.string "JE TE PRÉVIENS DÉJÀ !\p"
+	.string "J'EN AI DÉJÀ RECADRÉ DES MILLIERS DE\n"
+	.string "GENS COMME TOI !\p"
+	.string "ALORS MAINTENANT, DIS-MOI CE QUE TU\n"
+	.string "ES VENU FOUTRE ICI ?!\p"
+	.string "VAS-Y, JE T'ÉCOUTE !$"
 
 PetalburgCity_Gym_Text_WallyIdLikeAPokemon:
-	.string "Um… I…\n"
-	.string "I'd like to get a POKéMON, please…$"
+	.string "{ROCKET}???: {MAGMA}Heu… Bonjour !\p"
+	.string "J'ai besoin d'aide pour capturer un\n"
+	.string "Pokémon s'il vous plait.$"
 
 PetalburgCity_Gym_Text_DadOhYoureWallyRight:
-	.string "DAD: Hm? You're… Uh… Oh, right.\n"
-	.string "You're WALLY, right?$"
+	.string "{ROCKET}Pascal: {AQUA}C'EST UN MOULIN ICI OU QUOI ?!$"
 
 PetalburgCity_Gym_Text_WallyIveNeverCaughtAPokemon:
-	.string "WALLY: I'm going to go stay with my\n"
-	.string "relatives in VERDANTURF TOWN.\p"
-	.string "I thought I would be lonely by myself,\n"
-	.string "so I wanted to take a POKéMON along.\p"
-	.string "But I've never caught a POKéMON before.\n"
-	.string "I don't know how…$"
+	.string "{ROCKET}Oréletta: {MAGMA}Pardonnez-moi, je m'appelle\n"
+	.string "Oréletta et je ne viens pas d'ici.\p"
+	.string "J'ai essayé d'attraper des Pokémon\n"
+	.string "mais je n'ai pas réussi…\p"
+	.string "Du coup, j'ai vu qu'il y avait une\n"
+	.string "arène dans le coin et voilà quoi…!$"
 
 PetalburgCity_Gym_Text_DadHmISee:
-	.string "DAD: Hm. I see.$"
+	.string "{ROCKET}Pascal: {AQUA}OK, ON VA RÉGLER ÇA !$"
 
 PetalburgCity_Gym_Text_DadPlayerGoWithWally:
-	.string "DAD: {PLAYER}, you heard that,\n"
-	.string "right?\p"
-	.string "Go with WALLY and make sure that he\n"
-	.string "safely catches a POKéMON.$"
+	.string "{ROCKET}Pascal: {AQUA}HÉ TOI !\n"
+	.string "C'EST QUOI TON NOM DÉJÀ ?!\p"
+	.string "OUAIS NON, JE N'VEUX PAS LE SAVOIR !\p"
+	.string "BOUGE TON CUL ET VA L'AIDER À LUI\n"
+	.string "CHOPER UN POKÉTRUC DANS LES HERBES\l"
+	.string "SUR LA ROUTE D-2 !$"
 
 PetalburgCity_Gym_Text_IllLoanYouMyZigzagoon:
-	.string "WALLY, here, I'll loan you my POKéMON.\p"
-	.string "WALLY reçoit un Castoutou!$"
+	.string "{AQUA}QUANT À TOI !\n"
+	.string "JE TE PRÊTE MON FIDÈLE COMPAGNON !\p"
+	.string "{ROCKET}Oréletta reçoit un Castoutou !$"
 
 PetalburgCity_Gym_Text_WallyThankYouAndDadGivesPokeBall:
-	.string "WALLY: Oh, wow!\n"
-	.string "A POKéMON!\p"
-	.string "DAD: Hm. I'll give you a POKé BALL, too.\n"
-	.string "Go for it!\p"
-	.string "WALLY received a POKé BALL!$"
+	.string "{ROCKET}Pascal: {AQUA}J'AI PAS FINI AVEC TOI !\p"
+	.string "TU VAS ATTRAPER AVEC QUOI ?!\n"
+	.string "AVEC TA TÊTE DE MOLLÉTRON ?!\p"
+	.string "{ROCKET}Oréletta reçoit des Poké Balls !$"
 
 PetalburgCity_Gym_Text_WallyOhWowThankYou:
-	.string "WALLY: Oh, wow!\n"
-	.string "Thank you!$"
+	.string "{ROCKET}Oréletta: {MAGMA}Ok, d'accord…\n"
+	.string "Je vous remercie Pascal…!$"
 
 PetalburgCity_Gym_Text_WouldYouReallyComeWithMe:
-	.string "{PLAYER}… Would you really come\n"
-	.string "with me?$"
+	.string "{MAGMA}Bon ! On y va ?$"
 
 PetalburgCity_Gym_Text_DadSoDidItWorkOut:
-	.string "DAD: So, did it work out?$"
+	.string "{ROCKET}Pascal: {AQUA}ALORS, ÇA DONNE QUOI ?!$"
 
 PetalburgCity_Gym_Text_WallyThankYouBye:
-	.string "WALLY: Thank you, yes, it did.\n"
-	.string "Here's your POKéMON back.\p"
-	.string "{PLAYER}, thank you for coming along\n"
-	.string "with me.\p"
-	.string "You two are why I was able to catch\n"
-	.string "my POKéMON.\p"
-	.string "I promise I'll take really good\n"
-	.string "care of it.\p"
-	.string "Oh! My mom's waiting for me,\n"
-	.string "so I have to go!\p"
-	.string "Bye, {PLAYER}!$"
+	.string "{ROCKET}Oréletta: {MAGMA}C'est nickel !\p"
+	.string "J'ai pu en attraper un sans problème\n"
+	.string "grâce à votre Pokémon !\p"
+	.string "Maintenant, il faut que j'y aille !\p"
+	.string "Tenez votre Castoutou !\n"
+	.string "Encore merci et au revoir !$"
 
 PetalburgCity_Gym_Text_DadGoCollectBadges:
-	.string "DAD: Now…\p"
-	.string "{PLAYER}, if you want to become a\n"
-	.string "strong TRAINER, here's my advice.\p"
-	.string "Head for RUSTBORO CITY beyond this\n"
-	.string "town.\p"
-	.string "There, you should challenge\n"
-	.string "the GYM LEADER, ROXANNE.\p"
-	.string "After her, go on to other POKéMON\n"
-	.string "GYMS and defeat their LEADERS.\p"
-	.string "Collect BADGES from them,\n"
-	.string "understood?\p"
-	.string "Of course, I'm a GYM LEADER, too.\n"
-	.string "We'll battle one day, {PLAYER}.\p"
-	.string "But that's only after you become\n"
-	.string "stronger.$"
+	.string "{ROCKET}Pascal: {AQUA}BIEN !\p"
+	.string "À PRÉSENT, JE VAIS TE FOUTRE À LA\n"
+	.string "PORTE !\p"
+	.string "POURQUOI ?!\n"
+	.string "BAH C'EST ÉVIDENT !\p"
+	.string "T'AS RIEN, T'AS PAS LES ÉPAULES !\p"
+	.string "JE VAIS TE DIRE UN TRUC ALORS ÉCOUTE\n"
+	.string "BIEN CAR JE N'VAIS PAS TE LE RÉPÉTER !\p"
+	.string "COMMENCE PAR OBTENIR TON PREMIER\n"
+	.string "BADGE À LAROCHELLE !\p"
+	.string "TRAVERSE LES BOIS CHANTILLY POUR\n"
+	.string "ALLER À CETTE VILLE !\p"
+	.string "ENSUITE, REVIENS ME VOIR QUAND T'AS\n"
+	.string "AU MOINS 4 BADGES !$"
 
 PetalburgCity_Gym_Text_NormanGoToRustboro:
-	.string "DAD: Hm? Aren't you going to the\n"
-	.string "POKéMON GYM in RUSTBORO CITY?\p"
-	.string "There's no challenge for me to\n"
-	.string "battle a greenhorn TRAINER.\p"
-	.string "{PLAYER}, I want you to challenge me\n"
-	.string "when you become a lot stronger.\p"
-	.string "I'll battle you, {PLAYER}, when you\n"
-	.string "can show me four GYM BADGES, okay?$"
+	.string "{ROCKET}Pascal: {AQUA}TU FOUS QUOI ENCORE ICI ?!\p"
+	.string "VA FAIRE CE QUE J'T'AI DIT !$"
 
 PetalburgCity_Gym_Text_NormanGoToDewford:
 	.string "DAD: I see… So, you've beaten\n"
@@ -1549,7 +1537,7 @@ PetalburgCity_Gym_Text_EnterGymLeadersRoom:
 	.string "Do you want to go through?$"
 
 PetalburgCity_Gym_Text_GymStatue:
-	.string "PETALBURG CITY POKéMON GYM$"
+	.string "Arène de Chantiville$"
 
 PetalburgCity_Gym_Text_GymStatueCertified:
 	.string "PETALBURG CITY POKéMON GYM\p"

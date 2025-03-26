@@ -3321,7 +3321,7 @@ static void SpriteCb_AbilityPopUp(struct Sprite *sprite)
     if (!sprite->tHide) // Show
     {
         if (sprite->tIsMain && ++sprite->tFrames == 4)
-            PlaySE(SE_M_DOUBLE_TEAM);
+            PlaySE(SE_CONTEST_MONS_TURN);
         if ((!sprite->tRightToLeft && (sprite->x -= 4) <= sprite->tOriginalX)
             || (sprite->tRightToLeft && (sprite->x += 4) >= sprite->tOriginalX)
            )

@@ -12513,9 +12513,7 @@ static const u16 sSceptileTeachableLearnset[] = {
 
 #if P_FAMILY_TORCHIC
 static const u16 sTorchicTeachableLearnset[] = {
-    MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
-    MOVE_CUT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
     MOVE_FACADE,
@@ -12525,7 +12523,6 @@ static const u16 sTorchicTeachableLearnset[] = {
     MOVE_PROTECT,
     MOVE_REST,
     MOVE_ROCK_SMASH,
-    MOVE_ROCK_TOMB,
     MOVE_STRENGTH,
     MOVE_SUNNY_DAY,
     MOVE_TOXIC,
@@ -12547,7 +12544,6 @@ static const u16 sTorchicTeachableLearnset[] = {
 };
 
 static const u16 sCombuskenTeachableLearnset[] = {
-    MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
     MOVE_BULK_UP,
@@ -12589,7 +12585,6 @@ static const u16 sCombuskenTeachableLearnset[] = {
 };
 
 static const u16 sBlazikenTeachableLearnset[] = {
-    MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
     MOVE_BULK_UP,
@@ -13941,8 +13936,6 @@ static const u16 sSlakingTeachableLearnset[] = {
 
 #if P_FAMILY_NINCADA
 static const u16 sNincadaTeachableLearnset[] = {
-    MOVE_AERIAL_ACE,
-    MOVE_CUT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
     MOVE_FACADE,
@@ -13950,6 +13943,7 @@ static const u16 sNincadaTeachableLearnset[] = {
     MOVE_GIGA_DRAIN,
     MOVE_PROTECT,
     MOVE_REST,
+    MOVE_ROCK_TOMB,
     MOVE_SANDSTORM,
     MOVE_SHADOW_BALL,
     MOVE_SOLAR_BEAM,

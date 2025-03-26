@@ -1230,3 +1230,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route135/scripts.inc"
 
 	.include "data/maps/OldaleTown_House3/scripts.inc"
+
+	.include "data/maps/PetalburgCity_Pokecoffee/scripts.inc"

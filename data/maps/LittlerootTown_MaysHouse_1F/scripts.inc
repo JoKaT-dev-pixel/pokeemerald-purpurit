@@ -359,14 +359,14 @@ RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
 	.string "… … … … … … … … …\n"
 	.string "… … … … … … … … …\p"
 	.string "Tu es {PLAYER}{KUN} et tu habites dans la\n"
-	.string "maison voisine, c'est celà ?\p"
+	.string "maison voisine, c'est cela ?\p"
 	.string "Ma petite fille et toi vous avez le\n"
 	.string "même âge.\p"
 	.string "Hum…\p"
 	.string "Comment elle s'appelle déjà…?$"
 
 RivalsHouse_1F_Text_RivalNicknameChoice:
-	.string "Vous avez choisis “{MAGMA}{RIVAL}{ROCKET}”.\n"
+	.string "Vous avez choisi “{MAGMA}{RIVAL}{ROCKET}”.\n"
 	.string "Confirmez-vous ce choix ?$"
 
 RivalsHouse_1F_Text_RivalNicknameCheck:
@@ -441,6 +441,6 @@ RivalsHouse_1F_Text_BrendanWhoAreYou:
 	.string "Some other time, okay?$"
 
 RivalsHouse_1F_Text_DoYouHavePokemon:
-	.string "Ne fait pas attention à lui.\p"
+	.string "Ne fais pas attention à lui.\p"
 	.string "Ce n'est pas de sa faute s'il n'a plus\n"
 	.string "toute sa tête, le pauvre…$"

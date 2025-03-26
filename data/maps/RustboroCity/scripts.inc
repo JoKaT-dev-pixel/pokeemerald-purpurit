@@ -184,15 +184,15 @@ RustboroCity_EventScript_Woman::
 	msgbox RustboroCity_Text_GymLeaderIsntEasyWithFire, MSGBOX_NPC
 	end
 
-RustboroCity_EventScript_Man1::
+RustboroCity_EventScript_Boy1::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE01_GET, RustboroCity_EventScript_Man1HaveBadge
+	goto_if_set FLAG_BADGE01_GET, RustboroCity_EventScript_Boy1HaveBadge
 	msgbox RustboroCity_Text_HaveYouChallengedGym, MSGBOX_DEFAULT
 	release
 	end
 
-RustboroCity_EventScript_Man1HaveBadge::
+RustboroCity_EventScript_Boy1HaveBadge::
 	msgbox RustboroCity_Text_HeyThatsRustborosGymBadge, MSGBOX_DEFAULT
 	release
 	end
@@ -210,11 +210,11 @@ RustboroCity_EventScript_Boy2BrineyLeftTunnel::
 	release
 	end
 
-RustboroCity_EventScript_Twin::
+RustboroCity_EventScript_Maniac::
 	msgbox RustboroCity_Text_WowYouHavePokemon, MSGBOX_NPC
 	end
 
-RustboroCity_EventScript_NinjaBoy::
+RustboroCity_EventScript_SDFRustBall::
 	showmoneybox 0, 0
 	msgbox RustboroCity_Text_CatchRarePokemonIfIGoToSchool, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, RustboroCity_SDF_EventScript_BuyRustBall
@@ -286,16 +286,17 @@ RustboroCity_EventScript_LittleBoy::
 	release
 	end
 
-RustboroCity_EventScript_LittleGirl::
+RustboroCity_EventScript_Castoutou::
 	lock
 	faceplayer
-	msgbox RustboroCity_Text_PokemonChangeShape, MSGBOX_DEFAULT
-	applymovement LOCALID_LITTLE_GIRL, Common_Movement_FaceOriginalDirection
-	waitmovement 0
+	waitse
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	msgbox RustboroCity_Text_Castoutou, MSGBOX_DEFAULT
+	waitmoncry
 	release
 	end
 
-RustboroCity_EventScript_Man2::
+RustboroCity_EventScript_SchoolKid::
 	lock
 	faceplayer
 	msgbox RustboroCity_Text_TradePokemonGrowFast, MSGBOX_DEFAULT
@@ -359,7 +360,7 @@ RustboroCity_EventScript_StolenGoodsScene::
 	waitmovement 0
 	fadedefaultbgm
 	removeobject LOCALID_DEVON_EMPLOYEE
-	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 30, 9
+	setobjectxyperm LOCALID_DEVON_EMPLOYEE, 28, 9
 	clearflag FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1
 	setflag FLAG_DEVON_GOODS_STOLEN
 	setvar VAR_RUSTBORO_CITY_STATE, 2
@@ -1083,7 +1084,7 @@ RustboroCity_Movement_RivalApproachPlayer7:
 	walk_down
 	step_end
 
-RustboroCity_EventScript_Boy1::
+RustboroCity_EventScript_Lass::
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
 
@@ -1099,11 +1100,11 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner:
 	.string "looking guy went around the corner.$"
 
 RustboroCity_Text_HaveYouChallengedGym:
-	.string "Have you taken the POKéMON GYM\n"
-	.string "challenge?\p"
-	.string "When you get that shiny GYM BADGE\n"
-	.string "in hand, I guess TRAINERS begin to\l"
-	.string "realize what is required of them.$"
+	.string "Wallah, j'ai trop le seum !\p"
+	.string "La vie de ma mère, le Champion est\n"
+	.string "trop Harr wesh !\p"
+	.string "Si t'a un type Feu dans ton équipe,\n"
+	.string "force à toi !$"
 
 RustboroCity_Text_HeyThatsRustborosGymBadge:
 	.string "Hey, that's RUSTBORO's GYM BADGE!\p"
@@ -1111,28 +1112,28 @@ RustboroCity_Text_HeyThatsRustborosGymBadge:
 	.string "RUSTBORO's is the coolest, I'd say.$"
 
 RustboroCity_Text_YoureNewAroundHere:
-	.string "Hé toi, j'ai perdu ma montre.\n"
+	.string "Hé toi, j'ai perdu ma montre !\n"
 	.string "Quelle heure est-il ?$"
 
 Larochelle_Text_10Hours:
 	.string "Mince !\p"
 	.string "J'étais censé commencer à 9 heures…\p"
 	.string "On est d'accord que j'suis pas\n"
-	.string "assez en retard hein ?\p"
+	.string "assez en retard hein ?!\p"
 	.string "… … … … … … … … …$"
 
 Larochelle_Text_InfiniteHours:
 	.string "Mince !\p"
 	.string "Je suis en retard pour le boulot !\p"
 	.string "Oh et puis merde, j'suis mal payer\n"
-	.string "de toute façon…\p"
-	.string "Je fais le mur !$"
+	.string "de toute façon…!\p"
+	.string "C'est décidé, je fais le mur !$"
 
 Larochelle_Text_IDontKnow:
 	.string "Dis-moi…\p"
 	.string "Est-ce que tu sers à quelque chose\n"
-	.string "dans ta vie ?\p"
-	.string "Parce que là tu me sers à rien !\p"
+	.string "dans la vie ?\p"
+	.string "Parce que là, tu me sers à rien !\n"
 	.string "Bouffon va !$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
@@ -1157,43 +1158,46 @@ RustboroCity_Text_MrBrineyLovesPeeko:
 	.string "that PEEKO.$"
 
 RustboroCity_Text_WowYouHavePokemon:
-	.string "Wow, you have POKéMON with you, too.\p"
-	.string "When I get bigger, I'm going to go\n"
-	.string "places with POKéMON, too.$"
+	.string "Je vois enfin la lumière du jour !\p"
+	.string "Disons que ça fait 8 ans que je ne suis\n"
+	.string "pas sorti de ma chambre.\p"
+	.string "Tu sais ce que ça fait quand on est un\n"
+	.string "joueur pro de LoL !$"
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
-	.string "Je vends des Poké Balls très spéciales\n"
-	.string "et très résistantes.\p"
-	.string "Ça te fera seulement 200 ¥ pour 5\n"
-	.string "Poké Balls, ça marche ?$"
+	.string "Je t'offre des Balls de très bonne\n"
+	.string "qualité pour 200 ¥, marché conclus ?!$"
 
 RustboroCity_SDF_Text_HereYouGo:
-	.string "Hehehe…\p"
-	.string "Quel pigeon celui-là.\p"
-	.string "Euh je veux dire…\p"
-	.string "Voilà tes Poké Balls l'ami !$"
+	.string "Hé, hé, hé !\n"
+	.string "Quel pigeon celui-là !\p"
+	.string "Euh… Je veux dire…!\p"
+	.string "Voilà tes Balls comme promis !\n"
+	.string "Maintenant, va-t'en !$"
 
 RustboroCity_SDF_Text_NotEnoughMoney:
-	.string "You don't have the money.$"
+	.string "Dégage, sale pauvre !$"
 
 RustboroCity_SDF_Text_ThatsTooBad:
-	.string "Non ?\n"
-	.string "Va te faire foutre !$"
+	.string "Quoi ?!\n"
+	.string "Va te faire foutre, abruti !$"
 
 RustboroCity_Text_PokemonCanChangeLookFromExp:
-	.string "If a POKéMON gains experience in\n"
-	.string "battles, it can sometimes change in\l"
-	.string "the way it looks.$"
+	.string "J'essaie de rendre mon Castoutou\n"
+	.string "plus fort avec des Protéines mais\l"
+	.string "il n'évolue toujours pas !$"
 
-RustboroCity_Text_PokemonChangeShape:
-	.string "A POKéMON changes shape?\n"
-	.string "If one did that, I would be shocked!$"
+RustboroCity_Text_Castoutou:
+	.string "Castoutou: Grrr !$"
 
 RustboroCity_Text_TradePokemonGrowFast:
-	.string "A POKéMON you get in a trade from\n"
-	.string "someone grows fast.\p"
-	.string "But if you don't have certain GYM\n"
-	.string "BADGES, it may not obey you…$"
+	.string "J'ai fais une grosse découverte !\p"
+	.string "Savais-tu que si tu possèdes un\n"
+	.string "Pokémon échangé, son gain d'expérience\l"
+	.string "est multiplié ?\p"
+	.string "Attention !\p"
+	.string "Il se pourrait qu'il puisse te désobéir\n"
+	.string "si tu n'en obtiens pas assez de Badges.$"
 
 RustboroCity_Text_OutOfTheWay:
 	.string "Get out!\n"
@@ -1338,9 +1342,9 @@ RustboroCity_Text_DevonCorpSign:
 	.string "“Think Different”$"
 
 RustboroCity_Text_GymSign:
-	.string "Arène de Larochelle\n"
-	.string "CHAMPION: Didier Raoult\l"
-	.string "“Je suis un grand scientifique !”$"
+	.string "Arène de Larochelle\p"
+	.string "Champion: Jamy\n"
+	.string "“La science évolue sans cesse !”$"
 
 RustboroCity_Text_DevonCorpBranchOfficeSign:
 	.string "DEVON CORP. BRANCH OFFICE\p"
@@ -1355,7 +1359,8 @@ RustboroCity_Text_TrainersSchoolSign:
 	.string "Cathédrale$"
 
 RustboroCity_Text_CuttersHouse:
-	.string "Golden Barber$"
+	.string "Barber Shop\n"
+	.string "“Salon de coiffure.”$"
 
 RustboroCity_Text_DevelopedNewPokenavFeature:
 	.string "I've been developing an added feature\n"

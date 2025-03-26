@@ -1314,7 +1314,7 @@
     {
       "id": "LAYOUT_GRANITE_CAVE_1F",
       "name": "GraniteCave_1F_Layout",
-      "width": 42,
+      "width": 52,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
@@ -4414,8 +4414,8 @@
     {
       "id": "LAYOUT_ROUTE135",
       "name": "Route135_Layout",
-      "width": 80,
-      "height": 64,
+      "width": 110,
+      "height": 52,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route135/border.bin",
@@ -4430,6 +4430,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/OldaleTown_House3/border.bin",
       "blockdata_filepath": "data/layouts/OldaleTown_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_CITY_POKECOFFEE",
+      "name": "PetalburgCity_Pokecoffee_Layout",
+      "width": 11,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MossdeepGameCorner",
+      "border_filepath": "data/layouts/PetalburgCity_Pokecoffee/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_Pokecoffee/map.bin"
     }
   ]
 }

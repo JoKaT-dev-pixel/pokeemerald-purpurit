@@ -40,8 +40,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_STURDY] =
     {
-        .name = _("Sturdy"),
-        .description = COMPOUND_STRING("Negates 1-hit KO attacks."),
+        .name = _("Fermeté"),
+        .description = COMPOUND_STRING("Protège des capacités mettant\nK.O. en un coup."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -207,8 +207,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_LEVITATE] =
     {
-        .name = _("Levitate"),
-        .description = COMPOUND_STRING("Not hit by Ground attacks."),
+        .name = _("Lévitation"),
+        .description = COMPOUND_STRING("Immunise contre toutes les\ncapacités de type Sol."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -270,8 +270,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_CHLOROPHYLL] =
     {
-        .name = _("Chlorophyll"),
-        .description = COMPOUND_STRING("Raises Speed in sunshine."),
+        .name = _("Chlorophylle"),
+        .description = COMPOUND_STRING("Augmente la Vitesse du Pokémon\ns'il y a du soleil."),
         .aiRating = 6,
     },
 
@@ -770,8 +770,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_LEAF_GUARD] =
     {
+        #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Feuille Garde"),
+    #else
         .name = _("Leaf Guard"),
-        .description = COMPOUND_STRING("Blocks status in sunshine."),
+    #endif
+        .description = COMPOUND_STRING("Empêche les problèmes de statut\nau soleil."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -813,8 +817,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_FOREWARN] =
     {
-        .name = _("Forewarn"),
-        .description = COMPOUND_STRING("Determines a foe's move."),
+        .name = _("Prédiction"),
+        .description = COMPOUND_STRING("Découvre la capacité ennemie\nla plus puissante."),
         .aiRating = 2,
     },
 

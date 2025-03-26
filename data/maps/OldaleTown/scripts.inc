@@ -286,11 +286,11 @@ OldaleTown_Text_IWorkAtPokemonMart:
 
 OldaleTown_Text_ThisIsAPokemonMart:
 	.string "Tu vois ?\p"
-	.string "Ça s'est ma Boutique Pokémon !\p"
-	.string "La meilleur de tout le quartier,\n"
+	.string "Ça, c'est ma Boutique Pokémon !\p"
+	.string "La meilleure de tout le quartier,\n"
 	.string "il n'y a pas photo !\p"
-	.string "Je vends de bons objets très variés et\n"
-	.string "pas des trucs de pacotille !\p"
+	.string "Je vends de bons objets très variés\n"
+	.string "et pas des trucs de pacotille !\p"
 	.string "Tiens ceci, c'est cadeau de la maison !\n"
 	.string "Reviens me voir quand tu veux !$"
 

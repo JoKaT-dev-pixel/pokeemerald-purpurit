@@ -42,7 +42,9 @@ Route106_EventScript_Ned::
 	end
 
 Route106_Text_TrainerTips:
-	.string "TRAINER TIPS\p"
-	.string "Advice on catching POKéMON with a ROD:\n"
-	.string "Press the A Button if you get a bite.$"
+	.string "“Conseils aux Dresseurs”\p"
+	.string "Si vous voyez des personnes à poil,\n"
+	.string "c'est tout à fait normal.\p"
+	.string "Ils veulent se sentir à l’aise et\n"
+	.string "mieux accepter leur corps.$"
 

@@ -345,7 +345,7 @@ VERSION        = FD 07 @ "EMERALD"
 AQUA           = FD 08
 MAGMA          = FD 09
 ROCKET         = FD 0A
-MAXIE          = FD 0B
+EMERALD        = FD 0B
 KYOGRE         = FD 0C
 GROUDON        = FD 0D
 

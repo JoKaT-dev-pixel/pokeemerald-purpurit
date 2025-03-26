@@ -4,7 +4,7 @@ gText_Birch_Welcome::
 	.string "Je me retrouve devant cette caméra\n"
 	.string "pour vous dire que je quitte ma putain\l"
 	.string "de carrière de streameur et devenir\l"
-	.string "Chercheur Pokémon.\p"
+	.string "Chercheur Pokémon !\p"
 	.string "$"
 
 gText_Birch_Pokemon::
@@ -20,7 +20,7 @@ gText_Birch_MainSpeech::
 	.string "Oui bon, ce truc ressemble à une\n"
 	.string "tasse de café…\p"
 	.string "Mais ! C'est une tasse de café,\n"
-	.string "VIVANT !\p"
+	.string "VIVANTE !\p"
 	.string "C'est atypique mais ça reste un\n"
 	.string "Pokémon.\p"
 	.string "Pas convaincu ?\p"
@@ -42,12 +42,14 @@ gText_Birch_SoItsPlayer::
 	.string "{PLAYER}{KUN} ?$"
 
 gText_Birch_YourePlayer::
-	.string "D'accord {PLAYER}{KUN}.\p"
+	.string "D'accord {PLAYER}{KUN} !\p"
 	.string "Désormais tu seras le protagoniste\n"
 	.string "de cette nouvelle aventure palpitante\l"
 	.string "et inoubliable.\p"
-	.string "Je serai dans mon labo demain matin à\n"
-	.string "Bourg Paumé. Ne sois pas en retard !\p"
+	.string "Demain, je prévois d'aller dans mon\n"
+	.string "nouveau laboratoire à Bourg Paumé.\p"
+	.string "Alors si tu veux un Pokémon, ne sois\n"
+	.string "pas en retard !\p"
 	.string "$"
 
 gText_Birch_AreYouReady::

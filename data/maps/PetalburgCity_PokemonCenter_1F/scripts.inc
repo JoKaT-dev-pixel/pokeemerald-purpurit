@@ -18,7 +18,7 @@ PetalburgCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
-PetalburgCity_PokemonCenter_1F_EventScript_FatMan::
+PetalburgCity_PokemonCenter_1F_EventScript_Woman::
 	msgbox PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem, MSGBOX_NPC
 	end
 
@@ -26,7 +26,7 @@ PetalburgCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP, MSGBOX_NPC
 	end
 
-PetalburgCity_PokemonCenter_1F_EventScript_Woman::
+PetalburgCity_PokemonCenter_1F_EventScript_FatMan::
 	lock
 	faceplayer
 	msgbox PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon, MSGBOX_DEFAULT
@@ -54,43 +54,63 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayMudkipType::
 	msgbox PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType, MSGBOX_DEFAULT
 	return
 
+PetalburgCity_PokemonCenter_1F_EventScript_Mimicule::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_WHISMUR, CRY_MODE_NORMAL
+	msgbox PetalburgCity_PokemonCenter_1F_Text_Mimicule, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 PetalburgCity_PokemonCenter_1F_Text_PCStorageSystem:
-	.string "That PC-based POKéMON Storage\n"
-	.string "System…\p"
-	.string "Whoever made it must be some kind\n"
-	.string "of a scientific wizard!$"
+	.string "C'est trop cool le fait qu'ils ont\n"
+	.string "créer un système de stockage pour\l"
+	.string "Pokémon dans un PC !\p"
+	.string "Tu imagines toi de porter plus d'une\n"
+	.string "centaine de Pokémon ?!$"
 
 PetalburgCity_PokemonCenter_1F_Text_OranBerryRegainedHP:
-	.string "When my POKéMON ate an\n"
-	.string "ORAN BERRY, it regained HP!$"
+	.string "Tu veux bien me suivre sur Twitch ?\n"
+	.string "Mon compte c'est GoldenChêvre-miel !$"
 
 PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
-	.string "There are many types of POKéMON.\p"
-	.string "All types have their strengths and\n"
-	.string "weaknesses against other types.\p"
-	.string "Depending on the types of POKéMON,\n"
-	.string "a battle could be easy or hard.$"
+	.string "J'ai construit une table des types\n"
+	.string "de Pokémon.\p"
+	.string "Chaque type possède des faiblesses,\n"
+	.string "des résistances et parfois même\l"
+	.string "des immunités.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
-	.string "For example, your TREECKO\n"
-	.string "is a GRASS type.\p"
-	.string "It's strong against the WATER and\n"
-	.string "GROUND types.\p"
-	.string "But, it's weak against FIRE-type\n"
-	.string "POKéMON.$"
+	.string "Par exemple, ton Microrge est de\n"
+	.string "type Plante.\p"
+	.string "Les capacités de type Plante sont\n"
+	.string "efficaces sur les types Eau, Roche\l"
+	.string "et Sol.\p"
+	.string "Cependant, ils sont peu efficaces\n"
+	.string "sur les types Dragon, Feu, Insecte,\l"
+	.string "Plante, Poison et Vol.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TorchicIsFireType:
-	.string "For example, your TORCHIC\n"
-	.string "is a FIRE type.\p"
-	.string "It's strong against the GRASS and\n"
-	.string "BUG types.\p"
-	.string "But, it's weak against WATER-type\n"
-	.string "POKéMON.$"
+	.string "Par exemple, ton Serpuff est de\n"
+	.string "type Feu.\p"
+	.string "Les capacités de type Feu sont\n"
+	.string "efficaces sur les types Glace,\l"
+	.string "Insecte et Plante.\p"
+	.string "Cependant, ils sont peu efficaces\n"
+	.string "sur les types Dragon, Eau, Feu et\l"
+	.string "Roche.$"
 
 PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
-	.string "For example, your MUDKIP\n"
-	.string "is a WATER type.\p"
-	.string "It's strong against the FIRE type.\p"
-	.string "But, it's weak against GRASS-type\n"
-	.string "and ELECTRIC-type POKéMON.$"
+	.string "Par exemple, ton Lubryon est de\n"
+	.string "type Eau.\p"
+	.string "Les capacités de type Plante sont\n"
+	.string "efficaces sur les types Feu, Roche\l"
+	.string "et Sol.\p"
+	.string "Cependant, ils sont peu efficaces\n"
+	.string "sur les types Dragon, Eau et Plante.$"
+
+PetalburgCity_PokemonCenter_1F_Text_Mimicule:
+	.string "Mimicule: Mimi !$"
 

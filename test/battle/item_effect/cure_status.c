@@ -251,11 +251,11 @@ SINGLE_BATTLE_TEST("Casteliacone heals a battler from any primary status")
     PARAMETRIZE { status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE { status = STATUS1_SLEEP; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_CASTELIACONE].battleUsage == EFFECT_ITEM_CURE_STATUS);
+        ASSUME(gItemsInfo[ITEM_HOT_COFFEE].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_WOBBUFFET) { Status1(status); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_CASTELIACONE, partyIndex: 0); }
+        TURN { USE_ITEM(player, ITEM_HOT_COFFEE, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet had its status healed!");
     } THEN {
@@ -338,7 +338,7 @@ SINGLE_BATTLE_TEST("Full Heal, Heal Powder and Local Specialties heal a battler 
     PARAMETRIZE { item = ITEM_LAVA_COOKIE; }
     PARAMETRIZE { item = ITEM_RAGE_CANDY_BAR; }
     PARAMETRIZE { item = ITEM_OLD_GATEAU; }
-    PARAMETRIZE { item = ITEM_CASTELIACONE; }
+    PARAMETRIZE { item = ITEM_HOT_COFFEE; }
     PARAMETRIZE { item = ITEM_LUMIOSE_GALETTE; }
     PARAMETRIZE { item = ITEM_SHALOUR_SABLE; }
     PARAMETRIZE { item = ITEM_BIG_MALASADA; }

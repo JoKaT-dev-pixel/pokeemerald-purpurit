@@ -1,6 +1,29 @@
 MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce:
-	.string "This move can be learned only\n"
-	.string "once. Is that okay?$"
+	.string "Cette capacité ne peut être\n"
+	.string "apprise qu'une fois, ça marche ?$"
+
+MoveTutor_Text_PepperPowderTeach:
+	.string "Manger de la nourriture épicée peut\n"
+	.string "te donner la diarrhée.\p"
+	.string "T'inquiète pas, moi j'ai l'habitude.\p"
+	.string "Même si ça fait mal au cul, c'est\n"
+	.string "comme si ça donne un effet de vidange.\p"
+	.string "J'utilise des tas d'épices pour bien\n"
+	.string "pimenter mes délicieux plats.\p"
+	.string "Si tu as envie, je peux t'apprendre\n"
+	.string "à t'en servir avec Poudre Piquante !$"
+
+MoveTutor_Text_PepperPowderDeclined:
+	.string "C'est pas si grave si tu ne tolères\n"
+	.string "pas trop les repas épicés.$"
+
+MoveTutor_Text_PepperPowderWhichMon:
+	.string "Très bien ! Dans ce cas, sur quel\n"
+	.string "Pokémon veux-tu que j'enseigne ?$"
+
+MoveTutor_Text_PepperPowderTaught:
+	.string "J'en suis ravie ! Le piment c'est\n"
+	.string "bon pour la santé.$"
 
 MoveTutor_Text_SwaggerTeach:
 	.string "Heh! My POKéMON totally rules!\n"

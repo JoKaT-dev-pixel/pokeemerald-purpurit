@@ -394,12 +394,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_FRIEND_BALL] =
     {
-        .name = _("Friend Ball"),
+        .name = _("Copain Ball"),
         .price = (I_PRICE >= GEN_7) ? 0 : 300,
         .description = COMPOUND_STRING(
-            "A Ball that makes\n"
-            "a Pokémon friendly\n"
-            "when caught."),
+            "Une Ball qui permet\n"
+            "de rendre très vite\n"
+            "amical un Pokémon."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
@@ -1120,16 +1120,24 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
     },
 
-    [ITEM_CASTELIACONE] =
+    [ITEM_HOT_COFFEE] =
     {
-        .name = _("Casteliacone"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 100,
-        .description = sFullHealDesc,
-        .pocket = POCKET_ITEMS,
+        .name = _("Café Chaud"),
+        .price = 250,
+        .holdEffectParam = 25,
+        .description = COMPOUND_STRING(
+            "Un café avec une\n"
+            "fine saveur qui\n"
+        #if I_HEALTH_RECOVERY >= GEN_7
+            "restaure 25 PV."),
+        #else
+            "by 50 points."),
+        #endif
+        .pocket = POCKET_MEDICINES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_HotCoffee,
         .flingPower = 30,
     },
 
@@ -2319,7 +2327,7 @@ const struct Item gItemsInfo[] =
         .name = _("Petit Champi"),
         .price = 500 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
-            "Un champignon assez\n"
+            "Un champi assez\n"
             "rare. Peut être\n"
             "vendu à bas prix."),
         .pocket = POCKET_ITEMS,
@@ -6778,11 +6786,14 @@ const struct Item gItemsInfo[] =
 
     [ITEM_MIRACLE_SEED] =
     {
-        .name = _("Miracle Seed"),
+        .name = _("Graine Miracl"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_GRASS_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = sRoseIncenseDesc,
+        .description = COMPOUND_STRING(
+            "Objet tenu montant\n"
+            "la puissance des\n"
+            "capacités Plante."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -8167,9 +8178,9 @@ const struct Item gItemsInfo[] =
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_PSN,
         .description = COMPOUND_STRING(
-            "Objet tenu qui\n"
-            "soigne du poison\n"
-            "pendant un combat."),
+            "Une Baie qui soigne\n"
+            "du poison pendant\n"
+            "un combat."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -8241,7 +8252,7 @@ const struct Item gItemsInfo[] =
         .holdEffect = HOLD_EFFECT_RESTORE_HP,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
-            "Objet tenu qui\n"
+            "Une Baie qui\n"
             "restaure 10 PV\n"
             "pendant un combat."),
         .pocket = POCKET_BERRIES,
@@ -8290,16 +8301,16 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SITRUS_BERRY] =
     {
-        .name = _("Sitrus Berry"),
-        .pluralName = _("Sitrus Berries"),
+        .name = _("Baie Sitrus"),
+        .pluralName = _("Baies Sitrus"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         #if I_SITRUS_BERRY_HEAL >= GEN_4
             .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
             .holdEffectParam = 25,
             .description = COMPOUND_STRING(
-                "A hold item that\n"
-                "restores the user's\n"
-                "HP a little."),
+                "Une Baie qui\n"
+                "restaure quelques\n"
+                "PV au combat."),
         #else
             .holdEffect = HOLD_EFFECT_RESTORE_HP,
             .holdEffectParam = 30,
@@ -10614,9 +10625,9 @@ const struct Item gItemsInfo[] =
         .name = _("CS01"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Une attaque basique.\n"
-            "Peut couper des petits\n"
-            "arbres."),
+            "Permet de couper des\n"
+            "arbustes bloquant le\n"
+            "chemin."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

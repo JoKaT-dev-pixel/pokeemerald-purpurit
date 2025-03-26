@@ -9,7 +9,4 @@
 void HideMapNamePopUpWindow(void);
 void ShowMapNamePopup(void);
 
-#define MAPPOPUP_24_HOUR_TIME  FALSE
-#define MAPPOPUP_ALPHA_BLEND   FALSE
-
 #endif //GUARD_MAP_NAME_POPUP_H

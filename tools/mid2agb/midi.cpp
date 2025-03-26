@@ -953,11 +953,11 @@ void ReadMidiTracks()
                 CalculateWaits(*events);
 
                 if (g_compressionEnabled)
-                    Compress(*events);
+                Compress(*events);
 
                 PrintAgbTrack(*events);
 
-                g_agbTrack++;
+            g_agbTrack++;
             }
         }
     }

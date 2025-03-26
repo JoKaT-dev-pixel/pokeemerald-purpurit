@@ -1,17 +1,17 @@
 RustboroCity_Gym_MapScripts::
 	.byte 0
 
-Larochelle_Arene_EventScript_Raoult::
+Larochelle_Arene_EventScript_Jamy::
 	setvar VAR_MUGSHOT_ID, MUGSHOT_ROXANNE
-	trainerbattle_single TRAINER_ROXANNE_1, Larochelle_Arene_Text_RaoultIntro, Larochelle_Arene_Text_RaoultDefeat, Larochelle_Arene_EventScript_RaoultDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_ROXANNE_1, Larochelle_Arene_Text_JamyIntro, Larochelle_Arene_Text_JamyDefeat, Larochelle_Arene_EventScript_JamyDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Larochelle_Arene_EventScript_RaoultRematch
+	goto_if_eq VAR_RESULT, TRUE, Larochelle_Arene_EventScript_JamyRematch
 	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GiveRockTomb
-	msgbox Larochelle_Arene_Text_RaoultPostBattle, MSGBOX_DEFAULT
+	msgbox Larochelle_Arene_Text_JamyPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
-Larochelle_Arene_EventScript_RaoultDefeated::
+Larochelle_Arene_EventScript_JamyDefeated::
 	message RustboroCity_Gym_Text_ReceivedStoneBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -34,9 +34,9 @@ RustboroCity_Gym_EventScript_GiveRockTomb::
 	release
 	end
 
-Larochelle_Arene_EventScript_RaoultRematch::
-	trainerbattle_rematch_double TRAINER_ROXANNE_1, Larochelle_Arene_Text_RaoultPreRematch, Larochelle_Arene_Text_RaoultRematchDefeat, Larochelle_Arene_Text_RaoultRematchNeedTwoMons
-	msgbox Larochelle_Arene_Text_RaoultPostRematch, MSGBOX_AUTOCLOSE
+Larochelle_Arene_EventScript_JamyRematch::
+	trainerbattle_rematch_double TRAINER_ROXANNE_1, Larochelle_Arene_Text_JamyPreRematch, Larochelle_Arene_Text_JamyRematchDefeat, Larochelle_Arene_Text_JamyRematchNeedTwoMons
+	msgbox Larochelle_Arene_Text_JamyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 RustboroCity_Gym_EventScript_Josh::
@@ -101,7 +101,7 @@ RustboroCity_Gym_EventScript_GymStatue::
 
 RustboroCity_Gym_EventScript_RegisterRoxanne::
 	lockall
-	pokenavcall Larochelle_Arene_Text_RaoultRegisterCall
+	pokenavcall Larochelle_Arene_Text_JamyRegisterCall
 	waitmessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
@@ -189,9 +189,9 @@ RustboroCity_Gym_Text_MarcPostBattle:
 	.string "It took smarts and sense for her to\n"
 	.string "pick the ROCK type at her young age.$"
 
-Larochelle_Arene_Text_RaoultIntro:
+Larochelle_Arene_Text_JamyIntro:
 	.string "Bienvenue dans l'Arène de Larochelle.\n"
-	.string "Je suis le champion Didier Raoult.\p"
+	.string "Je suis le champion Jamy !\p"
 	.string "J'ai un talent dans la science, c'est\n"
 	.string "l'observation.\p"
 	.string "Je suis un bon observateur.\p"
@@ -203,9 +203,8 @@ Larochelle_Arene_Text_RaoultIntro:
 	.string "Laisse-moi te prouver que la science\n"
 	.string "peut être aussi un sport de combat !$"
 
-Larochelle_Arene_Text_RaoultDefeat:
-	.string "So…\n"
-	.string "I lost…\p"
+Larochelle_Arene_Text_JamyDefeat:
+	.string "ÉNORME !\p"
 	.string "It seems that I still have much more\n"
 	.string "to learn…\p"
 	.string "I understand.\p"
@@ -236,7 +235,7 @@ RustboroCity_Gym_Text_ExplainRockTomb:
 	.string "Remember, a TM can be used only once,\n"
 	.string "so think before you use it.$"
 
-Larochelle_Arene_Text_RaoultPostBattle:
+Larochelle_Arene_Text_JamyPostBattle:
 	.string "Since you are so strong, you should\n"
 	.string "challenge other GYM LEADERS.\p"
 	.string "By battling many TRAINERS, you should\n"
@@ -250,7 +249,7 @@ RustboroCity_Gym_Text_GymStatueCertified:
 	.string "ROXANNE'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
-Larochelle_Arene_Text_RaoultRegisterCall:
+Larochelle_Arene_Text_JamyRegisterCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
 	.string "ROXANNE: Oh, hello, {PLAYER}?\n"
@@ -271,7 +270,7 @@ RustboroCity_Gym_Text_RegisteredRoxanne:
 	.string "Registered GYM LEADER ROXANNE\n"
 	.string "in the POKéNAV.$"
 
-Larochelle_Arene_Text_RaoultPreRematch:
+Larochelle_Arene_Text_JamyPreRematch:
 	.string "ROXANNE: I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"
@@ -279,17 +278,17 @@ Larochelle_Arene_Text_RaoultPreRematch:
 	.string "I would like to see how much better\n"
 	.string "we've become. Let us battle!$"
 
-Larochelle_Arene_Text_RaoultRematchDefeat:
+Larochelle_Arene_Text_JamyRematchDefeat:
 	.string "Grr…\n"
 	.string "Again, I have lost…$"
 
-Larochelle_Arene_Text_RaoultPostRematch:
+Larochelle_Arene_Text_JamyPostRematch:
 	.string "ROXANNE: I still have much to learn\n"
 	.string "when it comes to battling POKéMON.\p"
 	.string "That awareness makes me love battling\n"
 	.string "all that much more!$"
 
-Larochelle_Arene_Text_RaoultRematchNeedTwoMons:
+Larochelle_Arene_Text_JamyRematchNeedTwoMons:
 	.string "ROXANNE: I'm so glad to see you again.\n"
 	.string "I'm ROXANNE, the GYM LEADER here.\p"
 	.string "I'm sure we've both experienced many\n"

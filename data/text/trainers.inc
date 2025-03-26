@@ -35,26 +35,23 @@ Route102_Text_CalvinRematchPostBattle:
 	.string "I'll get stronger, too.$"
 
 BoisChantilly_Text_MatthieuIntro:
-	.string "Bienvenue dans les bois de\n"
-	.string "Chantiville !\p"
-	.string "Je fais le guide, tu me suis ?$"
+	.string "En tant que scout, il est mon devoir\n"
+	.string "de faire le guide aux visiteurs !$"
 
 BoisChantilly_Text_MatthieuDefeated:
-	.string "I called you because I thought\n"
-	.string "I could beat you…$"
+	.string "Tu mérites d'être chez les scouts !$"
 
 BoisChantilly_Text_MatthieuPostBattle:
 	.string "C'est dangereux de se promener seul\n"
-	.string "dans les bois surtout si tu as\l"
-	.string "un mauvais sens d'orientation.$"
+	.string "dans les bois !$"
 
 RouteD2_Text_QuentinIntro:
 	.string "Lorsque les yeux de deux dresseurs\n"
-	.string "se croisent, ils doivent passer\l"
-	.string "à l'attaque !$"
+	.string "se croisent, ils doivent passer à\l"
+	.string "l'attaque !$"
 
 RouteD2_Text_QuentinDefeated:
-	.string "Bon sang, j’ai perdu…$"
+	.string "Bon sang, j’ai perdu…!$"
 
 RouteD2_Text_QuentinPostBattle:
 	.string "Le plus important c'est qu'on est\n"
@@ -2189,16 +2186,18 @@ Route116_Text_JoeyPostBattle:
 	.string "Heu non. Non, non, oublie ça.$"
 
 Route116_Text_JoseIntro:
-	.string "My BUG POKéMON are tough!\n"
-	.string "Let's battle!$"
+	.string "Moi, je dis qu'il y a peut-être du\n"
+	.string "XANA là-dessous !$"
 
 Route116_Text_JoseDefeat:
-	.string "I lost!\n"
-	.string "I thought I had you!$"
+	.string "C'est un coup de XANA, j’en suis\n"
+	.string "quasiment sûr !$"
 
 Route116_Text_JosePostBattle:
-	.string "BUG POKéMON evolve quickly.\n"
-	.string "So they get strong quickly, too.$"
+	.string "Je suis sûr d'être sur la bonne voie !\p"
+	.string "Mais il faudrait les ordinateurs du\n"
+	.string "labo pour vérifier les calculs !\p"
+	.string "J'vais aller à l'usine !$"
 
 Route116_Text_JaniceIntro:
 	.string "Let me teach you how strong my\n"
@@ -2255,15 +2254,15 @@ Route116_Text_JerryPostRematch:
 	.string "If I don't, ROXANNE will be steamed.$"
 
 Route116_Text_KarenIntro:
-	.string "I study at school, and I study on\n"
-	.string "the way home, too!$"
+	.string "XANA vient de lancer une attaque !$"
 
 Route116_Text_KarenDefeat:
-	.string "I'm in shock--I lost?$"
+	.string "Ce n'est pas vrai…!\p"
+	.string "Dites-moi que je rêve !$"
 
 Route116_Text_KarenPostBattle:
-	.string "Awww, I'll never become an elegant\n"
-	.string "TRAINER like ROXANNE this way!$"
+	.string "J'ai besoin de prendre un peu l'air,\n"
+	.string "si tu veux bien…$"
 
 Route116_Text_KarenRegister1:
 	.string "Oh, wow! Isn't that a POKéNAV?\n"
@@ -2300,40 +2299,40 @@ Route116_Text_SarahPostBattle:
 	.string "my wealth has no meaning.$"
 
 Route116_Text_DawsonIntro:
-	.string "When you lay your eyes on my POKéMON's\n"
-	.string "gorgeous fur, their beauty will render\l"
-	.string "you helpless!$"
+	.string "Psst, je suis pauvre…\n"
+	.string "Veux-tu acheter mes pieds ?$"
 
 Route116_Text_DawsonDefeat:
-	.string "Oh, baby, say it isn't so!$"
+	.string "Non seulement je n'ai plus d'argent,\n"
+	.string "mais en plus, j'ai perdu ma dignité !$"
 
 Route116_Text_DawsonPostBattle:
-	.string "Oh, no, no, no!\n"
-	.string "You've mussed up my POKéMON's fur!\l"
-	.string "You've ruined my hairdo, too!\l"
-	.string "I'll have to call my stylist now!$"
+	.string "Je te fais une remises de 50% sur\n"
+	.string "une partie de mon corps !$"
 
 Route116_Text_DevanIntro:
-	.string "We'll rock you hard!$"
+	.string "Il n'y a pas de temps à perdre !\n"
+	.string "On y va !$"
 
 Route116_Text_DevanDefeat:
-	.string "Aiyiyi!\n"
-	.string "No contest at all!$"
+	.string "Refais-moi un coup comme ça, et\n"
+	.string "t'es mort, pigé ?!$"
 
 Route116_Text_DevanPostBattle:
-	.string "I should try different POKéMON\n"
-	.string "types, that's what I ought to do.$"
+	.string "T'es gentil, tu me lâches !$"
 
 Route116_Text_JohnsonIntro:
-	.string "It's a dead end up here.\n"
-	.string "I'm bored, so can we battle?$"
+	.string "Oh, ça alors !\n"
+	.string "Y'a du thon au menu !$"
 
 Route116_Text_JohnsonDefeat:
-	.string "That was fun even though I lost.$"
+	.string "Eh, relax Max !\p"
+	.string "Je ne l'ai pas abîmé, ton joujou !$"
 
 Route116_Text_JohnsonPostBattle:
-	.string "Want to stay here and keep\n"
-	.string "me company?$"
+	.string "Oh non, en parlant de joujou, faut pas\n"
+	.string "que j'oublie d'aller nourrir mon\l"
+	.string "Castoutou moi !$"
 
 Route117_Text_IsaacIntro:
 	.string "Listen, could I get you to battle\n"
