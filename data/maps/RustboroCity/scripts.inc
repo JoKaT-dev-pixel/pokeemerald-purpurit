@@ -1103,7 +1103,7 @@ RustboroCity_Text_HaveYouChallengedGym:
 	.string "Wallah, j'ai trop le seum !\p"
 	.string "La vie de ma mère, le Champion est\n"
 	.string "trop Harr wesh !\p"
-	.string "Si t'a un type Feu dans ton équipe,\n"
+	.string "Si t'as un type Feu dans ton équipe,\n"
 	.string "force à toi !$"
 
 RustboroCity_Text_HeyThatsRustborosGymBadge:
@@ -1125,7 +1125,7 @@ Larochelle_Text_10Hours:
 Larochelle_Text_InfiniteHours:
 	.string "Mince !\p"
 	.string "Je suis en retard pour le boulot !\p"
-	.string "Oh et puis merde, j'suis mal payer\n"
+	.string "Oh et puis merde, j'suis mal payé\n"
 	.string "de toute façon…!\p"
 	.string "C'est décidé, je fais le mur !$"
 
@@ -1166,7 +1166,7 @@ RustboroCity_Text_WowYouHavePokemon:
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
 	.string "Je t'offre des Balls de très bonne\n"
-	.string "qualité pour 200 ¥, marché conclus ?!$"
+	.string "qualité pour 200 ¥, marché conclu ?!$"
 
 RustboroCity_SDF_Text_HereYouGo:
 	.string "Hé, hé, hé !\n"

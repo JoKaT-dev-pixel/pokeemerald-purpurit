@@ -641,7 +641,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(POKEMANIAC, "le Furry", 15, ITEM_FRIEND_BALL),
     TRAINER_CLASS(GUITARIST, "le Rockeur", 8),
     TRAINER_CLASS(KINDLER, "le Drogué", 3),
-    TRAINER_CLASS(CAMPER, "l'Artiste", 8),
+    TRAINER_CLASS(CAMPER, "le Peintre", 8),
     TRAINER_CLASS(PICNICKER, "la Féministe", 4),
     TRAINER_CLASS(BUG_MANIAC, "le Hackeur", 15, ITEM_CHERISH_BALL),
     TRAINER_CLASS(PSYCHIC, "Kinésiste", 6),
@@ -671,7 +671,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(MAGMA_LEADER, "MAGMA LEADER", 20, ITEM_MASTER_BALL),
     TRAINER_CLASS(LASS, "la Fillette", 4),
     TRAINER_CLASS(YOUNG_COUPLE, "les Amoureux", 8),
-    TRAINER_CLASS(OLD_COUPLE, "Lacoste TN", 10, ITEM_BLACK_BALL),
+    TRAINER_CLASS(OLD_COUPLE, "Lacoste TN", 2),
     TRAINER_CLASS(SIS_AND_BRO, "le Rappeur", 20),
     TRAINER_CLASS(SALON_MAIDEN, "SALON MAIDEN"),
     TRAINER_CLASS(DOME_ACE, "DOME ACE"),
@@ -682,7 +682,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(PYRAMID_KING, "PYRAMID KING"),
     TRAINER_CLASS(RS_PROTAG, "{PKMN} TRAINER"),
     TRAINER_CLASS(NUN, "la Nonne", 3, ITEM_HEAL_BALL),
-    TRAINER_CLASS(PASTOR, "le Curé", 6),
+    TRAINER_CLASS(GRAFFITIST, "le Tagueur", 6, ITEM_BLACK_BALL),
 };
 
 static void (* const sTurnActionsFuncsTable[])(void) =
@@ -5186,6 +5186,10 @@ s8 GetMovePriority(u32 battler, u16 move)
         gProtectStructs[battler].regalElevated = 1;
         priority++;
     }
+    else if (ability == ABILITY_PITCH_PERFECT && gMovesInfo[move].soundMove)
+    {
+        priority++;
+    }
 
     if (gProtectStructs[battler].quash)
         priority = -8;
@@ -6144,6 +6148,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
                  || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
                  || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
                  || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_ELECTRIC))
+                 || (attackerAbility == ABILITY_CRYSTALLISE && (ateType = TYPE_ROCK))
                 )
              )
     {

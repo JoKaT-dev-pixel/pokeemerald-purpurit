@@ -3027,7 +3027,7 @@ const struct SpriteTemplate gFleurCannonDischargeTemplate =
 const struct SpriteTemplate gStompingTantrumRockTemplate =
 {
     .tileTag = ANIM_TAG_SMALL_ROCK,
-    .paletteTag = ANIM_TAG_ROCKS,
+    .paletteTag = ANIM_TAG_SMALL_ROCK,
     .oam = &gOamData_AffineNormal_ObjNormal_16x16,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -4706,6 +4706,17 @@ const struct SpriteTemplate gSpriteTemplate_InfernalParadeFlame = {
     .images = NULL,
     .affineAnims = sSpriteAffineAnimTable_Flutterby,
     .callback = SpriteCB_MaxFlutterby
+};
+
+// acrobatics
+const struct SpriteTemplate gSpriteTemplate_AcrobaticsSlash = {
+    .tileTag = ANIM_TAG_BLUE_SLASH,
+    .paletteTag = ANIM_TAG_BLUE_SLASH,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gSlashSliceAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_FlippableSlash
 };
 
 // ceaseless edge

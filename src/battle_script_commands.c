@@ -1716,10 +1716,6 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         if (IS_MOVE_PHYSICAL(move))
             calc = (calc * 80) / 100; // 1.2 hustle loss
         break;
-    case ABILITY_ECCENTRIC:
-        if (IS_MOVE_SPECIAL(move))
-            calc = (calc * 80) / 100; // 1.2 eccentric loss
-        break;
     }
 
     // Target's ability
@@ -2934,7 +2930,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
         {
         case STATUS1_SLEEP:
             // check active uproar
-            if (battlerAbility != ABILITY_SOUNDPROOF || battlerAbility != ABILITY_AMPLIFIER || B_UPROAR_IGNORE_SOUNDPROOF >= GEN_5)
+            if (battlerAbility != ABILITY_SOUNDPROOF || battlerAbility != ABILITY_BASS_BOOSTER || B_UPROAR_IGNORE_SOUNDPROOF >= GEN_5)
             {
                 for (i = 0; i < gBattlersCount && !(gBattleMons[i].status2 & STATUS2_UPROAR); i++)
                     ;
@@ -3894,6 +3890,13 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     gDisableStructs[gEffectBattler].healBlockTimer = 2;
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_EffectPsychicNoise;
+                }
+                break;
+            case MOVE_EFFECT_ATK_TWO_DOWN: // Overheat variant
+                if (!NoAliveMonsForEitherParty())
+                {
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_AtkDown2;
                 }
                 break;
             }
@@ -11390,7 +11393,7 @@ bool8 UproarWakeUpCheck(u8 battler)
     {
         if (!(gBattleMons[i].status2 & STATUS2_UPROAR)
         || (GetBattlerAbility(battler) == ABILITY_SOUNDPROOF && B_UPROAR_IGNORE_SOUNDPROOF < GEN_5)
-        || (GetBattlerAbility(battler) == ABILITY_AMPLIFIER && B_UPROAR_IGNORE_SOUNDPROOF < GEN_5))
+        || (GetBattlerAbility(battler) == ABILITY_BASS_BOOSTER && B_UPROAR_IGNORE_SOUNDPROOF < GEN_5))
             continue;
 
         gBattleScripting.battler = i;
@@ -13239,7 +13242,7 @@ static void Cmd_healpartystatus(void)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BELL;
 
         if (GetBattlerAbility(gBattlerAttacker) != ABILITY_SOUNDPROOF
-        && GetBattlerAbility(gBattlerAttacker) != ABILITY_AMPLIFIER)
+        && GetBattlerAbility(gBattlerAttacker) != ABILITY_BASS_BOOSTER)
         {
             gBattleMons[gBattlerAttacker].status1 = 0;
             gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_NIGHTMARE;
@@ -13256,7 +13259,7 @@ static void Cmd_healpartystatus(void)
             && !(gAbsentBattlerFlags & gBitTable[battler]))
         {
             if (GetBattlerAbility(battler) != ABILITY_SOUNDPROOF
-            && GetBattlerAbility(battler) != ABILITY_AMPLIFIER)
+            && GetBattlerAbility(battler) != ABILITY_BASS_BOOSTER)
             {
                 gBattleMons[battler].status1 = 0;
                 gBattleMons[battler].status2 &= ~STATUS2_NIGHTMARE;
@@ -13289,7 +13292,7 @@ static void Cmd_healpartystatus(void)
                     ability = GetAbilityBySpecies(species, abilityNum);
 
                 if (ability != ABILITY_SOUNDPROOF
-                && ability != ABILITY_AMPLIFIER)
+                && ability != ABILITY_BASS_BOOSTER)
                     toHeal |= (1 << i);
             }
         }
@@ -13377,7 +13380,7 @@ static void Cmd_trysetperishsong(void)
     {
         if (gStatuses3[i] & STATUS3_PERISH_SONG
             || GetBattlerAbility(i) == ABILITY_SOUNDPROOF
-            || GetBattlerAbility(i) == ABILITY_AMPLIFIER
+            || GetBattlerAbility(i) == ABILITY_BASS_BOOSTER
             || BlocksPrankster(gCurrentMove, gBattlerAttacker, i, TRUE))
         {
             notAffectedCount++;

@@ -9,27 +9,29 @@ gText_Birch_Welcome::
 
 gText_Birch_Pokemon::
 	.string "Les Pokémon vivent en harmonie avec\n"
-	.string "les humains depuis des années.\p"
-	.string "Mais cette information, vous le savez\n"
-	.string "déjà sûrement !\p"
+	.string "les humains depuis plusieurs années.\p"
+	.string "Mais vu que vous n'êtes pas des noobs,\n"
+	.string "vous connaissez déjà toute l'histoire !\p"
 	.string "$"
 
 gText_Birch_MainSpeech::
 	.string "Ce petit… Truc… Et bien heu…\p"
 	.string "C'est un Pokémon voyons !\p"
-	.string "Oui bon, ce truc ressemble à une\n"
+	.string "Oui bon ! Ce truc ressemble à une\n"
 	.string "tasse de café…\p"
-	.string "Mais ! C'est une tasse de café,\n"
-	.string "VIVANTE !\p"
-	.string "C'est atypique mais ça reste un\n"
-	.string "Pokémon.\p"
+	.string "Mais attention !\p"
+	.string "C'est une tasse de café, avec des\n"
+	.string "pieds !\p"
+	.string "C'est assez spécial, on va dire…\p"
+	.string "Cependant, ça reste quand même un\n"
+	.string "Pokémon !\p"
 	.string "Pas convaincu ?\p"
-	.string "Oh ok…\p"
+	.string "Oh ok…!\p"
 	.string "Heu… Changement de sujet !\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "Eh toi là-bas ! Es-tu…$"
+	.string "Oui, toi là-bas ! Es-tu…$"
 
 gText_Birch_BoyOrGirl::
 	.string "Un mec ?\n"
@@ -42,7 +44,7 @@ gText_Birch_SoItsPlayer::
 	.string "{PLAYER}{KUN} ?$"
 
 gText_Birch_YourePlayer::
-	.string "D'accord {PLAYER}{KUN} !\p"
+	.string "D'accord machin !\p"
 	.string "Désormais tu seras le protagoniste\n"
 	.string "de cette nouvelle aventure palpitante\l"
 	.string "et inoubliable.\p"
@@ -56,5 +58,5 @@ gText_Birch_AreYouReady::
 	.string "En attendant vous autres, je vais\n"
 	.string "devoir vous laisser et je vous dis\l"
 	.string "à la prochaine !\p"
-	.string "TCHOUSS !\p"
+	.string "Tchouss !\p"
 	.string "$"

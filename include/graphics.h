@@ -2429,6 +2429,9 @@ extern const u32 gBattleAnimSpriteGfx_PoisonJab[];
 extern const u32 gBattleAnimSpriteGfx_TSign[];
 extern const u32 gBattleAnimSpriteGfx_YellowSwipe[];
 extern const u32 gBattleAnimSpriteGfx_LevelUpVertical[];
+extern const u32 gBattleAnimSpriteGfx_Snow[];
+extern const u32 gBattleAnimSpriteGfx_BlueSlash[];
+extern const u32 gBattleAnimSpriteGfx_OilBubble[];
 
 extern const u32 gBattleAnimSpritePal_Bone[];
 extern const u32 gBattleAnimSpritePal_Spark[];
@@ -2931,6 +2934,10 @@ extern const u32 gBattleAnimSpritePal_MagnetOrb[];
 extern const u32 gBattleAnimSpriteGfx_NothingScratch[];
 extern const u32 gBattleAnimSpritePal_YellowSwipe[];
 extern const u32 gBattleAnimSpritePal_LevelUpVertical[];
+extern const u32 gBattleAnimSpritePal_Snow[];
+extern const u32 gBattleAnimSpritePal_BlueSlash[];
+extern const u32 gBattleAnimSpritePal_OilBubble[];
+extern const u32 gBattleAnimSpritePal_OilBubble[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];

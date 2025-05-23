@@ -999,45 +999,41 @@ gText_PlayerWhitedOut::
 	.string "POKéMON!\p{PLAYER} whited out!$"
 
 gText_FirstShouldRestoreMonsHealth::
-	.string "Avant toute chose, vous devriez\n"
-	.string "faire soigner vos Pokémon.$"
+	.string "Avant toute chose, vous devriez faire\n"
+	.string "soigner vos Pokémon.$"
 
 gText_MonsHealedShouldBuyPotions::
 	.string "Vos Pokémon ont été soignés.\p"
-	.string "Si les PV de vos Pokémon sont\n"
-	.string "faibles, venez nous voir.\p"
-	.string "Si vous prévoyez de partir loin,\p"
-	.string "vous devriez acheter des Potions\n"
-	.string "dans une Boutique Pokémon.\p"
-	.string "Nous vous souhaitons\n"
-	.string "bonne chance.$"
+	.string "Si les PV de vos Pokémon sont faibles,\n"
+	.string "venez nous voir au Centre Pokémon.\p"
+	.string "Si vous prévoyez de partir loin, vous\n"
+	.string "devriez acheter des Potions dans une\l"
+	.string "Boutique Pokémon.\p"
+	.string "Nous vous souhaitons bonne chance.$"
 
 gText_MonsHealed::
 	.string "Vos Pokémon ont été soignés.\p"
-	.string "Nous vous souhaitons\n"
-	.string "bonne chance.$"
+	.string "Nous vous souhaitons bonne chance.$"
 
 gText_HadQuiteAnExperienceTakeRest::
-	.string "Maman: Comment ça va,\n"
-	.string "{PLAYER} ?\p"
-	.string "Tu as dû vivre des aventures\n"
-	.string "épuisantes.\p"
+	.string "{ROCKET}Maman: {MAGMA}Comment ça va, mon chou ?\n"
+	.string "Tu as dû vivre une aventure épuisante…\p"
 	.string "Tu devrais faire une sieste.$"
 
 gText_MomExplainHPGetPotions::
-	.string "Maman: Eh bien, toi et tes\n"
-	.string "Pokémon avez l'air d'aller mieux.\p"
-	.string "Je viens d'avoir des nouvelles\n"
-	.string "du Professeur Fildrong.\p"
+	.string "{ROCKET}Maman: {MAGMA}Eh bien, toi et tes Pokémon\n"
+	.string "vous avez l'air d'aller mieux.\p"
+	.string "Je viens d'avoir des nouvelles du\n"
+	.string "Professeur Fildrong.\p"
 	.string "Il dit que l'énergie d'un Pokémon\n"
 	.string "se mesure en PV.\p"
-	.string "Si tes Pokémon manquent de PV,\n"
-	.string "tu peux les restaurer en allant\l"
-	.string "dans un centre Pokémon.\p"
+	.string "Si tes Pokémon manquent de PV, tu\n"
+	.string "peux les restaurer en allant dans\l"
+	.string "un Centre Pokémon.\p"
 	.string "Et si tu prévois de voyager loin,\n"
 	.string "n'oublie pas d'acheter des Potions\l"
 	.string "dans une Boutique Pokémon.\p"
-	.string "Rends-moi fière, mon trésor.\p"
+	.string "Rends-moi fière, mon trésor !\n"
 	.string "Fais attention à toi !$"
 
 gText_RegisteredTrainerinPokeNav::

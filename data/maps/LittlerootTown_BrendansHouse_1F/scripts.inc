@@ -60,8 +60,10 @@ LittlerootTown_BrendansHouse_1F_OnFrame:
 
 LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
 	lockall
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM_SWEAT
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	applymovement LOCALID_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
@@ -331,19 +333,18 @@ PlayersHouse_1F_Text_IsntItNiceInHere:
 	.string "Elle te plait ma nouvelle déco ?$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
-	.string "Ne t'inquiète pas pour mes colis.\p"
+	.string "{MAGMA}Ne t'inquiète pas pour mes colis.\p"
 	.string "Les Pokémon du livreur se chargeront\n"
 	.string "de cette tâche.\p"
-	.string "Ah, tiens ! Je t'ai acheté une\n"
-	.string "nouvelle horloge pour fêter nos\l"
-	.string "retrouvailles !\p"
-	.string "Elle se trouve à l'étage. Va voir\n"
-	.string "à quoi elle ressemble, mon chou !$"
+	.string "Je t'ai acheté une nouvelle horloge\n"
+	.string "pour fêter ton retour !\p"
+	.string "Elle se trouve à l'étage. Va voir à quoi\n"
+	.string "elle ressemble, mon chou !$"
 
 PlayersHouse_1F_Text_ArentYouInterestedInRoom:
 	.string "{ROCKET}Maman: {MAGMA}Eh bien, {PLAYER} ?\p"
-	.string "Tu n’as pas envie de voir ton\n"
-	.string "cadeau au grenier ?$"
+	.string "Tu n’as pas envie de voir ton cadeau\n"
+	.string "au grenier ?$"
 
 PlayersHouse_1F_Text_GoSetTheClock:
 	.string "{ROCKET}Maman: {MAGMA}Ne sois pas si pressé, mon chou.$"
@@ -359,18 +360,19 @@ PlayersHouse_1F_Text_MaybeDadWillBeOn:
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
 	.string "{ROCKET}Maman: {MAGMA}Oh… C’est déjà terminé…\p"
-	.string "Dommage qu'on n'ait pas pu tout voir…\p"
-	.string "Mais ce laboratoire me fait vachement\n"
-	.string "penser au bâtiment proche de la\l"
-	.string "sortie du village.$"
+	.string "Dommage qu'on n'ait pas pu tout voir…$"
+
+PlayersHouse_1F_Text_MomLaboratoryOutTown:
+	.string "{MAGMA}C'est sûrement le même laboratoire\n"
+	.string "qui se trouve à la sortie du village.$"
 
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
-	.string "J'ai peut-être une idée !\p"
+	.string "{MAGMA}J'ai une idée !\p"
 	.string "Et si tu te présentais à cet endroit\n"
 	.string "et voir si ce professeur se trouve\l"
-	.string "là-bas ?\p"
+	.string "là-bas ?!\p"
 	.string "Avec un peu de chance, tu pourrais\n"
-	.string "avoir ton tout premier Pokémon.$"
+	.string "avoir ton premier Pokémon.$"
 
 PlayersHouse_1F_Text_SeeYouHoney:
 	.string "{ROCKET}Maman: {MAGMA}À plus tard, mon chou !$"
@@ -414,9 +416,9 @@ PlayersHouse_1F_Text_Vigoroth2:
 
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "Journaliste: … Ce reportage a été\n"
-	.string "diffusé devant le Laboratoire du\l"
-	.string "Professeur Fildrong.\p"
-	.string "C'était BFMTV.$"
+	.string "diffusé devant le laboratoire du\l"
+	.string "Professeur Fildrong !\p"
+	.string "C'était BFM Konbini !$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "Il y a une pub à la télé.\p"

@@ -353,6 +353,10 @@ $(BTLANMSPRGFXDIR)/flower.4bpp: $(BTLANMSPRGFXDIR)/flower_0.4bpp \
                                 $(BTLANMSPRGFXDIR)/flower_1.4bpp
 	@cat $^ >$@
 
+$(BTLANMSPRGFXDIR)/snow.4bpp: $(BTLANMSPRGFXDIR)/snow_0.4bpp \
+                                $(BTLANMSPRGFXDIR)/snow_1.4bpp
+	@cat $^ >$@
+
 $(BTLANMSPRGFXDIR)/spark.4bpp: $(BTLANMSPRGFXDIR)/spark_0.4bpp \
                                $(BTLANMSPRGFXDIR)/spark_1.4bpp
 	@cat $^ >$@

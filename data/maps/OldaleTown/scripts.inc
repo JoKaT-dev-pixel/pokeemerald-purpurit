@@ -260,7 +260,7 @@ OldaleTown_Text_Girl:
 	.string "¿no?$"
 
 OldaleTown_Text_SavingMyProgress:
-	.string "À ta place, je devrais plutôt\n"
+	.string "À ta place, je commencerais plutôt à\n"
 	.string "sauvegarder ma partie !$"
 
 OldaleTown_Text_OldMan:
@@ -279,18 +279,16 @@ OldaleTown_Text_Geek:
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Pssst, hé toi !\p"
 	.string "Tu m'as l'air d'être un vrai Dresseur,\n"
-	.string "je me trompe ?!\p"
+	.string "pas vrai ?!\p"
 	.string "Je travaille à la Boutique Pokémon\n"
 	.string "au coin de la rue.\p"
 	.string "Viens, suis-moi !$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "Tu vois ?\p"
-	.string "Ça, c'est ma Boutique Pokémon !\p"
-	.string "La meilleure de tout le quartier,\n"
-	.string "il n'y a pas photo !\p"
-	.string "Je vends de bons objets très variés\n"
-	.string "et pas des trucs de pacotille !\p"
+	.string "Tu vois ce bâtiment ?\n"
+	.string "C'est une Boutique Pokémon !\p"
+	.string "C'est ici que tu peux t'acheter des\n"
+	.string "objets très divers.\p"
 	.string "Tiens ceci, c'est cadeau de la maison !\n"
 	.string "Reviens me voir quand tu veux !$"
 

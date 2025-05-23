@@ -3314,16 +3314,16 @@ void UpdateAbilityPopup(u8 battlerId)
     RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
 
-#define FRAMES_TO_WAIT 48
+#define FRAMES_TO_WAIT 53
 
 static void SpriteCb_AbilityPopUp(struct Sprite *sprite)
 {
     if (!sprite->tHide) // Show
     {
-        if (sprite->tIsMain && ++sprite->tFrames == 4)
-            PlaySE(SE_CONTEST_MONS_TURN);
-        if ((!sprite->tRightToLeft && (sprite->x -= 4) <= sprite->tOriginalX)
-            || (sprite->tRightToLeft && (sprite->x += 4) >= sprite->tOriginalX)
+        if (sprite->tIsMain && ++sprite->tFrames == 5)
+            PlaySE(SE_ICE_STAIRS);
+        if ((!sprite->tRightToLeft && (sprite->x -= 5) <= sprite->tOriginalX)
+            || (sprite->tRightToLeft && (sprite->x += 5) >= sprite->tOriginalX)
            )
         {
             sprite->x = sprite->tOriginalX;
@@ -3335,8 +3335,8 @@ static void SpriteCb_AbilityPopUp(struct Sprite *sprite)
     {
         if (sprite->tFrames == 0)
         {
-            if ((!sprite->tRightToLeft && (sprite->x += 4) >= sprite->tOriginalX + ABILITY_POP_UP_POS_X_SLIDE)
-                ||(sprite->tRightToLeft && (sprite->x -= 4) <= sprite->tOriginalX - ABILITY_POP_UP_POS_X_SLIDE)
+            if ((!sprite->tRightToLeft && (sprite->x += 5) >= sprite->tOriginalX + ABILITY_POP_UP_POS_X_SLIDE)
+                ||(sprite->tRightToLeft && (sprite->x -= 5) <= sprite->tOriginalX - ABILITY_POP_UP_POS_X_SLIDE)
                )
             {
                 gBattleStruct->activeAbilityPopUps &= ~(gBitTable[sprite->tBattlerId]);

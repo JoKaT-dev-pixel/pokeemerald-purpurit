@@ -1340,13 +1340,13 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man5 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymHelper = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
     .height = 32,
     .textColor = NPC_TEXT_COLOR_MALE,
-    .paletteSlot = PALSLOT_NPC_1,
+    .paletteSlot = PALSLOT_NPC_3,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .disableReflectionPaletteLoad = FALSE,

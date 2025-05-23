@@ -169,6 +169,40 @@ const struct SpriteTemplate gPoisonBubbleSpriteTemplate =
     .callback = AnimBubbleEffect,
 };
 
+// Tar Shot
+const struct SpriteTemplate gOilProjectileSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_OIL_BUBBLE,
+    .paletteTag = ANIM_TAG_OIL_BUBBLE,
+    .oam = &gOamData_AffineDouble_ObjNormal_16x16,
+    .anims = gAnims_PoisonProjectile,
+    .images = NULL,
+    .affineAnims = gAffineAnims_PoisonProjectile,
+    .callback = AnimSludgeProjectile,
+};
+
+const struct SpriteTemplate gOilHitParticleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_OIL_BUBBLE,
+    .paletteTag = ANIM_TAG_OIL_BUBBLE,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = &gAnims_PoisonProjectile[2],
+    .images = NULL,
+    .affineAnims = sAffineAnims_SludgeBombHit,
+    .callback = AnimSludgeBombHitParticle,
+};
+
+const struct SpriteTemplate gOilDropletSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_OIL_BUBBLE,
+    .paletteTag = ANIM_TAG_OIL_BUBBLE,
+    .oam = &gOamData_AffineDouble_ObjNormal_16x16,
+    .anims = &gAnims_PoisonProjectile[1],
+    .images = NULL,
+    .affineAnims = gAffineAnims_Droplet,
+    .callback = AnimAcidPoisonDroplet,
+};
+
 const struct SpriteTemplate gWaterBubbleSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SMALL_BUBBLES,

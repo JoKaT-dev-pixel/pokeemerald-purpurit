@@ -298,6 +298,8 @@ extern const union AffineAnimCmd *const gStockpileAbsorptionOrbAffineAnimTable[]
 extern const union AnimCmd *const gSlashSliceAnimTable[];
 extern const union AffineAnimCmd* const sSpriteAffineAnimTable_HydroCannonBall[];
 extern const union AffineAnimCmd sSpriteAffineAnim_HydroCannonBall[];
+extern const union AnimCmd *const gSnowParticlesBigSnowAnimTable[];
+extern const union AnimCmd *const gSnowParticlesSmallSnowAnimTable[];
 
 // battle_anim_effects_2.c
 void AnimUproarRing(struct Sprite *sprite);

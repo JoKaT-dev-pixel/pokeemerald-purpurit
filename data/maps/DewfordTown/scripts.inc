@@ -632,11 +632,11 @@ DewfordTown_Text_TinyIslandCommunity:
 
 DewfordTown_Text_TownSign:
 	.string "Kohlanta\n"
-	.string "“Une ile remplie de défis extrêmes.”$"
+	.string "“Une île remplie de défis extrêmes.”$"
 
 DewfordTown_Text_GymSign:
-	.string "Arène de Kohlanta\n"
-	.string "CHAMPION: Tibo Inshape\l"
+	.string "Arène de Kohlanta\p"
+	.string "Champion: Tibo InShape\n"
 	.string "“N'oublie pas de rester ÉNORME ET SEC !”$"
 
 DewfordTown_Text_HallSign:

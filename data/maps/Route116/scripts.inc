@@ -447,7 +447,7 @@ Route116_Text_RouteSignRustboro:
 	.string "{LEFT_ARROW} RUSTBORO CITY$"
 
 Route116_Text_RusturfTunnelSign:
-	.string "Catacombes\n"
+	.string "Égout de Pariviar\n"
 	.string "“La cité des Cataphiles”\p"
 	.string "Carrières souterraines de la ville de\n"
 	.string "Pariviar.$"

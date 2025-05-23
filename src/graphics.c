@@ -448,6 +448,9 @@ const u32 gBattleAnimSpritePal_SpinningBall2[] = INCBIN_U32("graphics/battle_ani
 const u32 gBattleAnimSpriteGfx_WoodHammerHammer[] = INCBIN_U32("graphics/battle_anims/sprites/wood_hammer_hammer.4bpp.lz");
 const u32 gBattleAnimSpritePal_WoodHammerHammer[] = INCBIN_U32("graphics/battle_anims/sprites/wood_hammer_hammer.gbapal.lz");
 
+const u32 gBattleAnimSpriteGfx_Snow[] = INCBIN_U32("graphics/battle_anims/sprites/snow.4bpp.lz");
+const u32 gBattleAnimSpritePal_Snow[] = INCBIN_U32("graphics/battle_anims/sprites/snow.gbapal.lz");
+
 const u32 gBattleAnimSpriteGfx_Snowflakes[] = INCBIN_U32("graphics/battle_anims/sprites/snowflakes.4bpp.lz");
 const u32 gBattleAnimSpritePal_Snowflakes[] = INCBIN_U32("graphics/battle_anims/sprites/snowflakes.gbapal.lz");
 
@@ -1625,10 +1628,16 @@ const u32 gBattleAnimBgTilemap_SurfOpponent[] = INCBIN_U32("graphics/battle_anim
 const u32 gBattleAnimBgTilemap_SurfPlayer[] = INCBIN_U32("graphics/battle_anims/backgrounds/water_player.bin.lz");
 const u32 gBattleAnimBgTilemap_SurfContest[] = INCBIN_U32("graphics/battle_anims/backgrounds/water_contest.bin.lz");
 
+const u32 gBattleAnimSpriteGfx_BlueSlash[] = INCBIN_U32("graphics/battle_anims/sprites/blue_slash.4bpp.lz");
+const u32 gBattleAnimSpritePal_BlueSlash[] = INCBIN_U32("graphics/battle_anims/sprites/blue_slash.gbapal.lz");
+
 const u32 gBattleAnimSpritePal_Slash2[] = INCBIN_U32("graphics/battle_anims/sprites/slash_2.gbapal.lz");
 
 const u32 gBattleAnimSpriteGfx_WhiteShadow[] = INCBIN_U32("graphics/battle_anims/sprites/white_shadow.4bpp.lz");
 const u32 gBattleAnimSpritePal_WhiteShadow[] = INCBIN_U32("graphics/battle_anims/sprites/white_shadow.gbapal.lz");
+
+const u32 gBattleAnimSpriteGfx_OilBubble[] = INCBIN_U32("graphics/battle_anims/sprites/oil_bubble.4bpp.lz");
+const u32 gBattleAnimSpritePal_OilBubble[] = INCBIN_U32("graphics/battle_anims/sprites/oil_bubble.gbapal.lz");
 
 // Pledge Effect field status - Rainbow
 const u32 gBattleAnimBgImage_Rainbow[] = INCBIN_U32("graphics/battle_anims/backgrounds/rainbow.4bpp.lz");

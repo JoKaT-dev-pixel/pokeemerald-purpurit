@@ -281,28 +281,24 @@ DewfordTown_Gym_EventScript_GymStatue::
 	end
 
 DewfordTown_Gym_Text_GymGuideFreshWater:
-	.string "Hé, comment ça va {PLAYER} ?\p"
-	.string "Qu'est-ce que je fais là ?\p"
-	.string "Et bien je suis coach !\p"
+	.string "Hey, comment ça va le rookie ?!\p"
+	.string "Qu'est-ce que je fais là ?!\n"
+	.string "Et bah moi, j'suis coach !\p"
 	.string "Mais avant toute chose, prends de quoi\n"
 	.string "te rafraichir avant l'entrainement !$"
 
 DewfordTown_Gym_Text_GymGuideAdvice:
-	.string "Tibo Inshape, le Champion d'arène\n"
-	.string "de Kohlanta a des Pokémon de\l"
-	.string "type Combat.\p"
-	.string "Si tu comptes te battre contre ce gros\n"
-	.string "tas de muscle avec des Pokémon de\l"
-	.string "type Normal, tu risques la défaite.\p"
-	.string "Les Pokémon Combat infligent de\n"
-	.string "sérieux dégâts aux Pokémon de type\l"
-	.string "Normal.\p"
-	.string "En plus, j'ai mis plusieurs obstacles\n"
-	.string "pour ton entrainement. Hehe !\p"
-	.string "Il y a des trampolines un peu partout\n"
-	.string "alors sers-toi en pour me faire des\l"
-	.string "montées de genoux.\p"
-	.string "Allez Hop Hop Hop !$"
+	.string "Le Champion Tibo InShape possède des\n"
+	.string "Pokémon de type Combat.\p"
+	.string "Si tu comptes battre ce gros tas de\n"
+	.string "muscles avec des Pokémon de type\l"
+	.string "Normal, tu risques la défaite !\p"
+	.string "Mais t'inquiète, je crois en toi !\p"
+	.string "J'ai posé plusieurs trampolines dans\n"
+	.string "chaque recoin de l'arène !\p"
+	.string "C'est ton entrainement pour franchir\n"
+	.string "les obstacles durant ton parcours !\p"
+	.string "Allez hop, hop, hop le rookie !$"
 
 DewfordTown_Gym_Text_GymGuidePostVictory:
 	.string "Whoah! It's turned too bright in here!\p"
@@ -336,17 +332,17 @@ DewfordTown_Gym_Text_JocelynPostBattle:
 	.string "CHAMPION!$"
 
 DewfordTown_Gym_Text_LauraIntro:
-	.string "Je rêve où tu es en train de maté\n"
-	.string "mes fesses !$"
+	.string "Je rêve ou tu es en train de mater mes\n"
+	.string "fesses ?!$"
 
 DewfordTown_Gym_Text_LauraDefeat:
 	.string "Je retourne faire ma séance de\n"
 	.string "squat !$"
 
 DewfordTown_Gym_Text_LauraPostBattle:
-	.string "Je dois dire que je suis très\n"
-	.string "reconnaissante que mon fessier\l"
-	.string "n'ait pas été ton point de focus…$"
+	.string "D'accord, d'accord…!\p"
+	.string "Je m'excuse de t'avoir juger aussi\n"
+	.string "vite !$"
 
 DewfordTown_Gym_Text_LilithIntro:
 	.string "Ufufu…\n"

@@ -10,7 +10,10 @@
 
 static const u32 sMugshotImg_Female[] = INCBIN_U32("graphics/field_mugshots/female/normal.4bpp.lz");
 static const u32 sMugshotImg_Female_Angry[] = INCBIN_U32("graphics/field_mugshots/female/angry.4bpp.lz");
+static const u32 sMugshotImg_Mom[] = INCBIN_U32("graphics/field_mugshots/mom/normal.4bpp.lz");
+static const u32 sMugshotImg_Mom_Sweat[] = INCBIN_U32("graphics/field_mugshots/mom/sweat.4bpp.lz");
 static const u16 sMugshotPal_Female[] = INCBIN_U16("graphics/field_mugshots/female/normal.gbapal");
+static const u16 sMugshotPal_Mom[] = INCBIN_U16("graphics/field_mugshots/mom/normal.gbapal");
 
 struct Mugshot{
     u8 x;
@@ -30,6 +33,8 @@ static const struct Mugshot sMugshots[] = {
     //ADD YOUR MUGSHOTS HERE
     [MUGSHOT_FEMALE] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Female, .palette = sMugshotPal_Female},
     [MUGSHOT_FEMALE_ANGRY] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Female_Angry, .palette = sMugshotPal_Female},
+    [MUGSHOT_MOM] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Mom, .palette = sMugshotPal_Mom},
+    [MUGSHOT_MOM_SWEAT] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Mom_Sweat, .palette = sMugshotPal_Mom},
 };
 
 

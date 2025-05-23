@@ -1,5 +1,12 @@
+.set LOCALID_GYM_GUY, 4
+
 RustboroCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, RustboroCity_Gym_OnFrame
 	.byte 0
+
+RustboroCity_Gym_OnFrame:
+	map_script_2 VAR_RUSTBORO_CITY_GYM_STATE, 0, RustboroCity_Gym_EventScript_GymGuyTrigger
+	.2byte 0
 
 Larochelle_Arene_EventScript_Jamy::
 	setvar VAR_MUGSHOT_ID, MUGSHOT_ROXANNE
@@ -54,19 +61,52 @@ RustboroCity_Gym_EventScript_Marc::
 	msgbox RustboroCity_Gym_Text_MarcPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+RustboroCity_Gym_EventScript_GymGuyTrigger::
+	lockall
+	applymovement LOCALID_GYM_GUY, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_GYM_GUY, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	applymovement LOCALID_GYM_GUY, Common_Movement_Delay48
+	waitmovement 0
+	applymovement LOCALID_GYM_GUY, RustboroCity_Gym_Movement_GymGuyApproachPlayer
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastUp
+	waitmovement 0
+	goto RustboroCity_Gym_EventScript_GymGuide
+	end
+
 RustboroCity_Gym_EventScript_GymGuide::
-	lock
-	faceplayer
 	goto_if_set FLAG_FRESH_WATER_GYM_1, RustboroCity_Gym_EventScript_ReceivedFreshWater
 	msgbox RustboroCity_Gym_Text_GymGuideFreshWater, MSGBOX_DEFAULT
 	giveitem ITEM_FRESH_WATER
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GYM_GUY, RustboroCity_Gym_Movement_GymGuyMoveAwayPlayer
+	waitmovement 0
 	setflag FLAG_FRESH_WATER_GYM_1
-	release
+	setvar VAR_RUSTBORO_CITY_GYM_STATE, 1
+	releaseall
 	end
 
+RustboroCity_Gym_Movement_GymGuyApproachPlayer:
+	walk_right
+	walk_right
+	walk_in_place_down
+	step_end
+
+RustboroCity_Gym_Movement_GymGuyMoveAwayPlayer:
+	walk_left
+	walk_left
+	walk_in_place_down
+	step_end
+
 RustboroCity_Gym_EventScript_ReceivedFreshWater::
+	lock
+	faceplayer
 	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
 	msgbox RustboroCity_Gym_Text_GymGuideAdvice, MSGBOX_DEFAULT
 	release
@@ -115,12 +155,16 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	end
 
 RustboroCity_Gym_Text_GymGuideFreshWater:
-	.string "Yo, how's it going?\p"
-	.string "Prends ça!$"
+	.string "{AQUA}Yo !\n"
+	.string "Moi mon blaze, c'est Little Flo !\p"
+	.string "Par contre toi poto, t'es juste un\n"
+	.string "nouveau qui veut avoir des tuyaux !\p"
+	.string "J'adore faire des rimes car j'fais ça\n"
+	.string "pour la frime !\p"
+	.string "Pour remonter dans mon estime, j'vais\n"
+	.string "t'aider à ne pas finir en victime !$"
 
 RustboroCity_Gym_Text_GymGuideAdvice:
-	.string "Listen, my friend!\p"
-	.string "Would you like to become the CHAMPION?\p"
 	.string "I'm no TRAINER, not me, but I can\n"
 	.string "sure give you winning advice.\p"
 	.string "That's settled, then! We'll aim for the\n"
@@ -242,7 +286,7 @@ Larochelle_Arene_Text_JamyPostBattle:
 	.string "learn many things.$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "RUSTBORO CITY POKéMON GYM$"
+	.string "Arène de Larochelle$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
 	.string "RUSTBORO CITY POKéMON GYM\p"

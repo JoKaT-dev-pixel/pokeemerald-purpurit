@@ -45,6 +45,6 @@ Route106_Text_TrainerTips:
 	.string "“Conseils aux Dresseurs”\p"
 	.string "Si vous voyez des personnes à poil,\n"
 	.string "c'est tout à fait normal.\p"
-	.string "Ils veulent se sentir à l’aise et\n"
-	.string "mieux accepter leur corps.$"
+	.string "Ils veulent se sentir à l’aise et mieux\n"
+	.string "accepter leur corps.$"
 

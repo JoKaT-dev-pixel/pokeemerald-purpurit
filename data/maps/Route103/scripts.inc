@@ -42,6 +42,16 @@ Route103_EventScript_RivalMay::
 	setvar VAR_0x8000, MUGSHOT_FEMALE_ANGRY
 	callnative DrawMugshot
 	msgbox Route103_Text_MayLetsBattle, MSGBOX_DEFAULT
+	callnative ClearMugshot
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+	waitmovement 0
+	callnative DrawMugshot
+	msgbox Route103_Text_MayWhatTheFuck, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	goto Route103_EventScript_RivalExit
 	end
 
@@ -253,19 +263,20 @@ Route103_EventScript_Isabelle::
 	end
 
 Route103_Text_MayRoute103Pokemon:
-	.string "{ROCKET}{RIVAL}: {MAGMA}Soupir… C'est maintenant que\n"
-	.string "mon voyage commence !\p"
-	.string "Je pourrais dire adieu à cet endroit…$"
+	.string "{ROCKET}{RIVAL}: {MAGMA}C'est maintenant que mon\n"
+	.string "voyage commence !\p"
+	.string "Je pourrais dire adieu à cet endroit…!$"
 
 Route103_Text_MayLetsBattle:
-	.string "{ROCKET}{RIVAL}: {MAGMA}Encore toi !\p"
-	.string "Tu comptes me suivre partout encore\n"
-	.string "longtemps ?!\p"
-	.string "What ? Je rêve ou tu possèdes déjà\n"
-	.string "un Pokémon ?!\p"
-	.string "Fais chier…!\p"
-	.string "Ramène tes fesses au labo de Fildrong !\n"
-	.string "J'ai des comptes à régler avec toi !\p"
+	.string "{ROCKET}{RIVAL}: {MAGMA}Encore toi !\n"
+	.string "Putain, t'es un vrai pot de colle !$"
+
+Route103_Text_MayWhatTheFuck:
+	.string "{ROCKET}{RIVAL}: {MAGMA}J'hallucine…!\n"
+	.string "Tu possèdes déjà un Pokémon ?!\p"
+	.string "Fait chier !\p"
+	.string "Ramène tes fesses au labo de Fildrong,\n"
+	.string "on va régler nos comptes !\p"
 	.string "Faut que je file avant qu'il ne soit\n"
 	.string "trop tard !$"
 

@@ -565,18 +565,22 @@ static const union AnimCmd sAnim_Wigglytuff_1[] =
 #if P_FAMILY_ZUBAT
 static const union AnimCmd sAnim_Zubat_1[] =
 {
-    ANIMCMD_FRAME(0, 3),
-    ANIMCMD_FRAME(1, 3),
-    ANIMCMD_FRAME(0, 3),
-    ANIMCMD_FRAME(1, 3),
-    ANIMCMD_FRAME(0, 3),
-    ANIMCMD_FRAME(1, 3),
-    ANIMCMD_FRAME(0, 3),
-    ANIMCMD_FRAME(1, 3),
-    ANIMCMD_FRAME(0, 3),
-    ANIMCMD_FRAME(1, 3),
-    ANIMCMD_FRAME(0, 3),
-    ANIMCMD_FRAME(1, 3),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 5),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 5),
     ANIMCMD_FRAME(0, 3),
     ANIMCMD_END,
 };
@@ -2014,7 +2018,7 @@ static const union AnimCmd sAnim_Ditto_1[] =
 #if P_FAMILY_EEVEE
 static const union AnimCmd sAnim_Eevee_1[] =
 {
-    ANIMCMD_FRAME(1, 33),
+    ANIMCMD_FRAME(1, 36),
     ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
@@ -3132,8 +3136,9 @@ static const union AnimCmd sAnim_Magcargo_1[] =
 static const union AnimCmd sAnim_Swinub_1[] =
 {
     ANIMCMD_FRAME(1, 10),
-    ANIMCMD_FRAME(0, 10),
     ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(1, 5),
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
@@ -6801,9 +6806,10 @@ static const union AnimCmd sAnim_Whimsicott_1[] =
 static const union AnimCmd sAnim_Petilil_1[] =
 {
     ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 25),
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };

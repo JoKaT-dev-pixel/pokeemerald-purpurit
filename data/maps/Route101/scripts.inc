@@ -263,11 +263,13 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
-	.string "Mais… Mais lâche-moi Pokémon de merde !$"
+	.string "Mais…!!\n"
+	.string "Mais lâche-moi Pokémon de merde !!$"
 
 Route101_Text_PleaseHelp:
-	.string "Reste pas planté là ! Sauve-moi !\p"
-	.string "Là ! Dans mon Sac !\n"
+	.string "Reste pas planté là !\n"
+	.string "Sauve-moi !\p"
+	.string "Dans mon Sac !\n"
 	.string "Il y a 3 Poké Balls !\p"
 	.string "Grouille-toi !$"
 
@@ -277,10 +279,10 @@ Route101_Text_DontLeaveMe:
 
 Route101_Text_YouSavedMe:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Quelle terrible\n"
-	.string "désillusion pour ce Pokémon !\p"
+	.string "désillusion !\p"
 	.string "Je me promenais tranquillement et\n"
-	.string "ce Cornaigri sorti de nulle part\l"
-	.string "m'a attaquer !\p"
+	.string "ce Cornaigri sorti de nulle part m'a\l"
+	.string "attaquer !\p"
 	.string "C'est un Pokémon qui a toujours été\n"
 	.string "agressif.\p"
 	.string "Merci beaucoup de m'avoir secouru !\p"

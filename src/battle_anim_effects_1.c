@@ -1296,6 +1296,61 @@ const struct SpriteTemplate gAromatherapyBigFlowerSpriteTemplate =
     .callback = AnimFlyingParticle,
 };
 
+const union AnimCmd gSnowParticlesBigSnowAnimCmds[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+const union AnimCmd gSnowParticlesSmallSnowAnimCmds[] =
+{
+    ANIMCMD_FRAME(4, 1),
+    ANIMCMD_END,
+};
+
+const union AnimCmd *const gSnowParticlesBigSnowAnimTable[] =
+{
+    gSnowParticlesBigSnowAnimCmds,
+};
+
+const union AnimCmd *const gSnowParticlesSmallSnowAnimTable[] =
+{
+    gSnowParticlesSmallSnowAnimCmds,
+};
+
+const union AffineAnimCmd gWeatherSnowBigSnowAffineAnimCmds[] = {
+    AFFINEANIMCMD_FRAME(256, 256, 0, 0),
+    AFFINEANIMCMD_FRAME(0, 0, 4, 1),
+    AFFINEANIMCMD_JUMP(1),
+};
+
+const union AffineAnimCmd *const gWeatherSnowBigSnowAffineAnimTable[] = {
+    gWeatherSnowBigSnowAffineAnimCmds,
+};
+
+const struct SpriteTemplate gWeatherSnowBigSnowSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SNOW,
+    .paletteTag = ANIM_TAG_SNOW,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gSnowParticlesBigSnowAnimTable,
+    .images = NULL,
+    .affineAnims = gWeatherSnowBigSnowAffineAnimTable,
+    .callback = AnimFlyingParticle,
+};
+
+const struct SpriteTemplate gWeatherSnowSmallSnowSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SNOW,
+    .paletteTag = ANIM_TAG_SNOW,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gSnowParticlesSmallSnowAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimFlyingParticle,
+};
+
+
 const union AffineAnimCmd gSilverWindBigSparkAffineAnimCmds[] = {
     AFFINEANIMCMD_FRAME(256, 256, 0, 0),
     AFFINEANIMCMD_FRAME(0, 0, -10, 1),

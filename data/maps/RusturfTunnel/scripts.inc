@@ -3,6 +3,7 @@
 .set LOCALID_GRUNT, 6
 .set LOCALID_PEEKO, 7
 .equ LOCALID_WANDA, 10
+.set LOCALID_GRAFFITIST, 11
 
 RusturfTunnel_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RusturfTunnel_OnTransition
@@ -423,6 +424,16 @@ RusturfTunnel_EventScript_Mike::
 	msgbox RusturfTunnel_Text_MikePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+RusturfTunnel_EventScript_Graffitist::
+	lock
+	faceplayer
+	msgbox RusturfTunnel_Text_Graffitist, MSGBOX_NPC
+	closemessage
+	applymovement LOCALID_GRAFFITIST, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
 RusturfTunnel_Text_ComeAndGetSome:
 	.string "What, are you coming?\n"
 	.string "Come and get some, then!$"
@@ -529,4 +540,12 @@ RusturfTunnel_Text_MikePostBattle:
 	.string "They halted development here to\n"
 	.string "protect POKéMON, right?\l"
 	.string "There's a feel-good story!$"
+
+RusturfTunnel_Text_Graffitist:
+	.string "Ici, c'est l'endroit idéal pour réaliser\n"
+	.string "plein de tags !\p"
+	.string "Malheureusement pour toi, je n'ai plus\n"
+	.string "assez de sprays pour que tu puisses\l"
+	.string "faire le tien…\p"
+	.string "Ouaip c'est chiant, je sais…$"
 

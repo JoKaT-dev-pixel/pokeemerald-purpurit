@@ -4414,7 +4414,7 @@
     {
       "id": "LAYOUT_ROUTE135",
       "name": "Route135_Layout",
-      "width": 110,
+      "width": 120,
       "height": 52,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",

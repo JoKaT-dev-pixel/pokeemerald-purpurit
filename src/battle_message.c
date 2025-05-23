@@ -293,7 +293,6 @@ static const u8 sText_PkmnPreventsConfusionWith[] = _("{B_DEF_NAME_WITH_PREFIX}'
 static const u8 sText_PkmnRaisedFirePowerWith[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nraised its FIRE power!");
 static const u8 sText_PkmnAnchorsItselfWith[] = _("{B_DEF_NAME_WITH_PREFIX} anchors\nitself with {B_DEF_ABILITY}!");
 static const u8 sText_PkmnCutsAttackWith[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\ncuts {B_DEF_NAME_WITH_PREFIX}'s attack!");
-static const u8 sText_PkmnCutsSpAttackWith[] = _("L'Attaque Spéciale de\n{B_DEF_NAME_WITH_PREFIX} baisse!");
 static const u8 sText_PkmnPreventsStatLossWith[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nprevents stat loss!");
 static const u8 sText_PkmnHurtsWith[] = _("{B_ATK_NAME_WITH_PREFIX} was hurt by\n{B_DEF_NAME_WITH_PREFIX}'s {B_BUFF1}!");
 static const u8 sText_PkmnTraced[] = _("Le talent {B_BUFF2} du\n{B_BUFF1} a été calqué !");
@@ -369,8 +368,8 @@ static const u8 sText_SunlightFaded[] = _("The sunlight faded.");
 static const u8 sText_StartedHail[] = _("It started to hail!");
 static const u8 sText_HailContinues[] = _("Hail continues to fall.");
 static const u8 sText_HailStopped[] = _("The hail stopped.");
-static const u8 sText_StartedSnow[] = _("It started to snow!");
-static const u8 sText_SnowContinues[] = _("Snow continues to fall.");
+static const u8 sText_StartedSnow[] = _("Il commence à neiger !");
+static const u8 sText_SnowContinues[] = _("La neige continue de tomber.");
 static const u8 sText_SnowStopped[] = _("The snow stopped.");
 static const u8 sText_FailedToSpitUp[] = _("But it failed to spit up\na thing!");
 static const u8 sText_FailedToSwallow[] = _("But it failed to swallow\na thing!");
@@ -846,6 +845,8 @@ static const u8 sText_AttackerLostItsType[] = _("{B_ATK_NAME_WITH_PREFIX} lost\n
 static const u8 sText_ShedItsTail[] = _("{B_ATK_NAME_WITH_PREFIX} shed its tail\nto create a decoy!");
 static const u8 sText_SupersweetAromaWafts[] = _("A supersweet aroma is wafting from\nthe syrup covering {B_ATK_NAME_WITH_PREFIX}!");
 static const u8 sText_TidyingUpComplete[] = _("Tidying up complete!");
+static const u8 sText_DominanceAbilityActivates[] = _("{B_DEF_NAME_WITH_PREFIX} cède à la\nsoumission !");
+static const u8 sText_LoveIsInTheAir[] = _("Il y a de l'amour dans l'air !");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1186,7 +1187,6 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_PKMNRAISEDFIREPOWERWITH - BATTLESTRINGS_TABLE_START] = sText_PkmnRaisedFirePowerWith,
     [STRINGID_PKMNANCHORSITSELFWITH - BATTLESTRINGS_TABLE_START] = sText_PkmnAnchorsItselfWith,
     [STRINGID_PKMNCUTSATTACKWITH - BATTLESTRINGS_TABLE_START] = sText_PkmnCutsAttackWith,
-    [STRINGID_PKMNCUTSSPATTACKWITH - BATTLESTRINGS_TABLE_START] = sText_PkmnCutsSpAttackWith,
     [STRINGID_PKMNPREVENTSSTATLOSSWITH - BATTLESTRINGS_TABLE_START] = sText_PkmnPreventsStatLossWith,
     [STRINGID_PKMNHURTSWITH - BATTLESTRINGS_TABLE_START] = sText_PkmnHurtsWith,
     [STRINGID_PKMNTRACED - BATTLESTRINGS_TABLE_START] = sText_PkmnTraced,
@@ -1546,6 +1546,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ITEMWASUSEDUP - BATTLESTRINGS_TABLE_START] = sText_ItemWasUsedUp,
     [STRINGID_ATTACKERLOSTITSTYPE - BATTLESTRINGS_TABLE_START] = sText_AttackerLostItsType,
     [STRINGID_CLOAKEDINAHARSHLIGHT - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCloakedInAHarshLight,
+    [STRINGID_DOMINANCEABILITYACTIVATES - BATTLESTRINGS_TABLE_START] = sText_DominanceAbilityActivates,
+    [STRINGID_LOVEISINTHEAIR - BATTLESTRINGS_TABLE_START] = sText_LoveIsInTheAir,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

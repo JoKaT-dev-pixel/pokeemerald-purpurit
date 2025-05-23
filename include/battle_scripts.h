@@ -485,7 +485,7 @@ extern const u8 BattleScript_SpikesActivates[];
 extern const u8 BattleScript_BerserkGeneRet[];
 extern const u8 BattleScript_CokePowderRet[];
 extern const u8 BattleScript_TargetFormChangeWithStringNoPopup[];
-extern const u8 BattleScript_PheromoneActivates[];
+extern const u8 BattleScript_DominanceAbilityActivates[];
 extern const u8 BattleScript_SolarPanelsActivates[];
 extern const u8 BattleScript_TyrantActivates[];
 extern const u8 BattleScript_DefDown[];
@@ -832,5 +832,6 @@ extern const u8 BattleScript_EffectUpperHand[];
 extern const u8 BattleScript_EffectTidyUp[];
 extern const u8 BattleScript_EffectComingOut[];
 extern const u8 BattleScript_EffectTwerking[];
+extern const u8 BattleScript_AtkDown2[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

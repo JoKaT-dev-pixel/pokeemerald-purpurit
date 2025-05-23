@@ -540,9 +540,9 @@ const struct Item gItemsInfo[] =
         .name = _("Crasse Ball"),
         .price = 5,
         .description = COMPOUND_STRING(
-            "Un objet bousiller\n"
-            "qui se jète comme\n"
-            "comme une balle."),
+            "Un objet bousillé\n"
+            "qui se jette comme\n"
+            "une balle."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,

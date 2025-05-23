@@ -65,8 +65,8 @@ Route102_Text_TianaDefeated:
 	.string "Vas-y toi là !$"
 
 Route102_Text_TianaPostBattle:
-	.string "Elle est occupée à écrire des\n"
-	.string "messages sur son téléphone.$"
+	.string "Elle est occupée à écrire des messages\n"
+	.string "sur son téléphone.$"
 
 Route103_Text_DaisyIntro:
 	.string "Did you feel the tug of our\n"
@@ -2307,8 +2307,8 @@ Route116_Text_DawsonDefeat:
 	.string "mais en plus, j'ai perdu ma dignité !$"
 
 Route116_Text_DawsonPostBattle:
-	.string "Je te fais une remises de 50% sur\n"
-	.string "une partie de mon corps !$"
+	.string "Je te fais une remises de 50% sur une\n"
+	.string "partie de mon corps !$"
 
 Route116_Text_DevanIntro:
 	.string "Il n'y a pas de temps à perdre !\n"

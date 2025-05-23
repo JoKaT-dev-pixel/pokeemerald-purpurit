@@ -273,13 +273,12 @@ PlayersHouse_2F_EventScript_GameCube::
 	end
 
 PlayersHouse_2F_Text_ClockIsStopped:
-	.string "Elle est nulle cette horloge…\p"
-	.string "En plus, elle n'est même pas\n"
-	.string "à l'heure !$"
+	.string "Voici l'horloge que Maman m'a offerte.\n"
+	.string "Elle n'est pas encore réglée…$"
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
-	.string "{ROCKET}Maman: {MAGMA}Ah, je vois que tu as fini\n"
-	.string "par régler cette horloge ?\p"
+	.string "{ROCKET}Maman: {MAGMA}Alors mon chou, tu aimes bien\n"
+	.string "cette horloge ?\p"
 	.string "C'est parfait ! Je suis contente que\n"
 	.string "tu apprécies ce cadeau !\p"
 	.string "Ils ont fini de tout déposer en bas.\p"
@@ -290,9 +289,9 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} ouvre le carnet.\p"
 	.string "Savoir Nº 1:\p"
-	.string "Le fait que la petite souris prend\n"
-	.string "une dent en échange d'une pièce, c'est\l"
-	.string "considéré comme du trafic d'organes.\p"
+	.string "Si la petite souris prend une dent\n"
+	.string "en échange d'une pièce de monnaie,\l"
+	.string "c'est vu comme du trafic d'organes.\p"
 	.string "Savoir Nº 2:\p"
 	.string "Un historique vide en dit bien plus\n"
 	.string "qu'un historique rempli.\p"

@@ -149,8 +149,18 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	delay 10
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachPlayerAtTruck
 	waitmovement 0
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox LittlerootTown_Text_OurNewHomeLetsGoInside, MSGBOX_DEFAULT
+	callnative ClearMugshot
+	setvar VAR_0x8000, MUGSHOT_MOM_SWEAT
+	callnative DrawMugshot
+	msgbox LittlerootTown_Text_PlayerMomNotBedroom, MSGBOX_DEFAULT
+	callnative ClearMugshot
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
+	msgbox LittlerootTown_Text_PlayerMomGoToHome, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomApproachDoor
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerApproachDoor
@@ -915,14 +925,20 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "à la maison !\p"
 	.string "Ce voyage dans ce camion t'a sûrement\n"
 	.string "épuisé mais on s'en fiche !\p"
-	.string "L'essentiel c'est que tu as pris soin\n"
-	.string "de mes colis.\p"
+	.string "L'essentiel c'est que tu as pris soin de\n"
+	.string "mes colis.\p"
 	.string "Enfin bref… Te voilà à Bourg Paumé !\n"
-	.string "C'est très calme et paisible ici.\p"
-	.string "Ah… Par contre, tu n'as plus de chambre\n"
-	.string "alors pour l'instant tu vas devoir\l"
-	.string "dormir dans le grenier.\p"
-	.string "Bien, viens à la maison !$"
+	.string "C'est très calme et paisible ici.$"
+
+LittlerootTown_Text_PlayerMomNotBedroom:
+	.string "{MAGMA}Par contre, tu n'as plus de chambre\n"
+	.string "alors tu vas dormir dans le grenier.\p"
+	.string "Je suis désolée mon chou, tu vas devoir\n"
+	.string "faire avec pour l'instant…$"
+
+LittlerootTown_Text_PlayerMomGoToHome:
+	.string "{MAGMA}Bien !\n"
+	.string "Rentrons à la maison !$"
 
 LittlerootTown_Text_WaitPlayer:
 	.string "{ROCKET}Maman: {MAGMA}Attends, {PLAYER} !$"

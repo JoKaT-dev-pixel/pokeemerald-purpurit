@@ -977,6 +977,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (moveType == TYPE_GROUND)
                     RETURN_SCORE_MINUS(20);
                 break;
+            case ABILITY_FURNACE:
+                if (moveType == TYPE_ROCK)
+                    RETURN_SCORE_MINUS(20);
+                break;
             } // def ability checks
 
             // target partner ability checks & not attacking partner
@@ -1645,8 +1649,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (CountUsablePartyMons(battlerAtk) == 0
                   && aiData->abilities[battlerAtk] != ABILITY_SOUNDPROOF
                   && aiData->abilities[BATTLE_PARTNER(battlerAtk)] != ABILITY_SOUNDPROOF
-                  && aiData->abilities[battlerAtk] != ABILITY_AMPLIFIER
-                  && aiData->abilities[BATTLE_PARTNER(battlerAtk)] != ABILITY_AMPLIFIER
+                  && aiData->abilities[battlerAtk] != ABILITY_BASS_BOOSTER
+                  && aiData->abilities[BATTLE_PARTNER(battlerAtk)] != ABILITY_BASS_BOOSTER
                   && CountUsablePartyMons(FOE(battlerAtk)) >= 1)
                 {
                     ADJUST_SCORE(-10); //Don't wipe your team if you're going to lose
@@ -1655,9 +1659,9 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                   || gStatuses3[FOE(battlerAtk)] & STATUS3_PERISH_SONG)
                   && (!IsBattlerAlive(BATTLE_PARTNER(FOE(battlerAtk))) || aiData->abilities[BATTLE_PARTNER(FOE(battlerAtk))] == ABILITY_SOUNDPROOF
                   || gStatuses3[BATTLE_PARTNER(FOE(battlerAtk))] & STATUS3_PERISH_SONG)
-                  && (!IsBattlerAlive(FOE(battlerAtk)) || aiData->abilities[FOE(battlerAtk)] == ABILITY_AMPLIFIER
+                  && (!IsBattlerAlive(FOE(battlerAtk)) || aiData->abilities[FOE(battlerAtk)] == ABILITY_BASS_BOOSTER
                   || gStatuses3[FOE(battlerAtk)] & STATUS3_PERISH_SONG)
-                  && (!IsBattlerAlive(BATTLE_PARTNER(FOE(battlerAtk))) || aiData->abilities[BATTLE_PARTNER(FOE(battlerAtk))] == ABILITY_AMPLIFIER
+                  && (!IsBattlerAlive(BATTLE_PARTNER(FOE(battlerAtk))) || aiData->abilities[BATTLE_PARTNER(FOE(battlerAtk))] == ABILITY_BASS_BOOSTER
                   || gStatuses3[BATTLE_PARTNER(FOE(battlerAtk))] & STATUS3_PERISH_SONG))
                 {
                     ADJUST_SCORE(-10); //Both enemies are perish songed
@@ -1670,11 +1674,11 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else
             {
                 if (CountUsablePartyMons(battlerAtk) == 0 && aiData->abilities[battlerAtk] != ABILITY_SOUNDPROOF
-                  && aiData->abilities[battlerAtk] != ABILITY_AMPLIFIER && CountUsablePartyMons(battlerDef) >= 1)
+                  && aiData->abilities[battlerAtk] != ABILITY_BASS_BOOSTER && CountUsablePartyMons(battlerDef) >= 1)
                     ADJUST_SCORE(-10);
 
                 if (gStatuses3[FOE(battlerAtk)] & STATUS3_PERISH_SONG || aiData->abilities[FOE(battlerAtk)] == ABILITY_SOUNDPROOF
-                || aiData->abilities[FOE(battlerAtk)] == ABILITY_AMPLIFIER)
+                || aiData->abilities[FOE(battlerAtk)] == ABILITY_BASS_BOOSTER)
                     ADJUST_SCORE(-10);
             }
             break;
@@ -2771,7 +2775,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         }
     }
 
-    if (gMovesInfo[aiData->partnerMove].alwaysCriticalHit && aiData->abilities[battlerAtk] == ABILITY_PANIC_ATTACK)
+    if (gMovesInfo[aiData->partnerMove].alwaysCriticalHit && aiData->abilities[battlerAtk] == ABILITY_ANXIETY)
     {
         if (AI_WhoStrikesFirst(battlerAtk, battlerAtkPartner, move) == AI_IS_SLOWER)   // Partner moving first
         {
@@ -2948,6 +2952,12 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (IsStatLoweringEffect(effect))
                 {
                     RETURN_SCORE_PLUS(DECENT_EFFECT);
+                }
+                break;
+            case ABILITY_FURNACE:
+                if (moveType == TYPE_ROCK && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbility, STAT_SPEED))
+                {
+                    RETURN_SCORE_PLUS(WEAK_EFFECT);
                 }
                 break;
             }
@@ -3445,7 +3455,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_ROAR:
         if ((gMovesInfo[move].soundMove && aiData->abilities[battlerDef] == ABILITY_SOUNDPROOF)
-            || (gMovesInfo[move].soundMove && aiData->abilities[battlerDef] == ABILITY_AMPLIFIER) 
+            || (gMovesInfo[move].soundMove && aiData->abilities[battlerDef] == ABILITY_BASS_BOOSTER) 
           || aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
             break;
         else if (IsDynamaxed(battlerDef))
@@ -4591,6 +4601,9 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                     IncreaseStatUpScoreContrary(battlerAtk, battlerDef, STAT_CHANGE_DEF, &score);
                     IncreaseStatUpScoreContrary(battlerAtk, battlerDef, STAT_CHANGE_SPEED, &score);
                     IncreaseStatUpScoreContrary(battlerAtk, battlerDef, STAT_CHANGE_SPDEF, &score);
+                    break;
+                case MOVE_EFFECT_ATK_TWO_DOWN:
+                    IncreaseStatUpScoreContrary(battlerAtk, battlerDef, STAT_CHANGE_ATK_2, &score);
                     break;
                 }
             }

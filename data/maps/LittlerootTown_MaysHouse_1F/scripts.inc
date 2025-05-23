@@ -384,14 +384,14 @@ RivalsHouse_1F_Text_RivalNicknameNoCheck:
 	.string "compris…$"
 
 RivalsHouse_1F_Text_LikeChildLikeFather:
-	.string "Qui êtes-vous et que faites-vous\n"
-	.string "dans ma maison ?!$"
+	.string "Qui êtes-vous et que faites-vous dans\n"
+	.string "ma maison ?!$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
 	.string "C'est Agnès !\p"
 	.string "Je suppose qu'elle s’occupe de ses\n"
-	.string "Pokémon et n’a pas le temps de\l"
-	.string "discuter avec toi.$"
+	.string "Pokémon et n’a pas le temps de discuter\l"
+	.string "avec toi.$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
 	.string "Oh, tu cherches Charlotte ?\p"
@@ -407,16 +407,16 @@ RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
 	.string "worries about you, {PLAYER}{KUN}.$"
 
 RivalsHouse_1F_Text_MayWhoAreYou:
-	.string "{ROCKET}{RIVAL}: {MAGMA}What the fuck ?\n"
-	.string "Que… Que fais-tu chez moi ?\p"
+	.string "{ROCKET}{RIVAL}: {MAGMA}What the fuck !\n"
+	.string "Que… Que fais-tu chez moi ?!\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "Donc, tu as emménagé aujourd’hui.\n"
 	.string "Je vois…\p"
-	.string "Alors comme ça, toi aussi tu vas visiter\n"
-	.string "le labo ?\p"
-	.string "Pff… Ce n'est pas un rat comme toi qui\n"
-	.string "gâchera mon jour à choisir mon Starter.\p"
+	.string "Tu comptes vraiment visiter le labo\n"
+	.string "de Fildrong ?\p"
+	.string "Pff… Ce n'est pas un rat comme toi qu'il\n"
+	.string "acceptera de te donner un Starter.\p"
 	.string "Alors si tu veux bien m'excuser, j'ai\n"
 	.string "d'autres Meouwu à fouetter !$"
 

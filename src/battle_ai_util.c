@@ -406,7 +406,7 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
             return TRUE;
         break;
     case ABILITY_SOUNDPROOF:
-    case ABILITY_AMPLIFIER:
+    case ABILITY_BASS_BOOSTER:
         if (gMovesInfo[move].soundMove)
             return TRUE;
         break;
@@ -420,6 +420,10 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
         break;
     case ABILITY_EARTH_EATER:
         if (moveType == TYPE_GROUND)
+            return TRUE;
+        break;
+    case ABILITY_FURNACE:
+        if (moveType == TYPE_ROCK)
             return TRUE;
         break;
     }
@@ -788,6 +792,7 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
                 case MOVE_EFFECT_V_CREATE:
                 case MOVE_EFFECT_ATK_DEF_DOWN:
                 case MOVE_EFFECT_DEF_SPDEF_DOWN:
+                case MOVE_EFFECT_ATK_TWO_DOWN:
                     if ((gMovesInfo[move].additionalEffects[i].self && abilityAtk != ABILITY_CONTRARY)
                         || (noOfHitsToKo != 1 && abilityDef == ABILITY_CONTRARY && !DoesBattlerIgnoreAbilityChecks(abilityAtk, move)))
                         return TRUE;
@@ -2858,7 +2863,7 @@ bool32 AnyPartyMemberStatused(u32 battlerId, bool32 checkSoundproof)
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        if (checkSoundproof && GetMonAbility(&party[i]) == ABILITY_SOUNDPROOF && GetMonAbility(&party[i]) == ABILITY_AMPLIFIER)
+        if (checkSoundproof && GetMonAbility(&party[i]) == ABILITY_SOUNDPROOF && GetMonAbility(&party[i]) == ABILITY_BASS_BOOSTER)
             continue;
 
         if (GetMonData(&party[i], MON_DATA_STATUS) != STATUS1_NONE)
@@ -3143,7 +3148,7 @@ bool32 ShouldUseWishAromatherapy(u32 battlerAtk, u32 battlerDef, u32 move)
 
             if (GetMonData(&party[i], MON_DATA_STATUS, NULL) != STATUS1_NONE)
             {
-                if (move != MOVE_HEAL_BELL || GetMonAbility(&party[i]) != ABILITY_SOUNDPROOF || GetMonAbility(&party[i]) != ABILITY_AMPLIFIER)
+                if (move != MOVE_HEAL_BELL || GetMonAbility(&party[i]) != ABILITY_SOUNDPROOF || GetMonAbility(&party[i]) != ABILITY_BASS_BOOSTER)
                     hasStatus = TRUE;
             }
         }

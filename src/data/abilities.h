@@ -368,8 +368,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_THICK_FAT] =
     {
-        .name = _("Thick Fat"),
-        .description = COMPOUND_STRING("Heat-and-cold protection."),
+        .name = _("Isograisse"),
+        .description = COMPOUND_STRING("Augmente la résistance aux\ncapacités Feu et Glace."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -2616,10 +2616,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
     },
 
-    [ABILITY_PHEROMONE] =
+    [ABILITY_DOMINANCE] =
     {
-        .name = _("Phéromones"),
-        .description = COMPOUND_STRING("Influence l'ennemi et baisse\nson Attaque Spéciale."),
+        .name = _("Domination"),
+        .description = COMPOUND_STRING("Soumets les {PKMN} adverses et\nbaisse l'Atq. et l'Atq. Spé."),
         .aiRating = 7,
     },
 
@@ -2638,7 +2638,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
-    [ABILITY_NITROGEN] =
+    [ABILITY_CRYOGENIC] =
     {
         .name = _("Cryogénie"),
         .description = COMPOUND_STRING("Peut geler l'attaquant s'il\ny a contact."),
@@ -2697,23 +2697,23 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
-    [ABILITY_PANIC_ATTACK] =
+    [ABILITY_ANXIETY] =
     {
         .name = _("Angoisse"),
         .description = COMPOUND_STRING("Monte la Vitesse au max après\nun coup critique."),
         .aiRating = 4,
     },
 
-    [ABILITY_TYRANT] =
+    [ABILITY_PRESIDENT] =
     {
-        .name = _("Tyran"),
+        .name = _("Président"),
         .description = COMPOUND_STRING("Augmente l'Atq et l'Atq Spé.\naprès un coup super efficace."),
         .aiRating = 7,
     },
 
-    [ABILITY_ECCENTRIC] =
+    [ABILITY_ADRENALINE] =
     {
-        .name = _("Excentrique"),
+        .name = _("Adrénaline"),
         .description = COMPOUND_STRING("Améliore l'Attaque Spéciale,\nmais diminue la Précision."),
         .aiRating = 7,
     },
@@ -2725,15 +2725,90 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
     },
 
-    [ABILITY_AMPLIFIER] =
+    [ABILITY_BASS_BOOSTER] =
+    {
+        .name = _("Bass Boost"),
+        .description = COMPOUND_STRING("Booste et immunise toutes les\ncapacités sonores."),
+        .aiRating = 5,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_DETERMINATION] =
     {
         #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Amplificateur"),
+        .name = _("Détermination"),
     #else
-        .name = _("Amplifier"),
+        .name = _("Determintn"),
     #endif
-        .description = COMPOUND_STRING("Booste et immunise toutes les\ncapacités sonores."),
-        .aiRating = 2,
+        .description = COMPOUND_STRING("Gives up at half HP."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_EXOSKELETON] =
+    {
+        .name = _("Exosquelette"),
+        .description = COMPOUND_STRING("Halves special damage."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_MIND_POWER] =
+    {
+        #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Force Mentale"),
+    #else
+        .name = _("Mind Power"),
+    #endif
+        .description = COMPOUND_STRING("Double la puissance des attaques\nspéciales."),
+        .aiRating = 10,
+    },
+
+    [ABILITY_FURNACE] =
+    {
+        .name = _("Fournaise"),
+        .description = COMPOUND_STRING("Electricity raises Speed."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_PITCH_PERFECT] =
+    {
+        #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Note Parfaite"),
+    #else
+        .name = _("PitchPerfect"),
+    #endif
+        .description = COMPOUND_STRING("Flying moves go first."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_CRYSTALLISE] =
+    {
+        .name = _("Peau Cristal"),
+        .description = COMPOUND_STRING("Normal moves become Rock."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_NOTHING] =
+    {
+        .name = _("Rien"),
+        .description = COMPOUND_STRING("Normal moves become Rock."),
+        .aiRating = 1,
+    },
+
+    [ABILITY_MINDLESS] =
+    {
+        .name = _("Stupide"),
+        .description = COMPOUND_STRING("Immunise contre toutes les\ncapacités de type Psy."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_CANNABINOID] =
+    {
+        .name = _("Cannabinoïde"),
+        .description = COMPOUND_STRING("Augmente l'Attaque Spéciale si\ntouché par une capacité Feu."),
+        .aiRating = 4,
         .breakable = TRUE,
     },
 };

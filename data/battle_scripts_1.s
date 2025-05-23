@@ -405,7 +405,7 @@ BattleScript_EffectAttackUpUserAlly_End:
 	goto BattleScript_MoveEnd
 BattleScript_EffectAttackUpUserAlly_TryAlly_:
 	jumpifability BS_ATTACKER_PARTNER, ABILITY_SOUNDPROOF, BattleScript_EffectAttackUpUserAlly_TryAllyBlocked
-	jumpifability BS_ATTACKER_PARTNER, ABILITY_AMPLIFIER, BattleScript_EffectAttackUpUserAlly_TryAllyBlocked
+	jumpifability BS_ATTACKER_PARTNER, ABILITY_BASS_BOOSTER, BattleScript_EffectAttackUpUserAlly_TryAllyBlocked
 	setstatchanger STAT_ATK, 1, FALSE
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_EffectAttackUpUserAlly_End
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_EffectAttackUpUserAlly_AllyAnim
@@ -4182,7 +4182,7 @@ BattleScript_EffectPerishSong::
 	setbyte gBattlerTarget, 0
 BattleScript_PerishSongLoop::
 	jumpifability BS_TARGET, ABILITY_SOUNDPROOF, BattleScript_PerishSongBlocked
-	jumpifability BS_TARGET, ABILITY_AMPLIFIER, BattleScript_PerishSongBlocked
+	jumpifability BS_TARGET, ABILITY_BASS_BOOSTER, BattleScript_PerishSongBlocked
 	jumpifpranksterblocked BS_TARGET, BattleScript_PerishSongNotAffected
 BattleScript_PerishSongLoopIncrement::
 	addbyte gBattlerTarget, 1
@@ -6898,6 +6898,17 @@ BattleScript_SAtkDown2::
 BattleScript_SAtkDown2End::
 	return
 
+BattleScript_AtkDown2::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_ATK, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_NEGATIVE | STAT_CHANGE_BY_TWO
+	setstatchanger STAT_ATK, 2, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN | STAT_CHANGE_ALLOW_PTR, BattleScript_AtkDown2End
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_AtkDown2End
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AtkDown2End::
+	return
+
 BattleScript_MoveEffectClearSmog::
 	printstring STRINGID_RESETSTARGETSSTATLEVELS
 	waitmessage B_WAIT_TIME_LONG
@@ -7845,7 +7856,6 @@ BattleScript_SupersweetSyrupEffect_WaitString:
 	waitmessage B_WAIT_TIME_LONG
 	copybyte sBATTLER, gBattlerTarget
 	call BattleScript_TryIntimidateHoldEffects
-	call BattleScript_TryPheromoneHoldEffects
 BattleScript_SupersweetSyrupLoopIncrement:
 	addbyte gBattlerTarget, 1
 	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_SupersweetSyrupLoop
@@ -7869,73 +7879,69 @@ BattleScript_SupersweetSyrupContrary_WontIncrease:
 	printstring STRINGID_TARGETSTATWONTGOHIGHER
 	goto BattleScript_SupersweetSyrupEffect_WaitString
 
-BattleScript_TryPheromoneHoldEffects:
-	itemstatchangeeffects BS_TARGET
-	jumpifnoholdeffect BS_TARGET, HOLD_EFFECT_ADRENALINE_ORB, BattleScript_TryPheromoneHoldEffectsRet
-	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPEED, 12, BattleScript_TryPheromoneHoldEffectsRet
-	setstatchanger STAT_SPEED, 1, FALSE
-	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | MOVE_EFFECT_CERTAIN | STAT_CHANGE_ALLOW_PTR, BattleScript_TryPheromoneHoldEffectsRet
-	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
-	setgraphicalstatchangevalues
-	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
-	copybyte sBATTLER, gBattlerTarget
-	setlastuseditem BS_TARGET
-	printstring STRINGID_USINGITEMSTATOFPKMNROSE
-	waitmessage B_WAIT_TIME_LONG
-	removeitem BS_TARGET
-BattleScript_TryPheromoneHoldEffectsRet:
-	return
-
-BattleScript_PheromoneActivates::
+BattleScript_DominanceAbilityActivates::
+	copybyte sSAVED_BATTLER, gBattlerTarget
+.if B_ABILITY_POP_UP == TRUE
 	showabilitypopup BS_ATTACKER
 	pause B_WAIT_TIME_LONG
 	destroyabilitypopup
+.endif
 	setbyte gBattlerTarget, 0
-BattleScript_PheromoneLoop:
-	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_PheromoneLoopIncrement
-	jumpiftargetally BattleScript_PheromoneLoopIncrement
-	jumpifabsent BS_TARGET, BattleScript_PheromoneLoopIncrement
-	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_PheromoneLoopIncrement
-	jumpifstatus2 BS_TARGET, STATUS2_INFATUATION, BattleScript_PheromoneLoopIncrement
-	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_PheromoneInReverse
-BattleScript_PheromoneEffect:
+BattleScript_DominanceAbilityLoop:
+	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_DominanceAbilityLoopIncrement
+	jumpiftargetally BattleScript_DominanceAbilityLoopIncrement
+	jumpifabsent BS_TARGET, BattleScript_DominanceAbilityLoopIncrement
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_DominanceAbilityLoopIncrement
+	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_DominanceAbilityPrevented
+BattleScript_DominanceAbilityEffect:
 	copybyte sBATTLER, gBattlerAttacker
+	printstring STRINGID_DOMINANCEABILITYACTIVATES
+	waitmessage B_WAIT_TIME_LONG
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_TARGET, BIT_ATK | BIT_SPATK, STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_ATK, 1, TRUE
+	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_DominanceAbilityLoopIncrement
+	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_DominanceAbilityContrary
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_DominanceAbilitySpAtk
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DominanceAbilitySpAtk:
 	setstatchanger STAT_SPATK, 1, TRUE
-	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_PheromoneLoopIncrement
-	setgraphicalstatchangevalues
-	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_PheromoneContrary
-	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
-	printstring STRINGID_PKMNCUTSSPATTACKWITH
-BattleScript_PheromoneEffect_WaitString:
+	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_DominanceAbilityLoopIncrement
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_DominanceAbilityWontDecrease
+	printfromtable gStatDownStringIds
+BattleScript_DominanceAbilityEffect_WaitString:
 	waitmessage B_WAIT_TIME_LONG
 	copybyte sBATTLER, gBattlerTarget
-	call BattleScript_TryPheromoneHoldEffects
-BattleScript_PheromoneLoopIncrement:
+	call BattleScript_TryDestinyKnotTarget
+	call BattleScript_TryIntimidateHoldEffects
+BattleScript_DominanceAbilityLoopIncrement:
 	addbyte gBattlerTarget, 1
-	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_PheromoneLoop
-BattleScript_PheromoneEnd:
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_DominanceAbilityLoop
 	copybyte sBATTLER, gBattlerAttacker
 	destroyabilitypopup
-	pause B_WAIT_TIME_MED
+ 	copybyte gBattlerTarget, sSAVED_BATTLER
 	end3
 
-BattleScript_PheromoneContrary:
+BattleScript_DominanceAbilityPrevented:
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNPREVENTSSTATLOSSWITH
+	goto BattleScript_DominanceAbilityEffect_WaitString
+
+BattleScript_DominanceAbilityWontDecrease:
+	printstring STRINGID_STATSWONTDECREASE
+	goto BattleScript_DominanceAbilityEffect_WaitString
+
+BattleScript_DominanceAbilityContrary:
 	call BattleScript_AbilityPopUpTarget
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_PheromoneContrary_WontIncrease
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_DominanceAbilityContrary_WontIncrease
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printfromtable gStatUpStringIds
-	goto BattleScript_PheromoneEffect_WaitString
-BattleScript_PheromoneContrary_WontIncrease:
+	goto BattleScript_DominanceAbilityEffect_WaitString
+BattleScript_DominanceAbilityContrary_WontIncrease:
 	printstring STRINGID_TARGETSTATWONTGOHIGHER
-	goto BattleScript_PheromoneEffect_WaitString
-
-BattleScript_PheromoneInReverse:
-	copybyte sBATTLER, gBattlerTarget
-	call BattleScript_AbilityPopUpTarget
-	pause B_WAIT_TIME_SHORT
-	modifybattlerstatstage BS_TARGET, STAT_SPATK, INCREASE, 1, BattleScript_PheromoneLoopIncrement, ANIM_ON
-	call BattleScript_TryPheromoneHoldEffects
-	goto BattleScript_PheromoneLoopIncrement
+	goto BattleScript_DominanceAbilityEffect_WaitString
 
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT

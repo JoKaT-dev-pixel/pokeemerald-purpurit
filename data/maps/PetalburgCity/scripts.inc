@@ -845,7 +845,7 @@ Chantiville_Text_AssistantMatchCall:
 
 Chantiville_Text_FildrongCallTalk:
 	.string "{ROCKET}Fildrong: {AQUA}Pas question !\p"
-	.string "J'ai désormais rallumer la flamme que\n"
+	.string "J'ai désormais rallumé la flamme que\n"
 	.string "j'avais perdue depuis bien longtemps !\p"
 	.string "Ma commu a encore besoin de moi !$"
 
@@ -872,7 +872,7 @@ Chantiville_Text_FildrongAfterCall:
 
 PetalburgCity_Text_WellMaybeNot:
 	.string "{ROCKET}Fildrong: {AQUA}Hum, hum…!\n"
-	.string "Oublie ce que j'ai dis !\p"
+	.string "Oublie ce que j'ai dit !\p"
 	.string "La raison de mon interpellation est\n"
 	.string "que je souhaite saisir l'opportunité\l"
 	.string "d'être bien plus qu'un Professeur !\p"

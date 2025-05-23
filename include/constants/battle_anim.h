@@ -416,6 +416,9 @@
 #define ANIM_TAG_NOTHING_SCRATCH            (ANIM_SPRITES_START + 402)
 #define ANIM_TAG_YELLOW_SWIPE               (ANIM_SPRITES_START + 403)
 #define ANIM_TAG_VERTICAL_STRIPES           (ANIM_SPRITES_START + 404)
+#define ANIM_TAG_SNOW                       (ANIM_SPRITES_START + 405)
+#define ANIM_TAG_BLUE_SLASH                 (ANIM_SPRITES_START + 406)
+#define ANIM_TAG_OIL_BUBBLE                 (ANIM_SPRITES_START + 407)
 
 // battlers
 #define ANIM_ATTACKER         0

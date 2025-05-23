@@ -8,14 +8,15 @@ PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet::
 	return
 
 PlayersHouse_1F_EventScript_EnterHouseMovingIn::
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
 	applymovement VAR_0x8004, Common_Movement_FacePlayer
 	waitmovement 0
 	call_if_eq VAR_0x8005, MALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInMale
 	call_if_eq VAR_0x8005, FEMALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale
-	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox PlayersHouse_1F_Text_MoversPokemonGoSetClock, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	setvar VAR_LITTLEROOT_INTRO_STATE, 4
 	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerWalkIn
@@ -39,8 +40,10 @@ PlayersHouse_1F_Movement_PlayerWalkIn:
 	step_end
 
 PlayersHouse_1F_EventScript_MomGoSeeRoom::
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM_SWEAT
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_ArentYouInterestedInRoom, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterUp
 	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_MovePlayerAwayFromDoor
@@ -84,8 +87,10 @@ PlayersHouse_2F_EventScript_MomComesUpstairsMale::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsMale
 	waitmovement 0
@@ -98,8 +103,10 @@ PlayersHouse_2F_EventScript_MomComesUpstairsFemale::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_2F_Text_HowDoYouLikeYourRoom, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	applymovement VAR_0x8008, PlayersHouse_2F_Movement_MomExitsFemale
 	waitmovement 0
@@ -161,8 +168,10 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	applymovement OBJ_EVENT_ID_PLAYER, PlayersHouse_1F_Movement_PlayerApproachTVForGymMale
 	waitmovement 0
 	playbgm MUS_ENCOUNTER_INTERVIEWER, FALSE
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_MaybeDadWillBeOn, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomMakeRoomToSeeTVMale
 	waitmovement 0
@@ -171,14 +180,22 @@ PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	call PlayersHouse_1F_EventScript_WatchGymBroadcast
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM_SWEAT
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_ItsOverWeMissedHim, MSGBOX_DEFAULT
+	callnative ClearMugshot
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
+	msgbox PlayersHouse_1F_Text_MomLaboratoryOutTown, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	playse SE_PIN
 	applymovement LOCALID_MOM, Common_Movement_ExclamationMark
 	delay 50
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	setvar VAR_TEMP_1, 1
 	applymovement VAR_0x8005, PlayersHouse_1F_Movement_MomReturnToSeatMale
@@ -220,8 +237,10 @@ PlayersHouse_1F_EventScript_MomNoticeGymBroadcast::
 	waitmovement 0
 	applymovement VAR_0x8005, Common_Movement_Delay48
 	waitmovement 0
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_OhComeQuickly, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	return
 
@@ -368,13 +387,18 @@ PlayersHouse_1F_EventScript_TryGiveAmuletCoin::
 	end
 
 PlayersHouse_1F_EventScript_MomHealsParty::
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_YouShouldRestABit, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	goto PlayersHouse_1F_EventScript_HealParty
 	end
 
 PlayersHouse_1F_EventScript_SeeYouHoney::
-	textcolor NPC_TEXT_COLOR_FEMALE
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_SeeYouHoney, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	release
 	end
 
@@ -382,12 +406,18 @@ PlayersHouse_1F_EventScript_HealParty::
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
 	incrementgamestat GAME_STAT_RESTED_AT_HOME
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_TakeCareHoney, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	release
 	end
 
 PlayersHouse_1F_EventScript_DidYouMeetProfBirch::
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox PlayersHouse_1F_Text_DidYouMeetProfBirch, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	release
 	end
 
