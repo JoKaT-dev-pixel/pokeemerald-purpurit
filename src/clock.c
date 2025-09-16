@@ -11,6 +11,7 @@
 #include "main.h"
 #include "overworld.h"
 #include "wallclock.h"
+#include "wonder_trade.h"
 #include "constants/form_change_types.h"
 
 static void UpdatePerDay(struct Time *localTime);

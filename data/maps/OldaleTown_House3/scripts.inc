@@ -28,12 +28,11 @@ Fourqueue_House3_Text_Man:
 	.string "Et elle nous a quittés…$"
 
 Fourqueue_House3_Text_Twin:
-	.string "Moi je m'appelle Nina ! Et mon\n"
-	.string "Castoutou, lui, c'est Alexander !\p"
-	.string "Je m'inquiète beaucoup pour mon\n"
-	.string "papa…\p"
+	.string "Moi, je m'appelle Nina !\n"
+	.string "Et mon Castoutou, lui, c'est Alexander !\p"
+	.string "Je m'inquiète beaucoup pour mon papa…\p"
 	.string "Il étudie tout le temps et en plus,\n"
-	.string "il joue jamais avec nous…!$"
+	.string "il ne joue jamais avec nous…$"
 
 Fourqueue_House3_Text_Castoutou:
-	.string "Castoutou: Wouaf, wouaf ?!$"
+	.string "Castoutou: Wouaf !$"

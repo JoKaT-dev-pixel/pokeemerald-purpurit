@@ -16,8 +16,8 @@ PetalburgCity_House2_Text_NormanBecameGymLeader:
 	.string "délinquant !$"
 
 PetalburgCity_House2_Text_BattledNormanOnce:
-	.string "À cause de Pascal, ma mère m'oblige\n"
-	.string "à faire mes devoirs !\p"
+	.string "À cause de Pascal, ma mère m'oblige à\n"
+	.string "faire mes devoirs !\p"
 	.string "J'en ai tellement que je ne peux même\n"
 	.string "pas jouer à Call of Duty !$"
 

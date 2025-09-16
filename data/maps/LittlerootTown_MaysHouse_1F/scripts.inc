@@ -359,9 +359,8 @@ RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
 	.string "… … … … … … … … …\n"
 	.string "… … … … … … … … …\p"
 	.string "Tu es {PLAYER}{KUN} et tu habites dans la\n"
-	.string "maison voisine, c'est cela ?\p"
-	.string "Ma petite fille et toi vous avez le\n"
-	.string "même âge.\p"
+	.string "maison d'à côté, c'est cela ?\p"
+	.string "Ma petite fille a le même âge que toi !\p"
 	.string "Hum…\p"
 	.string "Comment elle s'appelle déjà…?$"
 
@@ -372,53 +371,50 @@ RivalsHouse_1F_Text_RivalNicknameChoice:
 RivalsHouse_1F_Text_RivalNicknameCheck:
 	.string "Ah mais oui bien sûr, ça me reviens,\n"
 	.string "c'est Martine !\p"
-	.string "Je suis désolé mon garçon mais tu es\n"
-	.string "tombé au mauvais moment…\p"
-	.string "Je crois que je l'ai vu partir tout à\n"
-	.string "l'heure.\p"
-	.string "Tu peux toujours aller voir dans sa\n"
-	.string "chambre si elle est de retour.$"
+	.string "Je crois que je l'ai vu partir dans sa\n"
+	.string "chambre.\p"
+	.string "Tu peux aller la voir, elle ne va pas te\n"
+	.string "manger !$"
 
 RivalsHouse_1F_Text_RivalNicknameNoCheck:
-	.string "Peux-tu répéter ? j'ai pas bien\n"
-	.string "compris…$"
+	.string "Peux-tu répéter ?\n"
+	.string "Je n'ai pas bien compris…!$"
 
 RivalsHouse_1F_Text_LikeChildLikeFather:
 	.string "Qui êtes-vous et que faites-vous dans\n"
 	.string "ma maison ?!$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
-	.string "C'est Agnès !\p"
-	.string "Je suppose qu'elle s’occupe de ses\n"
-	.string "Pokémon et n’a pas le temps de discuter\l"
-	.string "avec toi.$"
+	.string "C'est ma petite fille, Agnès !\n"
+	.string "Elle est très adorable et bien élevée.\p"
+	.string "Je suis sûr que vous allez devenir de\n"
+	.string "très bons amis.$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
 	.string "Oh, tu cherches Charlotte ?\p"
-	.string "Elle a dit qu'elle va sur le\n"
-	.string "Chenal 9.$"
+	.string "Elle a dit qu'elle va sur le Chenal 9.$"
 
 RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
-	.string "I think it's wonderful for people to\n"
-	.string "travel with POKéMON.\p"
-	.string "But you should go home every so often\n"
-	.string "to let your mother know you're okay.\p"
-	.string "She might not say it, but I'm sure she\n"
-	.string "worries about you, {PLAYER}{KUN}.$"
+	.string "{ROCKET}Il s'est endormi…\n"
+	.string "Vaut mieux le laisser tranquille.$"
 
 RivalsHouse_1F_Text_MayWhoAreYou:
-	.string "{ROCKET}{RIVAL}: {MAGMA}What the fuck !\n"
-	.string "Que… Que fais-tu chez moi ?!\p"
+	.string "{ROCKET}{RIVAL}: {MAGMA}What the fuck !\p"
+	.string "Qu'est-ce que tu foutais dans ma\n"
+	.string "chambre ?!\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
-	.string "Donc, tu as emménagé aujourd’hui.\n"
-	.string "Je vois…\p"
-	.string "Tu comptes vraiment visiter le labo\n"
-	.string "de Fildrong ?\p"
-	.string "Pff… Ce n'est pas un rat comme toi qu'il\n"
-	.string "acceptera de te donner un Starter.\p"
-	.string "Alors si tu veux bien m'excuser, j'ai\n"
-	.string "d'autres Meouwu à fouetter !$"
+	.string "Donc, tu as emménagé aujourd’hui ?\n"
+	.string "Je vois…!\p"
+	.string "Et en plus, tu comptes visiter le labo\n"
+	.string "de Fildrong ?!\p"
+	.string "Pff…!\p"
+	.string "Désolé pour toi, mais tu iras une autre\n"
+	.string "fois, sale rat !\p"
+	.string "C'est aujourd'hui que j'irai choisir mon\n"
+	.string "starter, alors tu n'as pas intérêt à\l"
+	.string "tout gâcher !\p"
+	.string "À jamais, connard !$"
 
 RivalsHouse_1F_Text_BrendanWhoAreYou:
 	.string "Hey!\n"

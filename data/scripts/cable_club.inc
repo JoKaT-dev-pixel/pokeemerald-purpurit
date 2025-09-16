@@ -1,3 +1,5 @@
+.set LOCALID_WONDERTRADENURSE, 2
+
 CableClub_OnTransition:
 	call CableClub_EventScript_HideOrShowMysteryGiftMan
 	end
@@ -227,20 +229,28 @@ CableClub_EventScript_PlayerExitLinkRoom::
 
 CableClub_EventScript_Tutorial::
 	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_WONDERTRADENURSE, Common_Movement_ExclamationMark
+	delay 1
+	applymovement LOCALID_WONDERTRADENURSE, Common_Movement_FaceLeft
+	delay 50
 	msgbox CableClub_Text_FirstTimeRightThisWay, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, CableClub_Movement_PlayerApproachCounter
 	waitmovement 0
-	delay 30
+	applymovement LOCALID_WONDERTRADENURSE, Common_Movement_WalkInPlaceFasterDown
+	delay 18
 	msgbox CableClub_Text_ExplainWirelessClubFirstTime, MSGBOX_DEFAULT
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 2
 	releaseall
 	end
 
 CableClub_Movement_PlayerApproachCounter:
-	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	walk_up
 	step_end
 

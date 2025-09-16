@@ -768,16 +768,17 @@ PetalburgCity_Text_WhereIsWally:
 	.string "tête…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
-	.string "Oh, un noob !\n"
-	.string "Tu viens de Bourg Paumé, ça se voit !\p"
+	.string "Hé, toi !\n"
+	.string "T'es pas du coin, on dirait !\p"
 	.string "Je vais t'expliquer deux, trois trucs\n"
-	.string "quand on est un Dresseur.\p"
+	.string "qui pourrait intéresser !\p"
 	.string "Pour progresser et devenir le meilleur\n"
 	.string "Dresseur, tu dois défier les Champions\l"
-	.string "d'Arène se trouvant dans chaque ville.$"
+	.string "d'Arène se trouvant dans chaque ville !$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "Ça ? C'est l'Arène de Chantiville !$"
+	.string "Ça, tu vois ?!\n"
+	.string "C'est l'Arène de Chantiville !$"
 
 PetalburgCity_Text_ThisIsGymSign:
 	.string "Toutes les informations sont indiquées\n"
@@ -787,34 +788,40 @@ PetalburgCity_Text_ThisIsGymSign:
 
 PetalburgCity_Text_Boyfriend:
 	.string "Pitié, aide-moi…!\p"
-	.string "Elle est folle !$"
+	.string "Ma copine est folle…!$"
 
 PetalburgCity_Text_FirstDate:
-	.string "Mon mec c'est trop un homme capable !\p"
-	.string "Il m'a offert un sac de luxe et m'a\n"
-	.string "ensuite emmené au restaurant.$"
+	.string "Mon mec, c'est trop un homme capable !\p"
+	.string "Il m'a offert un joli sac et compte me\n"
+	.string "proposer un restaurant 5 étoiles.$"
 
 PetalburgCity_Text_ExpertMale:
 	.string "Les Pokémon ont embelli la vie de\n"
 	.string "nombreuses personnes.\p"
 	.string "Ils sont partout, dans les montagnes,\n"
-	.string "dans les mers et même dans le ciel.$"
+	.string "sous l'océan et même dans le ciel.\p"
+	.string "Autrefois, j'étais un Dresseur tout\n"
+	.string "comme toi !\p"
+	.string "C'était vraiment la belle époque…$"
 
 PetalburgCity_Text_Man:
-	.string "Ma calvitie est un signe de virilité.\p"
-	.string "C'est pour ça que je n'en porterais\n"
-	.string "jamais de faux cheveux.$"
+	.string "Je ne suis pas complexer par ma\n"
+	.string "calvitie !\p"
+	.string "Je ne suis pas complexer par ma\n"
+	.string "calvitie !\p"
+	.string "Je ne suis pas complexer par ma\n"
+	.string "CALVITIE !!$"
 
 PetalburgCity_Text_Woman:
-	.string "Le café servi au Pokécafé est\n"
-	.string "vraiment délicieux.\p"
+	.string "Le café servi au Pokécafé est vraiment\n"
+	.string "délicieux.\p"
 	.string "Ce bar est un bon endroit pour bien\n"
-	.string "commencer une journée.$"
+	.string "commencer la journée !$"
 
 PetalburgCity_Text_Twin:
-	.string "Ma maman m'a dit de ne pas parler aux\n"
-	.string "étrangers.\p"
-	.string "Du coup, je te parle pas !$"
+	.string "Mes parents m'ont dit de ne pas parler\n"
+	.string "aux étrangers.\p"
+	.string "Du coup, j'te parle pas !$"
 
 PetalburgCity_Text_GymSign:
 	.string "Arène de Chantiville\p"

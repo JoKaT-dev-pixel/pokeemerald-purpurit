@@ -362,10 +362,6 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler, bool32 emitResult)
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SOUL_SAP;
     }
-    else if (gMovesInfo[gLastLandedMoves[battler]].type == TYPE_ROCK)
-    {
-        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FURNACE;
-    }
     else
     {
         return FALSE;
@@ -440,8 +436,7 @@ static bool32 ShouldSwitchIfGameStatePrompt(u32 battler, bool32 emitResult)
     //Perish Song
     if (gStatuses3[battler] & STATUS3_PERISH_SONG
         && gDisableStructs[battler].perishSongTimer == 0
-        && monAbility != ABILITY_SOUNDPROOF
-        && monAbility != ABILITY_BASS_BOOSTER)
+        && monAbility != ABILITY_SOUNDPROOF)
         switchMon = TRUE;
 
     if (AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_SMART_SWITCHING)

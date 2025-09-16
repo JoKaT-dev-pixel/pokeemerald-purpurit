@@ -710,7 +710,7 @@ static const u8 sText_DestinyKnotActivates[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX
 static const u8 sText_CloakedInAFreezingLight[] = _("{B_ATK_NAME_WITH_PREFIX} became cloaked\nin a freezing light!");
 static const u8 sText_ClearAmuletWontLowerStats[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_LAST_ITEM} prevents\nits stats from being lowered!");
 static const u8 sText_AuraFlaredToLife[] = _("{B_DEF_NAME_WITH_PREFIX}'s aura flared to life!");
-static const u8 sText_AirLockActivates[] = _("The effects of weather\ndisappeared.");
+static const u8 sText_AirLockActivates[] = _("Les effets de la météo se dissipent !");
 static const u8 sText_PressureActivates[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} is exerting its\npressure!");
 static const u8 sText_DarkAuraActivates[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} is radiating\na dark aura!");
 static const u8 sText_FairyAuraActivates[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} is radiating\na fairy aura!");
@@ -847,6 +847,8 @@ static const u8 sText_SupersweetAromaWafts[] = _("A supersweet aroma is wafting 
 static const u8 sText_TidyingUpComplete[] = _("Tidying up complete!");
 static const u8 sText_DominanceAbilityActivates[] = _("{B_DEF_NAME_WITH_PREFIX} cède à la\nsoumission !");
 static const u8 sText_LoveIsInTheAir[] = _("Il y a de l'amour dans l'air !");
+static const u8 sText_DeterminationGetUp[] = _("{B_ATK_NAME_WITH_PREFIX} n'a pas encore dit\nson dernier mot !");
+static const u8 sText_DeterminationActivates[] = _("Sa détermination augmente beaucoup\nson Attaque et sa Défense !");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1548,6 +1550,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_CLOAKEDINAHARSHLIGHT - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCloakedInAHarshLight,
     [STRINGID_DOMINANCEABILITYACTIVATES - BATTLESTRINGS_TABLE_START] = sText_DominanceAbilityActivates,
     [STRINGID_LOVEISINTHEAIR - BATTLESTRINGS_TABLE_START] = sText_LoveIsInTheAir,
+    [STRINGID_DETERMINATIONGETUP - BATTLESTRINGS_TABLE_START] = sText_DeterminationGetUp,
+    [STRINGID_DETERMINATIONACTIVATES - BATTLESTRINGS_TABLE_START] = sText_DeterminationActivates,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

@@ -622,7 +622,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(PKMN_BREEDER, "{PKMN} BREEDER", 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? ITEM_HEAL_BALL : ITEM_FRIEND_BALL),
     TRAINER_CLASS(COOLTRAINER, "Topdresseur", 12, ITEM_ULTRA_BALL),
     TRAINER_CLASS(BIRD_KEEPER, "Ornithologue", 8),
-    TRAINER_CLASS(COLLECTOR, "le Geek", 15),
+    TRAINER_CLASS(COLLECTOR, "le Pro-Gamer", 15),
     TRAINER_CLASS(SWIMMER_M, "SWIMMER♂", 2, ITEM_DIVE_BALL),
     TRAINER_CLASS(TEAM_MAGMA, "TEAM MAGMA"),
     TRAINER_CLASS(EXPERT, "le Go Muscu", 10, ITEM_SPORT_BALL),
@@ -5186,10 +5186,6 @@ s8 GetMovePriority(u32 battler, u16 move)
         gProtectStructs[battler].regalElevated = 1;
         priority++;
     }
-    else if (ability == ABILITY_PITCH_PERFECT && gMovesInfo[move].soundMove)
-    {
-        priority++;
-    }
 
     if (gProtectStructs[battler].quash)
         priority = -8;
@@ -5210,8 +5206,8 @@ s32 GetWhichBattlerFasterArgs(u32 battler1, u32 battler2, bool32 ignoreChosenMov
         // Lagging Tail - always last
         bool32 battler1HasQuickEffect = gProtectStructs[battler1].quickDraw || gProtectStructs[battler1].usedCustapBerry;
         bool32 battler2HasQuickEffect = gProtectStructs[battler2].quickDraw || gProtectStructs[battler2].usedCustapBerry;
-        bool32 battler1HasStallingAbility = ability1 == ABILITY_STALL || (ability1 == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gChosenMoveByBattler[battler1]));
-        bool32 battler2HasStallingAbility = ability2 == ABILITY_STALL || (ability2 == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gChosenMoveByBattler[battler2]));
+        bool32 battler1HasStallingAbility = ability1 == ABILITY_STALL || (ability1 == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gChosenMoveByBattler[battler1])) || (ability1 == ABILITY_SIMPING && AreBattlersOfOppositeGender(battler1, battler2));
+        bool32 battler2HasStallingAbility = ability2 == ABILITY_STALL || (ability2 == ABILITY_MYCELIUM_MIGHT && IS_MOVE_STATUS(gChosenMoveByBattler[battler2])) || (ability2 == ABILITY_SIMPING && AreBattlersOfOppositeGender(battler2, battler1));
 
         if (battler1HasQuickEffect && !battler2HasQuickEffect)
             strikesFirst = 1;
@@ -6148,7 +6144,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
                  || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
                  || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
                  || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_ELECTRIC))
-                 || (attackerAbility == ABILITY_CRYSTALLISE && (ateType = TYPE_ROCK))
+                 || (attackerAbility == ABILITY_MINERALATE && (ateType = TYPE_ROCK))
                 )
              )
     {

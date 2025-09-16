@@ -28,6 +28,8 @@ extern const u8 SafariZone_EventScript_RetirePrompt[];
 extern const u8 SafariZone_EventScript_OutOfBallsMidBattle[];
 extern const u8 SafariZone_EventScript_OutOfBalls[];
 
+extern const u8 FullStartMenu_EventScript_SavePrompt[];
+
 EWRAM_DATA u8 gNumSafariBalls = 0;
 EWRAM_DATA static u16 sSafariZoneStepCounter = 0;
 EWRAM_DATA static u8 sSafariZoneCaughtMons = 0;
@@ -92,6 +94,11 @@ bool8 SafariZoneTakeStep(void)
 void SafariZoneRetirePrompt(void)
 {
     ScriptContext_SetupScript(SafariZone_EventScript_RetirePrompt);
+}
+
+void FullStartMenuSavePrompt(void)
+{
+    ScriptContext_SetupScript(FullStartMenu_EventScript_SavePrompt);
 }
 
 void CB2_EndSafariBattle(void)

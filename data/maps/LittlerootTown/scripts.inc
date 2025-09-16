@@ -927,14 +927,16 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "épuisé mais on s'en fiche !\p"
 	.string "L'essentiel c'est que tu as pris soin de\n"
 	.string "mes colis.\p"
-	.string "Enfin bref… Te voilà à Bourg Paumé !\n"
+	.string "Enfin bref…\p"
+	.string "Te voilà à Bourg Paumé, mon chou !\n"
 	.string "C'est très calme et paisible ici.$"
 
 LittlerootTown_Text_PlayerMomNotBedroom:
-	.string "{MAGMA}Par contre, tu n'as plus de chambre\n"
-	.string "alors tu vas dormir dans le grenier.\p"
-	.string "Je suis désolée mon chou, tu vas devoir\n"
-	.string "faire avec pour l'instant…$"
+	.string "{MAGMA}Par contre, tu n'as plus de chambre.\n"
+	.string "Tu vas devoir dormir dans le grenier.\p"
+	.string "Je suis vraiment désolée mon chou, ce\n"
+	.string "n'est que temporaire…\p"
+	.string "Promis !$"
 
 LittlerootTown_Text_PlayerMomGoToHome:
 	.string "{MAGMA}Bien !\n"
@@ -944,8 +946,8 @@ LittlerootTown_Text_WaitPlayer:
 	.string "{ROCKET}Maman: {MAGMA}Attends, {PLAYER} !$"
 
 LittlerootTown_Text_WearTheseRunningShoes:
-	.string "{ROCKET}Maman: {MAGMA}Alors ça y est ? Tu pars à\n"
-	.string "l'aventure !\p"
+	.string "{ROCKET}Maman: {MAGMA}Alors ça y est ?\n"
+	.string "Tu pars à l'aventure !\p"
 	.string "Ne t'en fais pas pour moi, je vais\n"
 	.string "m'occuper durant ton absence.\p"
 	.string "N'oublie pas de revenir me voir de\n"
@@ -958,17 +960,15 @@ LittlerootTown_Text_SwitchShoesWithRunningShoes:
 
 LittlerootTown_Text_ExplainRunningShoes:
 	.string "{ROCKET}Maman: {MAGMA}Ces chaussures te serviront\n"
-	.string "pour courir en toute sécurité !\p"
+	.string "pour ton voyage !\p"
 	.string "Je vais te lire le mode d'emploi…\p"
 	.string "“Avec ces Chaussures de Sécurité,\n"
-	.string "appuyez sur le bouton B pour aller\l"
-	.string "plus vite !”\p"
-	.string "“Une fois les Chaussures de Sécurité\n"
-	.string "enfilées, vous pourrez désormais\l"
-	.string "courir n'importe où !”$"
+	.string "appuyez sur le bouton B pour courir\l"
+	.string "n'importe où !”$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
-	.string "Très bien, tout à l'air nickel !\p"
+	.string "Très bien, ça ne m'a pas l'air très\n"
+	.string "compliqué…!\p"
 	.string "Je suis désolée mais je vais devoir\n"
 	.string "te laisser mon chou !\p"
 	.string "J'ai un gâteau qui m'attends dans\n"
@@ -978,43 +978,43 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "Elle est seule, ta mère ?\p"
 	.string "Hmm…\p"
-	.string "Je prendrai bien soin d'elle après\n"
-	.string "ton départ.$"
+	.string "Je prendrai bien soin d'elle après ton\n"
+	.string "départ.$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "Je n'arrive pas à y croire que le\n"
 	.string "professeur Fildrong vient s'installer\l"
 	.string "dans ce trou paumé.\p"
-	.string "Je me demande ce qui lui est passé\n"
-	.string "par la tête ?$"
+	.string "Je me demande ce qui lui est passé par\n"
+	.string "la tête ?!$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Pas si vite !\p"
-	.string "Si tu t’aventures sans un Pokémon\n"
-	.string "dans ton équipe, tu risques de te\l"
-	.string "faire attaquer par d'autres Pokémon.$"
+	.string "C'est très dangereux de s'aventurer\n"
+	.string "sans Pokémon !$"
 
 LittlerootTown_Text_DangerousIfYouDontHavePokemon:
-	.string "C’est dangereux si tu voyages sans\n"
-	.string "tes propres POKéMON.$"
+	.string "Ta mère ne t'a jamais appris qu'il ne\n"
+	.string "faut surtout pas s'approcher des\l"
+	.string "Pokémon sauvages sans rien ?$"
 
 LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 	.string "Salut !\p"
 	.string "Depuis tout à l'heure, j'entends\n"
 	.string "quelqu'un crier au secours !\p"
-	.string "J’aimerais bien aller voir mais j'ai\n"
+	.string "J’aimerais bien y aller voir, mais j'ai\n"
 	.string "trop peur…\p"
-	.string "Tu pourrais aller voir pour moi ce\n"
-	.string "qui se passe s'il te plait ?$"
+	.string "Pourrais-tu jeter un coup d'œil s'il\n"
+	.string "te plaît ?$"
 
 LittlerootTown_Text_YouSavedBirch:
-	.string "Tu as réussi à sauver le Professeur !\n"
+	.string "Waouh !\n"
+	.string "T'as réussi à sauver le Professeur !\p"
 	.string "Je suis tellement soulagée !$"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "Ton Pokémon, il est trop mignon !\p"
-	.string "J'aimerais trop en avoir un moi\n"
-	.string "aussi.$"
+	.string "J'aimerais trop en avoir un, moi aussi !$"
 
 LittlerootTown_Text_TownSign:
 	.string "Bourg Paumé\n"

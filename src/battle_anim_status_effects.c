@@ -96,6 +96,28 @@ const struct SpriteTemplate gWeatherBallNormalDownSpriteTemplate =
     .callback = AnimWeatherBallDown,
 };
 
+static const union AnimCmd sAnim_DivebombFire[] =
+{
+    ANIMCMD_FRAME(0, 3),
+    ANIMCMD_JUMP(0)
+};
+
+static const union AnimCmd *const sAnims_DivebombFire[] =
+{
+    sAnim_DivebombFire,
+};
+
+const struct SpriteTemplate gDivebombFireSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_DIVEBOMB,
+    .paletteTag = ANIM_TAG_DIVEBOMB,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_DivebombFire,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimWeatherBallDown,
+};
+
 static const union AnimCmd sAnim_SpinningSparkle[] =
 {
     ANIMCMD_FRAME(0, 3),

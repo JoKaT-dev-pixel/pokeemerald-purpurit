@@ -359,6 +359,8 @@ SECTIONS {
         src/international_string_util.o(.text);
         src/pokemon_debug.o(.text);
         src/expansion_intro.o(.text);
+        src/map_preview_screen.o(.text);
+        src/ui_startmenu_full.o(.text);
     } > ROM =0
 
     script_data :
@@ -728,6 +730,8 @@ SECTIONS {
         src/pokemon_debug.o(.rodata);
         src/expansion_intro.o(.rodata);
         src/field_mugshot.o(.rodata);
+        src/map_preview_screen.o(.rodata);
+        src/ui_startmenu_full.o(.rodata);
     } > ROM =0
 
     song_data :

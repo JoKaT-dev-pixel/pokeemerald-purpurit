@@ -95,9 +95,10 @@ Route102_Text_LetsGoBack:
 	.string "Retournons voir Pascal !$"
 
 Route102_Text_ImNotVeryTall:
-	.string "Et non ! Je t'ai eu !\p"
+	.string "Et non !\n"
+	.string "Je t'ai eu !\p"
 	.string "Tu as cru que j'allais éternuer à\n"
-	.string "cause des herbes ?\p"
+	.string "cause des herbes ?!\p"
 	.string "Et bien, CHEH !$"
 
 Route102_Text_RouteSignOldale:

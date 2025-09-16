@@ -186,6 +186,32 @@ const struct SpriteTemplate gOpeningEyeSpriteTemplate =
     .callback = AnimSpriteOnMonPos,
 };
 
+const union AnimCmd gCuteEyeAnimCmds[] =
+{
+    ANIMCMD_FRAME(32, 30),
+    ANIMCMD_FRAME(16, 4),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(16, 6),
+    ANIMCMD_FRAME(32, 50),
+    ANIMCMD_END,
+};
+
+const union AnimCmd *const gCuteEyeAnimTable[] =
+{
+    gCuteEyeAnimCmds,
+};
+
+const struct SpriteTemplate gCuteEyeSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_CUTE_EYE,
+    .paletteTag = ANIM_TAG_CUTE_EYE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gCuteEyeAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimSpriteOnMonPos,
+};
+
 const struct SpriteTemplate gWhiteHaloSpriteTemplate =
 {
     .tileTag = ANIM_TAG_ROUND_WHITE_HALO,

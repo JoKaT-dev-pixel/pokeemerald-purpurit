@@ -846,18 +846,18 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
 	.string "Quoi ? Le Professeur ?\p"
 	.string "Il est parti se promener mais il ne\n"
 	.string "devrait pas tarder.\p"
-	.string "C'est pas tout à fait son genre de\n"
+	.string "Ce n'est pas tout à fait son genre de\n"
 	.string "rester derrière un bureau.\p"
 	.string "Autrefois, il était vidéaste.\p"
 	.string "Mais il a tellement été tourmenté par\n"
-	.string "sa chauveté qu'il a décidé de changer\l"
-	.string "de métier.$"
+	.string "sa calvitie qu'il a décidé de changer\l"
+	.string "de passion.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
 	.string "Je me retrouve à chaque fois à faire\n"
 	.string "tout le boulot à sa place.\p"
-	.string "Il aime trop prendre les choses à\n"
-	.string "la légère !$"
+	.string "Il aime trop prendre les choses à la\n"
+	.string "légère !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 	.string "Le Professeur est un spécialiste des\n"
@@ -867,30 +867,30 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 
 LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Bon, {PLAYER}{KUN} !\p"
-	.string "J'ai vu le potentiel que tu possèdes\n"
-	.string "quand tu as combattu ce Cornaigri.\p"
-	.string "Tu m'as l'air de savoir t'y prendre\n"
-	.string "avec les Pokémon.\p"
-	.string "Toi et {STR_VAR_1}, vous avez créé un\n"
-	.string "lien très fort qui vous unit !\p"
-	.string "Pour te remercier de m'avoir sauvé,\n"
-	.string "je t'offre ce Pokémon !$"
+	.string "J'ai vu le potentiel que t'as quand tu\n"
+	.string "t'es battu contre ce Cornaigri.\p"
+	.string "et tu m'as l'air de savoir t'y prendre\n"
+	.string "avec les Pokémon !\p"
+	.string "Toi et {STR_VAR_1}, vous avez su créer\n"
+	.string "un lien très fort qui vous unit !\p"
+	.string "Et pour te remercier de m'avoir sauvé,\n"
+	.string "je t'offre {STR_VAR_1} !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedYourePokemon:
-	.string "{PLAYER} reçoit {STR_VAR_1} de la\n"
-	.string "part du Professeur Fildrong !$"
+	.string "{PLAYER} reçoit {MAGMA}{STR_VAR_1} {ROCKET}de la part\n"
+	.string "du Professeur Fildrong !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon:
 	.string "Voulez-vous donnez un surnom au\n"
-	.string "{STR_VAR_1} obtenu ?$"
+	.string "{MAGMA}{STR_VAR_1} {ROCKET}obtenu ?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRivalOceane:
-	.string "{ROCKET}Prof. Fildrong: {AQUA}Avant de t'en aller,\n"
-	.string "j'ai une faveur à te demander.\p"
-	.string "Une autre Dresseuse comme toi était\n"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}D'ailleurs, j'ai une\n"
+	.string "faveur à te demander !\p"
+	.string "Une Dresseuse nommée “{MAGMA}{RIVAL}{AQUA}” était\n"
 	.string "censée passer me voir aujourd'hui.\p"
-	.string "Peux-tu lui dire de venir dans mon\n"
-	.string "labo dès que possible ?$"
+	.string "Peux-tu lui dire qu'elle peut venir\n"
+	.string "dès que possible ?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Avant de t'en aller,\n"
@@ -910,9 +910,10 @@ LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay:
 	.string "You should go meet my kid.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
-	.string "{ROCKET}Prof. Fildrong: {AQUA}Hmm… Si j'étais toi,\n"
-	.string "j'irais là où cette Dresseuse habite.\p"
-	.string "C'est mon intuition !$"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Hmm…\p"
+	.string "Si j'étais toi, j'irais chercher là où\n"
+	.string "elle vit.\p"
+	.string "C'est juste mon intuition !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchRivalEvanGoneHome:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Hmm… Si j'étais toi,\n"
@@ -939,9 +940,10 @@ LittlerootTown_ProfessorBirchsLab_Text_RivalMayBattle:
 	.string "{ROCKET}{RIVAL}: {MAGMA}Amène-toi espèce de rat !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_AfterRivalMayBattle:
-	.string "{ROCKET}{RIVAL}: {MAGMA}Pff… En vrai, c'était un beau\n"
-	.string "combat…!\p"
-	.string "T'es pas si mauvais que ça…!\p"
+	.string "{ROCKET}{RIVAL}: {MAGMA}Pff…\n"
+	.string "J'admets que c'était un beau combat…!\p"
+	.string "T'es pas si mauvais que ça, enfin de\n"
+	.string "compte !\p"
 	.string "Mais ne crois pas que la prochaine fois,\n"
 	.string "je vais être autant clémente !$"
 
@@ -949,32 +951,31 @@ LittlerootTown_ProfessorBirchsLab_Text_RivalBrendanBattle:
 	.string "Maintenant battons-nous !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayDefeated:
-	.string "Wait… J'ai perdu là ?!$"
+	.string "Wait…!\p"
+	.string "J'ai perdu ?!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoyBattle:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}{RIVAL}, {PLAYER}{KUN} !\n"
 	.string "Vous deux, vous avez été grandioses !\p"
 	.string "Votre dévouement permet à vos Pokémon\n"
-	.string "d'avoir confiance en vous !\p"
-	.string "Vos futurs adversaires durant votre\n"
-	.string "voyage vous feront obstacle !\p"
+	.string "d'avoir grandement confiance en vous !\p"
+	.string "De futurs adversaires vous feront\n"
+	.string "obstacle durant votre aventure !\p"
 	.string "Entraînez avec amour vos Pokémon au\n"
 	.string "combat pour qu'ils deviennent forts !\p"
 	.string "En parlant de Pokémon…!\p"
-	.string "Donnez-les moi, je vais tout de suite\n"
-	.string "les remettre sur pied !$"
+	.string "Je vais tout de suite les remettre sur\n"
+	.string "pied !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Une dernière chose !\p"
-	.string "Je vais vous demander à tous les deux\n"
-	.string "de me rendre un service.\p"
 	.string "Je dois mener des recherches sur\n"
 	.string "de nouvelles espèces de Pokémon.\p"
 	.string "Prenez ceci, vous en aurez besoin !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex:
-	.string "{PLAYER} reçoit un {EMERALD}Pokédex\n"
-	.string "{ROCKET}de la part du Professeur Fildrong !$"
+	.string "{PLAYER} reçoit un {EMERALD}Pokédex {ROCKET}de la part\n"
+	.string "du Professeur Fildrong !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Il s'agit d'un Pokédex,\n"

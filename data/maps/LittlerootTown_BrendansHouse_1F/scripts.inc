@@ -333,13 +333,13 @@ PlayersHouse_1F_Text_IsntItNiceInHere:
 	.string "Elle te plait ma nouvelle déco ?$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
-	.string "{MAGMA}Ne t'inquiète pas pour mes colis.\p"
+	.string "{MAGMA}Ne t'inquiète pas pour mes colis !\p"
 	.string "Les Pokémon du livreur se chargeront\n"
 	.string "de cette tâche.\p"
-	.string "Je t'ai acheté une nouvelle horloge\n"
-	.string "pour fêter ton retour !\p"
-	.string "Elle se trouve à l'étage. Va voir à quoi\n"
-	.string "elle ressemble, mon chou !$"
+	.string "Aussi, je t'ai acheté une nouvelle\n"
+	.string "horloge pour fêter ton retour !\p"
+	.string "Elle se trouve à l'étage !\n"
+	.string "Va voir à quoi elle ressemble, mon chou !$"
 
 PlayersHouse_1F_Text_ArentYouInterestedInRoom:
 	.string "{ROCKET}Maman: {MAGMA}Eh bien, {PLAYER} ?\p"
@@ -350,7 +350,8 @@ PlayersHouse_1F_Text_GoSetTheClock:
 	.string "{ROCKET}Maman: {MAGMA}Ne sois pas si pressé, mon chou.$"
 
 PlayersHouse_1F_Text_OhComeQuickly:
-	.string "{ROCKET}Maman: {MAGMA}{PLAYER} ! Viens voir !\n"
+	.string "{ROCKET}Maman: {MAGMA}{PLAYER} !\n"
+	.string "Viens voir !\p"
 	.string "Vite !$"
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn:
@@ -359,7 +360,8 @@ PlayersHouse_1F_Text_MaybeDadWillBeOn:
 	.string "tous les médias en parlent !$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
-	.string "{ROCKET}Maman: {MAGMA}Oh… C’est déjà terminé…\p"
+	.string "{ROCKET}Maman: {MAGMA}Oh…\n"
+	.string "C’est déjà terminé…\p"
 	.string "Dommage qu'on n'ait pas pu tout voir…$"
 
 PlayersHouse_1F_Text_MomLaboratoryOutTown:
@@ -382,7 +384,7 @@ PlayersHouse_1F_Text_DidYouMeetProfBirch:
 
 PlayersHouse_1F_Text_YouShouldRestABit:
 	.string "{ROCKET}Maman: {MAGMA}Comment ça va, {PLAYER} ?\n"
-	.string "Tu m'as l’air bien fatiguer.\p"
+	.string "Tu m'as l’air bien fatiguer !\p"
 	.string "Tu devrais te reposer.$"
 
 PlayersHouse_1F_Text_TakeCareHoney:

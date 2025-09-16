@@ -3425,10 +3425,8 @@ static const union AnimCmd sAnim_Treecko_1[] =
 static const union AnimCmd sAnim_Grovyle_1[] =
 {
     ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 18),
-    ANIMCMD_FRAME(0, 7),
-    ANIMCMD_FRAME(1, 12),
-    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_FRAME(1, 26),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
@@ -4861,9 +4859,7 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(AbsolMega);
 #if P_FAMILY_SNORUNT
 static const union AnimCmd sAnim_Snorunt_1[] =
 {
-    ANIMCMD_FRAME(0, 15),
     ANIMCMD_FRAME(1, 15),
-    ANIMCMD_FRAME(0, 15),
     ANIMCMD_FRAME(1, 15),
     ANIMCMD_FRAME(0, 15),
     ANIMCMD_END,
@@ -7408,14 +7404,6 @@ static const union AnimCmd sAnim_Klinklang_1[] =
 #if P_FAMILY_TYNAMO
 static const union AnimCmd sAnim_Tynamo_1[] =
 {
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 25),
     ANIMCMD_FRAME(1, 5),
     ANIMCMD_FRAME(0, 5),
     ANIMCMD_FRAME(1, 5),

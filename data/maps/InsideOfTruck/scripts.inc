@@ -52,8 +52,8 @@ InsideOfTruck_EventScript_MovingBox::
 	end
 
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
-	.string "Il y a beaucoup de carton contenant\n"
-	.string "un logo avec un sourire.\p"
+	.string "Il y a beaucoup de cartons avec un logo\n"
+	.string "souriant marqué dessus.\p"
 	.string "Je me demande qui en a commandé\n"
-	.string "autant.$"
+	.string "autant…$"
 

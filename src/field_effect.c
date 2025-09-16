@@ -618,11 +618,11 @@ static void (*const sPokeballGlowEffectFuncs[])(struct Sprite *) =
 static const struct Coords16 sPokeballCoordOffsets[PARTY_SIZE] =
 {
     {.x = 0, .y = 0},
-    {.x = 6, .y = 0},
-    {.x = 0, .y = 4},
-    {.x = 6, .y = 4},
-    {.x = 0, .y = 8},
-    {.x = 6, .y = 8}
+    {.x = 7, .y = 0},
+    {.x = 14, .y = 0},
+    {.x = 21, .y = 0},
+    {.x = 28, .y = 0},
+    {.x = 35, .y = 0}
 };
 
 static const u8 sPokeballGlowReds[]   = {16, 12, 8, 0};
@@ -1035,10 +1035,10 @@ bool8 FldEff_PokecenterHeal(void)
     nPokemon = CalculatePlayerPartyCount();
     task = &gTasks[CreateTask(Task_PokecenterHeal, 0xff)];
     task->tNumMons = nPokemon;
-    task->tFirstBallX = 93;
-    task->tFirstBallY = 36;
-    task->tMonitorX = 124;
-    task->tMonitorY = 24;
+    task->tFirstBallX = 102;
+    task->tFirstBallY = 59;
+    task->tMonitorX = 120;
+    task->tMonitorY = 40;
     return FALSE;
 }
 

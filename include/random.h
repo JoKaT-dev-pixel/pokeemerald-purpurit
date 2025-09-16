@@ -194,6 +194,7 @@ enum RandomTag
     RNG_FICKLE_BEAM,
     RNG_AI_ABILITY,
     RNG_SHELL_SIDE_ARM,
+    RNG_STUN_GUN,
 };
 
 #define RandomWeighted(tag, ...) \

@@ -640,10 +640,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SOLAR_PANELS] = _("Photovoltaïque"),
     [ABILITY_BAD_LUCK] = _("Malchance"),
     [ABILITY_ANXIETY] = _("Crise d'Angoisse"),
-    [ABILITY_PRESIDENT] = _("Tyran"),
+    [ABILITY_INFLATION] = _("Tyran"),
     [ABILITY_ADRENALINE] = _("Excentrique"),
-    [ABILITY_ROBUST] = _("Robustesse"),
-    [ABILITY_BASS_BOOSTER] = _("Amplificateur"),
+    [ABILITY_STUN_GUN] = _("Robustesse"),
+    [ABILITY_RECORDING] = _("Amplificateur"),
 };
 #else   // 12 characters
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -969,10 +969,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SOLAR_PANELS] = _("Photovoltaïk"),
     [ABILITY_BAD_LUCK] = _("Malchance"),
     [ABILITY_ANXIETY] = _("Crise Panic"),
-    [ABILITY_PRESIDENT] = _("Tyran"),
+    [ABILITY_INFLATION] = _("Tyran"),
     [ABILITY_ADRENALINE] = _("Excentrique"),
-    [ABILITY_ROBUST] = _("Robustesse"),
-    [ABILITY_BASS_BOOSTER] = _("Amplifier"),
+    [ABILITY_STUN_GUN] = _("Robustesse"),
+    [ABILITY_RECORDING] = _("Amplifier"),
 };
 #endif
 
@@ -1299,8 +1299,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SOLAR_PANELS] = sSolarPanelsDescription,
     [ABILITY_BAD_LUCK] = sBadLuckDescription,
     [ABILITY_ANXIETY] = sPanicAttackDescription,
-    [ABILITY_PRESIDENT] = sTyrantDescription,
+    [ABILITY_INFLATION] = sTyrantDescription,
     [ABILITY_ADRENALINE] = sEccentricDescription,
-    [ABILITY_ROBUST] = sRobustDescription,
-    [ABILITY_BASS_BOOSTER] = sAmplifierDescription
+    [ABILITY_STUN_GUN] = sRobustDescription,
+    [ABILITY_RECORDING] = sAmplifierDescription
 };

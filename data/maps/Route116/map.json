@@ -92,8 +92,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
-      "x": 41,
-      "y": 8,
+      "x": 38,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -118,8 +118,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 56,
-      "y": 16,
+      "x": 53,
+      "y": -2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -157,8 +157,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 49,
-      "y": 8,
+      "x": 48,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -170,8 +170,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 47,
-      "y": 9,
+      "x": 42,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -196,8 +196,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 47,
-      "y": 10,
+      "x": 46,
+      "y": -2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -234,7 +234,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
       "x": 10,
       "y": 5,
       "elevation": 3,
@@ -248,10 +248,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 41,
-      "y": 11,
+      "x": 38,
+      "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -339,7 +339,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 46,
+      "x": 47,
       "y": -2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -400,8 +400,8 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 59,
-      "y": 16,
+      "x": 56,
+      "y": -2,
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": "0"
@@ -417,8 +417,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 50,
-      "y": 8,
+      "x": 48,
+      "y": 10,
       "elevation": 3,
       "var": "VAR_ROUTE116_STATE",
       "var_value": "1",
@@ -482,15 +482,15 @@
     },
     {
       "type": "secret_base",
-      "x": 58,
-      "y": 16,
+      "x": 55,
+      "y": -2,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BLUE_CAVE3_2"
     },
     {
       "type": "secret_base",
-      "x": 57,
-      "y": 16,
+      "x": 54,
+      "y": -2,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BLUE_CAVE4_2"
     },

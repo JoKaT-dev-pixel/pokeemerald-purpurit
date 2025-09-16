@@ -1167,6 +1167,93 @@ EventScript_VsSeekerChargingDone::
 	releaseall
 	end
 
+Common_EventScript_DoWonderTrade::
+	lock
+	faceplayer
+	dotimebasedevents
+	goto_if_set FLAG_DAILY_UPDATE_WONDER_TRADE, WonderTrade_EventScript_ComeBackTomorrow
+	message DoYouWantToWonderTrade_Text_PkmnCenter
+	waitmessage
+	multichoice 0, 0, MULTI_YESNOINFO, FALSE
+	switch VAR_RESULT
+	case 0, EventScript_StartWonderTrade
+	case 1, EventScript_End
+	case 2, EventScript_WonderTradeInfo
+	case MULTI_B_PRESSED, EventScript_End
+	end
+
+WonderTrade_EventScript_ComeBackTomorrow::
+	msgbox WonderTrade_Text_ComeBackTomorrow, MSGBOX_DEFAULT
+	release
+	end
+
+EventScript_StartWonderTrade::
+	msgbox StartWonderTrade_Text_PkmnCenter, MSGBOX_DEFAULT
+	closemessage
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, EventScript_End
+	special ChoosePartyMon
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, EventScript_End
+	copyvar VAR_0x8005, VAR_0x8004
+	setflag FLAG_DAILY_UPDATE_WONDER_TRADE
+	message WaitWonderTrade_Text_PkmnCenter
+	waitmessage
+	special CreateWonderTradePokemon
+	closemessage
+	special DoInGameTradeScene
+	waitstate
+	special WonderTradeSaveGame
+	waitstate
+EventScript_End:
+	msgbox ExitWonderTrade_Text_PkmnCenter, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+EventScript_WonderTradeInfo::
+	msgbox WonderTradeInfo_Text_PkmnCenter, MSGBOX_DEFAULT
+	goto EventScript_DoYouWantToWonderTradeContinue
+	end
+
+EventScript_DoYouWantToWonderTradeContinue::
+	message DoYouWantToWonderTradeContinue_Text_PkmnCenter
+	waitmessage
+	multichoice 0, 0, MULTI_YESNOINFO, FALSE
+	switch VAR_RESULT
+	case 0, EventScript_StartWonderTrade
+	case 1, EventScript_End
+	case 2, EventScript_WonderTradeInfo
+	case MULTI_B_PRESSED, EventScript_End
+	end
+
+DoYouWantToWonderTrade_Text_PkmnCenter:
+	.string "Bienvenue à l'Association d'Échange\n"
+	.string "Pokémon du Centre Pokémon !\p"
+	.string "Souhaiteriez-vous échanger un\n"
+	.string "de vos Pokémon ?$"
+
+StartWonderTrade_Text_PkmnCenter:
+	.string "Veuillez choisir un Pokémon à\n"
+	.string "échanger.$"
+
+WaitWonderTrade_Text_PkmnCenter:
+	.string "Veuillez patienter…$"
+
+WonderTradeInfo_Text_PkmnCenter:
+	.string "Test$"
+
+DoYouWantToWonderTradeContinue_Text_PkmnCenter:
+	.string "Souhaiteriez-vous échanger un\n"
+	.string "de vos Pokémon ?$"
+
+ExitWonderTrade_Text_PkmnCenter:
+	.string "À une prochaine fois peut-être !$"
+
+WonderTrade_Text_ComeBackTomorrow:
+	.string "Faut attendre 24 heures pour procéder\n"
+	.string "de nouveau à un échange.$"
+
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"
 	.include "data/scripts/abnormal_weather.inc"

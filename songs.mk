@@ -133,7 +133,7 @@ $(MID_SUBDIR)/mus_route122.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G021 -V080
 
 $(MID_SUBDIR)/mus_route101.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G011 -V080
+	$(MID) $< $@ -E -R$(STD_REVERB) -G081 -V100
 
 $(MID_SUBDIR)/mus_dummy.s: %.s: %.mid
 	$(MID) $< $@ -E -R40
@@ -571,7 +571,7 @@ $(MID_SUBDIR)/mus_b_tower.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G110 -V100
 
 $(MID_SUBDIR)/mus_evolution.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G026 -V080
+	$(MID) $< $@ -E -R$(STD_REVERB) -G112 -V118
 
 $(MID_SUBDIR)/mus_encounter_elite_four.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G096 -V078

@@ -406,7 +406,6 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
             return TRUE;
         break;
     case ABILITY_SOUNDPROOF:
-    case ABILITY_BASS_BOOSTER:
         if (gMovesInfo[move].soundMove)
             return TRUE;
         break;
@@ -420,10 +419,6 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
         break;
     case ABILITY_EARTH_EATER:
         if (moveType == TYPE_GROUND)
-            return TRUE;
-        break;
-    case ABILITY_FURNACE:
-        if (moveType == TYPE_ROCK)
             return TRUE;
         break;
     }
@@ -2863,7 +2858,7 @@ bool32 AnyPartyMemberStatused(u32 battlerId, bool32 checkSoundproof)
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        if (checkSoundproof && GetMonAbility(&party[i]) == ABILITY_SOUNDPROOF && GetMonAbility(&party[i]) == ABILITY_BASS_BOOSTER)
+        if (checkSoundproof && GetMonAbility(&party[i]) == ABILITY_SOUNDPROOF)
             continue;
 
         if (GetMonData(&party[i], MON_DATA_STATUS) != STATUS1_NONE)
@@ -3148,7 +3143,7 @@ bool32 ShouldUseWishAromatherapy(u32 battlerAtk, u32 battlerDef, u32 move)
 
             if (GetMonData(&party[i], MON_DATA_STATUS, NULL) != STATUS1_NONE)
             {
-                if (move != MOVE_HEAL_BELL || GetMonAbility(&party[i]) != ABILITY_SOUNDPROOF || GetMonAbility(&party[i]) != ABILITY_BASS_BOOSTER)
+                if (move != MOVE_HEAL_BELL || GetMonAbility(&party[i]) != ABILITY_SOUNDPROOF)
                     hasStatus = TRUE;
             }
         }

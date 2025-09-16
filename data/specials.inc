@@ -563,3 +563,5 @@ gSpecials::
     //End Pokevial Branch
 
 	def_special UseBlankMessageToCancelPokemonPic
+	def_special CreateWonderTradePokemon
+	def_special WonderTradeSaveGame

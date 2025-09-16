@@ -419,6 +419,9 @@
 #define ANIM_TAG_SNOW                       (ANIM_SPRITES_START + 405)
 #define ANIM_TAG_BLUE_SLASH                 (ANIM_SPRITES_START + 406)
 #define ANIM_TAG_OIL_BUBBLE                 (ANIM_SPRITES_START + 407)
+#define ANIM_TAG_CUTE_EYE                   (ANIM_SPRITES_START + 408)
+#define ANIM_TAG_BOIL_FIRE                  (ANIM_SPRITES_START + 409)
+#define ANIM_TAG_DIVEBOMB                   (ANIM_SPRITES_START + 410)
 
 // battlers
 #define ANIM_ATTACKER         0
@@ -581,6 +584,8 @@
 #define B_ANIM_WONDER_ROOM              46
 #define B_ANIM_MAGIC_ROOM               47
 #define B_ANIM_TAILWIND                 48
+#define B_ANIM_SWITCH_MOVE              49
+#define B_ANIM_DETERMINATION            50
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

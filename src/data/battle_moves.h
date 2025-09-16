@@ -14894,9 +14894,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
-    [MOVE_OIL_BOMB] =
+    [MOVE_BOIL_OFF] =
     {
-        .effect = EFFECT_OIL_BOMB,
+        .effect = EFFECT_BOIL_OFF,
         .power = 70,
         .type = TYPE_FIRE,
         .accuracy = 100,
@@ -15061,7 +15061,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
-    [MOVE_MIGRAINE] =
+    [MOVE_PHOTOPHOBIE] =
     {
         .effect = EFFECT_ROLLOUT,
         .power = 30,

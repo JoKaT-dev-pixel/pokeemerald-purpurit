@@ -16,6 +16,6 @@ Fourqueue_House2_Text_SchoolKidBoy1:
 
 Fourqueue_House2_Text_SchoolKidBoy2:
 	.string "Tu connais Risimon ?\p"
-	.string "Pas étonnant vu que cette merde\n"
-	.string "a flop sur Steam !$"
+	.string "Pas étonnant vu que cette merde a\n"
+	.string "flop sur Steam !$"
 

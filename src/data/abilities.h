@@ -104,7 +104,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CLOUD_NINE] =
     {
         .name = _("Ciel Gris"),
-        .description = COMPOUND_STRING("Annule tous les effets liés\nà la météo."),
+        .description = COMPOUND_STRING("Annule tous les effets liés à la\nmétéo."),
         .aiRating = 5,
     },
 
@@ -672,8 +672,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DOWNLOAD] =
     {
-        .name = _("Download"),
-        .description = COMPOUND_STRING("Adjusts power favorably."),
+        .name = _("Télécharge"),
+        .description = COMPOUND_STRING("Ajuste la puissance selon l'ennemi."),
         .aiRating = 7,
     },
 
@@ -946,7 +946,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PICKPOCKET] =
     {
         .name = _("Pickpocket"),
-        .description = COMPOUND_STRING("Steals the foe's held item."),
+        .description = COMPOUND_STRING("Vole l'objet de l'ennemi si son\nattaque touche."),
         .aiRating = 3,
     },
 
@@ -1162,8 +1162,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_MOXIE] =
     {
-        .name = _("Moxie"),
-        .description = COMPOUND_STRING("KOs raise Attack."),
+        .name = _("Impudence"),
+        .description = COMPOUND_STRING("Monte l'Attaque quand il met un\nennemi K.O."),
         .aiRating = 7,
     },
 
@@ -2704,7 +2704,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 4,
     },
 
-    [ABILITY_PRESIDENT] =
+    [ABILITY_INFLATION] =
     {
         .name = _("Président"),
         .description = COMPOUND_STRING("Augmente l'Atq et l'Atq Spé.\naprès un coup super efficace."),
@@ -2714,21 +2714,25 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ADRENALINE] =
     {
         .name = _("Adrénaline"),
-        .description = COMPOUND_STRING("Améliore l'Attaque Spéciale,\nmais diminue la Précision."),
+        .description = COMPOUND_STRING("Augmente la Vitesse du Pokémon\nlorsqu'il tombe à la moitié de ses PV."),
         .aiRating = 7,
     },
 
-    [ABILITY_ROBUST] =
+    [ABILITY_STUN_GUN] =
     {
-        .name = _("Robustesse"),
+        .name = _("Paralyseur"),
         .description = COMPOUND_STRING("Diminue les dégâts qu'il subit\nquand les PV tombent de moitié."),
         .aiRating = 7,
     },
 
-    [ABILITY_BASS_BOOSTER] =
+    [ABILITY_RECORDING] =
     {
-        .name = _("Bass Boost"),
-        .description = COMPOUND_STRING("Booste et immunise toutes les\ncapacités sonores."),
+        #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Enregistrement"),
+    #else
+        .name = _("Recording"),
+    #endif
+        .description = COMPOUND_STRING("Augmente l'Attaque Spéciale si\ntouché par une capacité sonore."),
         .aiRating = 5,
         .breakable = TRUE,
     },
@@ -2736,12 +2740,12 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DETERMINATION] =
     {
         #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Détermination"),
+        .name = _("Volonté de Fer"),
     #else
         .name = _("Determintn"),
     #endif
-        .description = COMPOUND_STRING("Gives up at half HP."),
-        .aiRating = 5,
+        .description = COMPOUND_STRING("Restore quelques PV et augmente\nl'Att. et la Déf. si les PV sont bas."),
+        .aiRating = 7,
     },
 
     [ABILITY_EXOSKELETON] =
@@ -2752,37 +2756,32 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
-    [ABILITY_MIND_POWER] =
+    [ABILITY_MASTERMIND] =
     {
-        #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Force Mentale"),
-    #else
-        .name = _("Mind Power"),
-    #endif
+        .name = _("Neuroloforce"),
         .description = COMPOUND_STRING("Double la puissance des attaques\nspéciales."),
         .aiRating = 10,
     },
 
-    [ABILITY_FURNACE] =
-    {
-        .name = _("Fournaise"),
-        .description = COMPOUND_STRING("Electricity raises Speed."),
-        .aiRating = 6,
-        .breakable = TRUE,
-    },
-
-    [ABILITY_PITCH_PERFECT] =
+    [ABILITY_PERFECTIONNIST] =
     {
         #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Note Parfaite"),
+        .name = _("Perfectionniste"),
     #else
-        .name = _("PitchPerfect"),
+        .name = _("Perfection"),
     #endif
-        .description = COMPOUND_STRING("Flying moves go first."),
-        .aiRating = 6,
+        .description = COMPOUND_STRING("Augmente beaucoup la Précision mais\nréduit la puissance des capacités."),
+        .aiRating = 7,
     },
 
-    [ABILITY_CRYSTALLISE] =
+    [ABILITY_SURROUND_SOUND] =
+    {
+        .name = _("Ambiophonie"),
+        .description = COMPOUND_STRING("Booste la puissance et la Précision\npdes capacités sonores."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_MINERALATE] =
     {
         .name = _("Peau Cristal"),
         .description = COMPOUND_STRING("Normal moves become Rock."),
@@ -2792,8 +2791,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_NOTHING] =
     {
         .name = _("Rien"),
-        .description = COMPOUND_STRING("Normal moves become Rock."),
-        .aiRating = 1,
+        .description = COMPOUND_STRING("Ce talent ne fait rien de\nparticulier."),
+        .aiRating = 5,
     },
 
     [ABILITY_MINDLESS] =
@@ -2808,7 +2807,39 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Cannabinoïde"),
         .description = COMPOUND_STRING("Augmente l'Attaque Spéciale si\ntouché par une capacité Feu."),
-        .aiRating = 4,
+        .aiRating = 5,
         .breakable = TRUE,
+    },
+
+    [ABILITY_MATERIALIST] =
+    {
+        .name = _("Matérialiste"),
+        .description = COMPOUND_STRING("Augmente la puissance des attaques\ns'il tient un objet."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_YANDERE] =
+    {
+        .name = _("Yandere"),
+        .description = COMPOUND_STRING("Augmente l'Attaque si le Pokémon\nest amoureux."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_BIG_TAIL] =
+    {
+        #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Queue Épaisse"),
+    #else
+        .name = _("QueueÉpaisse"),
+    #endif
+        .description = COMPOUND_STRING("Grâce à une puissante mâchoire,\nles morsures sont plus fortes."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_SIMPING] =
+    {
+        .name = _("Simp"),
+        .description = COMPOUND_STRING("Always moves last."),
+        .aiRating = -1,
     },
 };

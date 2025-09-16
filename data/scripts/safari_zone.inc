@@ -72,6 +72,15 @@ SafariZone_EventScript_PokeblockPresent::
 	releaseall
 	end
 
+FullstartMenu_EventScript_Save::
+	call Common_EventScript_SaveGame
+	releaseall
+	end
+
+FullStartMenu_EventScript_SavePrompt::
+	lockall
+	goto FullstartMenu_EventScript_Save
+
 SafariZone_Text_WouldYouLikeToExit:
 	.string "Would you like to exit the SAFARI\n"
 	.string "ZONE right now?$"

@@ -469,6 +469,18 @@ const struct SpriteTemplate gWillOWispFireSpriteTemplate =
     .callback = AnimWillOWispFire,
 };
 
+//Boil-Off fire animation
+const struct SpriteTemplate gBoilOffFireSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BOIL_FIRE,
+    .paletteTag = ANIM_TAG_BOIL_FIRE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_WillOWispFire,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimWillOWispFire,
+};
+
 // Directions for shaking up/down or left/right in AnimTask_ShakeTargetInPattern
 // Only first 10 values are ever accessed.
 // First pattern results in larger shakes, second results in faster oscillation

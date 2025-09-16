@@ -267,30 +267,31 @@ Route101_Text_HelpMe:
 	.string "Mais lâche-moi Pokémon de merde !!$"
 
 Route101_Text_PleaseHelp:
-	.string "Reste pas planté là !\n"
-	.string "Sauve-moi !\p"
+	.string "Reste pas planté là !\p"
 	.string "Dans mon Sac !\n"
 	.string "Il y a 3 Poké Balls !\p"
 	.string "Grouille-toi !$"
 
 Route101_Text_DontLeaveMe:
-	.string "Je te jure que si tu me laisses\n"
-	.string "tomber, je vais niquer ta daronne !$"
+	.string "Je te jure que si tu m'abandonnes,\n"
+	.string "j'vais te défoncer l'anus !$"
 
 Route101_Text_YouSavedMe:
-	.string "{ROCKET}Prof. Fildrong: {AQUA}Quelle terrible\n"
-	.string "désillusion !\p"
-	.string "Je me promenais tranquillement et\n"
-	.string "ce Cornaigri sorti de nulle part m'a\l"
-	.string "attaquer !\p"
-	.string "C'est un Pokémon qui a toujours été\n"
-	.string "agressif.\p"
-	.string "Merci beaucoup de m'avoir secouru !\p"
-	.string "Tu es un Dresseur n'est-ce pas ?\p"
-	.string "J'aimerai discuter sérieusement\n"
-	.string "avec toi.\p"
-	.string "Ceci dit, restons pas là ! Rentrons\n"
-	.string "au labo !\p"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Ouf !\n"
+	.string "C'était moins une !\p"
+	.string "Je me promenais tranquillement et ce\n"
+	.string "Cornaigri m'a subitement attaqué !\p"
+	.string "D'habitude, ce Pokémon pourchasse\n"
+	.string "ceux qui passe près de son nid.\p"
+	.string "Ça reste bizarre mais bon…!\p"
+	.string "En tout cas, merci beaucoup de m'avoir\n"
+	.string "secouru !\p"
+	.string "… … … … … … … …\n"
+	.string "… … … … … … … …\p"
+	.string "Tu voulais me voir ?\p"
+	.string "Tu tombes à pique car j'allais retourné\n"
+	.string "dans mon labo !\p"
+	.string "Allez, viens avec moi !\p"
 	.string "Zé parti !$"
 
 Route101_OnTransition2:
@@ -463,23 +464,20 @@ RouteD1_Movement_ReturnToOriginalPosition:
 
 
 RouteD1_Text_WaitDontComeInHere:
-	.string "Hé oh, attends !\n"
+	.string "Halte-là !\n"
 	.string "Interdiction de passer !\p"
-	.string "J'ai pas encore fini de couper\n"
-	.string "les arbres !\p"
-	.string "Tu passeras quand j'aurai fini !$"
+	.string "Tu passeras quand j'aurai fini de\n"
+	.string "couper les arbres !$"
 
 RouteD1_Text_DiscoveredFootprints:
 	.string "Interdiction de passer !\p"
-	.string "J'ai pas encore fini de couper\n"
-	.string "les arbres !\p"
-	.string "Tu passeras quand j'aurai fini !$"
+	.string "Je suis en train de couper les arbres\n"
+	.string "pour céder le passage !$"
 
 RouteD1_Text_FinishedSketchingFootprints:
-	.string "J'ai fini de couper les arbres !\p"
-	.string "Avec ça, je pourrais faire un bon\n"
-	.string "feu de cheminée !\p"
-	.string "Vas-y, passe !$"
+	.string "J'ai enfin terminé mon boulot pour\n"
+	.string "aujourd'hui !\p"
+	.string "La voie est libre !$"
 
 RouteD1_Text_MayLetsGoBack:
 	.string "{ROCKET}{RIVAL}: {MAGMA}Allez ! Dépêche-toi !\n"

@@ -47,6 +47,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "ui_startmenu_full.h"
 
 // Menu actions
 enum
@@ -91,6 +92,9 @@ EWRAM_DATA static u8 (*sSaveDialogCallback)(void) = NULL;
 EWRAM_DATA static u8 sSaveDialogTimer = 0;
 EWRAM_DATA static bool8 sSavingComplete = FALSE;
 EWRAM_DATA static u8 sSaveInfoWindowId = 0;
+
+extern const u8 FullStartMenu_EventScript_SavePrompt[];
+extern const u8 SafariZone_EventScript_RetirePrompt[];
 
 // Menu action callbacks
 static bool8 StartMenuPokedexCallback(void);
@@ -139,6 +143,12 @@ static void SaveGameTask(u8 taskId);
 static void Task_SaveAfterLinkBattle(u8 taskId);
 static void Task_WaitForBattleTowerLinkSave(u8 taskId);
 static bool8 FieldCB_ReturnToFieldStartMenu(void);
+
+static void Task_SaveFromStartMenuFull(u8 taskId);
+static void Task_RetireFromStartMenuFull(u8 taskId);
+
+static void WonderTradeSaveGameTask(u8 taskId);
+static u8 WonderTradeSaveCallback(void);
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .bg = 0,
@@ -490,7 +500,6 @@ static bool32 PrintStartMenuActions(s8 *pIndex, u32 count)
         }
         else
         {
-            StringExpandPlaceholders(gStringVar4, sStartMenuItems[sCurrentStartMenuActions[index]].text);
             AddTextPrinterParameterized(GetStartMenuWindowId(), FONT_NORMAL, gStringVar4, 8, (index << 4) + 9, TEXT_SKIP_DRAW, NULL);
         }
 
@@ -618,7 +627,19 @@ void ShowStartMenu(void)
         PlayerFreeze();
         StopPlayerAvatar();
     }
-    CreateStartMenuTask(Task_ShowStartMenu);
+    else{
+        CreateStartMenuTask(Task_ShowStartMenu);
+        LockPlayerFieldControls();
+        return;
+    }
+    if (InBattlePyramid() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
+    {
+        CreateStartMenuTask(Task_ShowStartMenu);
+        LockPlayerFieldControls();
+        return;
+    }
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+    CreateTask(Task_OpenStartMenuFullScreen, 0);
     LockPlayerFieldControls();
 }
 
@@ -758,6 +779,15 @@ static bool8 StartMenuSaveCallback(void)
 
     gMenuCallback = SaveStartCallback; // Display save menu
 
+    if (!gPaletteFade.active)
+    {
+        RemoveExtraStartMenuWindows();
+        HideStartMenu();
+        FullStartMenuSavePrompt();
+
+        return TRUE;
+    }
+
     return FALSE;
 }
 
@@ -867,6 +897,59 @@ static bool8 SaveStartCallback(void)
     return FALSE;
 }
 
+void SaveStartCallback_FullStartMenu(void)
+{
+    WarpFadeInScreen();
+    InitSave();
+    CreateTask( Task_SaveFromStartMenuFull, 0);
+    return;
+}
+
+static void Task_SaveFromStartMenuFull(u8 taskId)
+{
+    s16 *state = gTasks[taskId].data;
+    
+    if (!gPaletteFade.active)
+    {
+        switch (*state)
+        {
+            case 0:
+                ScriptContext_SetupScript(FullStartMenu_EventScript_SavePrompt);
+                *state = 1;
+                break;
+            case 1:
+                DestroyTask(taskId);
+                break;
+        }
+    }
+}
+
+void RetireStartCallback_FullStartMenu(void)
+{
+    WarpFadeInScreen();
+    CreateTask( Task_RetireFromStartMenuFull, 0);
+    return;
+}
+
+static void Task_RetireFromStartMenuFull(u8 taskId)
+{
+    s16 *state = gTasks[taskId].data;
+    
+    if (!gPaletteFade.active)
+    {
+        switch (*state)
+        {
+            case 0:
+                ScriptContext_SetupScript(SafariZone_EventScript_RetirePrompt);
+                *state = 1;
+                break;
+            case 1:
+                DestroyTask(taskId);
+                break;
+        }
+    }
+}
+
 static bool8 SaveCallback(void)
 {
     switch (RunSaveCallback())
@@ -874,10 +957,6 @@ static bool8 SaveCallback(void)
     case SAVE_IN_PROGRESS:
         return FALSE;
     case SAVE_CANCELED: // Back to start menu
-        ClearDialogWindowAndFrameToTransparent(0, FALSE);
-        InitStartMenu();
-        gMenuCallback = HandleStartMenuInput;
-        return FALSE;
     case SAVE_SUCCESS:
     case SAVE_ERROR:    // Close start menu
         ClearDialogWindowAndFrameToTransparent(0, TRUE);
@@ -934,6 +1013,13 @@ static void InitSave(void)
     sSavingComplete = FALSE;
 }
 
+static void InitWonderTradeSave(void)
+{
+    SaveMapView();
+    sSaveDialogCallback = WonderTradeSaveCallback;
+    sSavingComplete = FALSE;
+}
+
 static u8 RunSaveCallback(void)
 {
     // True if text is still printing
@@ -952,6 +1038,12 @@ void SaveGame(void)
     CreateTask(SaveGameTask, 0x50);
 }
 
+void WonderTradeSaveGame(void)
+{
+    InitWonderTradeSave();
+    CreateTask(WonderTradeSaveGameTask, 0x50);
+}
+
 static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void))
 {
     StringExpandPlaceholders(gStringVar4, message);
@@ -962,6 +1054,27 @@ static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void))
 }
 
 static void SaveGameTask(u8 taskId)
+{
+    u8 status = RunSaveCallback();
+
+    switch (status)
+    {
+    case SAVE_CANCELED:
+    case SAVE_ERROR:
+        gSpecialVar_Result = 0;
+        break;
+    case SAVE_SUCCESS:
+        gSpecialVar_Result = status;
+        break;
+    case SAVE_IN_PROGRESS:
+        return;
+    }
+
+    DestroyTask(taskId);
+    ScriptContext_Enable();
+}
+
+static void WonderTradeSaveGameTask(u8 taskId)
 {
     u8 status = RunSaveCallback();
 
@@ -1042,6 +1155,17 @@ static u8 SaveConfirmSaveCallback(void)
     {
         ShowSaveMessage(gText_ConfirmSave, SaveYesNoCallback);
     }
+
+    return SAVE_IN_PROGRESS;
+}
+
+static u8 WonderTradeSaveCallback(void)
+{
+    ClearStdWindowAndFrame(GetStartMenuWindowId(), FALSE);
+    RemoveStartMenuWindow();
+    ShowSaveInfoWindow();
+
+    ShowSaveMessage(gText_SavingDontTurnOff, SaveDoSaveCallback);
 
     return SAVE_IN_PROGRESS;
 }
@@ -1490,4 +1614,3 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
     list[*pos] = newEntry;
     (*pos)++;
 }
-

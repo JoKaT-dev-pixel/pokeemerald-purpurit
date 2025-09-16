@@ -15,6 +15,8 @@
 #include "trig.h"
 #include "gpu_regs.h"
 #include "palette.h"
+#include "map_preview_screen.h"
+#include "constants/expansion.h"
 
 EWRAM_DATA static u8 sCurrentAbnormalWeather = 0;
 EWRAM_DATA static u16 sUnusedWeatherRelated = 0;
@@ -157,8 +159,12 @@ void Sunny_InitVars(void)
 {
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
-    Weather_SetBlendCoeffs(15, 5); // Right parameter from 0 to 15, where lower is darker
     gWeatherPtr->hasShadows = FALSE;
+    Weather_SetBlendCoeffs(15, 5); // Right parameter from 0 to 15, where lower is darker
+    if (EXPANSION_VERSION_MINOR >= 9 && MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
+    {
+        Weather_SetBlendCoeffs(15, 5); // Right parameter from 0 to 15, where lower is darker
+    }
 }
 
 void Sunny_InitAll(void)

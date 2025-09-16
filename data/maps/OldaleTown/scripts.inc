@@ -278,8 +278,6 @@ OldaleTown_Text_Geek:
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Pssst, hé toi !\p"
-	.string "Tu m'as l'air d'être un vrai Dresseur,\n"
-	.string "pas vrai ?!\p"
 	.string "Je travaille à la Boutique Pokémon\n"
 	.string "au coin de la rue.\p"
 	.string "Viens, suis-moi !$"
