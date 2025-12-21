@@ -392,11 +392,12 @@ RivalsHouse_1F_Text_TooBusyToNoticeVisit:
 
 RivalsHouse_1F_Text_WentOutToRoute103:
 	.string "Oh, tu cherches Charlotte ?\p"
-	.string "Elle a dit qu'elle va sur le Chenal 9.$"
+	.string "Elle a dit qu'elle comptait aller au\n"
+	.string "Chenal 9.$"
 
 RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
-	.string "{ROCKET}Il s'est endormi…\n"
-	.string "Vaut mieux le laisser tranquille.$"
+	.string "Où suis-je ?\p"
+	.string "Monsieur Macron, est-ce vous ?$"
 
 RivalsHouse_1F_Text_MayWhoAreYou:
 	.string "{ROCKET}{RIVAL}: {MAGMA}What the fuck !\p"
@@ -413,8 +414,7 @@ RivalsHouse_1F_Text_MayWhoAreYou:
 	.string "fois, sale rat !\p"
 	.string "C'est aujourd'hui que j'irai choisir mon\n"
 	.string "starter, alors tu n'as pas intérêt à\l"
-	.string "tout gâcher !\p"
-	.string "À jamais, connard !$"
+	.string "tout gâcher connard !$"
 
 RivalsHouse_1F_Text_BrendanWhoAreYou:
 	.string "Hey!\n"

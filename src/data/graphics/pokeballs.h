@@ -85,4 +85,7 @@ const u32 gBallPal_Rust[] = INCBIN_U32("graphics/balls/rust.gbapal.lz");
 const u32 gBallGfx_Black[] = INCBIN_U32("graphics/balls/black.4bpp.lz");
 const u32 gBallPal_Black[] = INCBIN_U32("graphics/balls/black.gbapal.lz");
 
+const u32 gBallGfx_Revo[] = INCBIN_U32("graphics/balls/revo.4bpp.lz");
+const u32 gBallPal_Revo[] = INCBIN_U32("graphics/balls/revo.gbapal.lz");
+
 const u32 gOpenPokeballGfx[] = INCBIN_U32("graphics/balls/open.4bpp.lz");

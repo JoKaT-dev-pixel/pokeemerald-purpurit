@@ -161,10 +161,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_KARATE_CHOP] =
     {
-        .name = COMPOUND_STRING("Karate Chop"),
+        .name = COMPOUND_STRING("Poing Karaté"),
         .description = COMPOUND_STRING(
-            "A chopping attack with a\n"
-            "high critical-hit ratio."),
+            "L'ennemi est tranché\n"
+            "violemment. Taux de\n"
+            "critique élevé."),
         .effect = EFFECT_HIT,
         .power = 50,
         .type = TYPE_FIGHTING,
@@ -183,10 +184,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_DOUBLE_SLAP] =
     {
-        .name = COMPOUND_STRING("Double Slap"),
+        .name = COMPOUND_STRING("Torgnoles"),
         .description = COMPOUND_STRING(
-            "Repeatedly slaps the foe\n"
-            "2 to 5 times."),
+            "Gifle rapidement l'ennemi\n"
+            "de deux à cinq fois\n"
+            "d'affilée."),
         .effect = EFFECT_MULTI_HIT,
         .power = 15,
         .type = TYPE_NORMAL,
@@ -206,9 +208,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Poing Comète"),
         .description = COMPOUND_STRING(
-            "Des pièces sont lancées sur\n"
-            "l'ennemi. Permet d'obtenir de\n"
-            "l'argent à la fin du combat."),
+            "Une tornade de coups de\n"
+            "poing qui frappe de deux\n"
+            "à cinq fois d'affilée."),
         .effect = EFFECT_MULTI_HIT,
         .power = 18,
         .type = TYPE_NORMAL,
@@ -229,8 +231,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Ultimapoing"),
         .description = COMPOUND_STRING(
-            "L'ennemi reçoit un coup de\n"
-            "poing d'une puissance\n"
+            "L'ennemi reçoit un coup\n"
+            "de poing d'une puissance\n"
             "incroyable."),
         .effect = EFFECT_HIT,
         .power = 80,
@@ -252,9 +254,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Jackpot"),
         .description = COMPOUND_STRING(
-            "Des pièces sont lancées sur\n"
-            "l'ennemi. Permet d'obtenir de\n"
-            "l'argent à la fin du combat."),
+            "Des pièces sont lancées\n"
+            "sur l'ennemi. Permet\n"
+            "d'obtenir de l'argent à\n"
+            "la fin du combat."),
         .effect = EFFECT_HIT,
         .power = 40,
         .type = TYPE_NORMAL,
@@ -274,10 +277,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_FIRE_PUNCH] =
     {
-        .name = COMPOUND_STRING("Fire Punch"),
+        .name = COMPOUND_STRING("Poing Feu"),
         .description = COMPOUND_STRING(
-            "A fiery punch that may burn\n"
-            "the foe."),
+            "Un coup de poing enflammé\n"
+            "vient frapper l'ennemi.\n"
+            "Peut le brûler."),
         .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_FIRE,
@@ -300,14 +304,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_ICE_PUNCH] =
     {
-        .name = COMPOUND_STRING("Ice Punch"),
+        .name = COMPOUND_STRING("Poing Glace"),
         .description = COMPOUND_STRING(
-            "An icy punch that may\n"
-        #if B_USE_FROSTBITE == TRUE
-            "leave the foe with frostbite."),
-        #else
-            "freeze the foe."),
-        #endif
+            "Un coup de poing glacé\n"
+            "vient frapper l'ennemi.\n"
+            "Peut le geler."),
         .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_ICE,
@@ -330,10 +331,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_THUNDER_PUNCH] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("ThunderPunch", "Thunder Punch"),
+        .name = HANDLE_EXPANDED_MOVE_NAME("ThunderPunch", "Poing Éclair"),
         .description = COMPOUND_STRING(
-            "An electrified punch that\n"
-            "may paralyze the foe."),
+            "Un coup de poing\n"
+            "électrique vient frapper\n"
+            "l'ennemi. Peut le\n"
+            "paralyser."),
         .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_ELECTRIC,
@@ -378,10 +381,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_VISE_GRIP] =
     {
-        .name = COMPOUND_STRING("Vise Grip"),
+        .name = COMPOUND_STRING("Force Poigne"),
         .description = COMPOUND_STRING(
-            "Grips the foe with large and\n"
-            "powerful pincers."),
+            "L'ennemi est attrapé et\n"
+            "compressé par les côtés."),
         .effect = EFFECT_HIT,
         .power = 55,
         .type = TYPE_NORMAL,
@@ -401,8 +404,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Guillotine"),
         .description = COMPOUND_STRING(
-            "A powerful pincer attack\n"
-            "that may cause fainting."),
+            "Des pinces lacèrent\n"
+            "violemment l'ennemi, le\n"
+            "mettant K.O. sur le coup\n"
+            "s'il est touché."),
         .effect = EFFECT_OHKO,
         .power = 1,
         .type = TYPE_NORMAL,
@@ -422,9 +427,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Coupe-Vent"),
         .description = COMPOUND_STRING(
-            "Attaque en 2 tours. Des lames\n"
-            "de vent frappent l'ennemi au 2e\n"
-            "tour. Taux de critique élevé."),
+            "Attaque en 2 tours. Des\n"
+            "lames de vent frappent\n"
+            "l'ennemi au 2e tour. Taux\n"
+            "de critique élevé."),
         .effect = EFFECT_TWO_TURNS_ATTACK,
         .power = 80,
         .type = TYPE_NORMAL,
@@ -446,10 +452,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SWORDS_DANCE] =
     {
-        .name = COMPOUND_STRING("Swords Dance"),
+        .name = COMPOUND_STRING("Danse Lames"),
         .description = COMPOUND_STRING(
-            "A fighting dance that\n"
-            "sharply raises Attack."),
+            "Une danse frénétique qui\n"
+            "exalte l'esprit combatif.\n"
+            "Augmente beaucoup\n"
+            "l'Attaque du lanceur."),
         .effect = EFFECT_ATTACK_UP_2,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -517,9 +525,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Cru-Ailes"),
         .description = COMPOUND_STRING(
-            "L'ennemi est frappé par de\n"
-            "larges ailes déployées pour\n"
-            "infliger des dégâts."),
+            "L'ennemi est frappé par\n"
+            "de larges ailes\n"
+            "déployées pour infliger\n"
+            "des dégâts."),
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_FLYING,
@@ -539,9 +548,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Cyclone"),
         .description = COMPOUND_STRING(
-            "Éjecte le Pokémon ennemi et le\n"
-            "remplace par un autre. Dans\n"
-            "la nature, met fin au combat."),
+            "Éjecte le Pokémon ennemi\n"
+            "et le remplace par un\n"
+            "autre. Dans la nature,\n"
+            "met fin au combat."),
         .effect = EFFECT_ROAR,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -1656,8 +1666,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Ultralaser"),
         .description = COMPOUND_STRING(
-            "Projette un puissant rayon sur\n"
-            "l'ennemi. Le lanceur doit se\n"
+            "Le lanceur projette un\n"
+            "puissant rayon sur la\n"
+            "cible, mais doit se\n"
             "reposer au tour suivant."),
         .effect = EFFECT_HIT,
         .power = 150,
@@ -2083,9 +2094,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Sécrétion"),
         .description = COMPOUND_STRING(
-            "Crache de la soie pour ligoter\n"
-            "l'ennemi et beaucoup baisser\n"
-            "sa Vitesse."),
+            "Crache de la soie pour\n"
+            "ligoter la cible et\n"
+            "beaucoup baisser sa\n"
+            "Vitesse."),
         .effect = B_UPDATED_MOVE_DATA >= GEN_6 ? EFFECT_SPEED_DOWN_2 : EFFECT_SPEED_DOWN,
         .power = 0,
         .type = TYPE_BUG,
@@ -2487,9 +2499,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Vive-Attaque"),
         .description = COMPOUND_STRING(
-            "Fonce sur l'ennemi si\n"
-            "rapidement qu'on parvient\n"
-            "à peine à le discerner.\n"
+            "Le lanceur fonce\n"
+            "rapidement sur l'ennemi.\n"
             "Frappe en priorité."),
         .effect = EFFECT_HIT,
         .power = 40,
@@ -2511,8 +2522,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .name = COMPOUND_STRING("Frénésie"),
         .description = COMPOUND_STRING(
             "Cette capacité gagne en\n"
-            "efficacité à mesure que le\n"
-            "lanceur subit des dégâts."),
+            "efficacité à mesure que\n"
+            "le lanceur subit des\n"
+            "dégâts."),
         .effect = EFFECT_RAGE,
         .power = 20,
         .type = TYPE_NORMAL,
@@ -3604,10 +3616,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SKY_ATTACK] =
     {
-        .name = COMPOUND_STRING("Sky Attack"),
+        .name = COMPOUND_STRING("Piqué"),
         .description = COMPOUND_STRING(
-            "Searches out weak spots,\n"
-            "then strikes the next turn."),
+            "Une attaque en 2 tours\n"
+            "au taux de critique\n"
+            "élevé. Peut aussi\n"
+            "apeurer l'ennemi."),
         .effect = EFFECT_TWO_TURNS_ATTACK,
         .power = 140,
         .type = TYPE_FLYING,
@@ -4989,8 +5003,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Verrouillage"),
         .description = COMPOUND_STRING(
-            "Verrouille l'ennemi pour ne pas\n"
-            "le rater au tour suivant."),
+            "Le lanceur verrouille la\n"
+            "cible pour ne pas la\n"
+            "rater au tour suivant."),
         .effect = EFFECT_LOCK_ON,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -5155,7 +5170,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_FALSE_SWIPE] =
     {
         .name = COMPOUND_STRING("Faux-Chage"),
-        .description = sFalseSwipeDescription,
+        .description = COMPOUND_STRING(
+            "Retient ses coups pour\n"
+            "que la cible garde au\n"
+            "moins 1 PV et ne tombe\n"
+            "pas K.O."),
         .effect = EFFECT_FALSE_SWIPE,
         .power = 40,
         .type = TYPE_NORMAL,
@@ -5250,9 +5269,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Taillade"),
         .description = COMPOUND_STRING(
-            "Un coup de faux ou de griffe\n"
-            "dont la force augmente quand il\n"
-            "touche plusieurs fois d'affilée."),
+            "Un coup de faux ou de\n"
+            "griffe dont la force\n"
+            "augmente quand il touche\n"
+            "plusieurs fois d'affilée."),
         #if B_UPDATED_MOVE_DATA >= GEN_6
             .power = 40,
         #elif B_UPDATED_MOVE_DATA >= GEN_5
@@ -5453,8 +5473,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .name = COMPOUND_STRING("Frustration"),
         .description = COMPOUND_STRING(
             "Moins le Pokémon aime son\n"
-            "Dresseur, plus cette attaque\n"
-            "est puissante."),
+            "Dresseur, plus cette\n"
+            "attaque est puissante."),
         .effect = EFFECT_FRUSTRATION,
         .power = 1,
         .type = TYPE_NORMAL,
@@ -5688,9 +5708,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Poursuite"),
         .description = COMPOUND_STRING(
-            "Une attaque qui inflige deux\n"
-            "fois plus de dégâts à un\n"
-            "ennemi qui quitte le combat."),
+            "Une attaque qui inflige\n"
+            "2 fois plus de dégâts à\n"
+            "un ennemi qui quitte le\n"
+            "combat."),
         .effect = EFFECT_PURSUIT,
         .power = 40,
         .type = TYPE_DARK,
@@ -7005,9 +7026,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Bâillement"),
         .description = COMPOUND_STRING(
-            "Le lanceur fait bâiller la\n"
-            "cible, qui s'endort au tour\n"
-            "suivant."),
+            "Le lanceur fait bâiller\n"
+            "la cible, qui s'endort\n"
+            "au tour suivant."),
         .effect = EFFECT_YAWN,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -9199,9 +9220,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Assurance"),
         .description = COMPOUND_STRING(
-            "Cette attaque est deux fois\n"
-            "plus efficace si l'ennemi a\n"
-            "déjà été blessé durant ce tour."),
+            "Cette attaque est 2 fois\n"
+            "plus efficace si l'ennemi\n"
+            "a déjà été blessé durant\n"
+            "ce tour."),
         .effect = EFFECT_ASSURANCE,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 50,
         .type = TYPE_DARK,
@@ -9221,8 +9243,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Embargo"),
         .description = COMPOUND_STRING(
-            "Prevents the foe from\n"
-            "using any items."),
+            "Empêche la cible\n"
+            "d'utiliser un objet tenu\n"
+            "et d'utiliser un objet\n"
+            "sur lui pendant 5 tours."),
         .effect = EFFECT_EMBARGO,
         .power = 0,
         .type = TYPE_DARK,
@@ -9526,10 +9550,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_PUNISHMENT] =
     {
-        .name = COMPOUND_STRING("Punishment"),
+        .name = COMPOUND_STRING("Punition"),
         .description = COMPOUND_STRING(
-            "Does more damage if the\n"
-            "foe has powered up."),
+            "Plus l'ennemi a utilisé\n"
+            "d'augmentations de stats\n"
+            "et plus cette capacité\n"
+            "est puissante."),
         .effect = EFFECT_PUNISHMENT,
         .power = 60,
         .type = TYPE_DARK,
@@ -9958,9 +9984,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Plaie Croix"),
         .description = COMPOUND_STRING(
-            "Taillade l'ennemi en utilisant\n"
-            "ses faux ou ses griffes comme\n"
-            "une paire de ciseaux."),
+            "Taillade l'ennemi en\n"
+            "utilisant ses faux ou ses\n"
+            "griffes comme une paire\n"
+            "de ciseaux."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_BUG,
@@ -11442,9 +11469,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Vent Mauvais"),
         .description = COMPOUND_STRING(
-            "Le lanceur crée une violente\n"
-            "bourrasque. Peut aussi\n"
-            "augmenter toutes ses stats."),
+            "Le lanceur crée une\n"
+            "violente bourrasque.\n"
+            "Peut aussi augmenter\n"
+            "toutes ses stats."),
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_GHOST,
@@ -12515,10 +12543,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_QUASH] =
     {
-        .name = COMPOUND_STRING("Quash"),
+        .name = COMPOUND_STRING("À la Queue"),
         .description = COMPOUND_STRING(
-            "Suppresses the foe, making\n"
-            "it move last."),
+            "Retient la cible de\n"
+            "force, l'obligeant à\n"
+            "agir en dernier."),
         .effect = EFFECT_QUASH,
         .power = 0,
         .type = TYPE_DARK,
@@ -12764,9 +12793,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Survinsecte"),
         .description = COMPOUND_STRING(
-            "Se débat de toutes ses forces,\n"
-            "et baisse l'Attaque Spéciale\n"
-            "de l'ennemi."),
+            "frappe en se débattant de\n"
+            "toutes ses forces, et\n"
+            "baisse l'Attaque\n"
+            "Spéciale de la cible."),
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 50 : 30,
         .type = TYPE_BUG,
@@ -14769,9 +14799,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = HANDLE_EXPANDED_MOVE_NAME("DazzlngGleam", "Éclat Magique"),
         .description = COMPOUND_STRING(
-            "Libère une puissante décharge\n"
-            "lumineuse qui inflige des\n"
-            "dégâts à l'ennemi."),
+            "Le lanceur libère une\n"
+            "puissante décharge\n"
+            "lumineuse qui inflige\n"
+            "des dégâts à l'ennemi."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_FAIRY,
@@ -16307,7 +16338,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "Jette un regard plein de\n"
             "larmes à la cible et voit\n"
-            "sont Attaque et Attaque\n"
+            "son Attaque et Attaque\n"
             "Spéciale baisser."),
         .effect = EFFECT_NOBLE_ROAR,
         .power = 0,
@@ -19527,9 +19558,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Canon Blindé"),
         .description = COMPOUND_STRING(
-            "Tire un boulet de canon ardent.\n"
-            "Cela baisse la Défense et la\n"
-            "Défense Spéciale du lanceur."),
+            "Tire un boulet de canon\n"
+            "ardent. Cela baisse la\n"
+            "Défense et la Défense\n"
+            "Spéciale du lanceur."),
         .effect = EFFECT_HIT,
         .power = 120,
         .type = TYPE_FIRE,

@@ -157,6 +157,7 @@ static const struct CaptureStar sCaptureStars[] =
 #define TAG_PARTICLES_CHERISHBALL 65056
 #define TAG_PARTICLES_RUSTBALL    65057
 #define TAG_PARTICLES_BLACKBALL   65058
+#define TAG_PARTICLES_REVOBALL    65059
 
 static const struct CompressedSpriteSheet sBallParticleSpriteSheets[] =
 {
@@ -189,6 +190,7 @@ static const struct CompressedSpriteSheet sBallParticleSpriteSheets[] =
     [BALL_CHERISH]  = {gBattleAnimSpriteGfx_Particles2,     0x100, TAG_PARTICLES_CHERISHBALL},
     [BALL_RUST]     = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_RUSTBALL},
     [BALL_BLACK]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_BLACKBALL},
+    [BALL_REVO]     = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_REVOBALL},
 };
 
 static const struct CompressedSpritePalette sBallParticlePalettes[] =
@@ -222,6 +224,7 @@ static const struct CompressedSpritePalette sBallParticlePalettes[] =
     [BALL_CHERISH]  = {gBattleAnimSpritePal_Particles2,     TAG_PARTICLES_CHERISHBALL},
     [BALL_RUST]     = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_RUSTBALL},
     [BALL_BLACK]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_BLACKBALL},
+    [BALL_REVO]     = {gBattleAnimSpritePal_Particles2,     TAG_PARTICLES_REVOBALL},
 };
 
 static const union AnimCmd sAnim_RegularBall[] =
@@ -307,6 +310,7 @@ static const u8 sBallParticleAnimNums[POKEBALL_COUNT] =
     [BALL_CHERISH] = 0,
     [BALL_RUST]    = 0,
     [BALL_BLACK]   = 5,
+    [BALL_REVO]    = 4,
 };
 
 static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
@@ -341,6 +345,7 @@ static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
     [BALL_CHERISH] = MasterBallOpenParticleAnimation,
     [BALL_RUST]    = SafariBallOpenParticleAnimation,
     [BALL_BLACK]   = PremierBallOpenParticleAnimation,
+    [BALL_REVO]    = GreatBallOpenParticleAnimation,
 };
 
 static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] =
@@ -607,6 +612,16 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
+
+    [BALL_REVO] = {
+        .tileTag = TAG_PARTICLES_REVOBALL,
+        .paletteTag = TAG_PARTICLES_REVOBALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
 };
 
 const u16 gBallOpenFadeColors[] =
@@ -641,6 +656,7 @@ const u16 gBallOpenFadeColors[] =
     [BALL_CHERISH] = RGB(25, 4, 3),
     [BALL_RUST] = RGB(31, 22, 30),
     [BALL_BLACK] = RGB(21, 31, 25),
+    [BALL_REVO] = RGB(31, 9, 10),
 };
 
 const struct SpriteTemplate gPokeblockSpriteTemplate =
@@ -1036,6 +1052,8 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_RUST;
     case ITEM_BLACK_BALL:
         return BALL_BLACK;
+    case ITEM_REVO_BALL:
+        return BALL_REVO;
     default:
         return BALL_POKE;
     }

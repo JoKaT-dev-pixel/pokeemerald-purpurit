@@ -61,11 +61,14 @@ OldaleTown_Mart_Text_PokeBallsAreSoldOut:
 	.string "Heu en fait, je dois encore réfléchir…$"
 
 OldaleTown_Mart_Text_ImGoingToBuyPokeBalls:
-	.string "J'ai du mal à choisir tellement il y a\n"
-	.string "du choix dans cette Boutique.$"
+	.string "J'suis trop deg, y'a pas l'iphone 17\n"
+	.string "dans cette boutique…$"
 
 OldaleTown_Mart_Text_RestoreHPWithPotion:
-	.string "Je ne pense pas que je trouverais ici\n"
-	.string "des outils de construction.\p"
-	.string "C'est vraiment dommage…$"
+	.string "Y'a vraiment de tout dans les rayons,\n"
+	.string "comme des soins, des Poké Balls et j'en\l"
+	.string "passe !\p"
+	.string "Les vendeurs dans les boutiques\n"
+	.string "Pokémon doivent bien se faire les\l"
+	.string "poches !$"
 

@@ -1766,6 +1766,12 @@ void CB2_ReturnToFieldFadeFromBlack(void)
     CB2_ReturnToField();
 }
 
+void CB2_ReturnToFieldSaveGamendRetireFadeFromBlack(void)
+{
+    FieldClearVBlankHBlankCallbacks();
+    SetMainCallback2(CB2_ReturnToFieldLocal);
+}
+
 static void FieldCB_FadeTryShowMapPopup(void)
 {
     if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)

@@ -335,8 +335,8 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "{PLAYER}{KUN}, I'll catch you later!$"
 
 RivalsHouse_2F_Text_MayGettingReady:
-	.string "POKéMON fully restored!\n"
-	.string "Items ready, and…$"
+	.string "{ROCKET}Vaut mieux pas trop déranger {RIVAL}\n"
+	.string "pour le moment…$"
 
 RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Hey!\n"

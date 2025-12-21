@@ -21,8 +21,8 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_LINK_RS_BRENDAN",
-      "x": 21,
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
+      "x": 22,
       "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -100,7 +100,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 20,
+      "x": 27,
       "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -179,7 +179,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
       "x": 28,
-      "y": 16,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 1,
@@ -191,8 +191,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 26,
-      "y": 26,
+      "x": 28,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,

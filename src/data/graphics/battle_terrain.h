@@ -90,6 +90,10 @@ const u32 gBattleTerrainTiles_Sewer[] = INCBIN_U32("graphics/battle_terrain/sewe
 const u32 gBattleTerrainPalette_Sewer[] = INCBIN_U32("graphics/battle_terrain/sewer/palette.gbapal.lz");
 const u32 gBattleTerrainTilemap_Sewer[] = INCBIN_U32("graphics/battle_terrain/sewer/map.bin.lz");
 
+const u32 gBattleTerrainTiles_Marsh[] = INCBIN_U32("graphics/battle_terrain/marsh/tiles.4bpp.lz");
+const u32 gBattleTerrainPalette_Marsh[] = INCBIN_U32("graphics/battle_terrain/marsh/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_Marsh[] = INCBIN_U32("graphics/battle_terrain/marsh/map.bin.lz");
+
 const u32 gBattleTerrainAnimTiles_Underwater[] = INCBIN_U32("graphics/battle_terrain/underwater/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_Underwater[] = INCBIN_U32("graphics/battle_terrain/underwater/anim_map.bin.lz");
 

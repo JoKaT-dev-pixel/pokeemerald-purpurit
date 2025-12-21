@@ -1874,7 +1874,11 @@ static void Task_ClosePokedex(u8 taskId)
         ClearMonSprites();
         FreeWindowAndBgBuffers();
         DestroyTask(taskId);
+        #if ENABLE_HEAT_START_MENU
+        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        #else
         SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
+        #endif
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
         Free(sPokedexView);
     }

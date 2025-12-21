@@ -299,7 +299,8 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
          || MetatileBehavior_IsForestEncounter(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSandGrass(objectEvent->currentMetatileBehavior)
          || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->currentMetatileBehavior)
-         || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior))
+         || MetatileBehavior_IsSurfableWaterOrUnderwater(objectEvent->previousMetatileBehavior)
+         || objectEvent->inMudPile)
         {
             FieldEffectStop(sprite, FLDEFF_SHADOW);
         }
@@ -311,7 +312,7 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
 #undef sMapGroup
 #undef sYOffset
 
-// Sprite data for FLDEFF_TALL_GRASS, FLDEFF_LONG_GRASS, FLDEFF_FOREST_GRASS and FLDEFF_SAND_GRASS
+// Sprite data for FLDEFF_TALL_GRASS, FLDEFF_LONG_GRASS, FLDEFF_FOREST_GRASS, FLDEFF_SAND_GRASS
 #define sElevation   data[0]
 #define sX           data[1]
 #define sY           data[2]
@@ -656,23 +657,6 @@ void UpdateSandGrassFieldEffect(struct Sprite *sprite)
     }
 }
 
-u32 FldEff_JumpSandGrass(void)
-{
-    u8 spriteId;
-
-    SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 12);
-    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_JUMP_SAND_GRASS], gFieldEffectArguments[0], gFieldEffectArguments[1], 0);
-    if (spriteId != MAX_SPRITES)
-    {
-        struct Sprite *sprite = &gSprites[spriteId];
-        sprite->coordOffsetEnabled = TRUE;
-        sprite->oam.priority = gFieldEffectArguments[3];
-        sprite->sJumpElevation = gFieldEffectArguments[2];
-        sprite->sJumpFldEff = FLDEFF_JUMP_SAND_GRASS;
-    }
-    return 0;
-}
-
 u8 FindSandGrassFieldEffectSpriteId(u8 localId, u8 mapNum, u8 mapGroup, s16 x, s16 y)
 {
     u8 i;
@@ -716,6 +700,23 @@ u32 FldEff_JumpLongGrass(void)
         sprite->oam.priority = gFieldEffectArguments[3];
         sprite->sJumpElevation = gFieldEffectArguments[2];
         sprite->sJumpFldEff = FLDEFF_JUMP_LONG_GRASS;
+    }
+    return 0;
+}
+
+u32 FldEff_JumpSandGrass(void)
+{
+    u8 spriteId;
+
+    SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 12);
+    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_JUMP_SAND_GRASS], gFieldEffectArguments[0], gFieldEffectArguments[1], 0);
+    if (spriteId != MAX_SPRITES)
+    {
+        struct Sprite *sprite = &gSprites[spriteId];
+        sprite->coordOffsetEnabled = TRUE;
+        sprite->oam.priority = gFieldEffectArguments[3];
+        sprite->sJumpElevation = gFieldEffectArguments[2];
+        sprite->sJumpFldEff = FLDEFF_JUMP_SAND_GRASS;
     }
     return 0;
 }
@@ -1484,6 +1485,57 @@ void UpdateSandPileFieldEffect(struct Sprite *sprite)
         sprite->y = parentY;
         sprite->subpriority = gSprites[gObjectEvents[objectEventId].spriteId].subpriority;
         UpdateObjectEventSpriteInvisibility(sprite, FALSE);
+    }
+}
+
+u32 FldEff_MudPile(void)
+{
+    u8 objectEventId = GetObjectEventIdByLocalIdAndMap(gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2]);
+    struct ObjectEvent *objectEvent = &gObjectEvents[objectEventId];
+    u8 spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_MUD_PILE], 0, 0, 0);
+    if (spriteId != MAX_SPRITES)
+    {
+        struct Sprite *linkedSprite;
+        const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
+        struct Sprite *sprite = &gSprites[spriteId];
+        sprite->coordOffsetEnabled = TRUE;
+        linkedSprite = &gSprites[objectEvent->spriteId];
+        sprite->oam.priority = linkedSprite->oam.priority;
+        sprite->sLocalId = gFieldEffectArguments[0];
+        sprite->sMapNum = gFieldEffectArguments[1];
+        sprite->sMapGroup = gFieldEffectArguments[2];
+        sprite->sPrevX = linkedSprite->x;
+        sprite->sPrevY = linkedSprite->y;
+        sprite->y2 = (graphicsInfo->height >> 1) - 2;
+        SeekSpriteAnim(sprite, 2);
+    }
+    return 0;
+}
+
+void UpdateMudPileFieldEffect(struct Sprite *sprite)
+{
+    u8 objectEventId;
+
+    if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objectEventId) || !gObjectEvents[objectEventId].inMudPile)
+    {
+        FieldEffectStop(sprite, FLDEFF_MUD_PILE);
+    }
+    else
+    {
+        struct ObjectEvent *objectEvent = &gObjectEvents[objectEventId];
+        struct Sprite *linkedSprite = &gSprites[objectEvent->spriteId];
+        sprite->x = linkedSprite->x;
+        sprite->y = linkedSprite->y;
+        sprite->subpriority = linkedSprite->subpriority;
+        UpdateObjectEventSpriteInvisibility(sprite, FALSE);
+        if (objectEvent->currentCoords.x != sprite->sPrevX || objectEvent->currentCoords.y != sprite->sPrevY)
+        {
+            sprite->sPrevX = objectEvent->currentCoords.x;
+            sprite->sPrevY = objectEvent->currentCoords.y;
+            if (sprite->animEnded)
+                PlaySE(SE_M_DIG);
+                StartSpriteAnim(sprite, 0);
+        }
     }
 }
 

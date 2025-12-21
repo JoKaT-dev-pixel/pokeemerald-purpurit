@@ -81,6 +81,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_ForestGrass               @ FLDEFF_FOREST_GRASS
 	.4byte gFieldEffectScript_SandGrass                 @ FLDEFF_SAND_GRASS
 	.4byte gFieldEffectScript_JumpSandGrass             @ FLDEFF_JUMP_SAND_GRASS
+	.4byte gFieldEffectScript_MudPile           		@ FLDEFF_MUD_PILE
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -383,5 +384,9 @@ gFieldEffectScript_SandGrass::
 
 gFieldEffectScript_JumpSandGrass::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_JumpSandGrass
+	field_eff_end
+
+gFieldEffectScript_MudPile::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_MudPile
 	field_eff_end
 

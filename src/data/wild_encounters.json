@@ -11564,149 +11564,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_SWINUB"
+                "min_level": 11,
+                "max_level": 11,
+                "species": "SPECIES_HORSEA"
               },
               {
-                "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_MAKUHITA"
+                "min_level": 11,
+                "max_level": 11,
+                "species": "SPECIES_WINGULL"
               },
               {
-                "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_SWINUB"
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_HORSEA"
               },
               {
-                "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_MAKUHITA"
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_WINGULL"
               },
               {
-                "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_SANDSHREW"
+                "min_level": 11,
+                "max_level": 11,
+                "species": "SPECIES_BARBOACH"
               },
               {
-                "min_level": 15,
-                "max_level": 16,
+                "min_level": 11,
+                "max_level": 11,
                 "species": "SPECIES_CACNEA"
               },
               {
-                "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_SANDSHREW"
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_BARBOACH"
               },
               {
-                "min_level": 15,
-                "max_level": 16,
+                "min_level": 12,
+                "max_level": 12,
                 "species": "SPECIES_CACNEA"
               },
               {
-                "min_level": 16,
-                "max_level": 17,
+                "min_level": 12,
+                "max_level": 12,
                 "species": "SPECIES_SWABLU"
               },
               {
-                "min_level": 16,
-                "max_level": 17,
-                "species": "SPECIES_NOSEPASS"
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_CORPHISH"
               },
               {
-                "min_level": 16,
-                "max_level": 17,
+                "min_level": 13,
+                "max_level": 13,
                 "species": "SPECIES_SWABLU"
               },
               {
-                "min_level": 16,
-                "max_level": 17,
-                "species": "SPECIES_NOSEPASS"
-              }
-            ]
-          },
-          "water_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              }
-            ]
-          },
-          "fishing_mons": {
-            "encounter_rate": 30,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_CORPHISH"
               }
             ]
           }

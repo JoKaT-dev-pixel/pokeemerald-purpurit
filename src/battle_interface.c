@@ -172,6 +172,9 @@ enum
 
 static const u8 *GetHealthboxElementGfxPtr(u8);
 static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *, u32, u32, u32, u32 *);
+static u8 *AddTextPrinterAndCreateWindowLvlOnHealthbox(const u8 *, u32, u32, u32, u32 *);
+
+static u8 *AddTextPrinterAndCreateWindowOnHealthboxWithFont(const u8 *, u32, u32, u32, u32 *, u32);
 
 static void RemoveWindowOnHealthbox(u32 windowId);
 static void UpdateHpTextInHealthboxInDoubles(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp, s16 maxHp);
@@ -619,6 +622,16 @@ static const struct WindowTemplate sHealthboxWindowTemplate = {
     .baseBlock = 0
 };
 
+static const struct WindowTemplate sHealthboxHPWindowTemplate = {
+    .bg = 0,
+    .tilemapLeft = 0,
+    .tilemapTop = 0,
+    .width = 8,
+    .height = 2,
+    .paletteNum = 0,
+    .baseBlock = 0
+};
+
 static const u8 ALIGNED(4) sMegaTriggerGfx[] = INCBIN_U8("graphics/battle_interface/mega_trigger.4bpp");
 static const u16 sMegaTriggerPal[] = INCBIN_U16("graphics/battle_interface/mega_trigger.gbapal");
 
@@ -753,6 +766,10 @@ static const struct SpriteTemplate sSpriteTemplate_BurstTrigger =
 // data fields for healthbar
 #define hBar_HealthBoxSpriteId      data[5]
 #define hBar_Data6                  data[6]
+
+#define HP_FONT FONT_SMALL_BW
+#define HP_MAX_DIGITS 3
+#define HP_RIGHT_SPRITE_CHARS 5
 
 // This function is here to cover a specific case - one player's mon in a 2 vs 1 double battle. In this scenario - display singles layout.
 // The same goes for a 2 vs 1 where opponent has only one pokemon.
@@ -1013,7 +1030,7 @@ void GetBattlerHealthboxCoords(u8 battler, s16 *x, s16 *y)
             *x = 159, *y = 76;
             break;
         case B_POSITION_PLAYER_RIGHT:
-            *x = 171, *y = 101;
+            *x = 169, *y = 100;
             break;
         case B_POSITION_OPPONENT_LEFT:
             *x = 44, *y = 19;
@@ -1060,7 +1077,7 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
         MegaIndicator_SetVisibilities(healthboxSpriteId, TRUE);
     }
 
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, xPos, 3, 2, &windowId);
+    windowTileData = AddTextPrinterAndCreateWindowLvlOnHealthbox(text, xPos, 3, 2, &windowId);
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
     if (GetBattlerSide(battler) == B_SIDE_PLAYER)
@@ -1080,30 +1097,32 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
     RemoveWindowOnHealthbox(windowId);
 }
 
-static void PrintHpOnHealthbox(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor, u32 rightTile, u32 leftTile)
+static void PrintHpOnHealthbox(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor, u32 rightStartTile, u32 leftEndTile)
 {
     u8 *windowTileData;
-    u32 windowId, tilesCount, x;
-    u8 text[28], *txtPtr;
-    void *objVram = (void *)(OBJ_VRAM0) + gSprites[spriteId].oam.tileNum * TILE_SIZE_4BPP;
+    u32 windowId, tilesCount, x, width, leftTile;
+    u8 text[2 * HP_MAX_DIGITS], *txtPtr;
+    void *objVram = (void*)(OBJ_VRAM0) + gSprites[spriteId].oam.tileNum * TILE_SIZE_4BPP;
 
     // To fit 4 digit HP values we need to modify a bit the way hp is printed on Healthbox.
-    // 6 chars can fit on the right healthbox, the rest goes to the left one
-    txtPtr = ConvertIntToDecimalStringN(text, currHp, STR_CONV_MODE_RIGHT_ALIGN, 4);
+    // HP_RIGHT_SPRITE_CHARS chars can fit on the right healthbox, the rest goes to the left one
+    txtPtr = ConvertIntToDecimalStringN(text, currHp, STR_CONV_MODE_RIGHT_ALIGN, HP_MAX_DIGITS);
     *txtPtr++ = CHAR_SLASH;
-    txtPtr = ConvertIntToDecimalStringN(txtPtr, maxHp, STR_CONV_MODE_LEFT_ALIGN, 4);
-    // Print last 6 chars on the right window
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(txtPtr - 6, 0, 5, bgColor, &windowId);
-    HpTextIntoHealthboxObject(objVram + rightTile, windowTileData, 4);
+    txtPtr = ConvertIntToDecimalStringN(txtPtr, maxHp, STR_CONV_MODE_LEFT_ALIGN, HP_MAX_DIGITS);
+    // Print last HP_RIGHT_SPRITE_CHARS chars on the right window
+    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxWithFont(txtPtr - HP_RIGHT_SPRITE_CHARS, 0, 5, bgColor, &windowId, HP_FONT);
+    width = GetStringWidth(HP_FONT, txtPtr - HP_RIGHT_SPRITE_CHARS, -1);
+    HpTextIntoHealthboxObject(objVram + rightStartTile, windowTileData, 4);
     RemoveWindowOnHealthbox(windowId);
     // Print the rest of the chars on the left window
-    txtPtr[-6] = EOS;
-    // if max hp is 3 digits print on block closer to the right window, if 4 digits print further from the right window
-    if (maxHp >= 1000)
-        x = 9, tilesCount = 3;
-    else
-        x = 6, tilesCount = 2, leftTile += 0x20;
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, x, 5, bgColor, &windowId);
+    txtPtr[-HP_RIGHT_SPRITE_CHARS] = EOS;
+ 
+    width = GetStringWidth(HP_FONT, text, -1) + GetFontAttribute(HP_FONT, FONTATTR_LETTER_SPACING);
+    tilesCount = (width + 7) / 8;
+    x = 8 * tilesCount - width;
+    leftTile = leftEndTile - 0x20 * tilesCount;
+    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxWithFont(text, x, 5, bgColor, &windowId, HP_FONT);
+
     HpTextIntoHealthboxObject(objVram + leftTile, windowTileData, tilesCount);
     RemoveWindowOnHealthbox(windowId);
 }
@@ -1192,7 +1211,7 @@ void UpdateHpTextInHealthbox(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp
     {
         if (GetBattlerSide(battlerId) == B_SIDE_PLAYER) // Player
         {
-            PrintHpOnHealthbox(healthboxSpriteId, currHp, maxHp, 2, 0xB00, 0x3A0);
+            PrintHpOnHealthbox(healthboxSpriteId, currHp, maxHp, 2, 0xB00, 0x400);
         }
         else // Opponent
         {
@@ -1210,7 +1229,7 @@ static void UpdateHpTextInHealthboxInDoubles(u32 healthboxSpriteId, u32 maxOrCur
     {
         if (gBattleSpritesDataPtr->battlerData[gSprites[healthboxSpriteId].data[6]].hpNumbersNoBars) // don't print text if only bars are visible
         {
-            PrintHpOnHealthbox(barSpriteId, currHp, maxHp, 0, 0x80, 0x20);
+            PrintHpOnHealthbox(barSpriteId, currHp, maxHp, 0, 0x80, 0x80);
             // Clears the end of the healthbar gfx.
             CpuCopy32(GetHealthboxElementGfxPtr(HEALTHBOX_GFX_FRAME_END),
                           (void *)(OBJ_VRAM0 + 0x680) + (gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP),
@@ -2901,10 +2920,48 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y,
     FillWindowPixelBuffer(winId, PIXEL_FILL(bgColor));
 
     color[0] = bgColor;
-    color[1] = 1;
-    color[2] = 3;
+    color[1] = 3;
+    color[2] = 1;
 
     AddTextPrinterParameterized4(winId, FONT_SMALL_BW, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
+
+    *windowId = winId;
+    return (u8 *)(GetWindowAttribute(winId, WINDOW_TILE_DATA));
+}
+
+static u8 *AddTextPrinterAndCreateWindowLvlOnHealthbox(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId)
+{
+    u16 winId;
+    u8 color[3];
+    struct WindowTemplate winTemplate = sHealthboxWindowTemplate;
+
+    winId = AddWindow(&winTemplate);
+    FillWindowPixelBuffer(winId, PIXEL_FILL(bgColor));
+
+    color[0] = bgColor;
+    color[1] = 3;
+    color[2] = 1;
+
+    AddTextPrinterParameterized4(winId, FONT_SMALL, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
+
+    *windowId = winId;
+    return (u8 *)(GetWindowAttribute(winId, WINDOW_TILE_DATA));
+}
+
+static u8 *AddTextPrinterAndCreateWindowOnHealthboxWithFont(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId, u32 fontId)
+{
+    u16 winId;
+    u8 color[3];
+    struct WindowTemplate winTemplate = sHealthboxWindowTemplate;
+
+    winId = AddWindow(&winTemplate);
+    FillWindowPixelBuffer(winId, PIXEL_FILL(bgColor));
+
+    color[0] = bgColor;
+    color[1] = 3;
+    color[2] = 7;
+
+    AddTextPrinterParameterized4(winId, fontId, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
 
     *windowId = winId;
     return (u8 *)(GetWindowAttribute(winId, WINDOW_TILE_DATA));

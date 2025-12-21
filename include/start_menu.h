@@ -14,5 +14,7 @@ void HideStartMenu(void);
 void AppendToList(u8 *list, u8 *pos, u8 newEntry);
 void SaveStartCallback_FullStartMenu(void);
 void RetireStartCallback_FullStartMenu(void);
+void SaveStartCallback_HeatStartMenu(void);
+void RetireStartCallback_HeatStartMenu(void);
 
 #endif // GUARD_START_MENU_H

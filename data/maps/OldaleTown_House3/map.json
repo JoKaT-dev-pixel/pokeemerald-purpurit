@@ -56,14 +56,14 @@
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 4,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN",
       "dest_warp_id": "4"
     },
     {
-      "x": 4,
+      "x": 5,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN",

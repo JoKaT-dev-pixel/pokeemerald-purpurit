@@ -783,7 +783,7 @@ PetalburgCity_Text_ThisIsPetalburgGym:
 PetalburgCity_Text_ThisIsGymSign:
 	.string "Toutes les informations sont indiquées\n"
 	.string "sur ce type de panneau.\p"
-	.string "Bonne chance, parce que le Champion\n"
+	.string "Bonne chance, parce que le champion\n"
 	.string "me fait vraiment flipper !$"
 
 PetalburgCity_Text_Boyfriend:
@@ -800,9 +800,8 @@ PetalburgCity_Text_ExpertMale:
 	.string "nombreuses personnes.\p"
 	.string "Ils sont partout, dans les montagnes,\n"
 	.string "sous l'océan et même dans le ciel.\p"
-	.string "Autrefois, j'étais un Dresseur tout\n"
-	.string "comme toi !\p"
-	.string "C'était vraiment la belle époque…$"
+	.string "C'est totalement fascinant de voir\n"
+	.string "des gens heureux avec leur Pokémon !$"
 
 PetalburgCity_Text_Man:
 	.string "Je ne suis pas complexer par ma\n"
@@ -810,7 +809,9 @@ PetalburgCity_Text_Man:
 	.string "Je ne suis pas complexer par ma\n"
 	.string "calvitie !\p"
 	.string "Je ne suis pas complexer par ma\n"
-	.string "CALVITIE !!$"
+	.string "CALVITIE !!\p"
+	.string "Aucune femme veut de moi à cause de\n"
+	.string "ma calvitie…$"
 
 PetalburgCity_Text_Woman:
 	.string "Le café servi au Pokécafé est vraiment\n"

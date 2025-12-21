@@ -264,6 +264,9 @@ $(FONTGFXDIR)/frlg_female.fwjpnfont: $(FONTGFXDIR)/japanese_frlg_female.png
 $(FONTGFXDIR)/small_bw.latfont: $(FONTGFXDIR)/bw_small.png
 	$(GFX) $< $@
 
+$(FONTGFXDIR)/small_menu.latfont: $(FONTGFXDIR)/latin_menu_font.png
+	$(GFX) $< $@
+
 ### Miscellaneous ###
 graphics/title_screen/pokemon_logo.gbapal: %.gbapal: %.pal
 	$(GFX) $< $@ -num_colors 224

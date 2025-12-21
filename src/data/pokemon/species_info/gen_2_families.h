@@ -913,12 +913,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_SPINARAK
     [SPECIES_SPINARAK] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 75,
-        .baseDefense   = 20,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 30,
+        .baseHP        = 35,
+        .baseAttack    = 65,
+        .baseDefense   = 30,
+        .baseSpeed     = 25,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_BUG, TYPE_FIRE),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 55 : 55,
@@ -934,20 +934,20 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .cryId = CRY_SPINARAK,
         .natDexNum = NATIONAL_DEX_SPINARAK,
         .categoryName = _("Arme à Feu"),
-        .height = 5,
-        .weight = 85,
+        .height = 4,
+        .weight = 108,
         .description = COMPOUND_STRING(
-            "Pour se défendre, il possède un pistolet\n"
-            "se situant sur son abdomen. Il est capable\n"
+            "Le pistolet sur son abdomen est capable\n"
             "de tirer des projectiles sur un rayon de\n"
-            "100 mètres."),
+            "100 mètres. Ses projectiles en question\n"
+            "ne ratent jamais sa cible."),
         .pokemonScale = 414,
-        .pokemonOffset = 21,
+        .pokemonOffset = 19,
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Spinarak,
         .frontPicSize = MON_COORDS_SIZE(48, 32),
-        .frontPicYOffset = 9,
+        .frontPicYOffset = 5,
         .frontAnimFrames = sAnims_Spinarak,
         .frontAnimId = ANIM_GROW_VIBRATE,
         .backPic = gMonBackPic_Spinarak,
@@ -2747,33 +2747,32 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Murkrow)
         .levelUpLearnset = sMurkrowLevelUpLearnset,
         .teachableLearnset = sMurkrowTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_HONCHKROW}),
     },
 
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_HONCHKROW] =
     {
-        .baseHP        = 100,
+        .baseHP        = 70,
         .baseAttack    = 125,
-        .baseDefense   = 52,
-        .baseSpeed     = 71,
-        .baseSpAttack  = 105,
-        .baseSpDefense = 52,
+        .baseDefense   = 65,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_DARK, TYPE_FLYING),
         .catchRate = 30,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 177 : 187,
-        .evYield_Attack = 2,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 172,
+        .evYield_Attack = 3,
         .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
+        .eggCycles = 15,
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_INSOMNIA, ABILITY_SUPER_LUCK, ABILITY_MOXIE },
+        .abilities = { ABILITY_UNNERVE, ABILITY_BAD_LUCK, ABILITY_ANGER_POINT },
         .bodyColor = BODY_COLOR_BLACK,
-        .speciesName = _("Honchkrow"),
+        .speciesName = _("Corbizness"),
         .cryId = CRY_HONCHKROW,
         .natDexNum = NATIONAL_DEX_HONCHKROW,
-        .categoryName = _("Big Boss"),
+        .categoryName = _("Patron"),
         .height = 9,
         .weight = 273,
         .description = COMPOUND_STRING(
@@ -4689,12 +4688,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_SWINUB
     [SPECIES_SWINUB] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 80,
-        .baseDefense   = 60,
-        .baseSpeed     = 55,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 65,
+        .baseHP        = 58,
+        .baseAttack    = 90,
+        .baseDefense   = 65,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 25,
+        .baseSpDefense = 53,
         .types = MON_TYPES(TYPE_FIGHTING, TYPE_GROUND),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 60,
@@ -4709,9 +4708,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .speciesName = _("Porcrassin"),
         .cryId = CRY_SWINUB,
         .natDexNum = NATIONAL_DEX_SWINUB,
-        .categoryName = _("Porc"),
-        .height = 4,
-        .weight = 65,
+        .categoryName = _("Gros Cochon"),
+        .height = 7,
+        .weight = 511,
         .description = COMPOUND_STRING(
             "It roots for food by rubbing its snout\n"
             "against the ground. Its favorite food is a\n"
@@ -4723,7 +4722,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Swinub,
         .frontPicSize = MON_COORDS_SIZE(40, 32),
-        .frontPicYOffset = 6,
+        .frontPicYOffset = 5,
         .frontAnimFrames = sAnims_Swinub,
         .frontAnimId = ANIM_H_STRETCH_FAR,
         .backPic = gMonBackPic_Swinub,

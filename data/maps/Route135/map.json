@@ -15,30 +15,30 @@
   "connections": [
     {
       "map": "MAP_ROUTE106",
-      "offset": 0,
+      "offset": -7,
       "direction": "right"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
-      "x": 111,
-      "y": 23,
+      "x": 48,
+      "y": 26,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_DOWN_LEFT",
+      "movement_range_x": 8,
+      "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Route106_EventScript_Ned",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 92,
-      "y": 22,
+      "x": 27,
+      "y": 36,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -48,8 +48,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCOTT",
-      "x": 61,
-      "y": 25,
+      "x": 6,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -61,8 +61,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 75,
-      "y": 36,
+      "x": 7,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
@@ -74,8 +74,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 67,
-      "y": 32,
+      "x": 6,
+      "y": 52,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -87,8 +87,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 9,
-      "y": 35,
+      "x": 32,
+      "y": 20,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -100,21 +100,21 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
-      "x": 45,
-      "y": 44,
+      "x": 22,
+      "y": 52,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route103_EventScript_Daisy",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 23,
-      "y": 43,
+      "x": 5,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -139,8 +139,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNUSED_NATU_DOLL",
-      "x": 21,
-      "y": 27,
+      "x": 9,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -152,8 +152,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNUSED_NATU_DOLL",
-      "x": 23,
-      "y": 27,
+      "x": 10,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -165,8 +165,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNUSED_NATU_DOLL",
-      "x": 20,
-      "y": 28,
+      "x": 8,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -178,8 +178,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNUSED_NATU_DOLL",
-      "x": 24,
-      "y": 28,
+      "x": 11,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -191,8 +191,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL",
-      "x": 22,
-      "y": 28,
+      "x": 12,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -205,39 +205,11 @@
   ],
   "warp_events": [
     {
-      "x": 111,
-      "y": 20,
+      "x": 68,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_GRANITE_CAVE_1F",
       "dest_warp_id": "2"
-    },
-    {
-      "x": 90,
-      "y": 20,
-      "elevation": 0,
-      "dest_map": "MAP_GRANITE_CAVE_1F",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 76,
-      "y": 25,
-      "elevation": 0,
-      "dest_map": "MAP_GRANITE_CAVE_1F",
-      "dest_warp_id": "3"
-    },
-    {
-      "x": 44,
-      "y": 41,
-      "elevation": 0,
-      "dest_map": "MAP_GRANITE_CAVE_B1F",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 26,
-      "y": 41,
-      "elevation": 0,
-      "dest_map": "MAP_GRANITE_CAVE_B1F",
-      "dest_warp_id": "3"
     }
   ],
   "coord_events": [
@@ -262,8 +234,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 76,
-      "y": 32,
+      "x": 45,
+      "y": 22,
       "elevation": 3,
       "item": "ITEM_STARDUST",
       "flag": "FLAG_HIDDEN_ITEM_PALMNUT_COAST_SUPER_POTION"

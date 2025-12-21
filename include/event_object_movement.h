@@ -72,6 +72,8 @@ enum ReflectionTypes
 #define GROUND_EFFECT_FLAG_SEAWEED               (1 << 19)
 #define GROUND_EFFECT_FLAG_SAND_GRASS_ON_SPAWN   (1 << 20)
 #define GROUND_EFFECT_FLAG_SAND_GRASS_ON_MOVE    (1 << 21)
+#define GROUND_EFFECT_FLAG_LAND_IN_SAND_GRASS    (1 << 22)
+#define GROUND_EFFECT_FLAG_MUD_PILE              (1 << 23)
 
 // Sprite data for the CameraObject functions
 #define sCamera_FollowSpriteId data[0]

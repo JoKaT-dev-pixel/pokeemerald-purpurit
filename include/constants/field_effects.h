@@ -76,6 +76,7 @@
 #define FLDEFF_FOREST_GRASS              72
 #define FLDEFF_SAND_GRASS                73
 #define FLDEFF_JUMP_SAND_GRASS           74
+#define FLDEFF_MUD_PILE                  75
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
@@ -119,6 +120,7 @@
 #define FLDEFFOBJ_FOREST_GRASS          39
 #define FLDEFFOBJ_SAND_GRASS            40
 #define FLDEFFOBJ_JUMP_SAND_GRASS       41
+#define FLDEFFOBJ_MUD_PILE              42
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003

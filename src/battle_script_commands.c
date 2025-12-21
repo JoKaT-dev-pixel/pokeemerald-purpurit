@@ -15287,6 +15287,10 @@ static void Cmd_handleballthrow(void)
                 if (GetCurrentMapType() == MAP_TYPE_CITY)
                     ballMultiplier = 350;
                 break;
+            case ITEM_REVO_BALL:
+                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isEvolvedMon)
+                    ballMultiplier = 400;
+                break;
             }
         }
 

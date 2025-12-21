@@ -744,6 +744,8 @@ u8 BattleSetup_GetTerrainId(void)
         return BATTLE_TERRAIN_SAND;
     if (MetatileBehavior_IsSandGrass(tileBehavior))
         return BATTLE_TERRAIN_BEACH;
+    if (MetatileBehavior_IsMudPile(tileBehavior))
+        return BATTLE_TERRAIN_MARSH;
 
     switch (gMapHeader.mapType)
     {

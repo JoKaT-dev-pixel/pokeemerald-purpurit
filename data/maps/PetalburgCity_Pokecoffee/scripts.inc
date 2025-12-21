@@ -72,8 +72,8 @@ PetalburgCity_Pokecoffee_EventScript_Hiker::
 	msgbox PetalburgCity_Pokecoffee_Text_Hiker, MSGBOX_NPC
 	end
 
-PetalburgCity_Pokecoffee_EventScript_ExpertMale::
-	msgbox PetalburgCity_Pokecoffee_Text_ExpertMale, MSGBOX_NPC
+PetalburgCity_Pokecoffee_EventScript_Man::
+	msgbox PetalburgCity_Pokecoffee_Text_Man, MSGBOX_NPC
 	end
 
 PetalburgCity_Pokecoffee_EventScript_Maniac::
@@ -143,35 +143,43 @@ PetalburgCity_Pokecoffee_EventScript_Waitress::
 PetalburgCity_Pokecoffee_Text_Hiker:
 	.string "J'ai appris sur internet que le café\n"
 	.string "favorise la pousse de barbe !\p"
-	.string "C'est le moment de devenir un vrai\n"
-	.string "bonhomme !$"
+	.string "Tu crois que ça fonctionne sur les\n"
+	.string "poils du torse ?$"
 
-PetalburgCity_Pokecoffee_Text_ExpertMale:
-	.string "Chaque matin, je viens dans ce bar\n"
-	.string "prendre un café.\p"
-	.string "Rien que d'en boire me rappelle le\n"
-	.string "bon vieux temps.$"
+PetalburgCity_Pokecoffee_Text_Man:
+	.string "Chaque matin, je viens ici prendre mon\n"
+	.string "café.\p"
+	.string "SLURP !!\p"
+	.string "Attends deux secondes…!\p"
+	.string "SLURP !!\n"
+	.string "Trop bon…!\p"
+	.string "Du coup, je disais donc…\p"
+	.string "SLURP !!\n"
+	.string "Putain c'est trop bon !\p"
+	.string "Désolé, mais je ne peux plus m'arrêter\n"
+	.string "d'en boire.$"
 
 PetalburgCity_Pokecoffee_Text_Dating:
-	.string "Je suis en rencard avec deux nanas,\n"
-	.string "la classe non ?\p"
+	.string "Je suis en date avec deux nanas, la\n"
+	.string "classe non ?\p"
 	.string "Je les ai rencontrées sur des sites\n"
-	.string "de rencontre.$"
+	.string "de rencontre.\p"
+	.string "Tu devrais essayer pour pécho des 10\n"
+	.string "sur 10 !$"
 
 PetalburgCity_Pokecoffee_Text_Girl:
 	.string "Ce connard nous a menti sur ses\n"
 	.string "photos !\p"
 	.string "En plus d'être moche, c'est un gros\n"
-	.string "dégueulasse !$"
+	.string "pervers !$"
 
 PetalburgCity_Pokecoffee_Text_Woman:
-	.string "Ce rencard est un désastre total !\p"
-	.string "Je croyais que c'était un beau gosse\n"
-	.string "musclé et tatoué sur tout le corps.\p"
-	.string "Au lieu de ça, nous nous coltinons un\n"
-	.string "puceau obèse et qui pue de la gueule…\p"
-	.string "Bref, je m'attendais à rien et je suis\n"
-	.string "quand même déçue…$"
+	.string "J'ai accepté ce date car il me faisait\n"
+	.string "trop de la peine.\p"
+	.string "Sincèrement, je regrette d'avoir dit\n"
+	.string "oui…\p"
+	.string "Au moins, j'espère qu'il va nous payer\n"
+	.string "notre café.$"
 
 PetalburgCity_Pokecoffee_Text_CookHotCoffee:
 	.string "Bonjour !\n"

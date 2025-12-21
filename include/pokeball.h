@@ -32,6 +32,7 @@ enum
     BALL_CHERISH,
     BALL_RUST,
     BALL_BLACK,
+    BALL_REVO,
     POKEBALL_COUNT
 };
 

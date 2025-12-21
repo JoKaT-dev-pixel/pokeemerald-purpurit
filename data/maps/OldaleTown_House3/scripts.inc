@@ -20,7 +20,7 @@ Fourqueue_House3_EventScript_Castoutou::
 	end
 
 Fourqueue_House3_Text_Man:
-	.string "Je suis au bord du gouffre…!\p"
+	.string "Je suis au bord du gouffre…\p"
 	.string "Notre vie était vraiment difficile\n"
 	.string "avant que j'obtienne mon certificat.\p"
 	.string "Nous étions extrêmement pauvres…\p"
@@ -28,11 +28,11 @@ Fourqueue_House3_Text_Man:
 	.string "Et elle nous a quittés…$"
 
 Fourqueue_House3_Text_Twin:
-	.string "Moi, je m'appelle Nina !\n"
+	.string "Moi, je m'appelle Nina !\p"
 	.string "Et mon Castoutou, lui, c'est Alexander !\p"
 	.string "Je m'inquiète beaucoup pour mon papa…\p"
-	.string "Il étudie tout le temps et en plus,\n"
-	.string "il ne joue jamais avec nous…$"
+	.string "Il ne joue jamais avec nous et il est\n"
+	.string "très inquiet pour son examen…$"
 
 Fourqueue_House3_Text_Castoutou:
 	.string "Castoutou: Wouaf !$"

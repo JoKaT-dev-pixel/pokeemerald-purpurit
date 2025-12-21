@@ -422,6 +422,8 @@
 #define ANIM_TAG_CUTE_EYE                   (ANIM_SPRITES_START + 408)
 #define ANIM_TAG_BOIL_FIRE                  (ANIM_SPRITES_START + 409)
 #define ANIM_TAG_DIVEBOMB                   (ANIM_SPRITES_START + 410)
+#define ANIM_TAG_BLUE_SPARKLE               (ANIM_SPRITES_START + 411)
+#define ANIM_TAG_PUNISHMENT_HIT             (ANIM_SPRITES_START + 412)
 
 // battlers
 #define ANIM_ATTACKER         0

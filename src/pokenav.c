@@ -317,7 +317,11 @@ void CB2_InitPokeNav(void)
     gPokenavResources = Alloc(sizeof(*gPokenavResources));
     if (gPokenavResources == NULL)
     {
+        #if ENABLE_HEAT_START_MENU
+        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        #else
         SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
+        #endif
     }
     else
     {
@@ -495,7 +499,11 @@ static void Task_Pokenav(u8 taskId)
             if (calledFromScript)
                 SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
             else
-                SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
+            #if ENABLE_HEAT_START_MENU
+                    SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+                #else
+                    SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
+            #endif
         }
         break;
     }

@@ -617,12 +617,17 @@ EventScript_AfterWhiteOutHealMsg::
 
 EventScript_AfterWhiteOutMomHeal::
 	lockall
-	textcolor NPC_TEXT_COLOR_FEMALE
 	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
+	setvar VAR_0x8000, MUGSHOT_MOM_SWEAT
+	callnative DrawMugshot
 	msgbox gText_HadQuiteAnExperienceTakeRest
+	callnative ClearMugshot
 	call Common_EventScript_OutOfCenterPartyHeal
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox gText_MomExplainHPGetPotions
+	callnative ClearMugshot
 	fadedefaultbgm
 	releaseall
 	end
@@ -832,6 +837,10 @@ Common_EventScript_FastWallyTutorial::
 	fadescreen FADE_FROM_BLACK
 	return
 
+Common_EventScript_BackToSafari::
+	fadescreen FADE_FROM_BLACK
+	return
+
 EventScript_RegionMap::
 	lockall
 	msgbox Common_Text_LookCloserAtMap, MSGBOX_DEFAULT
@@ -976,12 +985,10 @@ gText_SelectWithoutRegisteredItem::
 	.string "registered to SELECT for easy use.$"
 
 gText_PokemonTrainerSchoolEmail::
-	.string "There's an e-mail from POKéMON TRAINER\n"
-	.string "SCHOOL.\p"
+	.string "Une page Steam est ouvert.\p"
 	.string "… … … … … …\p"
-	.string "A POKéMON may learn up to four moves.\p"
-	.string "A TRAINER's expertise is tested on the\n"
-	.string "move sets chosen for POKéMON.\p"
+	.string "Y'a une promotion sur un jeu Monster\n"
+	.string "Hunter.\p"
 	.string "… … … … … …$"
 
 gText_PlayerHouseBootPC::
@@ -1017,7 +1024,7 @@ gText_MonsHealed::
 
 gText_HadQuiteAnExperienceTakeRest::
 	.string "{ROCKET}Maman: {MAGMA}Comment ça va, mon chou ?\n"
-	.string "Tu as dû vivre une aventure épuisante…\p"
+	.string "T'as dû vivre une aventure épuisante…\p"
 	.string "Tu devrais faire une sieste.$"
 
 gText_MomExplainHPGetPotions::
@@ -1241,7 +1248,13 @@ WaitWonderTrade_Text_PkmnCenter:
 	.string "Veuillez patienter…$"
 
 WonderTradeInfo_Text_PkmnCenter:
-	.string "Test$"
+	.string "L'Association d'Échange Pokémon\n"
+	.string "permet de pouvoir échanger un de vos\l"
+	.string "Pokémon avec ceux des autres\l"
+	.string "dresseurs de la région de Gaullia.\p"
+	.string "Les échanges se font uniquement une\n"
+	.string "fois par jour pour éviter tout abus\l"
+	.string "d'utilisation.$"
 
 DoYouWantToWonderTradeContinue_Text_PkmnCenter:
 	.string "Souhaiteriez-vous échanger un\n"

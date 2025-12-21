@@ -480,7 +480,8 @@ RouteD1_Text_FinishedSketchingFootprints:
 	.string "La voie est libre !$"
 
 RouteD1_Text_MayLetsGoBack:
-	.string "{ROCKET}{RIVAL}: {MAGMA}Allez ! Dépêche-toi !\n"
+	.string "{ROCKET}{RIVAL}: {MAGMA}T'as un balai dans le cul ou\n"
+	.string "quoi ?!\p"
 	.string "J'ai pas que ça à faire !$"
 
 RouteD1_Text_BrendanLetsGoBack:

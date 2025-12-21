@@ -2,6 +2,7 @@
 #include "strings.h"
 #include "battle_pyramid_bag.h"
 #include "item_menu.h"
+#include "config/heat_menus.h"
 
 ALIGNED(4)
 const u8 gText_ExpandedPlaceholder_Empty[] = _("");
@@ -1210,7 +1211,7 @@ const u8 gText_FirePunch48BP[] = _("FIRE PUNCH{CLEAR_TO 0x4E}48BP");
 #if OW_POISON_DAMAGE < GEN_4
 const u8 gText_PkmnFainted_FldPsn[] = _("{STR_VAR_1} fainted…\p\n");
 #else
-const u8 gText_PkmnFainted_FldPsn[] = _("Dev: Reste tranquille poto, {STR_VAR_1}\na survécu au poison !\p");
+const u8 gText_PkmnFainted_FldPsn[] = _("Dev: {EMERALD}Reste tranquille poto, {STR_VAR_1}\na survécu au poison !\p");
 #endif
 const u8 gText_Marco[] = _("MARCO");
 const u8 gText_TrainerCardName[] = _("Nom:  ");
@@ -1500,6 +1501,14 @@ const u8 gText_MoveCloserToLinkPartner[] = _("Move closer to your link partner(s
 const u8 gText_ABtnRegistrationCounter[] = _("A Button: Registration Counter");
 const u8 gText_ABtnTitleScreen[] = _("A Button: Title Screen");
 const u8 gText_Option[] = _("Paramètres");
+#if HEAT_MENUS_SAVEBLOCK_PALETTES
+const u8 gText_SmallDot[] = _("·");
+const u8 gText_LargeDot[] = _("{EMOJI_CIRCLE}");
+const u8 gText_PageNav[] = _("{L_BUTTON}{R_BUTTON} PAGE");
+const u8 gText_MenuPal[] = _("MENU COLOR");
+const u8 gText_MenuPalColor[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}COLOR");
+const u8 gText_MenuPalNumber[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
+#endif
 const u8 gText_TextSpeed[] = _("Vit.Texte");
 const u8 gText_BattleScene[] = _("Animat.Combat");
 const u8 gText_BattleStyle[] = _("Style Combat");
@@ -1617,7 +1626,7 @@ const u8 gText_YourName[] = _("Votre nom ?");
 const u8 gText_BoxName[] = _("BOX NAME?");
 const u8 gText_PkmnsNickname[] = _("Surnom de {STR_VAR_1} ?");
 const u8 gText_TellHimTheWords[] = _("Tell him the words.");
-const u8 gText_MoveOkBack[] = _("{DPAD_NONE}MOVE  {A_BUTTON}OK  {B_BUTTON}BACK");
+const u8 gText_MoveOkBack[] = _("{DPAD_NONE}DÉPLACER  {A_BUTTON}OK  {B_BUTTON}RETOUR");
 const u8 gText_CallCantBeMadeHere[] = _("A call can't be made from here.");
 const u8 gText_ContestLady_Handsome[] = _("HANDSOME");
 const u8 gText_ContestLady_Vinny[] = _("VINNY");

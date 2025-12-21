@@ -448,10 +448,13 @@ static void Task_WaitForFadeShowStartMenu(u8 taskId)
     }
 }
 
+#include "config/heat_menus.h"
 void ReturnToFieldOpenStartMenu(void)
 {
     FadeInFromBlack();
-    CreateTask(Task_WaitForFadeShowStartMenu, 0x50);
+    #if ENABLE_HEAT_START_MENU == FALSE
+    CreateTask(Task_WaitForFadeShowStartMenu, 0x50); 
+    #endif
     LockPlayerFieldControls();
 }
 

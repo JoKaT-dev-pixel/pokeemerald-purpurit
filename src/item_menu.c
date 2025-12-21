@@ -746,7 +746,11 @@ void ResetBagScrollPositions(void)
 
 void CB2_BagMenuFromStartMenu(void)
 {
+    #if ENABLE_HEAT_START_MENU
+    GoToBagMenu(ITEMMENULOCATION_FIELD, POCKETS_COUNT, CB2_ReturnToFieldWithOpenMenu);
+    #else
     GoToBagMenu(ITEMMENULOCATION_FIELD, POCKETS_COUNT, CB2_ReturnToFullScreenStartMenu);
+    #endif
 }
 
 void CB2_BagMenuFromBattle(void)

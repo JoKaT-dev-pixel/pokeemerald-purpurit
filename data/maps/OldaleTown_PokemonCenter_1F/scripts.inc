@@ -46,10 +46,10 @@ OldaleTown_PokemonCenter_1F_Text_TrainersHealsPokemon:
 	.string "plus, c'est gratuit !$"
 
 OldaleTown_PokemonCenter_1F_Text_Woman:
-	.string "Décidément vous les arabes, vous avez\n"
-	.string "toujours un problème avec tout ce qui\l"
-	.string "vole.\p"
-	.string "T'es pas arabe hein ?$"
+	.string "Parfois, je me demande vraiment si ça\n"
+	.string "existe des personnes qui utilisent des\l"
+	.string "Pokémon pour des fins politiques ?!\p"
+	.string "Ça serait horrible !$"
 
 OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable:
 	.string "Finalement, tu as pu voir ce qu'il y a\n"
@@ -57,8 +57,6 @@ OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable:
 	.string "C'est cool !$"
 
 OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub:
-	.string "Je ne suis jamais monté voir ce qu'il\n"
-	.string "y a au 2e étage.\p"
-	.string "Je suis tout près de l'escalator mais\n"
-	.string "j'ai la flemme.$"
+	.string "Apparemment, y'a une dinguerie au\n"
+	.string "premier étage mais flemme d'y aller.$"
 

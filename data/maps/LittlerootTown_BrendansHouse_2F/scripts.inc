@@ -304,4 +304,4 @@ Common_Text_LookCloserAtMap:
 
 PlayersHouse_2F_Text_ItsAGameCube:
 	.string "C’est une Nintendo Switch 2.\p"
-	.string "Elle a fini par sortir finalement.$"
+	.string "Elle est même sortie avant GTA 6…$"

@@ -102,7 +102,6 @@ LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor::
 	applymovement LOCALID_RIVAL_MOM, LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
 	special GetRivalSonDaughterString
-	textcolor NPC_TEXT_COLOR_FEMALE
 	msgbox RivalsHouse_1F_Text_OhYoureTheNewNeighbor, MSGBOX_DEFAULT
 	waitmessage
 	special SetRivalsName
@@ -333,9 +332,8 @@ PlayersHouse_1F_Text_IsntItNiceInHere:
 	.string "Elle te plait ma nouvelle déco ?$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
-	.string "{MAGMA}Ne t'inquiète pas pour mes colis !\p"
-	.string "Les Pokémon du livreur se chargeront\n"
-	.string "de cette tâche.\p"
+	.string "{MAGMA}Les Pokémon du livreur se chargeront\n"
+	.string "de ranger mes colis.\p"
 	.string "Aussi, je t'ai acheté une nouvelle\n"
 	.string "horloge pour fêter ton retour !\p"
 	.string "Elle se trouve à l'étage !\n"
@@ -429,12 +427,13 @@ PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "Bon, il faut y aller !$"
 
 PlayersHouse_1F_Text_RunningShoesManual:
-	.string "It's the instruction booklet for the\n"
-	.string "RUNNING SHOES.\p"
-	.string "“Press the B Button to run while\n"
-	.string "wearing your RUNNING SHOES.\p"
-	.string "“Lace up your RUNNING SHOES and hit\n"
-	.string "the road running!”$"
+	.string "C’est le manuel d’instructions des\n"
+	.string "Chaussures de Sécurité.\p"
+	.string "“Lorsque vous portez vos Chaussures\n"
+	.string "de Sécurité, appuyez sur le bouton\l"
+	.string "B pour courir.”\p"
+	.string "“Enfilez vos Chaussures de Sécurité\n"
+	.string "et foncez droit devant !”$"
 
 PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
 	.string "DAD: Hm?\p"

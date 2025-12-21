@@ -1537,6 +1537,18 @@ const struct SpriteTemplate gVineWhipSpriteTemplate =
     .callback = AnimWhipHit,
 };
 
+//Punishment Anim
+const struct SpriteTemplate gPunishmentHitSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PUNISHMENT_HIT,
+    .paletteTag = ANIM_TAG_PUNISHMENT_HIT,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_Whip,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimWhipHit,
+};
+
 static const union AnimCmd sAnim_SlidingHit[] =
 {
     ANIMCMD_FRAME(0, 4),
@@ -2117,6 +2129,32 @@ const struct SpriteTemplate gVerticalStripesSpriteTemplate =
     .paletteTag = ANIM_TAG_VERTICAL_STRIPES,
     .oam = &gOamData_AffineOff_ObjBlend_16x32,
     .anims = gEndureEnergyAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimEndureEnergy,
+};
+
+const union AnimCmd gDazzlingGleamSparkleParticleAnimCmds[] =
+{
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(4, 4),
+    ANIMCMD_FRAME(8, 4),
+    ANIMCMD_FRAME(12, 4),
+    ANIMCMD_END,
+};
+
+const union AnimCmd *const gDazzlingGleamSparkleParticleAnimTable[] =
+{
+    gDazzlingGleamSparkleParticleAnimCmds,
+};
+
+//Dazzling Gleam Effect
+const struct SpriteTemplate gDazzlingGleamSparkleParticleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BLUE_SPARKLE,
+    .paletteTag = ANIM_TAG_BLUE_SPARKLE,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gDazzlingGleamSparkleParticleAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimEndureEnergy,

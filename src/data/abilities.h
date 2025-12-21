@@ -967,8 +967,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_UNNERVE] =
     {
-        .name = _("Unnerve"),
-        .description = COMPOUND_STRING("Foes can't eat Berries."),
+        .name = _("Tension"),
+        .description = COMPOUND_STRING("Fait stresser l'ennemi, ce qui\nl'empêche de manger des Baies."),
         .aiRating = 3,
     },
 

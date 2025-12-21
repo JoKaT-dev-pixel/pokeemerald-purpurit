@@ -486,7 +486,10 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetHomeDoorCoordsMale
 	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_SetHomeDoorCoordsFemale
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox LittlerootTown_Text_WaitPlayer, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_MomApproachPlayerMale
@@ -909,13 +912,27 @@ LittlerootTown_EventScript_SetReceivedRunningShoes::
 	end
 
 LittlerootTown_EventScript_GiveRunningShoes::
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	playfanfare MUS_OBTAIN_ITEM
 	message LittlerootTown_Text_SwitchShoesWithRunningShoes
 	waitfanfare
 	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_AfterObtainingRunningShoes, MSGBOX_DEFAULT
+	callnative ClearMugshot
+	setvar VAR_0x8000, MUGSHOT_MOM_SWEAT
+	callnative DrawMugshot
+	msgbox LittlerootTown_Text_CakeInTheOven, MSGBOX_DEFAULT
+	callnative ClearMugshot
+	setvar VAR_0x8000, MUGSHOT_MOM
+	callnative DrawMugshot
 	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	delay 30
 	return
@@ -934,9 +951,8 @@ LittlerootTown_Text_OurNewHomeLetsGoInside:
 LittlerootTown_Text_PlayerMomNotBedroom:
 	.string "{MAGMA}Par contre, tu n'as plus de chambre.\n"
 	.string "Tu vas devoir dormir dans le grenier.\p"
-	.string "Je suis vraiment désolée mon chou, ce\n"
-	.string "n'est que temporaire…\p"
-	.string "Promis !$"
+	.string "Après, ce n'est que temporaire…\n"
+	.string "Raasure-toi !$"
 
 LittlerootTown_Text_PlayerMomGoToHome:
 	.string "{MAGMA}Bien !\n"
@@ -966,13 +982,17 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "appuyez sur le bouton B pour courir\l"
 	.string "n'importe où !”$"
 
-LittlerootTown_Text_ComeHomeIfAnythingHappens:
+LittlerootTown_Text_AfterObtainingRunningShoes:
 	.string "Très bien, ça ne m'a pas l'air très\n"
-	.string "compliqué…!\p"
+	.string "compliqué…!$"
+
+LittlerootTown_Text_CakeInTheOven:
 	.string "Je suis désolée mais je vais devoir\n"
 	.string "te laisser mon chou !\p"
 	.string "J'ai un gâteau qui m'attends dans\n"
-	.string "le four !\p"
+	.string "le four !$"
+
+LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Bonne chance et sois prudent !$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:

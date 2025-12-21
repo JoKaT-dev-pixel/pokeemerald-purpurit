@@ -22,7 +22,7 @@ static const u8 sBattleAnimBgCnts[] = {REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, REG
 
 static const TaskFunc sBattleIntroSlideFuncs[] =
 {
-    [BATTLE_TERRAIN_GRASS]      = BattleIntroSlide1,
+    [BATTLE_TERRAIN_GRASS]      = BattleIntroSlide3,
     [BATTLE_TERRAIN_LONG_GRASS] = BattleIntroSlide1,
     [BATTLE_TERRAIN_SAND]       = BattleIntroSlide2,
     [BATTLE_TERRAIN_UNDERWATER] = BattleIntroSlide2,
@@ -32,10 +32,11 @@ static const TaskFunc sBattleIntroSlideFuncs[] =
     [BATTLE_TERRAIN_CAVE]       = BattleIntroSlide1,
     [BATTLE_TERRAIN_BUILDING]   = BattleIntroSlide3,
     [BATTLE_TERRAIN_PLAIN]      = BattleIntroSlide3,
-    [BATTLE_TERRAIN_FOREST]     = BattleIntroSlide1,
+    [BATTLE_TERRAIN_MARSH]      = BattleIntroSlide2,
+    [BATTLE_TERRAIN_FOREST]     = BattleIntroSlide3,
     [BATTLE_TERRAIN_CITY]       = BattleIntroSlide3,
     [BATTLE_TERRAIN_SEWER]      = BattleIntroSlide3,
-    [BATTLE_TERRAIN_BEACH]      = BattleIntroSlide3,
+    [BATTLE_TERRAIN_BEACH]      = BattleIntroSlide2,
     [BATTLE_TERRAIN_BIRCH_LAB]  = BattleIntroSlide3,
 };
 
@@ -247,6 +248,8 @@ static void BattleIntroSlide2(u8 taskId)
     {
     case BATTLE_TERRAIN_SAND:
     case BATTLE_TERRAIN_WATER:
+    case BATTLE_TERRAIN_MARSH:
+    case BATTLE_TERRAIN_BEACH:
         gBattle_BG1_X += 8;
         break;
     case BATTLE_TERRAIN_UNDERWATER:

@@ -143,32 +143,34 @@ LittlerootTown_ProfessorBirchsLab_EventScript_RivalGender::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
-	textcolor NPC_TEXT_COLOR_MALE
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRivalOceane, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalFemale
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRivalEvan::
-	textcolor NPC_TEXT_COLOR_MALE
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalMale
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
-	textcolor NPC_TEXT_COLOR_MALE
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	end
 
-LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival::
-	textcolor NPC_TEXT_COLOR_MALE
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay, MSGBOX_YESNO
+LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalFemale::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWayMale, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRival
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalFemale
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalMale::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWayFemale, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalMale
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent::
@@ -905,20 +907,25 @@ LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou:
 	.string "Tu es donc digne de confiance !\p"
 	.string "{PLAYER}, je compte sur toi !$"
 
-LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWay:
-	.string "PROF. BIRCH: Oh, don't be that way.\n"
-	.string "You should go meet my kid.$"
+LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWayFemale:
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Heu, meuf…\n"
+	.string "Faut que t'appuie sur “Oui” !$"
+
+LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWayMale:
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Heu, mec…\n"
+	.string "Faut que t'appuie sur “Oui” !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Hmm…\p"
-	.string "Si j'étais toi, j'irais chercher là où\n"
-	.string "elle vit.\p"
-	.string "C'est juste mon intuition !$"
+	.string "Si j'étais toi, je commencerais par aller\n"
+	.string "la voir chez elle !\p"
+	.string "C'est juste une question de logique.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchRivalEvanGoneHome:
-	.string "{ROCKET}Prof. Fildrong: {AQUA}Hmm… Si j'étais toi,\n"
-	.string "j'irais là où ce Dresseur habite.\p"
-	.string "C'est mon intuition !$"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Hmm…\p"
+	.string "Si j'étais toi, je commencerais par aller\n"
+	.string "le voir chez lui !\p"
+	.string "C'est juste une question de logique.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BackLab:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Ah, te voilà {PLAYER}{KUN} !\p"
@@ -964,8 +971,8 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoyBattle:
 	.string "Entraînez avec amour vos Pokémon au\n"
 	.string "combat pour qu'ils deviennent forts !\p"
 	.string "En parlant de Pokémon…!\p"
-	.string "Je vais tout de suite les remettre sur\n"
-	.string "pied !$"
+	.string "Je vais les remettre sur pied illico\n"
+	.string "presto !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Une dernière chose !\p"

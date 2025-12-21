@@ -540,9 +540,8 @@ const struct Item gItemsInfo[] =
         .name = _("Crasse Ball"),
         .price = 5,
         .description = COMPOUND_STRING(
-            "Un objet bousillé\n"
-            "qui se jette comme\n"
-            "une balle."),
+            "Tu t'es fait\n"
+            "arnaquer, zebi !"),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
@@ -561,6 +560,20 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
         .secondaryId = ITEM_BLACK_BALL - FIRST_BALL,
+    },
+
+    [ITEM_REVO_BALL] =
+    {
+        .name = _("Révolu Ball"),
+        .price = (I_PRICE >= GEN_7) ? 0 : 300,
+        .description = COMPOUND_STRING(
+            "Une Ball spéciale\n"
+            "qui fonctionne bien\n"
+            "sur les {PKMN} évoluer."),
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_REVO_BALL - FIRST_BALL,
     },
 
 // Medicine
@@ -2156,6 +2169,30 @@ const struct Item gItemsInfo[] =
     },
 
     [ITEM_X_ACCURACY] =
+    {
+        .name = _("X Accuracy"),
+        .pluralName = _("X Accuracies"),
+        .price = (I_PRICE >= GEN_7) ? 1000 : 950,
+        .holdEffectParam = X_ITEM_STAGES,
+            .description = COMPOUND_STRING(
+        #if B_X_ITEMS_BUFF >= GEN_7
+            "Sharply raises move\n"
+            "accuracy during\n"
+            "one battle."),
+        #else
+            "Raises accuracy\n"
+            "of attack moves\n"
+            "during one battle."),
+        #endif
+        .pocket = POCKET_BATTLE_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XAccuracy,
+        .flingPower = 30,
+    },
+
+    [ITEM_X_OMNI] =
     {
         .name = _("X Accuracy"),
         .pluralName = _("X Accuracies"),
@@ -3897,6 +3934,21 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
+    },
+
+    [ITEM_FRESH_YEAST] =
+    {
+        .name = _("Levure"),
+        .price = (I_PRICE >= GEN_7) ? 2000 * TREASURE_FACTOR : 2100,
+        .description = COMPOUND_STRING(
+            "A clear device\n"
+            "overflowing with\n"
+            "dubious data."),
+        .pocket = POCKET_ITEMS,
+        .type = EVO_HELD_ITEM_TYPE,
+        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
+        .flingPower = 50,
     },
 
     [ITEM_EVERSTONE] =
@@ -6399,6 +6451,21 @@ const struct Item gItemsInfo[] =
         .flingPower = 60,
     },
 
+    [ITEM_DUMBBELL] =
+    {
+        .name = _("Haltère"),
+        .price = (I_PRICE >= GEN_7) ? 1000 : 500,
+        .holdEffect = HOLD_EFFECT_DUMBBELL,
+        .description = COMPOUND_STRING(
+            "A hold item that \n"
+            "raises Cubone or\n"
+            "Marowak's Attack."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 90,
+    },
+
 // Incenses
 
     [ITEM_SEA_INCENSE] =
@@ -6988,6 +7055,22 @@ const struct Item gItemsInfo[] =
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
         .effect = gItemEffect_EvoItem,
+        .flingPower = 30,
+    },
+
+    [ITEM_ANAL_PLUG] =
+    {
+        .name = _("Plug Anal"),
+        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
+        .holdEffect = HOLD_EFFECT_FAIRY_POWER,
+        .holdEffectParam = TYPE_BOOST_PARAM,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises the power of\n"
+            "Dark-type moves."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
     },
 
@@ -8131,6 +8214,21 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 60,
+    },
+
+    [ITEM_ENERGY_DRINK] =
+    {
+        .name = _("Red Bull"),
+        .price = (I_PRICE >= GEN_9) ? 10000 : ((I_PRICE >= GEN_7) ? 4000 : 100),
+        .holdEffect = HOLD_EFFECT_MENTAL_HERB,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "snaps Pokémon out\n"
+            "of infatuation."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
 // Berries
@@ -12443,22 +12541,6 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_ANAL_PLUG] =
-    {
-        .name = _("Plug Anal"),
-        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_FAIRY_POWER,
-        .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "raises the power of\n"
-            "Dark-type moves."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 30,
-    },
-
     [ITEM_COKE_POWDER] =
     {
         .name = _("Cocaïne"),
@@ -12472,21 +12554,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
-    },
-
-    [ITEM_DUMBBELL] =
-    {
-        .name = _("Haltère"),
-        .price = (I_PRICE >= GEN_7) ? 1000 : 500,
-        .holdEffect = HOLD_EFFECT_DUMBBELL,
-        .description = COMPOUND_STRING(
-            "A hold item that \n"
-            "raises Cubone or\n"
-            "Marowak's Attack."),
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 90,
     },
 
     //Start Pokevial Branch

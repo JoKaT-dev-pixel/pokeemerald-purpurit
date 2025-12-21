@@ -69,6 +69,8 @@ extern const u32 gBallGfx_Rust[];
 extern const u32 gBallPal_Rust[];
 extern const u32 gBallGfx_Black[];
 extern const u32 gBallPal_Black[];
+extern const u32 gBallGfx_Revo[];
+extern const u32 gBallPal_Revo[];
 extern const u32 gOpenPokeballGfx[];
 
 // Pokémon gfx
@@ -289,6 +291,9 @@ extern const u32 gBattleTerrainPalette_StadiumWallace[];
 extern const u32 gBattleTerrainTiles_GrassField[];
 extern const u32 gBattleTerrainTilemap_GrassField[];
 extern const u32 gBattleTerrainPalette_GrassField[];
+extern const u32 gBattleTerrainTiles_Marsh[];
+extern const u32 gBattleTerrainTilemap_Marsh[];
+extern const u32 gBattleTerrainPalette_Marsh[];
 extern const u32 gBattleTerrainTiles_Forest[];
 extern const u32 gBattleTerrainTilemap_Forest[];
 extern const u32 gBattleTerrainPalette_Forest[];
@@ -442,6 +447,8 @@ extern const u32 gItemIcon_RustBall[];
 extern const u32 gItemIconPalette_RustBall[];
 extern const u32 gItemIcon_BlackBall[];
 extern const u32 gItemIconPalette_BlackBall[];
+extern const u32 gItemIcon_RevoBall[];
+extern const u32 gItemIconPalette_RevoBall[];
 // Medicine
 extern const u32 gItemIcon_Potion[];
 extern const u32 gItemIconPalette_Potion[];
@@ -2435,6 +2442,8 @@ extern const u32 gBattleAnimSpriteGfx_OilBubble[];
 extern const u32 gBattleAnimSpriteGfx_CuteEye[];
 extern const u32 gBattleAnimSpriteGfx_BoilFire[];
 extern const u32 gBattleAnimSpriteGfx_Divebomb[];
+extern const u32 gBattleAnimSpriteGfx_BlueSparkle[];
+extern const u32 gBattleAnimSpriteGfx_PunishmentHit[];
 
 extern const u32 gBattleAnimSpritePal_Bone[];
 extern const u32 gBattleAnimSpritePal_Spark[];
@@ -2943,6 +2952,8 @@ extern const u32 gBattleAnimSpritePal_OilBubble[];
 extern const u32 gBattleAnimSpritePal_OilBubble[];
 extern const u32 gBattleAnimSpritePal_BoilFire[];
 extern const u32 gBattleAnimSpritePal_Divebomb[];
+extern const u32 gBattleAnimSpritePal_BlueSparkle[];
+extern const u32 gBattleAnimSpritePal_PunishmentHit[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];

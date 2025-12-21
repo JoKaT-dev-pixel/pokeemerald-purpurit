@@ -407,11 +407,7 @@ static void HandleInputChooseAction(u32 battler)
             }
         }
     }
-    else if (JOY_NEW(START_BUTTON))
-    {
-        SwapHpBarsWithHpText();
-    }
-#if DEBUG_BATTLE_MENU == FALSE
+#if DEBUG_BATTLE_MENU == TRUE
     else if (JOY_NEW(SELECT_BUTTON))
     {
         BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_DEBUG, 0);

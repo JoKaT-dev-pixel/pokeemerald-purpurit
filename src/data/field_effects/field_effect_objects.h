@@ -1406,3 +1406,32 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_JumpSandGrass = {
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateJumpImpactEffect,
 };
+
+static const struct SpriteFrameImage sPicTable_MudPile[] = {
+    overworld_frame(gFieldEffectObjectPic_MudPile, 2, 1, 0),
+    overworld_frame(gFieldEffectObjectPic_MudPile, 2, 1, 1),
+    overworld_frame(gFieldEffectObjectPic_MudPile, 2, 1, 2),
+};
+
+static const union AnimCmd sAnim_MudPile[] =
+{
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(2, 4),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_MudPile[] =
+{
+    sAnim_MudPile,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_MudPile = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
+    .oam = &gObjectEventBaseOam_16x8,
+    .anims = sAnimTable_MudPile,
+    .images = sPicTable_MudPile,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateMudPileFieldEffect,
+};
