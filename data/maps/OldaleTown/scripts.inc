@@ -261,7 +261,10 @@ OldaleTown_Text_Girl:
 
 OldaleTown_Text_SavingMyProgress:
 	.string "À ta place, je commencerais plutôt à\n"
-	.string "sauvegarder ma partie !$"
+	.string "sauvegarder ma partie !\p"
+	.string "Le pouvoir de la science est\n"
+	.string "incroyable !\p"
+	.string "Pourquoi je dis ça, moi ?$"
 
 OldaleTown_Text_OldMan:
 	.string "J'ai vécu tant d'années ici et c'était\n"

@@ -845,7 +845,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
 	end
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
-	.string "Quoi ? Le Professeur ?\p"
+	.string "Quoi ?\n"
+	.string "Le Professeur ?\p"
 	.string "Il est parti se promener mais il ne\n"
 	.string "devrait pas tarder.\p"
 	.string "Ce n'est pas tout à fait son genre de\n"
@@ -853,7 +854,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchAwayOnFieldwork:
 	.string "Autrefois, il était vidéaste.\p"
 	.string "Mais il a tellement été tourmenté par\n"
 	.string "sa calvitie qu'il a décidé de changer\l"
-	.string "de passion.$"
+	.string "de rêve.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchIsntOneForDeskWork:
 	.string "Je me retrouve à chaque fois à faire\n"
@@ -869,14 +870,14 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoysRivalsHelpToo:
 
 LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Bon, {PLAYER}{KUN} !\p"
-	.string "J'ai vu le potentiel que t'as quand tu\n"
-	.string "t'es battu contre ce Cornaigri.\p"
-	.string "et tu m'as l'air de savoir t'y prendre\n"
+	.string "J'ai vu le potentiel que tu possèdes\n"
+	.string "lorsque tu t'es battu tout à l'heure.\p"
+	.string "Tu m'as l'air de savoir t'y prendre\n"
 	.string "avec les Pokémon !\p"
-	.string "Toi et {STR_VAR_1}, vous avez su créer\n"
+	.string "Toi et {STR_VAR_1}, vous avez créer\n"
 	.string "un lien très fort qui vous unit !\p"
-	.string "Et pour te remercier de m'avoir sauvé,\n"
-	.string "je t'offre {STR_VAR_1} !$"
+	.string "Pour te remercier de m'avoir sauvé,\n"
+	.string "je t'offre ce {STR_VAR_1} !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedYourePokemon:
 	.string "{PLAYER} reçoit {MAGMA}{STR_VAR_1} {ROCKET}de la part\n"

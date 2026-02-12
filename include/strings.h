@@ -3060,6 +3060,8 @@ extern const u8 gText_Cancel3[];
 extern const u8 gText_Medicines[];
 extern const u8 gText_BattleItems[];
 
+extern const u8 gText_ItemLimitHasBeenReached[];
+
 // Naming Screen
 extern const u8 gText_MoveOkBack[];
 extern const u8 gText_YourName[];

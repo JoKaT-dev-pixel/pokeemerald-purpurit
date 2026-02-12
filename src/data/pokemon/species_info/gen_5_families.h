@@ -873,29 +873,29 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_FAMILY_PURRLOIN
     [SPECIES_PURRLOIN] =
     {
-        .baseHP        = 41,
-        .baseAttack    = 50,
-        .baseDefense   = 37,
-        .baseSpeed     = 66,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 37,
+        .baseHP        = 43,
+        .baseAttack    = 35,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 47,
         .types = MON_TYPES(TYPE_DARK),
         .catchRate = 255,
         .expYield = 56,
-        .evYield_Speed = 1,
+        .evYield_SpAttack = 1,
         .genderRatio = PERCENT_FEMALE(87.5),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_FUR_COAT, ABILITY_MATERIALIST, ABILITY_STEADFAST },
+        .abilities = { ABILITY_FUR_COAT, ABILITY_MATERIALIST, ABILITY_MOODY },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Brebelle"),
         .cryId = CRY_PURRLOIN,
         .natDexNum = NATIONAL_DEX_PURRLOIN,
         .categoryName = _("Insolence"),
         .height = 4,
-        .weight = 101,
+        .weight = 57,
         .description = COMPOUND_STRING(
             "Their deceptively cute act is the\n"
             "perfect ruse. They steal from people for\n"

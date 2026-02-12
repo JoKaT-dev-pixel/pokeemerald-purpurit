@@ -754,13 +754,13 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_NYMBLE
     [SPECIES_NYMBLE] =
     {
-        .baseHP        = 33,
-        .baseAttack    = 46,
-        .baseDefense   = 40,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 21,
-        .baseSpDefense = 25,
-        .types = MON_TYPES(TYPE_BUG),
+        .baseHP        = 40,
+        .baseAttack    = 70,
+        .baseDefense   = 37,
+        .baseSpeed     = 44,
+        .baseSpAttack  = 31,
+        .baseSpDefense = 30,
+        .types = MON_TYPES(TYPE_BUG, TYPE_DARK),
         .catchRate = 190,
         .expYield = 42,
         .evYield_Attack = 1,
@@ -769,12 +769,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = 20,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_NONE, ABILITY_TINTED_LENS },
-        .bodyColor = BODY_COLOR_GRAY,
-        .speciesName = _("Nymble"),
+        .abilities = { ABILITY_SWARM, ABILITY_HYPER_CUTTER, ABILITY_CONTRARY },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Droitantis"),
         .cryId = CRY_NYMBLE,
         .natDexNum = NATIONAL_DEX_NYMBLE,
-        .categoryName = _("Grasshopper"),
+        .categoryName = _("Fasciste"),
         .height = 2,
         .weight = 10,
         .description = COMPOUND_STRING(
@@ -802,7 +802,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         FOOTPRINT(Nymble)
         .levelUpLearnset = sNymbleLevelUpLearnset,
         .teachableLearnset = sNymbleTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_LOKIX}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_LOKIX}),
     },
 
     [SPECIES_LOKIX] =

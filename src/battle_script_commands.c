@@ -1717,7 +1717,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         if (IS_MOVE_PHYSICAL(move))
             calc = (calc * 80) / 100; // 1.2 hustle loss
         break;
-    case ABILITY_SURROUND_SOUND:
+    case ABILITY_SOUND_WAVE:
         if (gMovesInfo[move].soundMove)
             calc = (calc * 130) / 100; // 1.3 surround sound boost
         break;

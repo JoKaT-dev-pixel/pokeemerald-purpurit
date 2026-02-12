@@ -1709,12 +1709,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_MARILL] =
     {
-        .baseHP        = 55,
-        .baseAttack    = 10,
-        .baseDefense   = 57,
-        .baseSpeed     = 57,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 50,
+        .baseHP        = 45,
+        .baseAttack    = 60,
+        .baseDefense   = 45,
+        .baseSpeed     = 63,
+        .baseSpAttack  = 53,
+        .baseSpDefense = 59,
     #if P_UPDATED_TYPES >= GEN_6
         .types = MON_TYPES(TYPE_WATER, TYPE_FAIRY),
     #else
@@ -1722,20 +1722,20 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     #endif
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 78 : 78,
-        .evYield_SpAttack = 1,
-        .genderRatio = MON_MALE,
+        .evYield_Speed = 1,
+        .genderRatio = MON_FEMALE,
         .eggCycles = 19,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_FAST,
+        .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_HEALER, ABILITY_HUGE_POWER, ABILITY_MAGIC_GUARD },
-        .bodyColor = BODY_COLOR_PINK,
-        .speciesName = _("Fawxie"),
+        .abilities = { ABILITY_RIVALRY, ABILITY_WATER_ABSORB, ABILITY_COSTAR },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Squahaj"),
         .cryId = CRY_MARILL,
         .natDexNum = NATIONAL_DEX_MARILL,
-        .categoryName = _("Féerique"),
-        .height = 4,
-        .weight = 85,
+        .categoryName = _("Peluche"),
+        .height = 5,
+        .weight = 87,
         .description = COMPOUND_STRING(
             "Its body is covered with water-repellent\n"
             "fur. Because of the fur, it can swim\n"
@@ -1761,7 +1761,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Marill)
         .levelUpLearnset = sMarillLevelUpLearnset,
         .teachableLearnset = sMarillTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SHINY_STONE, SPECIES_AZUMARILL}),
+        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_AZUMARILL}),
     },
 
     [SPECIES_AZUMARILL] =
@@ -2245,29 +2245,29 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_SUNKERN
     [SPECIES_SUNKERN] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 30,
-        .baseDefense   = 41,
-        .baseSpeed     = 20,
-        .baseSpAttack  = 81,
+        .baseHP        = 85,
+        .baseAttack    = 15,
+        .baseDefense   = 45,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 60,
         .baseSpDefense = 70,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 190,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 54 : 54,
-        .evYield_SpAttack = 1,
+        .evYield_HP = 1,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_SOLAR_PANELS, ABILITY_LIGHTNING_ROD, ABILITY_SOLAR_POWER },
-        .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Graitello"),
+        .abilities = { ABILITY_SOLAR_PANELS, ABILITY_ILLUMINATE, ABILITY_SOLAR_POWER },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Grainergie"),
         .cryId = CRY_SUNKERN,
         .natDexNum = NATIONAL_DEX_SUNKERN,
         .categoryName = _("Ampoule"),
-        .height = 3,
-        .weight = 18,
+        .height = 2,
+        .weight = 15,
         .description = COMPOUND_STRING(
             "Sunkern try to minimize movement to\n"
             "conserve the nutrients they have stored\n"
@@ -2298,29 +2298,29 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
     [SPECIES_SUNFLORA] =
     {
-        .baseHP        = 100,
-        .baseAttack    = 40,
-        .baseDefense   = 61,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 131,
-        .baseSpDefense = 100,
+        .baseHP        = 120,
+        .baseAttack    = 25,
+        .baseDefense   = 70,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_GRASS, TYPE_ELECTRIC),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 162 : 162,
-        .evYield_SpAttack = 2,
+        .evYield_HP = 2,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_SOLAR_PANELS, ABILITY_LIGHTNING_ROD, ABILITY_SOLAR_POWER },
+        .abilities = { ABILITY_SOLAR_PANELS, ABILITY_ILLUMINATE, ABILITY_SOLAR_POWER },
         .bodyColor = BODY_COLOR_YELLOW,
-        .speciesName = _("Lampadherb"),
+        .speciesName = _("Lumilianth"),
         .cryId = CRY_SUNFLORA,
         .natDexNum = NATIONAL_DEX_SUNFLORA,
-        .categoryName = _("Sun"),
-        .height = 8,
-        .weight = 85,
+        .categoryName = _("Technologie"),
+        .height = 10,
+        .weight = 280,
         .description = COMPOUND_STRING(
             "Sunflora convert solar energy into\n"
             "nutrition. They are highly active in the\n"
@@ -2465,12 +2465,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_WOOPER
     [SPECIES_WOOPER] =
     {
-        .baseHP        = 100,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 95,
+        .baseHP        = 90,
+        .baseAttack    = 30,
+        .baseDefense   = 70,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 70,
         .types = MON_TYPES(TYPE_GROUND, TYPE_POISON),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 131 : 131,
@@ -2486,8 +2486,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .cryId = CRY_WOOPER,
         .natDexNum = NATIONAL_DEX_WOOPER,
         .categoryName = _("Excrément"),
-        .height = 10,
-        .weight = 85,
+        .height = 7,
+        .weight = 92,
         .description = COMPOUND_STRING(
             "Wooper usually live in water but come\n"
             "out onto land seeking food occasionally.\n"

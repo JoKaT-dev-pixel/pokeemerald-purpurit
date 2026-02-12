@@ -1,6 +1,6 @@
 gText_WouldYouLikeToRestYourPkmn::
-	.string "Bonjour ! Bienvenue au Centre\n"
-    .string "Pokémon.\p"
+	.string "Bonjour !\n"
+    .string "Bienvenue au Centre Pokémon.\p"
     .string "Nous pouvons soigner vos Pokémon.\p"
     .string "Voulez-vous les soigner ?$"
 
@@ -9,8 +9,7 @@ gText_IllTakeYourPkmn::
 
 gText_RestoredPkmnToFullHealth::
 	.string "Merci d’avoir attendu.\p"
-    .string "Vos Pokémon sont en super\n"
-    .string "forme.$"
+    .string "Vos Pokémon sont en super forme.$"
 
 gText_WeHopeToSeeYouAgain::
 	.string "À une prochaine fois peut-être !$"

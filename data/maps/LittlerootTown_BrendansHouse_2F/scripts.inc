@@ -279,8 +279,8 @@ PlayersHouse_2F_Text_ClockIsStopped:
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "{ROCKET}Maman: {MAGMA}Alors mon chou, tu aimes bien\n"
 	.string "cette horloge ?\p"
-	.string "C'est parfait ! Je suis contente que\n"
-	.string "tu apprécies ce cadeau !\p"
+	.string "Je suis contente que tu apprécies ce\n"
+	.string "cadeau !\p"
 	.string "Ils ont fini de tout déposer en bas.\p"
 	.string "Avant de descendre, assure-toi que\n"
 	.string "tes affaires se trouvent bien sur\l"

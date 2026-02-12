@@ -69,6 +69,7 @@
 #include "constants/battle.h"
 #include "constants/battle_frontier.h"
 #include "constants/field_effects.h"
+#include "constants/flags.h"
 #include "constants/form_change_types.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
@@ -1420,10 +1421,25 @@ void Task_HandleChooseMonInput(u8 taskId)
         switch (PartyMenuButtonHandler(slotPtr))
         {
         case A_BUTTON: // Selected mon
-            HandleChooseMonSelection(taskId, slotPtr);
+            if (FlagGet(FLAG_USED_ITEM))
+            {
+                HandleChooseMonSelection(taskId, slotPtr);
+                if (gItemLimit >= 4)
+                {
+                    gItemLimit = 4;
+                }
+                else
+                    gItemLimit++;
+                FlagClear(FLAG_USED_ITEM);
+            }
+            else
+            {
+                HandleChooseMonSelection(taskId, slotPtr);
+            }
             break;
         case B_BUTTON: // Selected Cancel / pressed B
             HandleChooseMonCancel(taskId, slotPtr);
+            FlagClear(FLAG_USED_ITEM);
             break;
         case START_BUTTON:
             if (sPartyMenuInternal->chooseHalf)
@@ -4790,6 +4806,14 @@ void ItemUseCB_BattleScript(u8 taskId, TaskFunc task)
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = task;
     }
+    else if (gItemLimit >= 4) //can't use more than 4 items in battle
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_ItemLimitHasBeenReached, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = task;
+    }
     else
     {
         gBattleStruct->itemPartyIndex[gBattlerInMenuId] = GetPartyIdFromBattleSlot(gPartyMenu.slotId);
@@ -7316,6 +7340,7 @@ void ChooseMonForInBattleItem(void)
     InitPartyMenu(PARTY_MENU_TYPE_IN_BATTLE, GetPartyLayoutFromBattleType(), PARTY_ACTION_USE_ITEM, FALSE, PARTY_MSG_USE_ON_WHICH_MON, Task_HandleChooseMonInput, CB2_ReturnToBagMenu);
     ReshowBattleScreenDummy();
     UpdatePartyToBattleOrder();
+    FlagSet(FLAG_USED_ITEM);
 }
 
 static u8 GetPartyMenuActionsTypeInBattle(struct Pokemon *mon)

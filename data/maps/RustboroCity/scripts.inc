@@ -215,6 +215,8 @@ RustboroCity_EventScript_Maniac::
 	end
 
 RustboroCity_EventScript_SDFRustBall::
+	lock
+	faceplayer
 	showmoneybox 0, 0
 	msgbox RustboroCity_Text_CatchRarePokemonIfIGoToSchool, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, RustboroCity_SDF_EventScript_BuyRustBall
@@ -1144,10 +1146,11 @@ RustboroCity_Text_GymLeaderIsntEasyWithFire:
 	.string "well against ROCK-type POKéMON…$"
 
 RustboroCity_Text_MrBrineyWalksInTheTunnel:
-	.string "The old sailor MR. BRINEY lives in\n"
-	.string "a cottage by the sea.\p"
-	.string "He goes for walks in the tunnel every\n"
-	.string "so often.$"
+	.string "Ne te fais pas avoir par le SDF qui\n"
+	.string "essaie de te vendre des Poké Balls\l"
+	.string "spéciales.\p"
+	.string "C'est clairement de l'arnaque et j'ai\n"
+	.string "failli en prendre.$"
 
 RustboroCity_Text_MrBrineyLovesPeeko:
 	.string "The old sailor MR. BRINEY lives in\n"
@@ -1158,11 +1161,14 @@ RustboroCity_Text_MrBrineyLovesPeeko:
 	.string "that PEEKO.$"
 
 RustboroCity_Text_WowYouHavePokemon:
-	.string "Je vois enfin la lumière du jour !\p"
-	.string "Disons que ça fait 8 ans que je ne suis\n"
-	.string "pas sorti de ma chambre.\p"
-	.string "Tu sais ce que ça fait quand on est un\n"
-	.string "joueur pro de LoL !$"
+	.string "Tu étais au courant qu'Inoxtag s'est\n"
+	.string "donné le défi d'atteindre le rang\l"
+	.string "Platine sur LoL en seulement 7 jours ?\p"
+	.string "Spoiler alert !\p"
+	.string "Il a échoué en atteignant que le rang\n"
+	.string "Silver 4.\p"
+	.string "Pff…!\n"
+	.string "Quel amateur !$"
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
 	.string "Je t'offre des Balls de très bonne\n"

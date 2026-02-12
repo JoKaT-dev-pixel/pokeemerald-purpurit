@@ -257,7 +257,7 @@ static const u16 sEmpty_Pal[16 * 14] = {0};
 
 // unused text
 static const u8 sUnusedText_YesNo[] = _("YES\nNO");
-static const u8 sUnusedText_2[] = _("▶");
+static const u8 sUnusedText_2[] = _("{RIGHT_ARROW}");
 static const u8 sUnusedText_Space[] = _(" ");
 static const u8 sUnusedText_Terminating[] = _("Terminating.");
 static const u8 sUnusedText_LinkPartnerNotFound[] = _("Link partner(s) not found.\nPlease try again.\p");
