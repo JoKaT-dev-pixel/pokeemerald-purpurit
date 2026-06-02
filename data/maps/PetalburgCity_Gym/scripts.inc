@@ -126,9 +126,7 @@ PetalburgCity_Gym_EventScript_NormanTrigger::
 	setvar VAR_PETALBURG_GYM_STATE, 1
 	removeobject LOCALID_WALLY
 	setflag FLAG_HIDE_PETALBURG_CITY_WALLY
-	delay 30
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
+	delay 20
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	releaseall
@@ -1160,7 +1158,7 @@ PetalburgCity_Gym_EventScript_GymStatue::
 	end
 
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
-	.string "{ROCKET}Pascal: {AQUA}HÉ T'ES SÉRIEUX TOI ?!\p"
+	.string "{ROCKET}Pascal: {AQUA}HÉ, T'ES SÉRIEUX TOI ?!\p"
 	.string "ON T'A JAMAIS APPRIS DE FRAPPER AVANT\n"
 	.string "D'ENTRER ?!\p"
 	.string "TOI ET MOI, ON NE VAS PAS ÊTRE POTE,\n"
@@ -1228,8 +1226,11 @@ PetalburgCity_Gym_Text_WallyThankYouBye:
 	.string "Encore merci et au revoir !$"
 
 PetalburgCity_Gym_Text_DadGoCollectBadges:
-	.string "{ROCKET}Pascal: {AQUA}BIEN !\p"
-	.string "À PRÉSENT, JE VAIS TE FOUTRE À LA\n"
+	.string "{AQUA}… … … … … … … … …\n"
+	.string "… … … … … … … … …\p"
+	.string "EN FAIT, NON !\n"
+	.string "J'NE VEUX PAS LE SAVOIR !\p"
+	.string "À PRÉSENT, J'VAIS TE FOUTRE À LA\n"
 	.string "PORTE !\p"
 	.string "POURQUOI ?!\n"
 	.string "BAH C'EST ÉVIDENT !\p"
@@ -1241,7 +1242,8 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 	.string "TRAVERSE LES BOIS CHANTILLY POUR\n"
 	.string "ALLER À CETTE VILLE !\p"
 	.string "ENSUITE, REVIENS ME VOIR QUAND T'AS\n"
-	.string "AU MOINS 4 BADGES !$"
+	.string "AU MOINS 4 BADGES !\p"
+	.string "ALLEZ MAINTENANT, DÉGAGE !$"
 
 PetalburgCity_Gym_Text_NormanGoToRustboro:
 	.string "{ROCKET}Pascal: {AQUA}TU FOUS QUOI ENCORE ICI ?!\p"

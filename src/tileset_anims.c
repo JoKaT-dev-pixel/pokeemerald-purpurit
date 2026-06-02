@@ -85,8 +85,7 @@ const u16 tileset_anims_space_0[16] = {};
 const u16 *const gTilesetAnims_General_Flower[] = {
     gTilesetAnims_General_Flower_Frame0,
     gTilesetAnims_General_Flower_Frame1,
-    gTilesetAnims_General_Flower_Frame2,
-    gTilesetAnims_General_Flower_Frame3,
+    gTilesetAnims_General_Flower_Frame0,
     gTilesetAnims_General_Flower_Frame4
 };
 

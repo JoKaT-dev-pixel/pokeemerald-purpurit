@@ -205,7 +205,7 @@ const struct SpriteTemplate gOilDropletSpriteTemplate =
 
 const struct SpriteTemplate gWaterBubbleSpriteTemplate =
 {
-    .tileTag = ANIM_TAG_SMALL_BUBBLES,
+    .tileTag = ANIM_TAG_NEW_BUBBLE,
     .paletteTag = ANIM_TAG_SMALL_BUBBLES,
     .oam = &gOamData_AffineNormal_ObjBlend_16x16,
     .anims = gAnims_WaterBubble,

@@ -4087,12 +4087,8 @@ static const union AnimCmd sAnim_Meditite_1[] =
 
 static const union AnimCmd sAnim_Medicham_1[] =
 {
-    ANIMCMD_FRAME(0, 11),
-    ANIMCMD_FRAME(1, 11),
-    ANIMCMD_FRAME(0, 11),
-    ANIMCMD_FRAME(1, 11),
-    ANIMCMD_FRAME(0, 11),
-    ANIMCMD_FRAME(1, 11),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 36),
     ANIMCMD_FRAME(0, 11),
     ANIMCMD_END,
 };
@@ -4415,15 +4411,9 @@ static const union AnimCmd sAnim_Flygon_1[] =
 static const union AnimCmd sAnim_Cacnea_1[] =
 {
     ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(1, 45),
     ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 15),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 15),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 15),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(1, 30),
     ANIMCMD_FRAME(0, 15),
     ANIMCMD_END,
 };

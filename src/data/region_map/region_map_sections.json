@@ -146,7 +146,7 @@
     },
     {
       "map_section": "MAPSEC_ROUTE_103",
-      "name": "Chenal 9",
+      "name": "Chenal 11",
       "x": 4,
       "y": 8,
       "width": 4,
@@ -170,7 +170,7 @@
     },
     {
       "map_section": "MAPSEC_ROUTE_106",
-      "name": "Chenal 5",
+      "name": "Chenal 6",
       "x": 0,
       "y": 13,
       "width": 2,
@@ -202,7 +202,7 @@
     },
     {
       "map_section": "MAPSEC_ROUTE_110",
-      "name": "ROUTE 110",
+      "name": "Route D-10",
       "x": 8,
       "y": 7,
       "width": 1,
@@ -250,7 +250,7 @@
     },
     {
       "map_section": "MAPSEC_ROUTE_116",
-      "name": "ROUTE 116",
+      "name": "Route D-4",
       "x": 1,
       "y": 5,
       "width": 4,

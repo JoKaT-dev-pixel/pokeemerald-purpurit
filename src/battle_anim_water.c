@@ -54,6 +54,12 @@ static void AnimTask_WaterSpoutRain_Step(u8);
 static u8 GetWaterSpoutPowerForAnim(void);
 static void CreateWaterSpoutLaunchDroplets(struct Task *, u8);
 static void CreateWaterSpoutRainDroplet(struct Task *, u8);
+static void AnimMatchaGotchaRain(struct Sprite *);
+static void AnimMatchaGotchaRainHit(struct Sprite *);
+static void AnimTask_MatchaGotchaLaunch_Step(u8);
+static void AnimTask_MatchaGotchaRain_Step(u8);
+static void CreateMatchaGotchaLaunchDroplets(struct Task *, u8);
+static void CreateMatchaGotchaRainDroplet(struct Task *, u8);
 static void AnimTask_WaterSport_Step(u8);
 static void CreateWaterSportDroplet(struct Task *);
 static void CreateWaterPulseRingBubbles(struct Sprite *, int, int);
@@ -128,8 +134,8 @@ const union AnimCmd *const gAnims_TearGasCloud[] =
 
 const struct SpriteTemplate gWaterBubbleProjectileSpriteTemplate =
 {
-    .tileTag = ANIM_TAG_BUBBLE,
-    .paletteTag = ANIM_TAG_BUBBLE,
+    .tileTag = ANIM_TAG_NEW_BUBBLE,
+    .paletteTag = ANIM_TAG_NEW_BUBBLE,
     .oam = &gOamData_AffineNormal_ObjBlend_16x16,
     .anims = gAnims_WaterBubbleProjectile,
     .images = NULL,
@@ -252,6 +258,30 @@ const struct SpriteTemplate gSignalBeamGreenOrbSpriteTemplate =
 {
     .tileTag = ANIM_TAG_GLOWY_GREEN_ORB,
     .paletteTag = ANIM_TAG_GLOWY_GREEN_ORB,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimToTargetInSinWave,
+};
+
+//Charge Beam
+const struct SpriteTemplate gChargeBeamOrbSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_GLOWY_YELLOW_ORB,
+    .paletteTag = ANIM_TAG_GLOWY_YELLOW_ORB,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimToTargetInSinWave,
+};
+
+//Twin Beam
+const struct SpriteTemplate gTwinBeamOrbSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_GLOWY_ORANGE_ORB,
+    .paletteTag = ANIM_TAG_GLOWY_ORANGE_ORB,
     .oam = &gOamData_AffineOff_ObjNormal_8x8,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -422,6 +452,18 @@ const struct SpriteTemplate gSmallWaterOrbSpriteTemplate =
 {
     .tileTag = ANIM_TAG_GLOWY_BLUE_ORB,
     .paletteTag = ANIM_TAG_GLOWY_BLUE_ORB,
+    .oam = &gOamData_AffineOff_ObjNormal_8x8,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimSmallWaterOrb,
+};
+
+// Used by Matcha Gotcha
+const struct SpriteTemplate gMatchaGotchaOrbRainSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MATCHA_GOTCHA_ORB,
+    .paletteTag = ANIM_TAG_MATCHA_GOTCHA_ORB,
     .oam = &gOamData_AffineOff_ObjNormal_8x8,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1636,6 +1678,254 @@ static void AnimWaterSpoutRain(struct Sprite *sprite)
 }
 
 static void AnimWaterSpoutRainHit(struct Sprite *sprite)
+{
+    if (++sprite->data[1] > 1)
+    {
+        sprite->data[1] = 0;
+        sprite->invisible ^= 1;
+        if (++sprite->data[2] == 12)
+        {
+            gTasks[sprite->data[6]].data[sprite->data[7]]--;
+            FreeOamMatrix(sprite->oam.matrixNum);
+            DestroySprite(sprite);
+        }
+    }
+}
+
+//Matcha Gotcha Rain
+void AnimTask_MatchaGotchaLaunch(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    task->data[15] = GetAnimBattlerSpriteId(ANIM_ATTACKER);
+    task->data[5] = gSprites[task->data[15]].y;
+    PrepareBattlerSpriteForRotScale(task->data[15], ST_OAM_OBJ_NORMAL);
+    task->func = AnimTask_MatchaGotchaLaunch_Step;
+}
+
+static void AnimTask_MatchaGotchaLaunch_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    switch (task->data[0])
+    {
+    case 0:
+        PrepareEruptAnimTaskData(task, task->data[15], 0x100, 0x100, 0xE0, 0x200, 32);
+        task->data[0]++;
+    case 1:
+        if (++task->data[3] > 1)
+        {
+            task->data[3] = 0;
+            if (++task->data[4] & 1)
+            {
+                gSprites[task->data[15]].x2 = 3;
+                gSprites[task->data[15]].y++;
+            }
+            else
+            {
+                gSprites[task->data[15]].x2 = -3;
+            }
+        }
+        if (UpdateEruptAnimTask(task) == 0)
+        {
+            SetBattlerSpriteYOffsetFromYScale(task->data[15]);
+            gSprites[task->data[15]].x2 = 0;
+            task->data[3] = 0;
+            task->data[4] = 0;
+            task->data[0]++;
+        }
+        break;
+    case 2:
+        if (++task->data[3] > 4)
+        {
+            PrepareEruptAnimTaskData(task, task->data[15], 0xE0, 0x200, 0x180, 0xE0, 8);
+            task->data[3] = 0;
+            task->data[0]++;
+        }
+        break;
+    case 3:
+        if (UpdateEruptAnimTask(task) == 0)
+        {
+            task->data[3] = 0;
+            task->data[4] = 0;
+            task->data[0]++;
+        }
+        break;
+    case 4:
+        CreateMatchaGotchaLaunchDroplets(task, taskId);
+        task->data[0]++;
+    case 5:
+        if (++task->data[3] > 1)
+        {
+            task->data[3] = 0;
+            if (++task->data[4] & 1)
+                gSprites[task->data[15]].y2 += 2;
+            else
+                gSprites[task->data[15]].y2 -= 2;
+            if (task->data[4] == 10)
+            {
+                PrepareEruptAnimTaskData(task, task->data[15], 0x180, 0xE0, 0x100, 0x100, 8);
+                task->data[3] = 0;
+                task->data[4] = 0;
+                task->data[0]++;
+            }
+        }
+        break;
+    case 6:
+        gSprites[task->data[15]].y--;
+        if (UpdateEruptAnimTask(task) == 0)
+        {
+            ResetSpriteRotScale(task->data[15]);
+            gSprites[task->data[15]].y = task->data[5];
+            task->data[4] = 0;
+            task->data[0]++;
+        }
+        break;
+    case 7:
+        if (task->data[2] == 0)
+            DestroyAnimVisualTask(taskId);
+        break;
+    }
+}
+
+static void CreateMatchaGotchaLaunchDroplets(struct Task *task, u8 taskId)
+{
+    s16 i;
+    s16 attackerCoordX = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    s16 attackerCoordY = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    s16 trigIndex = 172;
+    u8 subpriority = GetBattlerSpriteSubpriority(gBattleAnimAttacker) - 1;
+    s16 increment = 4 - task->data[1];
+    u8 spriteId;
+
+    if (increment <= 0)
+        increment = 1;
+    for (i = 0; i < 20; i += increment)
+    {
+        spriteId = CreateSprite(&gMatchaGotchaOrbRainSpriteTemplate, attackerCoordX, attackerCoordY, subpriority);
+        if (spriteId != MAX_SPRITES)
+        {
+            gSprites[spriteId].data[1] = i;
+            gSprites[spriteId].data[2] = attackerCoordX * 16;
+            gSprites[spriteId].data[3] = attackerCoordY * 16;
+            gSprites[spriteId].data[4] = Cos(trigIndex, 64);
+            gSprites[spriteId].data[5] = Sin(trigIndex, 64);
+            gSprites[spriteId].data[6] = taskId;
+            gSprites[spriteId].data[7] = 2;
+            if (task->data[2] & 1)
+                AnimSmallWaterOrb(&gSprites[spriteId]);
+            task->data[2]++;
+        }
+        trigIndex = (trigIndex + increment * 2);
+        trigIndex &= 0xFF;
+    }
+}
+
+void AnimTask_MatchaGotchaRain(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_PLAYER)
+    {
+        task->data[4] = 180;
+        task->data[6] = 40;
+    }
+    else
+    {
+        task->data[4] = 16;
+        task->data[6] = 80;
+    }
+    task->data[5] = 98;
+    task->data[7] = task->data[4] + 49;
+    task->data[12] = task->data[1] * 5 + 5;
+    task->func = AnimTask_MatchaGotchaRain_Step;
+}
+
+static void AnimTask_MatchaGotchaRain_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    u8 taskId2;
+
+    switch (task->data[0])
+    {
+    case 0:
+        if (++task->data[2] > 2)
+        {
+            task->data[2] = 0;
+            CreateMatchaGotchaRainDroplet(task, taskId);
+        }
+        if (task->data[10] != 0 && task->data[13] == 0)
+        {
+            gBattleAnimArgs[0] = ANIM_TARGET;
+            gBattleAnimArgs[1] = 0;
+            gBattleAnimArgs[2] = 12;
+            taskId2 = CreateTask(AnimTask_HorizontalShake, 80);
+            if (taskId2 != TASK_NONE)
+            {
+                gTasks[taskId2].func(taskId2);
+                gAnimVisualTaskCount++;
+            }
+            gBattleAnimArgs[0] = ANIM_DEF_PARTNER;
+            gBattleAnimArgs[1] = 0;
+            gBattleAnimArgs[2] = 12;
+            taskId2 = CreateTask(AnimTask_HorizontalShake, 80);
+            if (taskId2 != TASK_NONE)
+            {
+                gTasks[taskId2].func(taskId2);
+                gAnimVisualTaskCount++;
+            }
+            task->data[13] = 1;
+        }
+        if (task->data[11] >= task->data[12])
+            task->data[0]++;
+        break;
+    case 1:
+        if (task->data[9] == 0)
+            DestroyAnimVisualTask(taskId);
+        break;
+    }
+}
+
+static void CreateMatchaGotchaRainDroplet(struct Task *task, u8 taskId)
+{
+    u16 yPosArg = ((gSineTable[task->data[8]] + 3) >> 4) + task->data[6];
+    u8 spriteId = CreateSprite(&gMatchaGotchaOrbRainSpriteTemplate, task->data[7], 0, 0);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        gSprites[spriteId].callback = AnimMatchaGotchaRain;
+        gSprites[spriteId].data[5] = yPosArg;
+        gSprites[spriteId].data[6] = taskId;
+        gSprites[spriteId].data[7] = 9;
+        task->data[9]++;
+    }
+    task->data[11]++;
+    task->data[8] = (task->data[8] + 39) & 0xFF;
+    task->data[7] = (ISO_RANDOMIZE2(task->data[7]) % task->data[5]) + task->data[4];
+}
+
+static void AnimMatchaGotchaRain(struct Sprite *sprite)
+{
+    if (sprite->data[0] == 0)
+    {
+        sprite->y += 8;
+        if (sprite->y >= sprite->data[5])
+        {
+            gTasks[sprite->data[6]].data[10] = 1;
+            sprite->data[1] = CreateSprite(&gMatchaGotchaHitSplatSpriteTemplate, sprite->x, sprite->y, 1);
+            if (sprite->data[1] != MAX_SPRITES)
+            {
+                StartSpriteAffineAnim(&gSprites[sprite->data[1]], 3);
+                gSprites[sprite->data[1]].data[6] = sprite->data[6];
+                gSprites[sprite->data[1]].data[7] = sprite->data[7];
+                gSprites[sprite->data[1]].callback = AnimMatchaGotchaRainHit;
+            }
+            DestroySprite(sprite);
+        }
+    }
+}
+
+static void AnimMatchaGotchaRainHit(struct Sprite *sprite)
 {
     if (++sprite->data[1] > 1)
     {

@@ -352,7 +352,7 @@ const struct SpriteTemplate gElectroBallCannonBallTemplate =
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gAffineAnims_ShadowBall,
-    .callback = AnimShadowBall
+    .callback = TranslateAnimSpriteToTargetMonLocation
 };
 
 //foul play

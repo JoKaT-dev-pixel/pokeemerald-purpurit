@@ -1282,6 +1282,8 @@ const u32 gItemIcon_BlackGlasses[] = INCBIN_U32("graphics/items/icons/black_glas
 const u32 gItemIcon_MetalCoat[] = INCBIN_U32("graphics/items/icons/metal_coat.4bpp.lz");
 const u32 gItemIconPalette_MetalCoat[] = INCBIN_U32("graphics/items/icon_palettes/metal_coat.gbapal.lz");
 
+const u32 gItemIcon_AnalPlug[] = INCBIN_U32("graphics/items/icons/anal_plug.4bpp.lz");
+
 // Choice Items
 
 const u32 gItemIcon_ChoiceBand[] = INCBIN_U32("graphics/items/icons/choice_band.4bpp.lz");

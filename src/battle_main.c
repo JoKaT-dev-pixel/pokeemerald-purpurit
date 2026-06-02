@@ -619,48 +619,48 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(PKMN_TRAINER_1, "Dresseur {PKMN}"),
     TRAINER_CLASS(PKMN_TRAINER_2, "le Rival"),
     TRAINER_CLASS(HIKER, "le Bûcheron", 10),
-    TRAINER_CLASS(TEAM_AQUA, "Team Cross", 4, ITEM_REVO_BALL),
+    TRAINER_CLASS(TEAM_AQUA, "Team Némésis", 4, ITEM_REVO_BALL),
     TRAINER_CLASS(PKMN_BREEDER, "{PKMN} BREEDER", 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? ITEM_HEAL_BALL : ITEM_FRIEND_BALL),
     TRAINER_CLASS(COOLTRAINER, "Topdresseur", 12, ITEM_ULTRA_BALL),
-    TRAINER_CLASS(BIRD_KEEPER, "Ornithologue", 8),
+    TRAINER_CLASS(BIRD_KEEPER, "l'Ornithologue", 8),
     TRAINER_CLASS(COLLECTOR, "le Pro-Gamer", 15),
     TRAINER_CLASS(SWIMMER_M, "SWIMMER♂", 2, ITEM_DIVE_BALL),
     TRAINER_CLASS(TEAM_MAGMA, "TEAM MAGMA"),
-    TRAINER_CLASS(EXPERT, "le Go Muscu", 10, ITEM_SPORT_BALL),
+    TRAINER_CLASS(EXPERT, "le Masculiniste", 8, ITEM_SPORT_BALL),
     TRAINER_CLASS(AQUA_ADMIN, "AQUA ADMIN", 10),
     TRAINER_CLASS(BLACK_BELT, "le Karatéka", 8),
     TRAINER_CLASS(AQUA_LEADER, "AQUA LEADER", 20),
     TRAINER_CLASS(HEX_MANIAC, "la Gothique", 6, ITEM_DUSK_BALL),
-    TRAINER_CLASS(AROMA_LADY, "la Camgirl", 10),
+    TRAINER_CLASS(AROMA_LADY, "la Cosplayeuse", 10),
     TRAINER_CLASS(RUIN_MANIAC, "Archéologue", 15),
     TRAINER_CLASS(INTERVIEWER, "Journalistes", 12),
     TRAINER_CLASS(TUBER_F, "le Touriste", 20),
     TRAINER_CLASS(TUBER_M, "le Gay", 8, ITEM_LOVE_BALL),
-    TRAINER_CLASS(LADY, "la Maîtresse", 20),
-    TRAINER_CLASS(BEAUTY, "la Tana", 20),
+    TRAINER_CLASS(LADY, "la Dominatrice", 20),
+    TRAINER_CLASS(BEAUTY, "l'Influenceuse", 20),
     TRAINER_CLASS(RICH_BOY, "le Bourgeois", 50, ITEM_PREMIER_BALL),
     TRAINER_CLASS(POKEMANIAC, "le Furry", 15, ITEM_FRIEND_BALL),
     TRAINER_CLASS(GUITARIST, "le Rockeur", 8),
     TRAINER_CLASS(KINDLER, "le Drogué", 3),
     TRAINER_CLASS(CAMPER, "le Peintre", 8),
-    TRAINER_CLASS(PICNICKER, "la Féministe", 4),
+    TRAINER_CLASS(PICNICKER, "la Maman", 4),
     TRAINER_CLASS(BUG_MANIAC, "le Hackeur", 15, ITEM_CHERISH_BALL),
     TRAINER_CLASS(PSYCHIC, "Kinésiste", 6),
-    TRAINER_CLASS(GENTLEMAN, "le Pédagogue", 10),
+    TRAINER_CLASS(GENTLEMAN, "l'enseignant", 10),
     TRAINER_CLASS(ELITE_FOUR, "ELITE FOUR", 25, ITEM_ULTRA_BALL),
     TRAINER_CLASS(LEADER, "le Champion", 25),
-    TRAINER_CLASS(SCHOOL_KID, "Étudiant"),
+    TRAINER_CLASS(SCHOOL_KID, "l'Étudiant"),
     TRAINER_CLASS(SR_AND_JR, "le Smicard", 4),
     TRAINER_CLASS(WINSTRATE, "le Cuisinier", 10),
     TRAINER_CLASS(POKEFAN, "le Naturiste", 20),
     TRAINER_CLASS(YOUNGSTER, "le Gamin", 4),
     TRAINER_CLASS(CHAMPION, "le Maître", 50),
     TRAINER_CLASS(FISHERMAN, "le Pêcheur", 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? ITEM_DIVE_BALL : ITEM_LURE_BALL),
-    TRAINER_CLASS(TRIATHLETE, "TRIATHLETE", 10),
+    TRAINER_CLASS(TRIATHLETE, "le Cycliste", 10),
     TRAINER_CLASS(DRAGON_TAMER, "le Mime", 12),
     TRAINER_CLASS(NINJA_BOY, "le Clodo", 0, ITEM_RUST_BALL),
     TRAINER_CLASS(BATTLE_GIRL, "la Fitgirl", 6),
-    TRAINER_CLASS(PARASOL_LADY, "Star du X", 10),
+    TRAINER_CLASS(PARASOL_LADY, "les Stars du X", 10),
     TRAINER_CLASS(SWIMMER_F, "le Soumis", 2, ITEM_DIVE_BALL),
     TRAINER_CLASS(TWINS, "les Jumelles", 3),
     TRAINER_CLASS(SAILOR, "le Marin", 8),
@@ -672,7 +672,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(MAGMA_LEADER, "MAGMA LEADER", 20, ITEM_MASTER_BALL),
     TRAINER_CLASS(LASS, "la Fillette", 4),
     TRAINER_CLASS(YOUNG_COUPLE, "les Amoureux", 8),
-    TRAINER_CLASS(OLD_COUPLE, "Lacoste TN", 2),
+    TRAINER_CLASS(OLD_COUPLE, "le Lacoste TN", 2),
     TRAINER_CLASS(SIS_AND_BRO, "le Rappeur", 20),
     TRAINER_CLASS(SALON_MAIDEN, "SALON MAIDEN"),
     TRAINER_CLASS(DOME_ACE, "DOME ACE"),
@@ -684,6 +684,10 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(RS_PROTAG, "{PKMN} TRAINER"),
     TRAINER_CLASS(NUN, "la Nonne", 3, ITEM_HEAL_BALL),
     TRAINER_CLASS(GRAFFITIST, "le Tagueur", 6, ITEM_BLACK_BALL),
+    TRAINER_CLASS(STRATEGIST, "le Stratège", 9, ITEM_GREAT_BALL),
+    TRAINER_CLASS(GYM_LEADER_F, "la Championne", 25),
+    TRAINER_CLASS(LITTLE_BOY, "le Petit Garçon", 4),
+    TRAINER_CLASS(LITTLE_GIRL, "la Petite Fille", 4),
 };
 
 static void (* const sTurnActionsFuncsTable[])(void) =
@@ -4750,6 +4754,12 @@ static void HandleTurnActionSelectionState(void)
                          && gBattleResources->bufferB[battler][1] == B_ACTION_RUN)
                 {
                     BattleScriptExecute(BattleScript_PrintCantRunFromTrainer);
+                    gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
+                }
+                else if (gBattleTypeFlags & BATTLE_TYPE_TOTEM_BATTLE
+                         && gBattleResources->bufferB[battler][1] == B_ACTION_RUN)
+                {
+                    BattleScriptExecute(BattleScript_PrintCantRunFromTotemBattle);
                     gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
                 }
                 else if (IsRunningFromBattleImpossible(battler) != BATTLE_RUN_SUCCESS

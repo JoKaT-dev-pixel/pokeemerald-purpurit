@@ -10,9 +10,15 @@
 
 static const u32 sMugshotImg_Female[] = INCBIN_U32("graphics/field_mugshots/female/normal.4bpp.lz");
 static const u32 sMugshotImg_Female_Angry[] = INCBIN_U32("graphics/field_mugshots/female/angry.4bpp.lz");
+static const u32 sMugshotImg_Female_Bored[] = INCBIN_U32("graphics/field_mugshots/female/bored.4bpp.lz");
+static const u32 sMugshotImg_Fildrong[] = INCBIN_U32("graphics/field_mugshots/fildrong/normal.4bpp.lz");
+static const u32 sMugshotImg_Fildrong_Serious[] = INCBIN_U32("graphics/field_mugshots/fildrong/serious.4bpp.lz");
+static const u32 sMugshotImg_Fildrong_Angry[] = INCBIN_U32("graphics/field_mugshots/fildrong/angry.4bpp.lz");
+static const u32 sMugshotImg_Fildrong_Sweat[] = INCBIN_U32("graphics/field_mugshots/fildrong/sweat.4bpp.lz");
 static const u32 sMugshotImg_Mom[] = INCBIN_U32("graphics/field_mugshots/mom/normal.4bpp.lz");
 static const u32 sMugshotImg_Mom_Sweat[] = INCBIN_U32("graphics/field_mugshots/mom/sweat.4bpp.lz");
 static const u16 sMugshotPal_Female[] = INCBIN_U16("graphics/field_mugshots/female/normal.gbapal");
+static const u16 sMugshotPal_Fildrong[] = INCBIN_U16("graphics/field_mugshots/fildrong/normal.gbapal");
 static const u16 sMugshotPal_Mom[] = INCBIN_U16("graphics/field_mugshots/mom/normal.gbapal");
 
 struct Mugshot{
@@ -33,6 +39,11 @@ static const struct Mugshot sMugshots[] = {
     //ADD YOUR MUGSHOTS HERE
     [MUGSHOT_FEMALE] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Female, .palette = sMugshotPal_Female},
     [MUGSHOT_FEMALE_ANGRY] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Female_Angry, .palette = sMugshotPal_Female},
+    [MUGSHOT_FEMALE_BORED] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Female_Bored, .palette = sMugshotPal_Female},
+    [MUGSHOT_FILDRONG] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Fildrong, .palette = sMugshotPal_Fildrong},
+    [MUGSHOT_FILDRONG_SERIOUS] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Fildrong_Serious, .palette = sMugshotPal_Fildrong},
+    [MUGSHOT_FILDRONG_ANGRY] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Fildrong_Angry, .palette = sMugshotPal_Fildrong},
+    [MUGSHOT_FILDRONG_SWEAT] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Fildrong_Sweat, .palette = sMugshotPal_Fildrong},
     [MUGSHOT_MOM] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Mom, .palette = sMugshotPal_Mom},
     [MUGSHOT_MOM_SWEAT] = {.x = 21, .y = 6, .width = 64, .height = 64, .image = sMugshotImg_Mom_Sweat, .palette = sMugshotPal_Mom},
 };

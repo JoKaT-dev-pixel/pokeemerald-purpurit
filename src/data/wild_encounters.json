@@ -460,63 +460,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 11,
-                "max_level": 12,
+                "min_level": 10,
+                "max_level": 11,
                 "species": "SPECIES_TAILLOW"
               },
               {
-                "min_level": 11,
-                "max_level": 12,
-                "species": "SPECIES_ZIGZAGOON"
+                "min_level": 10,
+                "max_level": 11,
+                "species": "SPECIES_LOTAD"
               },
               {
-                "min_level": 11,
-                "max_level": 12,
+                "min_level": 10,
+                "max_level": 11,
                 "species": "SPECIES_TAILLOW"
               },
               {
-                "min_level": 11,
-                "max_level": 12,
-                "species": "SPECIES_ZIGZAGOON"
-              },
-              {
-                "min_level": 11,
-                "max_level": 12,
+                "min_level": 10,
+                "max_level": 11,
                 "species": "SPECIES_LOTAD"
               },
               {
-                "min_level": 11,
-                "max_level": 12,
+                "min_level": 10,
+                "max_level": 11,
+                "species": "SPECIES_WHISMUR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 11,
                 "species": "SPECIES_SWINUB"
               },
               {
-                "min_level": 11,
-                "max_level": 12,
-                "species": "SPECIES_LOTAD"
+                "min_level": 10,
+                "max_level": 11,
+                "species": "SPECIES_WHISMUR"
               },
               {
-                "min_level": 11,
-                "max_level": 12,
+                "min_level": 10,
+                "max_level": 11,
                 "species": "SPECIES_SWINUB"
               },
               {
-                "min_level": 11,
-                "max_level": 12,
-                "species": "SPECIES_MARILL"
+                "min_level": 10,
+                "max_level": 11,
+                "species": "SPECIES_MAKUHITA"
               },
               {
-                "min_level": 11,
-                "max_level": 14,
+                "min_level": 10,
+                "max_level": 11,
                 "species": "SPECIES_PETILIL"
               },
               {
-                "min_level": 11,
-                "max_level": 12,
-                "species": "SPECIES_MARILL"
+                "min_level": 10,
+                "max_level": 11,
+                "species": "SPECIES_MAKUHITA"
               },
               {
                 "min_level": 11,
-                "max_level": 14,
+                "max_level": 13,
                 "species": "SPECIES_PETILIL"
               }
             ]
@@ -1962,72 +1962,7 @@
         },
         {
           "map": "MAP_GRANITE_CAVE_1F",
-          "base_label": "gGraniteCave_1F",
-          "land_mons": {
-            "encounter_rate": 0,
-            "mons": [
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_SILCOON"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_SILCOON"
-              },
-              {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_MAKUHITA"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_GEODUDE"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_GEODUDE"
-              },
-              {
-                "min_level": 15,
-                "max_level": 15,
-                "species": "SPECIES_SANDSHREW"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_ABRA"
-              },
-              {
-                "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_NOSEPASS"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_ABRA"
-              },
-              {
-                "min_level": 15,
-                "max_level": 16,
-                "species": "SPECIES_NOSEPASS"
-              }
-            ]
-          }
+          "base_label": "gGraniteCave_1F"
         },
         {
           "map": "MAP_GRANITE_CAVE_B1F",
@@ -4653,72 +4588,7 @@
         },
         {
           "map": "MAP_GRANITE_CAVE_STEVENS_ROOM",
-          "base_label": "gGraniteCave_StevensRoom",
-          "land_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_MAKUHITA"
-              },
-              {
-                "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_MAKUHITA"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ZUBAT"
-              },
-              {
-                "min_level": 9,
-                "max_level": 9,
-                "species": "SPECIES_MAKUHITA"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ABRA"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_MAKUHITA"
-              },
-              {
-                "min_level": 6,
-                "max_level": 6,
-                "species": "SPECIES_MAKUHITA"
-              },
-              {
-                "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_ARON"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ARON"
-              },
-              {
-                "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_ARON"
-              },
-              {
-                "min_level": 8,
-                "max_level": 8,
-                "species": "SPECIES_ARON"
-              }
-            ]
-          }
+          "base_label": "gGraniteCave_StevensRoom"
         },
         {
           "map": "MAP_ROUTE125",

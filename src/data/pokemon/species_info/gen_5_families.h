@@ -7241,10 +7241,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .height = 2,
         .weight = 3,
         .description = COMPOUND_STRING(
-            "These Pokémon move in schools.\n"
-            "One alone can emit only a trickle of\n"
-            "electricity, so a group of them gathers\n"
-            "to unleash a powerful electric shock."),
+            "Élekclik est capable de naviguer\n"
+            "librement à une vitesse éclair sur\n"
+            "internet. Son agilité est mise à profit\n"
+            "pour les speedrunners."),
         .pokemonScale = 682,
         .pokemonOffset = 24,
         .trainerScale = 256,

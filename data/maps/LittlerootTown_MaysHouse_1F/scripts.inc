@@ -393,7 +393,7 @@ RivalsHouse_1F_Text_TooBusyToNoticeVisit:
 RivalsHouse_1F_Text_WentOutToRoute103:
 	.string "Oh, tu cherches Charlotte ?\p"
 	.string "Elle a dit qu'elle comptait aller au\n"
-	.string "Chenal 9.$"
+	.string "Chenal 11.$"
 
 RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
 	.string "Où suis-je ?\p"

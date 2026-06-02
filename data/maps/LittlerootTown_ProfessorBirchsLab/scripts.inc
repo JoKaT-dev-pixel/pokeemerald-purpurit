@@ -114,16 +114,16 @@ LittlerootTown_ProfessorBirchsLab_OnFrame:
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent::
 	lockall
 	bufferleadmonspeciesname STR_VAR_1
-	textcolor NPC_TEXT_COLOR_MALE
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	message LittlerootTown_ProfessorBirchsLab_Text_LikeYouToHavePokemon
 	waitmessage
 	delay 70
-	textcolor NPC_TEXT_COLOR_NEUTRAL
+	callnative ClearMugshot
 	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedYourePokemon
 	waitmessage
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
-	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_NicknameStarter
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_RivalGender
@@ -143,9 +143,12 @@ LittlerootTown_ProfessorBirchsLab_EventScript_RivalGender::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRival::
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRivalOceane, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalFemale
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MightBeGoodIdeaToGoSeeRivalOceane, MSGBOX_DEFAULT
+	closemessage
+	callnative ClearMugshot
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_YesNoHideMugshot
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRivalEvan::
@@ -154,17 +157,30 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GoSeeRivalEvan::
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalMale
 	end
 
+LittlerootTown_ProfessorBirchsLab_EventScript_YesNoHideMugshot::
+	multichoice 21, 8, MULTI_YESNO_MUGSHOT, TRUE
+	switch VAR_RESULT
+	case 0, LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
+	case 1, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalFemale
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival::
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GetRivalToTeachYou, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	clearflag FLAG_HIDE_ROUTE_101_BOY
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalFemale::
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWayMale, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, LittlerootTown_ProfessorBirchsLab_EventScript_AgreeToSeeRival
-	goto_if_eq VAR_RESULT, NO, LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalFemale
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_SERIOUS
+	callnative DrawMugshot
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWayMale, MSGBOX_DEFAULT
+	closemessage
+	callnative ClearMugshot
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_YesNoHideMugshot
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_DeclineSeeingRivalMale::
@@ -524,8 +540,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister::
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3, ProfBirch_EventScript_RatePokedexOrRegister
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, ProfBirch_EventScript_RatePokedexOrRegister
 	goto_if_eq VAR_BIRCH_LAB_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait
-	textcolor NPC_TEXT_COLOR_MALE
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_SERIOUS
+	callnative DrawMugshot
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	release
 	end
 
@@ -554,7 +572,10 @@ EventScript_RegisterProfBirch::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_BeginRivalBattle::
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_SWEAT
+	callnative DrawMugshot
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BackLab, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_RivalBattle
 	end
@@ -627,14 +648,20 @@ LittlerootTown_ProfessorBirchsLab_EventScript_PlayerApproachBirch::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerApproachBirch
 	waitmovement 0
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchEnjoyBattle, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex
 	closemessage
 	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchGivePokedexToRival
@@ -643,10 +670,18 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	waitmovement 0
 	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchComeBack
 	waitmovement 0
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex, MSGBOX_DEFAULT
+	callnative ClearMugshot
+	closemessage
 	giveitem ITEM_POKE_BALL, 5
 	call_if_eq VAR_RESULT, FALSE, LittlerootTown_ProfessorBirchsLab_EventScript_MayNoRoomForPokeBalls
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls, MSGBOX_DEFAULT
+	callnative ClearMugshot
+	closemessage
 	setvar VAR_RESULT, 0
 	setvar VAR_BIRCH_LAB_STATE, 5
 	setflag FLAG_ADVENTURE_STARTED
@@ -695,7 +730,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_BrendanGivePokeBalls::
 	return
 
 LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait::
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	release
 	end
 
@@ -913,8 +951,8 @@ LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWayFemale:
 	.string "Faut que t'appuie sur “Oui” !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_DontBeThatWayMale:
-	.string "{ROCKET}Prof. Fildrong: {AQUA}Heu, mec…\n"
-	.string "Faut que t'appuie sur “Oui” !$"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Mec…!\n"
+	.string "Faut que t'appuie sur “{MAGMA}Oui{AQUA}” !$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "{ROCKET}Prof. Fildrong: {AQUA}Hmm…\p"

@@ -1118,7 +1118,7 @@ static void PrintHpOnHealthbox(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor,
     txtPtr[-HP_RIGHT_SPRITE_CHARS] = EOS;
  
     width = GetStringWidth(HP_FONT, text, -1) + GetFontAttribute(HP_FONT, FONTATTR_LETTER_SPACING);
-    tilesCount = (width + 7) / 8;
+    tilesCount = 3;
     x = 8 * tilesCount - width;
     leftTile = leftEndTile - 0x20 * tilesCount;
     windowTileData = AddTextPrinterAndCreateWindowOnHealthboxWithFont(text, x, 5, bgColor, &windowId, HP_FONT);

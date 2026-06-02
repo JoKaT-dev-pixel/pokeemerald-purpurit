@@ -18,12 +18,12 @@
 #define MULTI_REGISTER_MENU                7
 #define MULTI_SSTIDAL_LILYCOVE             8 // Exit only, populated by CreateLilycoveSSTidalMultichoice
 #define MULTI_SALARYMAN                    9
-#define MULTI_UNUSED_10                    10
+#define MULTI_RUSTBOROCITYFLAT1F           10
 #define MULTI_FRONTIER_PASS_INFO           11
 #define MULTI_BIKE                         12
 #define MULTI_STATUS_INFO                  13
 #define MULTI_BRINEY_OFF_DEWFORD           14
-#define MULTI_UNUSED_15                    15
+#define MULTI_YESNO_MUGSHOT                15
 #define MULTI_VIEWED_PAINTINGS             16
 #define MULTI_YESNOINFO                    17
 #define MULTI_BATTLE_MODE                  18

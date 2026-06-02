@@ -1224,6 +1224,7 @@ extern const u32 gItemIconPalette_DragonFang[];
 extern const u32 gItemIcon_BlackGlasses[];
 extern const u32 gItemIcon_MetalCoat[];
 extern const u32 gItemIconPalette_MetalCoat[];
+extern const u32 gItemIcon_AnalPlug[];
 // Choice Items
 extern const u32 gItemIcon_ChoiceBand[];
 extern const u32 gItemIconPalette_ChoiceBand[];
@@ -2444,6 +2445,7 @@ extern const u32 gBattleAnimSpriteGfx_BoilFire[];
 extern const u32 gBattleAnimSpriteGfx_Divebomb[];
 extern const u32 gBattleAnimSpriteGfx_BlueSparkle[];
 extern const u32 gBattleAnimSpriteGfx_PunishmentHit[];
+extern const u32 gBattleAnimSpriteGfx_NewBubble[];
 
 extern const u32 gBattleAnimSpritePal_Bone[];
 extern const u32 gBattleAnimSpritePal_Spark[];
@@ -2954,6 +2956,10 @@ extern const u32 gBattleAnimSpritePal_BoilFire[];
 extern const u32 gBattleAnimSpritePal_Divebomb[];
 extern const u32 gBattleAnimSpritePal_BlueSparkle[];
 extern const u32 gBattleAnimSpritePal_PunishmentHit[];
+extern const u32 gBattleAnimSpritePal_GlowyOrangeOrb[];
+extern const u32 gBattleAnimSpritePal_GlowyYellowOrb[];
+extern const u32 gBattleAnimSpritePal_MatchaGotchaOrb[];
+extern const u32 gBattleAnimSpritePal_NewBubble[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];

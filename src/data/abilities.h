@@ -436,7 +436,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_CUTE_CHARM] =
     {
         .name = _("Joli Sourire"),
-        .description = COMPOUND_STRING("Séduit parfois l'ennemi au\ncontact."),
+        .description = COMPOUND_STRING("Séduit parfois l'ennemi au contact."),
         .aiRating = 2,
     },
 
@@ -740,7 +740,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SNIPER] =
     {
         .name = _("Sniper"),
-        .description = COMPOUND_STRING("Booste les capacités qui sont\ndes coups critiques."),
+        .description = COMPOUND_STRING("Booste les capacités qui sont des\ncoups critiques."),
         .aiRating = 3,
     },
 
@@ -2683,7 +2683,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_DOMINANCE] =
     {
         .name = _("Domination"),
-        .description = COMPOUND_STRING("Soumets les {PKMN} adverses et\nbaisse l'Atq. et l'Atq. Spé."),
+        .description = COMPOUND_STRING("Soumets les {PKMN} adverses et baisse\nleur Attaque et Attaque Spéciale."),
         .aiRating = 7,
     },
 

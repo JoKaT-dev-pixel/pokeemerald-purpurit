@@ -25,9 +25,11 @@ Route101_EventScript_HideMapNamePopup::
 Route101_EventScript_StartBirchRescue::
 	lockall
 	playbgm MUS_HELP, TRUE
-	textcolor NPC_TEXT_COLOR_MALE
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_ANGRY
+	callnative DrawMugshot
 	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
 	closemessage
+	callnative ClearMugshot
 	setobjectxy LOCALID_BIRCH, 28, 15
 	setobjectxy LOCALID_ZIGZAGOON, 28, 16
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_EnterScene
@@ -43,18 +45,22 @@ Route101_EventScript_StartBirchRescue::
 	applymovement LOCALID_ZIGZAGOON, Route101_Movement_ZigzagoonFaceBirch
 	applymovement LOCALID_BIRCH, Route101_Movement_BirchFaceZigzagoon
 	waitmovement 0
-	textcolor NPC_TEXT_COLOR_MALE
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_ANGRY
+	callnative DrawMugshot
 	msgbox Route101_Text_PleaseHelp, MSGBOX_DEFAULT
 	closemessage
+	callnative ClearMugshot
 	setvar VAR_ROUTE101_STATE, 2
 	releaseall
 	end
 
 Route101_EventScript_PreventExitSouth::
 	lockall
-	textcolor NPC_TEXT_COLOR_MALE
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_ANGRY
+	callnative DrawMugshot
 	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
+	callnative ClearMugshot
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitSouth
 	waitmovement 0
 	releaseall
@@ -62,9 +68,11 @@ Route101_EventScript_PreventExitSouth::
 
 Route101_EventScript_PreventExitWest::
 	lockall
-	textcolor NPC_TEXT_COLOR_MALE
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_ANGRY
+	callnative DrawMugshot
 	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
+	callnative ClearMugshot
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitWest
 	waitmovement 0
 	releaseall
@@ -72,9 +80,11 @@ Route101_EventScript_PreventExitWest::
 
 Route101_EventScript_PreventExitNorth::
 	lockall
-	textcolor NPC_TEXT_COLOR_MALE
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_ANGRY
+	callnative DrawMugshot
 	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
 	closemessage
+	callnative ClearMugshot
 	applymovement OBJ_EVENT_ID_PLAYER, Route101_Movement_PreventExitNorth
 	waitmovement 0
 	releaseall
@@ -233,7 +243,8 @@ Route101_EventScript_BirchsBag::
 	waitstate
 	applymovement LOCALID_BIRCH, Route101_Movement_BirchApproachPlayer
 	waitmovement 0
-	textcolor NPC_TEXT_COLOR_MALE
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox Route101_Text_YouSavedMe, MSGBOX_DEFAULT
 	special HealPlayerParty
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
@@ -263,17 +274,17 @@ Route101_Movement_BirchApproachPlayer:
 	step_end
 
 Route101_Text_HelpMe:
-	.string "Mais…!!\n"
-	.string "Mais lâche-moi Pokémon de merde !!$"
+	.string "{AQUA}Mais…!!\n"
+	.string "Mais lâche-moi Pokémon de MERDE !!$"
 
 Route101_Text_PleaseHelp:
-	.string "Reste pas planté là !\p"
+	.string "{AQUA}Reste pas planté là !\p"
 	.string "Dans mon Sac !\n"
 	.string "Il y a 3 Poké Balls !\p"
 	.string "Grouille-toi !$"
 
 Route101_Text_DontLeaveMe:
-	.string "Je te jure que si tu m'abandonnes,\n"
+	.string "{AQUA}Je te jure que si tu m'abandonnes,\n"
 	.string "j'vais te défoncer l'anus !$"
 
 Route101_Text_YouSavedMe:
@@ -492,6 +503,6 @@ RouteD1_Text_BrendanLetsGoBack:
 Route101_Text_RouteSign:
 	.string "“Route D-1”\p"
 	.string "{DOWN_ARROW} Bourg Paumé au Sud.\n"
-	.string "{UP_ARROW} Chenal 9 au Nord.\l"
+	.string "{UP_ARROW} Chenal 11 au Nord.\l"
 	.string "{LEFT_ARROW} Fourqueue à l'Ouest.$"
 

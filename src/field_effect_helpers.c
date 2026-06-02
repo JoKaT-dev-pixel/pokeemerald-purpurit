@@ -42,9 +42,6 @@ u32 FldEff_Shadow(void);
 // Data used by all the field effects that share WaitFieldEffectSpriteAnim
 #define sWaitFldEff  data[0]
 
-// Used by several field effects to determine which of a group it is
-#define sFldEff    data[1]
-
 #define sReflectionObjEventId       data[0]
 #define sReflectionObjEventLocalId  data[1]
 #define sReflectionVerticalOffset   data[2]
@@ -788,6 +785,7 @@ void UpdateShortGrassFieldEffect(struct Sprite *sprite)
 // Sprite data for FLDEFF_SAND_FOOTPRINTS, FLDEFF_DEEP_SAND_FOOTPRINTS, and FLDEFF_BIKE_TIRE_TRACKS
 #define sState   data[0]
 #define sTimer   data[1]
+#define sFldEff  data[7]
 
 u32 FldEff_SandFootprints(void)
 {

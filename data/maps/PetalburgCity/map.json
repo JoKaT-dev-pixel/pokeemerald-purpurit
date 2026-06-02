@@ -126,7 +126,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 21,
+      "x": 24,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -307,7 +307,7 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 15,
       "y": 7,
       "elevation": 3,
       "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",
@@ -316,7 +316,7 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 15,
       "y": 8,
       "elevation": 3,
       "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",
@@ -325,7 +325,7 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 15,
       "y": 9,
       "elevation": 3,
       "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",
@@ -334,7 +334,7 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 15,
       "y": 10,
       "elevation": 3,
       "var": "VAR_SCOTT_PETALBURG_ENCOUNTER",

@@ -538,7 +538,7 @@ PetalburgCity_EventScript_Scott0::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_SCOTT, 21, 7
+	setobjectxy LOCALID_SCOTT, 24, 7
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -546,7 +546,7 @@ PetalburgCity_EventScript_Scott1::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 1
-	setobjectxy LOCALID_SCOTT, 21, 8
+	setobjectxy LOCALID_SCOTT, 24, 8
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -554,7 +554,7 @@ PetalburgCity_EventScript_Scott2::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 2
-	setobjectxy LOCALID_SCOTT, 21, 9
+	setobjectxy LOCALID_SCOTT, 24, 9
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -562,7 +562,7 @@ PetalburgCity_EventScript_Scott3::
 	lockall
 	addobject LOCALID_SCOTT
 	setvar VAR_0x8008, 3
-	setobjectxy LOCALID_SCOTT, 21, 10
+	setobjectxy LOCALID_SCOTT, 24, 10
 	goto PetalburgCity_EventScript_Scott
 	end
 
@@ -579,7 +579,10 @@ PetalburgCity_EventScript_Scott::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	setvar VAR_SCOTT_STATE, 1
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox PetalburgCity_Text_AreYouATrainer, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	playse SE_POKENAV_CALL
 	applymovement LOCALID_SCOTT, Common_Movement_QuestionMark
@@ -591,25 +594,40 @@ PetalburgCity_EventScript_Scott::
 	delay 30
 	msgbox Chantiville_Text_AssistantMatchCall, MSGBOX_DEFAULT
 	waitmovement 0
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_SWEAT
+	callnative DrawMugshot
 	msgbox Chantiville_Text_FildrongCallTalk, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	waitmovement 0
 	msgbox Chantiville_Text_AngryAssistantMatchCall, MSGBOX_DEFAULT
 	waitmovement 0
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_SWEAT
+	callnative DrawMugshot
 	msgbox Chantiville_Text_FildrongClosedCall, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	waitmovement 0
 	playse SE_POKENAV_HANG_UP
 	msgbox Chantiville_Text_CloseCall, MSGBOX_DEFAULT
 	closemessage
 	delay 30
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_SWEAT
+	callnative DrawMugshot
 	msgbox Chantiville_Text_FildrongAfterCall, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	delay 30
+	setvar VAR_0x8000, MUGSHOT_FILDRONG_SERIOUS
+	callnative DrawMugshot
 	msgbox PetalburgCity_Text_WellMaybeNot, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	giveitem ITEM_POKEMON_BOX_LINK
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	goto_if_eq VAR_RESULT, FALSE, 
+	setvar VAR_0x8000, MUGSHOT_FILDRONG
+	callnative DrawMugshot
 	msgbox PetalburgCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
+	callnative ClearMugshot
 	closemessage
 	call_if_eq VAR_0x8008, 0, PetalburgCity_EventScript_ScottExit0
 	call_if_eq VAR_0x8008, 1, PetalburgCity_EventScript_ScottExit1
@@ -838,9 +856,9 @@ PetalburgCity_Text_PokecoffeeSign:
 	.string "“Venez faire une pause café.”$"
 
 PetalburgCity_Text_AreYouATrainer:
-	.string "{ROCKET}Fildrong: {AQUA}Ah, te voilà {PLAYER} !\p"
-	.string "Je t'ai enfin rattrapé mais là n'est\n"
-	.string "pas la question !\p"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Fiou !!\p"
+	.string "Je t'ai enfin rattrapé {PLAYER} mais là\n"
+	.string "n'est pas la question !\p"
 	.string "J'ai quelque chose d'important à\n"
 	.string "te dire.$"
 
@@ -852,7 +870,7 @@ Chantiville_Text_AssistantMatchCall:
 	.string "de suite finir vos recherches !$"
 
 Chantiville_Text_FildrongCallTalk:
-	.string "{ROCKET}Fildrong: {AQUA}Pas question !\p"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Pas question !\p"
 	.string "J'ai désormais rallumé la flamme que\n"
 	.string "j'avais perdue depuis bien longtemps !\p"
 	.string "Ma commu a encore besoin de moi !$"
@@ -863,8 +881,8 @@ Chantiville_Text_AngryAssistantMatchCall:
 	.string "toute seule ?!$"
 
 Chantiville_Text_FildrongClosedCall:
-	.string "{ROCKET}Fildrong: {AQUA}Je suis sûr que vous allez\n"
-	.string "y arriver sans moi.\p"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Je suis sûr que vous\n"
+	.string "allez y arriver sans moi.\p"
 	.string "Je suis désolé, je vous entends pas\n"
 	.string "très bien…!\p"
 	.string "Je passe sous un tunnel…!$"
@@ -874,12 +892,12 @@ Chantiville_Text_CloseCall:
 	.string "… … … … … Clic !$"
 
 Chantiville_Text_FildrongAfterCall:
-	.string "{ROCKET}Fildrong: {AQUA}… … … … … …\p"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}… … … … … …\p"
 	.string "Un jour, elle comprendra vraiment\n"
 	.string "ce que ça fait d'être célibataire…$"
 
 PetalburgCity_Text_WellMaybeNot:
-	.string "{ROCKET}Fildrong: {AQUA}Hum, hum…!\n"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}Hum, hum…!\n"
 	.string "Oublie ce que j'ai dit !\p"
 	.string "La raison de mon interpellation est\n"
 	.string "que je souhaite saisir l'opportunité\l"
@@ -893,6 +911,6 @@ PetalburgCity_Text_WellMaybeNot:
 	.string "Je pense que ça te sera très utile.$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
-	.string "{ROCKET}Fildrong: {AQUA}Bien !\p"
-	.string "Il est grand temps pour moi de partir\n"
-	.string "à la conquête du lore de cette région !$"
+	.string "{ROCKET}Prof. Fildrong: {AQUA}À présent, il est grand\n"
+	.string "temps pour moi de partir à la conquête\l"
+	.string "du lore de cette région !$"

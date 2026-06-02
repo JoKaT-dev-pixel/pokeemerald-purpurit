@@ -426,49 +426,57 @@ PetalburgWoods_EventScript_JamesRematch::
 	end
 
 PetalburgWoods_Text_NotAOneToBeFound:
-	.string "{ROCKET}???: {AQUA}Je sens qu'il va se produire\n"
-	.string "quelque chose mais quoi…?$"
+	.string "{ROCKET}???: {AQUA}Ah, si j'ai pop ici c'est ce qu'il va\n"
+	.string "se produire quelque chose !$"
 
 PetalburgWoods_Text_HaveYouSeenShroomish:
-	.string "{ROCKET}???: {AQUA}Oh tiens, c'est le gros machin\n"
-	.string "que j'ai vu à Chantiville !\p"
-	.string "Alors quoi de neuf, poto ?!$"
+	.string "{ROCKET}???: {AQUA}Oh mais, c'est la chose que j'ai vu\n"
+	.string "tout à l'heure à Chantiville !\p"
+	.string "Alors, ça fart ?!$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:
-	.string "{AQUA}Toi là !\p"
-	.string "J'suis sûr que tu possèdes des Pokémon\n"
-	.string "woke !$"
+	.string "{AQUA}Hé, toi là-bas !!$"
 
 PetalburgWoods_Text_HandOverThosePapers:
-	.string "{AQUA}Donne-moi tes Pokémon et plus vite\n"
-	.string "que ça !$"
+	.string "{AQUA}J'suis sûr que t'es un Dresseur\n"
+	.string "Pokémon, pas vrai ?!\p"
+	.string "Que dirais-tu de rejoindre les rangs de\n"
+	.string "la Team Némésis ?$"
 
 PetalburgWoods_Text_YouHaveToHelpMe:
-	.string "{ROCKET}???: {AQUA}Tu sais à qui tu t'adresses ?!\p"
+	.string "{ROCKET}???: {AQUA}Mais il veut quoi, lui ?!\p"
 	.string "Allez machin-truc, donne-lui une bonne\n"
 	.string "leçon à ce clown !$"
 
 PetalburgWoods_Text_NoOneCrossesTeamAqua:
-	.string "{AQUA}Puisque tu insistes, je vais te les\n"
-	.string "prendre de force !\p"
-	.string "Tu n'es pas digne d'en avoir !\n"
-	.string "tu t'amuses à les maltraiter comme\l"
-	.string "si de rien n'était !\p"
-	.string "Libère tes Pokémon !$"
+	.string "{AQUA}Nous sommes un groupe qui souhaite\n"
+	.string "retrouver les vraies valeur de la région\l"
+	.string "de Gaullia.\p"
+	.string "Alors, ça t'intéresse ?$"
+
+PetalburgWoods_Text_Nointerested:
+	.string "{AQUA}Non ?\p"
+	.string "T'es de la résistance, c'est ça\n"
+	.string "sale merde ?!\p"
+	.string "Je vois…\p"
+	.string "Je vais devoir me débarrasser de toi !\p"
+	.string "Allez, viens par là, que je t’attrape !$"
 
 PetalburgWoods_Text_YoureKiddingMe:
-	.string "T'es vraiment une sale enflure !$"
+	.string "Putain, j'ai affaire à un coriace !$"
 
 PetalburgWoods_Text_YouveGotSomeNerve:
-	.string "{AQUA}Merde…!\p"
-	.string "Libérez les Pokémon aux mains de ce\n"
-	.string "Dresseur ne va pas être aussi simple…!\p"
+	.string "{AQUA}C'est impossible…!\p"
+	.string "Comment un déchet comme toi peut être\n"
+	.string "aussi fort ?!\p"
 	.string "Mais… Ça n'a plus d'importance !\p"
 	.string "Tu verras, les autres membres de la\n"
-	.string "Team Sbire vont délivrer les Pokémon\l"
-	.string "de leur souffrance !\p"
-	.string "Finit la maltraitance !\n"
-	.string "Vive la Team Sbire !$"
+	.string "Team Némésis vont lutter pour vous\l"
+	.string "exclure et ça sera fini de vous !\p"
+	.string "Finis l'immigration, finies les\n"
+	.string "LGBT et la résistance !\p"
+	.string "On va vous écraser !\n"
+	.string "Vive la Team Némésis !$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "{ROCKET}???: {AQUA}Qu'est-ce qui peut être con…!\p"

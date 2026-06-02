@@ -688,8 +688,8 @@ const struct BattleBackground sBattleTerrainTable[] =
     {
         .tileset = gBattleTerrainTiles_Marsh,
         .tilemap = gBattleTerrainTilemap_Marsh,
-        .entryTileset = gBattleTerrainAnimTiles_PondWater,
-        .entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+        .entryTileset = gBattleTerrainAnimTiles_Underwater,
+        .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
         .palette = gBattleTerrainPalette_Marsh,
     },
 

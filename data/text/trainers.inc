@@ -2254,7 +2254,8 @@ Route116_Text_JerryPostRematch:
 	.string "If I don't, ROXANNE will be steamed.$"
 
 Route116_Text_KarenIntro:
-	.string "XANA vient de lancer une attaque !$"
+	.string "As-tu déjà pratiqué une dissection sur\n"
+	.string "un Pokémon ?$"
 
 Route116_Text_KarenDefeat:
 	.string "Ce n'est pas vrai…!\p"
@@ -2311,8 +2312,7 @@ Route116_Text_DawsonPostBattle:
 	.string "partie de mon corps !$"
 
 Route116_Text_DevanIntro:
-	.string "Il n'y a pas de temps à perdre !\n"
-	.string "On y va !$"
+	.string "Seven !$"
 
 Route116_Text_DevanDefeat:
 	.string "Refais-moi un coup comme ça, et\n"
@@ -2322,8 +2322,7 @@ Route116_Text_DevanPostBattle:
 	.string "T'es gentil, tu me lâches !$"
 
 Route116_Text_JohnsonIntro:
-	.string "Oh, ça alors !\n"
-	.string "Y'a du thon au menu !$"
+	.string "Six !$"
 
 Route116_Text_JohnsonDefeat:
 	.string "Eh, relax Max !\p"

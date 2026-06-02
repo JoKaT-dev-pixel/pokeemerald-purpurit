@@ -61,6 +61,13 @@ static const struct MenuAction MultichoiceList_Salaryman[] =
     {gText_IDontKnow},
 };
 
+static const struct MenuAction MultichoiceList_RustboroCityFlat11F[] =
+{
+    {gText_ChooseGreen},
+    {gText_ChooseYellow},
+    {gText_ChooseBlueGreen},
+};
+
 static const struct MenuAction MultichoiceList_Bike[] =
 {
     {gText_Mach},
@@ -81,6 +88,12 @@ static const struct MenuAction MultichoiceList_BrineyOffDewford[] =
 {
     {gText_Dewford},
     {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_YesNoMugshot[] =
+{
+    {gText_Yes},
+    {gText_No},
 };
 
 static const struct MenuAction MultichoiceList_ViewedPaintings[] =
@@ -808,12 +821,12 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_REGISTER_MENU]              = MULTICHOICE(MultichoiceList_RegisterMenu),
     [MULTI_SSTIDAL_LILYCOVE]           = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_SALARYMAN]                  = MULTICHOICE(MultichoiceList_Salaryman),
-    [MULTI_UNUSED_10]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_RUSTBOROCITYFLAT1F]         = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_FRONTIER_PASS_INFO]         = MULTICHOICE(MultichoiceList_FrontierPassInfo),
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),
     [MULTI_STATUS_INFO]                = MULTICHOICE(MultichoiceList_StatusInfo),
     [MULTI_BRINEY_OFF_DEWFORD]         = MULTICHOICE(MultichoiceList_BrineyOffDewford),
-    [MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_YESNO_MUGSHOT]              = MULTICHOICE(MultichoiceList_YesNoMugshot),
     [MULTI_VIEWED_PAINTINGS]           = MULTICHOICE(MultichoiceList_ViewedPaintings),
     [MULTI_YESNOINFO]                  = MULTICHOICE(MultichoiceList_YesNoInfo),
     [MULTI_BATTLE_MODE]                = MULTICHOICE(MultichoiceList_BattleMode),

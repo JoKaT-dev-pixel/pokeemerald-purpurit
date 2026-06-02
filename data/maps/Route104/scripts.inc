@@ -352,9 +352,7 @@ Route104_EventScript_SailToDewford::
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
 	call Common_EventScript_PlayBrineysBoatMusic
-	goto_if_set FLAG_ENABLE_NORMAN_MATCH_CALL, Route104_EventScript_SailToDewfordNoCall
-	goto_if_unset FLAG_ENABLE_NORMAN_MATCH_CALL, Route104_EventScript_SailToDewfordDadCalls
-	end
+	goto Route104_EventScript_SailToDewfordNoCall
 
 Route104_EventScript_SailToDewfordNoCall::
 	applymovement LOCALID_BOAT_R104, Route104_Movement_SailToDewford

@@ -19,7 +19,6 @@
 #include "constants/trainer_hill.h"
 #include "constants/items.h"
 #include "config/save.h"
-#include "config/heat_menus.h"
 
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
@@ -221,7 +220,7 @@ struct BerryPickingResults
 struct PyramidBag
 {
     u16 itemId[FRONTIER_LVL_MODE_COUNT][PYRAMID_BAG_ITEMS_COUNT];
-#if MAX_PYRAMID_BAG_ITEM_CAPACITY > 255
+#if MAX_PYRAMID_BAG_ITEM_CAPACITY > 821
     u16 quantity[FRONTIER_LVL_MODE_COUNT][PYRAMID_BAG_ITEMS_COUNT];
 #else
     u8 quantity[FRONTIER_LVL_MODE_COUNT][PYRAMID_BAG_ITEMS_COUNT];
@@ -505,9 +504,6 @@ struct SaveBlock2
              u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
              u16 regionMapZoom:1; // whether the map is zoomed in
-             #if HEAT_MENUS_SAVEBLOCK_PALETTES
-             u16 optionsStartMenuPalette:2; // whether the start menu is in the default palette
-             #endif
              //u16 padding1:4;
              //u16 padding2;
              u16 expShare:1;

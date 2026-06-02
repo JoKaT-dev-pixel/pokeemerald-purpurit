@@ -835,5 +835,6 @@ extern const u8 BattleScript_EffectTidyUp[];
 extern const u8 BattleScript_EffectComingOut[];
 extern const u8 BattleScript_EffectTwerking[];
 extern const u8 BattleScript_AtkDown2[];
+extern const u8 BattleScript_PrintCantRunFromTotemBattle[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

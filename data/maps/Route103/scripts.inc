@@ -321,6 +321,6 @@ Route103_Text_ShortcutToOldale:
 	.string "Fufufu, that's useful, isn't it?$"
 
 Route103_Text_RouteSign:
-	.string "“Chenal 9”\p"
+	.string "“Chenal 11”\p"
 	.string "{DOWN_ARROW} Route D-1 au Sud.$"
 

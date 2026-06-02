@@ -19,6 +19,7 @@
 #include "graphics.h"
 #include "international_string_util.h"
 #include "item.h"
+#include "item_icon.h"
 #include "link.h"
 #include "m4a.h"
 #include "malloc.h"
@@ -126,6 +127,7 @@ enum BWSummarySprites
     SPRITE_ARR_ID_STATUS,
     SPRITE_ARR_ID_SHINY,
     SPRITE_ARR_ID_POKERUS_CURED,
+    SPRITE_ARR_ID_ITEM,
     SPRITE_ARR_ID_FRIENDSHIP,
     SPRITE_ARR_ID_CATEGORY,
     SPRITE_ARR_ID_HP_GRADE,
@@ -325,6 +327,8 @@ static void SetMoveTypeIcons(void);
 static void SetContestMoveTypeIcons(void);
 static void SetNewMoveTypeIcon(void);
 static void SwapMovesTypeSprites(u8, u8);
+static void CreateHeldItemSprite(void);
+static void DestroyHeldItemIconSprite(void);
 static u8 LoadMonGfxAndSprite(struct Pokemon *, s16 *, bool32);
 static u8 CreateMonSprite(struct Pokemon *, bool32);
 static void SpriteCB_Pokemon(struct Sprite *);
@@ -376,11 +380,11 @@ static const u8 sText_Switch[]                              = _("Changer");
 static const u8 sText_PkmnInfo[]                            = _("Infos Pokémon");
 static const u8 sText_PkmnSkills[]                          = _("Aptitudes");
 static const u8 sText_BattleMoves[]                         = _("Capacités");
-static const u8 sText_ContestMoves[]                        = _("Capacités Conc.");
+static const u8 sText_ContestMoves[]                        = _("Concours");
 static const u8 sText_Info[]                                = _("Info");
-static const u8 sText_ViewIVs[]                             = _("View IV");
-static const u8 sText_ViewEVs[]                             = _("View EV");
-static const u8 sText_ViewStats[]                           = _("View Stats");
+static const u8 sText_ViewIVs[]                             = _("Voir IV");
+static const u8 sText_ViewEVs[]                             = _("Voir EV");
+static const u8 sText_ViewStats[]                           = _("Voir Stats");
 static const u8 sText_ViewIVs_Graded[]                      = _("See Innate");
 static const u8 sText_ViewEVs_Graded[]                      = _("See Effort");
 static const u8 sText_NextLv[]                              = _("N. Suiv.");
@@ -649,7 +653,7 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     },
     [PSS_DATA_WINDOW_SKILLS_STATS_HP] = {
         .bg = 0,
-        .tilemapLeft = 8,
+        .tilemapLeft = 9,
         .tilemapTop = 2,
         .width = 8,
         .height = 2,
@@ -658,7 +662,7 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     },
     [PSS_DATA_WINDOW_SKILLS_STATS_NON_HP] = {
         .bg = 0,
-        .tilemapLeft = 8,
+        .tilemapLeft = 9,
         .tilemapTop = 4,
         .width = 10,
         .height = 8,
@@ -757,6 +761,7 @@ static void (*const sTextPrinterTasks[])(u8 taskId) =
 #define TAG_STAT_GRADES 30007
 #define TAG_FRIENDSHIP_ICON 30008
 #define TAG_MON_SHADOW 30009
+#define TAG_HELD_ITEM_ICON 30010
 
 enum BWCategoryIcon
 {
@@ -2297,6 +2302,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         break;
     case 1:
         SummaryScreen_DestroyAnimDelayTask();
+        DestroyHeldItemIconSprite();
         DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]]);
         if (BW_SUMMARY_MON_SHADOWS)
             DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_SHADOW]]);
@@ -2360,6 +2366,8 @@ static void Task_ChangeSummaryMon(u8 taskId)
                 LimitEggSummaryPageDisplay();
             else
                 RestoreSummaryPageDisplay();
+
+            CreateHeldItemSprite();
         } 
         else if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
         {
@@ -2462,6 +2470,11 @@ static void ChangePage(u8 taskId, s8 delta)
         return;
     else if (delta == 1 && sMonSummaryScreen->currPageIndex == sMonSummaryScreen->maxPageIndex)
         return;
+
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
+    {
+        DestroyHeldItemIconSprite();
+    }
 
     PlaySE(SE_WIN_OPEN);
     ClearPageWindowTilemaps(sMonSummaryScreen->currPageIndex);
@@ -3107,8 +3120,8 @@ static void HandleAppealJamTilemap(u16 move)
     ScheduleBgCopyTilemapToVram(1);
 }
 
-#define HP_BAR_TILEMAP_START_ROW_1 0x069
-#define HP_BAR_TILEMAP_START_ROW_2 0x089
+#define HP_BAR_TILEMAP_START_ROW_1 0x06A
+#define HP_BAR_TILEMAP_START_ROW_2 0x08A
 #define HP_BAR_TILE_EMPTY_ROW_1    0x5110
 #define HP_BAR_TILE_FULL_ROW_1     0x5118
 #define HP_BAR_TILE_EMPTY_ROW_2    0x5120
@@ -3399,14 +3412,14 @@ static void PrintPageNamesAndStats(void)
         }
         else // precise display
         {
-            stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, sText_ViewIVs, skillsLabelWidth);
+            stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, sText_ViewIVs, skillsLabelWidth - 2);
             iconXPos = stringXPos - 16;
             if (iconXPos < 0)
                 iconXPos = 0;
             PrintAOrBButtonIcon(PSS_LABEL_WINDOW_PROMPT_IVS, FALSE, iconXPos);
             PrintTextOnWindow(PSS_LABEL_WINDOW_PROMPT_IVS, sText_ViewIVs, stringXPos, 1, 0, 1);
 
-            stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, sText_ViewEVs, skillsLabelWidth);
+            stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, sText_ViewEVs, skillsLabelWidth - 2);
             iconXPos = stringXPos - 16;
             if (iconXPos < 0)
                 iconXPos = 0;
@@ -3414,7 +3427,7 @@ static void PrintPageNamesAndStats(void)
             PrintTextOnWindow(PSS_LABEL_WINDOW_PROMPT_EVS, sText_ViewEVs, stringXPos, 1, 0, 1);
         }
 
-        stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, sText_ViewStats, skillsLabelWidth);
+        stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, sText_ViewStats, skillsLabelWidth + 1);
         iconXPos = stringXPos - 16;
         if (iconXPos < 0)
             iconXPos = 0;
@@ -4609,6 +4622,7 @@ static void TrySetInfoPageIcons(void)
     if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
     { 
         SetPokerusCuredSprite();
+        CreateHeldItemSprite();
         if (BW_SUMMARY_SHOW_FRIENDSHIP)
             SetFriendshipSprite();
     }
@@ -4645,15 +4659,15 @@ static void SetMonTypeIcons(void)
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     if (summary->isEgg)
     {
-        SetTypeSpritePosAndPal(TYPE_MYSTERY, 68, 46, SPRITE_ARR_ID_TYPE);
+        SetTypeSpritePosAndPal(TYPE_MYSTERY, 72, 46, SPRITE_ARR_ID_TYPE);
         SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, TRUE);
     }
     else
     {
-        SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[0], 68, 46, SPRITE_ARR_ID_TYPE);
+        SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[0], 72, 46, SPRITE_ARR_ID_TYPE);
         if (gSpeciesInfo[summary->species].types[0] != gSpeciesInfo[summary->species].types[1])
         {
-            SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[1], 108, 46, SPRITE_ARR_ID_TYPE + 1);
+            SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[1], 110, 46, SPRITE_ARR_ID_TYPE + 1);
             SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, FALSE);
         }
         else
@@ -4726,6 +4740,41 @@ static void SwapMovesTypeSprites(u8 moveIndex1, u8 moveIndex2)
     sprite1->animEnded = FALSE;
     sprite2->animBeginning = TRUE;
     sprite2->animEnded = FALSE;
+}
+
+static void CreateHeldItemSprite(void)
+{
+    u16 itemId = sMonSummaryScreen->summary.item;
+    u8 spriteId;
+    
+    // Always destroy old sprite first
+    DestroyHeldItemIconSprite();
+    
+    // Only create new sprite if mon has an item
+    if (itemId == ITEM_NONE)
+        return;
+    
+    spriteId = AddItemIconSprite(TAG_HELD_ITEM_ICON, TAG_HELD_ITEM_ICON, itemId);
+    
+    if (spriteId != MAX_SPRITES)
+    {
+        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM] = spriteId;
+        gSprites[spriteId].x = 154;  // Set your desired x position
+        gSprites[spriteId].y = 100;   // Set your desired y position
+    }
+}
+
+static void DestroyHeldItemIconSprite(void)
+{
+    u8 spriteId = sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM];
+    
+    if (spriteId != SPRITE_NONE)
+    {
+        FreeSpriteTilesByTag(TAG_HELD_ITEM_ICON);
+        FreeSpritePaletteByTag(TAG_HELD_ITEM_ICON);
+        DestroySprite(&gSprites[spriteId]);
+        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM] = SPRITE_NONE;
+    }
 }
 
 static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state, bool32 isShadow)
@@ -4896,7 +4945,7 @@ static void CreateMonMarkingsSprite(struct Pokemon *mon)
     if (sprite != NULL)
     {
         StartSpriteAnim(sprite, GetMonData(mon, MON_DATA_MARKINGS));
-        sMonSummaryScreen->markingsSprite->x = 19;
+        sMonSummaryScreen->markingsSprite->x = 33;
         sMonSummaryScreen->markingsSprite->y = 102;
         sMonSummaryScreen->markingsSprite->oam.priority = 2;
         if (sMonSummaryScreen->currPageIndex != PSS_PAGE_INFO)

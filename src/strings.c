@@ -2,7 +2,6 @@
 #include "strings.h"
 #include "battle_pyramid_bag.h"
 #include "item_menu.h"
-#include "config/heat_menus.h"
 
 ALIGNED(4)
 const u8 gText_ExpandedPlaceholder_Empty[] = _("");
@@ -213,7 +212,7 @@ const u8 gText_NumberClear01[] = _("{NO}{CLEAR 0x01}");
 const u8 gText_RightArrow[] = _("{RIGHT_ARROW}"); // Unused
 const u8 gText_IDNumber2[] = _("{NO}{ID}");
 const u8 gText_Space[] = _(" ");
-const u8 gText_SelectorArrow2[] = _("{RIGHT_ARROW}");
+const u8 gText_SelectorArrow2[] = _("▶");
 const u8 gText_GoBackPrevMenu[] = _("Retourner au menu\nprécédent.");
 const u8 gText_WhatWouldYouLike[] = _("Que voulez-vous faire ?");
 const u8 gMenuText_Give2[] = _("Donner");
@@ -644,6 +643,9 @@ const u8 gText_Information[] = _("INFORMATION");
 const u8 gText_10hours[] = _("10 Heures");
 const u8 gText_InfiniteHours[] = _("99 Heures");
 const u8 gText_IDontKnow[] = _("Je ne sais pas");
+const u8 gText_ChooseGreen[] = _("Vert");
+const u8 gText_ChooseYellow[] = _("Jaune");
+const u8 gText_ChooseBlueGreen[] = _("Blue Vert");
 const u8 gText_Mach[] = _("MACH");
 const u8 gText_Acro[] = _("ACRO");
 const u8 gText_Psn[] = _("PSN");
@@ -656,8 +658,8 @@ const u8 gText_Ok3[] = _("OK"); // Unused
 const u8 gText_Quit[] = _("QUIT"); // Unused
 const u8 gText_SawIt[] = _("Saw it");
 const u8 gText_NotYet[] = _("Not yet");
-const u8 gText_Yes[] = _("OUI");
-const u8 gText_No[] = _("NON");
+const u8 gText_Yes[] = _("Oui");
+const u8 gText_No[] = _("Non");
 const u8 gText_Info4[] = _("INFO"); // Unused
 const u8 gText_SingleBattle[] = _("SINGLE BATTLE");
 const u8 gText_DoubleBattle[] = _("DOUBLE BATTLE");
@@ -1501,14 +1503,6 @@ const u8 gText_MoveCloserToLinkPartner[] = _("Move closer to your link partner(s
 const u8 gText_ABtnRegistrationCounter[] = _("A Button: Registration Counter");
 const u8 gText_ABtnTitleScreen[] = _("A Button: Title Screen");
 const u8 gText_Option[] = _("Paramètres");
-#if HEAT_MENUS_SAVEBLOCK_PALETTES
-const u8 gText_SmallDot[] = _("·");
-const u8 gText_LargeDot[] = _("{EMOJI_CIRCLE}");
-const u8 gText_PageNav[] = _("{L_BUTTON}{R_BUTTON} PAGE");
-const u8 gText_MenuPal[] = _("MENU COLOR");
-const u8 gText_MenuPalColor[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}COLOR");
-const u8 gText_MenuPalNumber[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
-#endif
 const u8 gText_TextSpeed[] = _("Vit.Texte");
 const u8 gText_BattleScene[] = _("Animat.Combat");
 const u8 gText_BattleStyle[] = _("Style Combat");

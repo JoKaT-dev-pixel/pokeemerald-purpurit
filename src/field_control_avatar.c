@@ -152,9 +152,6 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
 #endif
 }
 
-#include "heat_start_menu.h"
-#include "map_name_popup.h"
-#include "config/heat_menus.h"
 int ProcessPlayerFieldInput(struct FieldInput *input)
 {
     struct MapPosition position;
@@ -222,13 +219,8 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         return TRUE;
     if (input->pressedStartButton && !ForestMapPreviewScreenIsRunning()) // Prevents opening the Start menu while the map preview is still fading out.
     {
-        PlaySE(SE_WIN_OPEN);
-        #if ENABLE_HEAT_START_MENU
-        HideMapNamePopUpWindow();
-        HeatStartMenu_Init();
-        #else 
+        PlaySE(SE_WIN_OPEN); 
         ShowStartMenu();
-        #endif
         return TRUE;
     }
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)

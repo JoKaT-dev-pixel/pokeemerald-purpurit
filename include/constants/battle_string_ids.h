@@ -711,8 +711,9 @@
 #define STRINGID_HIDING                               709
 #define STRINGID_DETERMINATIONGETUP                   710
 #define STRINGID_DETERMINATIONACTIVATES               711
+#define STRINGID_NORUNNINGFROMTOTEMBATTLE             712
 
-#define BATTLESTRINGS_COUNT                           712
+#define BATTLESTRINGS_COUNT                           713
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

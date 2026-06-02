@@ -565,3 +565,5 @@ gSpecials::
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special CreateWonderTradePokemon
 	def_special WonderTradeSaveGame
+
+	def_special BattleSetup_StartTotemBattle

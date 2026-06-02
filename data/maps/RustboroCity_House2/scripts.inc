@@ -9,13 +9,17 @@ RustboroCity_House2_EventScript_LittleGirl::
 	msgbox RustboroCity_House2_Text_RoxanneKnowsALot, MSGBOX_NPC
 	end
 
-RustboroCity_House2_Text_TrainerSchoolExcellent:
-	.string "The TRAINER'S SCHOOL is excellent.\p"
-	.string "If you study there, you could even\n"
-	.string "become a GYM LEADER.$"
+RustboroCity_House2_Text_TrainerSchoolExcellent:    
+	.string "Ma meuf et moi, nous cherchons une\n"
+	.string "nouvelle série à regarder sur Netflix.\p"
+	.string "Y'a Invincible, Attack des Titans,\n"
+	.string "Stranger Things…\p"
+	.string "Wesh, y'a trop de choix !$"
 
 RustboroCity_House2_Text_RoxanneKnowsALot:
-	.string "ROXANNE, the GYM LEADER, really knows\n"
-	.string "a lot about POKéMON.\p"
-	.string "She's really strong, too!$"
+	.string "J'avais prévu de sortir avec mes amies,\n"
+	.string "mais lui m'oblige à rester pour regarder\l"
+	.string "Netflix…\p"
+	.string "Honnêtement, pourquoi suis-je encore\n"
+	.string "avec lui…?$"
 

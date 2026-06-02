@@ -1473,6 +1473,10 @@ const struct CompressedSpriteSheet gBattleAnimPicTable[] =
     {gBattleAnimSpriteGfx_Divebomb, 0x0800, ANIM_TAG_DIVEBOMB},
     {gBattleAnimSpriteGfx_BlueSparkle, 0x0200, ANIM_TAG_BLUE_SPARKLE},
     {gBattleAnimSpriteGfx_PunishmentHit, 0x1000, ANIM_TAG_PUNISHMENT_HIT},
+    {gBattleAnimSpriteGfx_GlowyRedOrb, 0x0020, ANIM_TAG_GLOWY_ORANGE_ORB},
+    {gBattleAnimSpriteGfx_GlowyRedOrb, 0x0020, ANIM_TAG_GLOWY_YELLOW_ORB},
+    {gBattleAnimSpriteGfx_GlowyRedOrb, 0x0020, ANIM_TAG_MATCHA_GOTCHA_ORB},
+    {gBattleAnimSpriteGfx_NewBubble, 0x0180, ANIM_TAG_NEW_BUBBLE},
 };
 
 const struct CompressedSpritePalette gBattleAnimPaletteTable[] =
@@ -1947,6 +1951,10 @@ const struct CompressedSpritePalette gBattleAnimPaletteTable[] =
     {gBattleAnimSpritePal_Divebomb, ANIM_TAG_DIVEBOMB},
     {gBattleAnimSpritePal_BlueSparkle, ANIM_TAG_BLUE_SPARKLE},
     {gBattleAnimSpritePal_PunishmentHit, ANIM_TAG_PUNISHMENT_HIT},
+    {gBattleAnimSpritePal_GlowyOrangeOrb, ANIM_TAG_GLOWY_ORANGE_ORB},
+    {gBattleAnimSpritePal_GlowyYellowOrb, ANIM_TAG_GLOWY_YELLOW_ORB},
+    {gBattleAnimSpritePal_MatchaGotchaOrb, ANIM_TAG_MATCHA_GOTCHA_ORB},
+    {gBattleAnimSpritePal_NewBubble, ANIM_TAG_NEW_BUBBLE},
 };
 
 const struct BattleAnimBackground gBattleAnimBackgroundTable[] =
